@@ -1,0 +1,10 @@
+{
+    "folders":
+    [
+        {
+            "name": "OmniSharpSublime",
+            "follow_symlinks": true,
+            "path": "."
+        }
+    ]
+}
