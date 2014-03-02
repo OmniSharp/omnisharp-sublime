@@ -1,0 +1,3 @@
+[
+    {"command": "omni_sharp_go_to_definition", "keys": ["ctrl+alt+g"]}
+]

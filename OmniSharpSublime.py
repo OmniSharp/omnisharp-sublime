@@ -2,6 +2,7 @@
 import sys
 
 from .listeners import *
+from .commands import *
 
 if sys.version_info < (3, 3):
     raise RuntimeError('OmniSharpSublime works with Sublime Text 3 only')

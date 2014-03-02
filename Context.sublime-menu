@@ -1,0 +1,13 @@
+[
+    {
+        "caption": "OmniSharpSublime",
+        "id": "omnisharp_context",
+        "children":
+        [
+            {
+                "command": "omni_sharp_go_to_definition",
+                "caption": "Goto Definition"
+            }
+        ]
+    }
+]

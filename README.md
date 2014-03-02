@@ -66,10 +66,9 @@ https://github.com/nosami/Omnisharp
 https://github.com/n-yoda/OmniSharpSublime
 
 # TODO
-* vim용 Omnisharp 참고해서 자동 완성 기능 보강(제네릭)
-* Go to definition
-* Find Usage
 * rename
+* Find Usage
+* Show Documentations
 * Find type / symbols
 * code action
 * code format
