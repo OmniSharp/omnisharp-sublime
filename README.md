@@ -2,6 +2,7 @@
 Sublime Text 3용 C# IDE 플러그인입니다. OmniSharpServer 클라이언트로 동작하며, 비동기 통신을
 하기 떄문에 에디터가 느려지는 것은 최소화하였습니다.
 
+현재 Mac OSX만 지원합니다.
 
 # 참고
 

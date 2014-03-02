@@ -34,7 +34,6 @@ class OmniSharpCompletionEventListener(sublime_plugin.EventListener):
         omnisharp.get_response(view, '/autocomplete', self._complete)
 
     def _complete(self, response):
-        print(response)
         if response is not None and len(response) > 0:
             completions = []
             for item in response:

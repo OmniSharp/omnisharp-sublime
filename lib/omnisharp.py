@@ -1,9 +1,18 @@
+import os
 import sublime
 import threading
 import json
 import urllib
+import socket
+import subprocess
 
 from .helpers import get_settings
+from .helpers import current_solution
+
+server_subprocesses = {
+}
+server_ports = {
+}
 
 
 class ThreadUrl(threading.Thread):
@@ -16,12 +25,15 @@ class ThreadUrl(threading.Thread):
         self.callback = callback
 
     def run(self):
-        response = urllib.request.urlopen(
-            self.url, self.data, self.timeout)
-        self.callback(response.read())
+        try:
+            response = urllib.request.urlopen(
+                self.url, self.data, self.timeout)
+            self.callback(response.read())
+        except:
+            self.callback(None)
 
 
-def async_urlopen(url, callback, data, timeout):
+def urlopen_async(url, callback, data, timeout):
     thread = ThreadUrl(url, callback, data, timeout)
     thread.start()
 
@@ -41,16 +53,62 @@ def get_response(view, endpoint, callback, params=None, timeout=None):
     if timeout is None:
         timeout = int(get_settings(view, 'omnisharp_response_timeout'))
 
-    host = get_settings(view, 'omnisharp_host')
-    port = int(get_settings(view, 'omnisharp_port'))
+    host = 'localhost'
+    port = server_ports[current_solution(view)]
 
     httpurl = "http://%s:%s/" % (host, port)
 
     target = urllib.parse.urljoin(httpurl, endpoint)
     data = urllib.parse.urlencode(parameters).encode('utf-8')
 
-    async_urlopen(
+    def urlopen_callback(data):
+        if data is None:
+            callback(None)
+        else:
+            jsonStr = data.decode('utf-8')
+            jsonObj = json.loads(jsonStr)
+            callback(jsonObj)
+    urlopen_async(
         target,
-        lambda jsonStr: callback(json.loads(jsonStr.decode('utf-8'))),
+        urlopen_callback,
         data,
         timeout)
+
+
+def _available_prot():
+    s = socket.socket()
+    s.bind(('', 0))
+    port = s.getsockname()[1]
+    s.close()
+
+    return port
+
+
+def create_omnisharp_server_subprocess(view):
+    solution_path = current_solution(view)
+
+    # no solution file
+    if not os.path.isfile(solution_path):
+        return
+
+    # server is running
+    if solution_path in server_subprocesses:
+        return
+
+    omnisharp_server_path = os.path.join(
+        os.path.dirname(__file__),
+        '../OmniSharpServer/OmniSharp/bin/Debug/OmniSharp.exe')
+
+    port = _available_prot()
+    args = [
+        'mono', omnisharp_server_path, '-p', str(port),
+        '-s', solution_path
+    ]
+
+    try:
+        process = subprocess.Popen(args)
+        server_subprocesses[solution_path] = process
+        server_ports[solution_path] = port
+    except:
+        print('Check your solution file, OmniSharpServer'
+              ' and mono environment.')

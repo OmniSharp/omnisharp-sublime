@@ -1,5 +1,4 @@
 {
     "omnisharp_response_timeout": 1,
-    "omnisharp_host": "localhost",
-    "omnisharp_port": 2000
+    "omnisharp_auto_start": true
 }
