@@ -66,8 +66,8 @@ https://github.com/nosami/Omnisharp
 https://github.com/n-yoda/OmniSharpSublime
 
 # TODO
-* rename
 * Find Usage
+* Syntax error
 * Show Documentations
 * Find type / symbols
 * code action
