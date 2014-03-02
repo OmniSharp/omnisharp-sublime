@@ -13,3 +13,16 @@ https://github.com/DamnWidget/anaconda
 https://github.com/nosami/Omnisharp
 3. OmniSharpSublime by n-yoda :
 https://github.com/n-yoda/OmniSharpSublime
+
+# TODO
+* OmniSharpServer submodule로 등록
+* OmniSharpServer 자동 실행 기능 추가
+* Go to definition
+* Find type / symbols
+* vim용 Omnisharp 참고해서 자동 완성 기능 보강(제네)
+* Find Usage
+* rename
+* code action
+* code format
+* type lookup
+* syntax highlight 강화(vim용 Omnisharp 참고)
