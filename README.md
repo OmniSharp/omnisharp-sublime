@@ -15,7 +15,6 @@ https://github.com/nosami/Omnisharp
 https://github.com/n-yoda/OmniSharpSublime
 
 # TODO
-* OmniSharpServer submodule로 등록
 * OmniSharpServer 자동 실행 기능 추가
 * Go to definition
 * Find type / symbols
