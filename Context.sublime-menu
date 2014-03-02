@@ -7,6 +7,10 @@
             {
                 "command": "omni_sharp_go_to_definition",
                 "caption": "Goto Definition"
+            },
+            {
+                "command": "omni_sharp_rename",
+                "caption": "Rename"
             }
         ]
     }

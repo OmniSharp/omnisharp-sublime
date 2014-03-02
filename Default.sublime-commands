@@ -2,5 +2,9 @@
     {
         "caption": "OmniSharpSublime: Goto Definition",
         "command": "omni_sharp_go_to_definition"
+    },
+    {
+        "command": "omni_sharp_rename",
+        "caption": "OmniSharpSublime: Rename"
     }
 ]
