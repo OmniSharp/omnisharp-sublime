@@ -1,0 +1,3 @@
+[submodule "OmniSharpServer"]
+	path = OmniSharpServer
+	url = git@github.com:moonrabbit/OmniSharpServer.git
