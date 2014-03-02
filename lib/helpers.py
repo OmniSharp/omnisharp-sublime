@@ -32,6 +32,9 @@ def project_data(view):
 
 def current_solution(view):
     project_file = project_file_name(view)
+    if project_file is None:
+        return None
+
     project_dir = os.path.dirname(project_file)
 
     data = project_data(view)

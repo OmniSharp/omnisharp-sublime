@@ -39,6 +39,10 @@ def urlopen_async(url, callback, data, timeout):
 
 
 def get_response(view, endpoint, callback, params=None, timeout=None):
+    solution_path = current_solution(view)
+    if solution_path is None or solution_path not in server_ports:
+        callback(None)
+        return
     parameters = {}
     location = view.sel()[0]
     cursor = view.rowcol(location.begin())
@@ -54,7 +58,7 @@ def get_response(view, endpoint, callback, params=None, timeout=None):
         timeout = int(get_settings(view, 'omnisharp_response_timeout'))
 
     host = 'localhost'
-    port = server_ports[current_solution(view)]
+    port = server_ports[solution_path]
 
     httpurl = "http://%s:%s/" % (host, port)
 
@@ -88,7 +92,7 @@ def create_omnisharp_server_subprocess(view):
     solution_path = current_solution(view)
 
     # no solution file
-    if not os.path.isfile(solution_path):
+    if solution_path is None or not os.path.isfile(solution_path):
         return
 
     # server is running
@@ -97,18 +101,13 @@ def create_omnisharp_server_subprocess(view):
 
     omnisharp_server_path = os.path.join(
         os.path.dirname(__file__),
-        '../OmniSharpServer/OmniSharp/bin/Debug/OmniSharp.exe')
+        '../server/server.py')
 
     port = _available_prot()
     args = [
-        'mono', omnisharp_server_path, '-p', str(port),
-        '-s', solution_path
+        'python', omnisharp_server_path, str(os.getpid()), str(port), solution_path
     ]
 
-    try:
-        process = subprocess.Popen(args)
-        server_subprocesses[solution_path] = process
-        server_ports[solution_path] = port
-    except:
-        print('Check your solution file, OmniSharpServer'
-              ' and mono environment.')
+    process = subprocess.Popen(args)
+    server_subprocesses[solution_path] = process
+    server_ports[solution_path] = port
