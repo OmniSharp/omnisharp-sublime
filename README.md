@@ -74,3 +74,7 @@ https://github.com/n-yoda/OmniSharpSublime
 * code format
 * type lookup
 * syntax highlight 강화(vim용 Omnisharp 참고)
+
+# known issue
+* 제네릭이 포함된 함수/클래스 rename시, 사용하는 파일을 모두 고치치 않는 이슈
+* 제네릭이 포함된 함수/클래스 find usage시, 제대로 못 찾는 이슈

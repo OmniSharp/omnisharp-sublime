@@ -11,6 +11,10 @@
             {
                 "command": "omni_sharp_rename",
                 "caption": "Rename"
+            },
+            {
+                "command": "omni_sharp_find_usage",
+                "caption": "Find Usage"
             }
         ]
     }
