@@ -15,6 +15,7 @@ Sublime Text 3용 C# IDE 플러그인입니다. OmniSharpServer를 사용했으�
 2. git으로 OmniSharpSublime을 받습니다.
 
     git clone https://github.com/moonrabbit/OmniSharpSublime.git
+    git submodule update --init
 
 3. OmniSharpSublime 디펙토리로 이동한 뒤, build.sh 스크립트를 실행해 줍니다.
 
