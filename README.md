@@ -67,7 +67,11 @@ https://github.com/n-yoda/OmniSharpSublime
 
 # TODO
 * Find Usage
+* class rename 버그 수정
+* field rename 버그 수정
 * Syntax error
+
+# 언젠간 하려나...
 * Show Documentations
 * Find type / symbols
 * code action
