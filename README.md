@@ -10,17 +10,17 @@ Sublime Text 3용 C# IDE 플러그인입니다. OmniSharpServer를 사용했으�
 # 설치 방법
 1. 터미널로 sublime 플러그인 디렉토리로 이동합니다.
 
-    cd /Users/master/Library/Application\ Support/Sublime\ Text\ 3/Packages
+        cd /Users/master/Library/Application\ Support/Sublime\ Text\ 3/Packages
 
 2. git으로 OmniSharpSublime을 받습니다.
 
-    git clone https://github.com/moonrabbit/OmniSharpSublime.git
-    git submodule update --init
+        git clone https://github.com/moonrabbit/OmniSharpSublime.git
+        git submodule update --init
 
 3. OmniSharpSublime 디펙토리로 이동한 뒤, build.sh 스크립트를 실행해 줍니다.
 
-    cd OmniSharpSublime
-    ./build.sh
+        cd OmniSharpSublime
+        ./build.sh
 
 # 사용법
 sublime text project 파일에 솔루션 위치만 지정해주면 사용이 가능합니다.
