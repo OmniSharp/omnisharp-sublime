@@ -48,7 +48,7 @@ if __name__ == '__main__':
         os.path.dirname(__file__),
         '../OmniSharpServer/OmniSharp/bin/Debug/OmniSharp.exe')
     args = [
-        'mono', omnisharp_server_path, '-p', port,
+        '/usr/local/bin/mono', omnisharp_server_path, '-p', port,
         '-s', solution_file
     ]
 
