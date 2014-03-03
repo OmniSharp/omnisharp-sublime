@@ -3,6 +3,7 @@ import sublime
 import threading
 import json
 import urllib
+import urllib.parse
 import socket
 import subprocess
 
