@@ -7,6 +7,7 @@ import urllib.parse
 import urllib.request
 import socket
 import subprocess
+import queue
 
 from .helpers import get_settings
 from .helpers import current_solution
@@ -110,6 +111,21 @@ def create_omnisharp_server_subprocess(view):
         'python', omnisharp_server_path, str(os.getpid()), str(port), solution_path
     ]
 
-    process = subprocess.Popen(args)
-    server_subprocesses[solution_path] = process
+    print('open_solution_server:%s' % (solution_path))
+    server_process = subprocess.Popen(args, stderr=subprocess.PIPE)
+    server_thread = threading.Thread(target=communicate_server, args=(server_process, solution_path))
+    server_thread.daemon = True
+    server_thread.start()
+
+    server_subprocesses[solution_path] = server_process
     server_ports[solution_path] = port
+
+def communicate_server(target_process, target_name):
+    print('start_solution_server:%s' % (target_name))
+    stdin_data, stderr_data = target_process.communicate()
+    if stderr_data:
+        for stderr_line in stderr_data.splitlines():
+            print('exit_solution_server:%s error:%s' % (target_name, stderr_line))
+    else:
+        print('exit_solution_server:%s' % (target_name))
+
