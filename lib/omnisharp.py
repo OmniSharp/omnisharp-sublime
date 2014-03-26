@@ -67,12 +67,17 @@ def get_response(view, endpoint, callback, params=None, timeout=None):
 
     target = urllib.parse.urljoin(httpurl, endpoint)
     data = urllib.parse.urlencode(parameters).encode('utf-8')
+    print('request: %s' % target)
+    print('======== request params ======== \n %s' % json.dumps(parameters))
 
     def urlopen_callback(data):
+        print('======== response ========')
         if data is None:
+            print(None)
             callback(None)
         else:
             jsonStr = data.decode('utf-8')
+            print(jsonStr)
             jsonObj = json.loads(jsonStr)
             callback(jsonObj)
     urlopen_async(
