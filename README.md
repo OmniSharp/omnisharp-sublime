@@ -1,37 +1,43 @@
-# 개요
-Sublime Text 3용 C# IDE 플러그인입니다. OmniSharpServer를 사용했으며, 비동기 통신으로
-에디터가 느려지는 것은 최소화하였습니다.
+# OmniSharpSublime for ST3
+ OmnisharpSublime is a plugin for ST3 to provide C# development environment. It communicate with OmniSharpServer by nosami for IDE functions.
 
-현재 Mac OSX만 지원합니다.
+ It works on Mac OSX and Linux.
 
-# 필요 사항
-1. mono
+# Features
+ 1. Auto OmniSharpServer running
+ 2. Asynchronous communication with OmniSharpServer (Never freeze!)
+ 3. Auto Completion
+ 4. Goto definition
+ 5. Rename
 
-# 설치 방법
-1. 터미널로 sublime 플러그인 디렉토리로 이동합니다.
+# Requirements
+ * Mono Development Kit(for [OmniSharpServer](https://github.com/nosami/OmniSharpServer))
 
-        cd /Users/master/Library/Application\ Support/Sublime\ Text\ 3/Packages
+# Installation
+1. Move to ST3 plugin directory in console.
 
-2. git으로 OmniSharpSublime을 받습니다.
+        cd {path to ST3 plugin directory}/Packages
+
+2. Clone repository and update submodule.
 
         git clone https://github.com/moonrabbit/OmniSharpSublime.git
         git submodule update --init
 
-3. OmniSharpSublime 디펙토리로 이동한 뒤, build.sh 스크립트를 실행해 줍니다.
+3. Move to plugin directory and run build.sh
 
         cd OmniSharpSublime
         ./build.sh
 
-# 사용법
-sublime text project 파일에 솔루션 위치만 지정해주면 사용이 가능합니다.
+# Project Setting
+To run server automatically, you have to specify solution file on sublime-project file.
 
-##설정 파일의 예
+## Example of sublime-project
 
         {
             "folders":
             [
                 {
-                    "name": "fxd_client",
+                    "name": "csharp_project",
                     "follow_symlinks": true,
                     "path": ".",
                     "file_exclude_patterns":
@@ -51,35 +57,20 @@ sublime text project 파일에 솔루션 위치만 지정해주면 사용이 가
             {
                 "tab_size": 4
             },
-            "solution_file": "./fxd_client-csharp.sln"
+            "solution_file": "./csharp-project.sln"
         }
 
 
-# 참고
-
-3가지 프로젝트를 참고하고 있습니다.
-
-1. anaconda (sublime text용 python IDE 플러그인) :
-https://github.com/DamnWidget/anaconda
-2. Omnisharp (vim용 C# IDE 플러그인) :
-https://github.com/nosami/Omnisharp
-3. OmniSharpSublime by n-yoda :
-https://github.com/n-yoda/OmniSharpSublime
-
 # TODO
-* Find Usage
-* class rename 버그 수정
-* field rename 버그 수정
-* Syntax error
+* find usage
+* class rename bug fix
+* field rename bug fix
+* syntax error notification
 
-# 언젠간 하려나...
+# Sometime
 * Show Documentations
 * Find type / symbols
 * code action
 * code format
 * type lookup
-* syntax highlight 강화(vim용 Omnisharp 참고)
-
-# known issue
-* 제네릭이 포함된 함수/클래스 rename시, 사용하는 파일을 모두 고치치 않는 이슈
-* 제네릭이 포함된 함수/클래스 find usage시, 제대로 못 찾는 이슈
+* advanced syntax highlight
