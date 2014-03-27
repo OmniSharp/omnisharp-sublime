@@ -31,7 +31,7 @@ class OmniSharpCompletionEventListener(sublime_plugin.EventListener):
 
         params = {}
         params['wordToComplete'] = word_to_complete
-        omnisharp.get_response(view, '/autocomplete', self._complete)
+        omnisharp.get_response(view, '/autocomplete', self._complete, params)
 
     def _complete(self, response):
         if response is not None and len(response) > 0:
