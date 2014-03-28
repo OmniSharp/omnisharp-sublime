@@ -26,7 +26,6 @@ class OmniSharpRename(sublime_plugin.TextCommand):
             self.view, '/rename', self._rename_response_received, params)
 
     def _rename_response_received(self, data):
-        print(data)
         self.data = data
         self.view.run_command('omni_sharp_rename')
 
