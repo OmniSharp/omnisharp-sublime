@@ -65,8 +65,30 @@ class OmniSharpCompletionEventListener(sublime_plugin.EventListener):
         display += '\t'
         display += json['DisplayText']
 
+        # Get paramaters out of DisplayText
+        pattern = re.compile(r"\(|\)")
+        params = pattern.split(json['DisplayText'])
+        paramssplit = []
+
+        # Split paramaters by comma
+        if len(params) > 1:
+          paramssplit = params[1].split(',')
+
+        completionText = json['CompletionText']
+        
         # fix generics completions
-        if re.match("^T\W", json['DisplayText']):
-            fixed = re.sub("\(\)?$", "<", json['CompletionText'])
-            json['CompletionText'] = fixed
-        return (display, json['CompletionText'])
+        if re.match("^T\W", completionText):
+            fixed = re.sub("\(\)?$", "<", completionText)
+            completionText = fixed       
+
+        # Output paramaters with field markers if this is a function
+        if len(params) > 1:
+          if len(paramssplit) > 0:
+            for i in range(0, len(paramssplit)):
+              completionText += '${' + str(i+1) + ':' + paramssplit[i].strip() +'}'
+              if i < len(paramssplit)-1:
+                completionText += ', '
+
+          completionText += ')'
+
+        return (display, completionText)
