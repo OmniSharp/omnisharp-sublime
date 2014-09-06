@@ -39,7 +39,6 @@ class OmniSharpFindUsage(sublime_plugin.TextCommand):
                 text = text + i["FileName"].strip() + " - (" + str(i["Line"]) + ", " + str(i["Column"]) + ") : " + i["Text"].strip() + os.linesep
         region = sublime.Region(0, view.size())
         view.replace(edit, region, text)
-        sublime.Selection.clear()
         self.data = None
 
     def is_enabled(self):
