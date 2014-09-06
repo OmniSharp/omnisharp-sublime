@@ -21,11 +21,11 @@
 2. Clone repository and update submodule.
 
         git clone https://github.com/moonrabbit/OmniSharpSublime.git
-        git submodule update --init
 
-3. Move to plugin directory and run build.sh
+3. Move to plugin directory
 
         cd OmniSharpSublime
+        git submodule update --init
         ./build.sh
 
 # Project Setting
