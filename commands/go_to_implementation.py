@@ -31,7 +31,10 @@ class OmniSharpGoToImplementation(sublime_plugin.TextCommand):
                 print(i)
                 self.quickitems.append(i["Text"].strip())
         if len(self.quickitems) > 0:
-        	self.view.window().show_quick_panel(self.quickitems, self.on_done)
+            if len(self.quickitems) == 1:
+               self.on_done(0) 
+            else:
+                self.view.window().show_quick_panel(self.quickitems, self.on_done)
 
     def is_enabled(self):
         return helpers.is_csharp(self.view)
