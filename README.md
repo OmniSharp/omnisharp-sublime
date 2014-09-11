@@ -18,14 +18,14 @@
 
         cd {path to ST3 plugin directory}/Packages
 
-2. Clone repository and update submodule.
+2. Clone repository.
 
         git clone https://github.com/moonrabbit/OmniSharpSublime.git
-        git submodule update --init
 
-3. Move to plugin directory and run build.sh
+3. Move to plugin directory, update submodule and build.
 
         cd OmniSharpSublime
+        git submodule update --init
         ./build.sh
 
 # Project Setting
