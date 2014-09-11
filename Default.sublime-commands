@@ -6,5 +6,9 @@
     {
         "command": "omni_sharp_rename",
         "caption": "OmniSharpSublime: Rename"
+    },
+    {
+        "command": "omni_sharp__find_usages",
+        "caption": "OmniSharpSublime: Find Usages"
     }
 ]
