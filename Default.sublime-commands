@@ -10,5 +10,9 @@
     {
         "command": "omni_sharp__find_usages",
         "caption": "OmniSharpSublime: Find Usages"
+    },
+    {
+        "command": "omni_sharp_go_to_implementation",
+        "caption": "OmniSharpSublime: Go to implementation"
     }
 ]

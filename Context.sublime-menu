@@ -15,6 +15,10 @@
             {
                 "command": "omni_sharp_find_usage",
                 "caption": "Find Usage"
+            },
+            {
+                "command": "omni_sharp_go_to_implementation",
+                "caption": "Go to implementation"
             }
         ]
     }
