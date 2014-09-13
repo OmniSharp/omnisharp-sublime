@@ -8,7 +8,8 @@ import urllib.request
 import socket
 import subprocess
 import queue
-
+import traceback
+import sys
 
 from .helpers import get_settings
 from .helpers import current_solution
@@ -36,6 +37,7 @@ class ThreadUrl(threading.Thread):
                 self.url, self.data, self.timeout)
             self.callback(response.read())
         except:
+            traceback.print_exc(file=sys.stdout)
             self.callback(None)
 
 
@@ -80,11 +82,15 @@ def get_response(view, endpoint, callback, params=None, timeout=None):
         print('======== response ========')
         if data is None:
             print(None)
+            # traceback.print_stack(file=sys.stdout)
+            print('callback none')
             callback(None)
         else:
             jsonStr = data.decode('utf-8')
             print(jsonStr)
             jsonObj = json.loads(jsonStr)
+            # traceback.print_stack(file=sys.stdout)
+            print('callback data')
             callback(jsonObj)
     urlopen_async(
         target,
