@@ -33,7 +33,7 @@ class OmniSharpFindUsage(sublime_plugin.TextCommand):
         text=''
         print('findusage is :')
         print(self.data)
-        if "QuickFixes" in self.data:
+        if "QuickFixes" in self.data and self.data["QuickFixes"] != None:
             for i in self.data["QuickFixes"]:
                 print(i)
                 text = text + i["FileName"].strip() + " - (" + str(i["Line"]) + ", " + str(i["Column"]) + ") : " + i["Text"].strip() + os.linesep
