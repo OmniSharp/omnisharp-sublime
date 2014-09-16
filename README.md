@@ -62,10 +62,8 @@ To run server automatically, you have to specify solution file on sublime-projec
 
 
 # TODO
-* find usage
 * class rename bug fix
 * field rename bug fix
-* syntax error notification
 
 # Sometime
 * Show Documentations
