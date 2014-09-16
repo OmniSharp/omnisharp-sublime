@@ -29,7 +29,7 @@
         ./build.sh
 
 # Project Setting
-To run server automatically, you have to specify solution file on sublime-project file.
+To run server automatically, you have to specify a solution file in a sublime-project. For ASP.Net vNext applications you do not need to specify the solution file but you need the sublime-project file.
 
 ## Example of sublime-project
 
