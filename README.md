@@ -25,7 +25,7 @@
 3. Move to plugin directory, update submodule and build.
 
         cd OmniSharpSublime
-        git submodule update --init
+        git submodule update --init --recursive
         ./build.sh
 
 # Project Setting
