@@ -47,7 +47,7 @@ def urlopen_async(url, callback, data, timeout):
 
 
 def get_response(view, endpoint, callback, params=None, timeout=None):
-    solution_path =  current_project_folder(view)
+    solution_path =  current_solution_or_folder(view)
 
     print(solution_path)
     print(server_ports)
