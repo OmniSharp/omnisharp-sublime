@@ -12,7 +12,7 @@ class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
     semanticdata = None
     outputpanel = None
 
-    def on_modified(self, view):
+    def on_post_save(self, view):
         if not helpers.is_csharp(view):
             return
         
