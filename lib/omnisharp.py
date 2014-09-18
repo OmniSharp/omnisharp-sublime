@@ -12,7 +12,7 @@ import traceback
 import sys
 
 from .helpers import get_settings
-from .helpers import current_solution
+from .helpers import current_solution_or_folder
 from .helpers import current_project_folder
 
 
@@ -109,7 +109,7 @@ def _available_prot():
 
 
 def create_omnisharp_server_subprocess(view):
-    solution_path = current_project_folder(view)
+    solution_path = current_solution_or_folder(view)
 
     print(solution_path)
 
