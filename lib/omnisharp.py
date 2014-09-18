@@ -99,6 +99,52 @@ def get_response(view, endpoint, callback, params=None, timeout=None):
         timeout)
 
 
+def get_response_from_empty_httppost(view, endpoint, callback, timeout=None):
+    solution_path =  current_solution_or_folder(view)
+
+    print(solution_path)
+    print(server_ports)
+    if solution_path is None or solution_path not in server_ports:
+        callback(None)
+        return
+    parameters = {}
+    location = view.sel()[0]
+    cursor = view.rowcol(location.begin())
+
+    if timeout is None:
+        timeout = int(get_settings(view, 'omnisharp_response_timeout'))
+
+    host = 'localhost'
+    port = server_ports[solution_path]
+
+    httpurl = "http://%s:%s/" % (host, port)
+
+    target = urllib.parse.urljoin(httpurl, endpoint)
+    data = urllib.parse.urlencode(parameters).encode('utf-8')
+    print('request: %s' % target)
+    print('======== no request params ======== \n')
+
+    def urlopen_callback(data):
+        print('======== response ========')
+        if data is None:
+            print(None)
+            # traceback.print_stack(file=sys.stdout)
+            print('callback none')
+            callback(None)
+        else:
+            jsonStr = data.decode('utf-8')
+            print(jsonStr)
+            jsonObj = json.loads(jsonStr)
+            # traceback.print_stack(file=sys.stdout)
+            print('callback data')
+            callback(jsonObj)
+    urlopen_async(
+        target,
+        urlopen_callback,
+        data,
+        timeout)
+
+
 def _available_prot():
     s = socket.socket()
     s.bind(('', 0))
