@@ -19,6 +19,10 @@
             {
                 "command": "omni_sharp_go_to_implementation",
                 "caption": "Go to implementation"
+            },
+            {
+                "command": "omni_sharp_go_to_file",
+                "caption": "Go to file"
             }
         ]
     }
