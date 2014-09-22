@@ -1,0 +1,75 @@
+import sublime
+import sublime_plugin
+import re
+
+from ..lib import omnisharp
+from ..lib import helpers
+
+
+class OmniSharpOverrideTargets(sublime_plugin.TextCommand):
+    data = None
+    quickitems = None
+    runtargetdata = None
+    currentedit = None
+
+    def run(self, edit):
+        if self.data is None:
+            # for region in view.sel():  
+            #     if not region.empty():
+            #         s = view.substr(region)  
+            #         if re.match("^\W*$", s):
+            #             word_to_complete = ''
+            #         else:
+            #             word_to_complete = prefix
+
+            #         params = {}
+            #         params['wordToComplete'] = word_to_complete
+            #         omnisharp.get_response(self.view, '/getoverridetargets', self._handle_overridetargets, params)
+            #         break
+            params = {}
+            params['wordToComplete'] = 'public class OverridingClass : MyOverrideableClass { public override int GetInt() { return 123; } public override string GetString() { throw new System.NotImplementedException(); } }'
+            omnisharp.get_response(self.view, '/getoverridetargets', self._handle_overridetargets, params)
+        else:
+            self._show_override_targets(edit)
+
+    def _handle_overridetargets(self, data):
+        print(data)
+        if data is None:
+            return
+        self.data = data
+        self.view.run_command('omni_sharp_override_targets')
+
+    def _show_override_targets(self, edit):
+        print('overridetargets is :')
+        print(self.data)
+        self.quickitems = [];
+        if len(self.data) > 0:
+            for i in self.data:
+                print(i['OverrideTargetName'])
+                self.quickitems.append(i["OverrideTargetName"].strip())
+        if len(self.quickitems) > 0:
+            self.currentedit = edit
+            self.view.window().show_quick_panel(self.quickitems, self.on_done)
+
+    def is_enabled(self):
+        return helpers.is_csharp(self.view)
+
+    def on_done(self, index):
+        item = self.data[index]
+        print(item)
+
+        params = {}
+        params['overrideTargetName'] = item["OverrideTargetName"].strip()
+        omnisharp.get_response(self.view, '/runoverridetarget', self._handle_runtarget, params)
+        
+    def _handle_runtarget(self, data):
+        print('runtarget is:')
+        print(data)
+        if data is None:
+            return
+        self.view.run_command("omni_sharp_run_target",{"args":{'text':data['Buffer']}})
+
+class OmniSharpRunTarget(sublime_plugin.TextCommand):
+  def run(self, edit, args):
+    region = sublime.Region(0, self.view.size())
+    self.view.replace(edit, region, args['text'])
