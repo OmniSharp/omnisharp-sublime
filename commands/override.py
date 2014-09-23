@@ -14,21 +14,7 @@ class OmniSharpOverrideTargets(sublime_plugin.TextCommand):
 
     def run(self, edit):
         if self.data is None:
-            # for region in view.sel():  
-            #     if not region.empty():
-            #         s = view.substr(region)  
-            #         if re.match("^\W*$", s):
-            #             word_to_complete = ''
-            #         else:
-            #             word_to_complete = prefix
-
-            #         params = {}
-            #         params['wordToComplete'] = word_to_complete
-            #         omnisharp.get_response(self.view, '/getoverridetargets', self._handle_overridetargets, params)
-            #         break
-            params = {}
-            params['wordToComplete'] = 'public class OverridingClass : MyOverrideableClass { public override int GetInt() { return 123; } public override string GetString() { throw new System.NotImplementedException(); } }'
-            omnisharp.get_response(self.view, '/getoverridetargets', self._handle_overridetargets, params)
+            omnisharp.get_response(self.view, '/getoverridetargets', self._handle_overridetargets)
         else:
             self._show_override_targets(edit)
 
@@ -50,17 +36,25 @@ class OmniSharpOverrideTargets(sublime_plugin.TextCommand):
         if len(self.quickitems) > 0:
             self.currentedit = edit
             self.view.window().show_quick_panel(self.quickitems, self.on_done)
+        else:
+            self.data = None
+        
 
     def is_enabled(self):
         return helpers.is_csharp(self.view)
 
     def on_done(self, index):
+        if index == -1:
+            self.data = None
+            return
+            
         item = self.data[index]
         print(item)
 
         params = {}
         params['overrideTargetName'] = item["OverrideTargetName"].strip()
         omnisharp.get_response(self.view, '/runoverridetarget', self._handle_runtarget, params)
+        self.data = None
         
     def _handle_runtarget(self, data):
         print('runtarget is:')
