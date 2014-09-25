@@ -14,6 +14,13 @@ class OmniSharpOverrideTargets(sublime_plugin.TextCommand):
 
     def run(self, edit):
         if self.data is None:
+            location = self.view.sel()[0]
+            cursor = self.view.rowcol(location.begin())
+            row = cursor[0] #+ 1
+            col = cursor[1] #+ 1
+            point = self.view.text_point(row,col)
+            self.lineregion = self.view.full_line(point)
+
             omnisharp.get_response(self.view, '/getoverridetargets', self._handle_overridetargets)
         else:
             self._show_override_targets(edit)
@@ -61,9 +68,15 @@ class OmniSharpOverrideTargets(sublime_plugin.TextCommand):
         print(data)
         if data is None:
             return
-        self.view.run_command("omni_sharp_run_target",{"args":{'text':data['Buffer']}})
+        
+        self.view.run_command("omni_sharp_run_target",{"args":{'text':data['Buffer'], 'a':self.lineregion.a, 'b':self.lineregion.b}})
 
 class OmniSharpRunTarget(sublime_plugin.TextCommand):
   def run(self, edit, args):
     region = sublime.Region(0, self.view.size())
     self.view.replace(edit, region, args['text'])
+    
+    lineregion = sublime.Region(args['a'], args['b'])
+    print('erasing from' + str(lineregion.a) + ' to ' + str(lineregion.b))
+    self.view.erase(edit,lineregion)
+    print('erase')
