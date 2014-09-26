@@ -9,6 +9,11 @@
  3. Auto Completion
  4. Goto definition
  5. Rename
+ 6. Goto implementation
+ 7. Syntax/Semantic error highlighting
+ 8. Displays possible override methods
+ 9. Find Usages
+ 10. Format Document
 
 # Requirements
  * Mono Development Kit(for [OmniSharpServer](https://github.com/nosami/OmniSharpServer))
@@ -61,6 +66,25 @@ To run server automatically, you have to specify a solution file in a sublime-pr
         }
 
 
+#Format Document Settings
+
+When you press `Ctrl + K + D` to format the document you may see `CR` markers.  
+
+![CR Markers](http://i.imgur.com/SBgyjtk.png)
+
+This is to do with the settings for `OmniSharpServer`.  Simply go to the OmniSharpServer/OmniSharp/bin/Debug sub directory then open config.json and modify the `eolMarker` setting to `\n` like below
+```
+  "TextEditorOptions": {
+    "tabsToSpaces": true,
+    "tabSize": 4,
+    "indentSize": 4,
+    "continuationIndent": 4,
+    "labelIndent": 0,
+    "eolMarker": "\n",
+    "indentBlankLines": false,
+    "wrapLineLength": 80
+  },
+```
 # TODO
 * class rename bug fix
 * field rename bug fix
@@ -69,6 +93,5 @@ To run server automatically, you have to specify a solution file in a sublime-pr
 * Show Documentations
 * Find type / symbols
 * code action
-* code format
 * type lookup
-* advanced syntax highlight
+
