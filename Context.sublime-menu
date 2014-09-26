@@ -27,6 +27,10 @@
             {
                 "command": "omni_sharp_format_document",
                 "caption": "Format Document"
+            },
+            {
+                "command": "omni_sharp_override_targets",
+                "caption": "Override"
             }
         ]
     }
