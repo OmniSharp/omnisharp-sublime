@@ -31,6 +31,10 @@
             {
                 "command": "omni_sharp_override_targets",
                 "caption": "Override"
+            },
+            {
+                "command": "omni_sharp_add_reference",
+                "caption": "Add Reference"
             }
         ]
     }
