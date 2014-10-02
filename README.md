@@ -61,6 +61,15 @@ To run server automatically, you have to specify a solution file in a sublime-pr
         }
 
 
+## C# language-specific settings
+ This will launch completion on . and < symbols
+ Edit C#-sublime-settings
+ {
+    "auto_complete": true,
+    "auto_complete_selector": "source - comment",
+    "auto_complete_triggers": [ {"selector": "source.cs", "characters": ".<"} ],
+ }
+
 # TODO
 * class rename bug fix
 * field rename bug fix
