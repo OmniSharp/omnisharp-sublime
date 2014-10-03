@@ -22,5 +22,10 @@
     {
         "command": "omni_sharp_override_targets",
         "caption": "OmniSharpSublime: Override Targets"
+    },
+    ,
+    {
+        "command": "omni_sharp_add_reference",
+        "caption": "OmniSharpSublime: Add Reference"
     }
 ]

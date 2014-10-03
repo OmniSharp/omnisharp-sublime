@@ -9,6 +9,7 @@
  3. Auto Completion
  4. Goto definition
  5. Rename
+ 6. Add Reference
 
 # Requirements
  * Mono Development Kit(for [OmniSharpServer](https://github.com/nosami/OmniSharpServer))
