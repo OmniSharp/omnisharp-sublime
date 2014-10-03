@@ -9,8 +9,8 @@ if sys.version_info < (3, 3):
 
 
 def plugin_loaded():
-    print('plugin_loaded')
+    print('omnisharp plugin_loaded')
 
 
 def plugin_unloaded():
-    print('plugin_unloaded')
+    print('omnisharp plugin_unloaded')

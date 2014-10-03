@@ -8,9 +8,13 @@ import urllib.request
 import socket
 import subprocess
 import queue
+import traceback
+import sys
 
 from .helpers import get_settings
-from .helpers import current_solution
+from .helpers import current_solution_or_folder
+from .helpers import current_project_folder
+
 
 server_subprocesses = {
 }
@@ -33,6 +37,7 @@ class ThreadUrl(threading.Thread):
                 self.url, self.data, self.timeout)
             self.callback(response.read())
         except:
+            traceback.print_exc(file=sys.stdout)
             self.callback(None)
 
 
@@ -42,7 +47,10 @@ def urlopen_async(url, callback, data, timeout):
 
 
 def get_response(view, endpoint, callback, params=None, timeout=None):
-    solution_path = current_solution(view)
+    solution_path =  current_solution_or_folder(view)
+
+    print(solution_path)
+    print(server_ports)
     if solution_path is None or solution_path not in server_ports:
         callback(None)
         return
@@ -74,11 +82,61 @@ def get_response(view, endpoint, callback, params=None, timeout=None):
         print('======== response ========')
         if data is None:
             print(None)
+            # traceback.print_stack(file=sys.stdout)
+            print('callback none')
             callback(None)
         else:
             jsonStr = data.decode('utf-8')
             print(jsonStr)
             jsonObj = json.loads(jsonStr)
+            # traceback.print_stack(file=sys.stdout)
+            print('callback data')
+            callback(jsonObj)
+    urlopen_async(
+        target,
+        urlopen_callback,
+        data,
+        timeout)
+
+
+def get_response_from_empty_httppost(view, endpoint, callback, timeout=None):
+    solution_path =  current_solution_or_folder(view)
+
+    print(solution_path)
+    print(server_ports)
+    if solution_path is None or solution_path not in server_ports:
+        callback(None)
+        return
+    parameters = {}
+    location = view.sel()[0]
+    cursor = view.rowcol(location.begin())
+
+    if timeout is None:
+        timeout = int(get_settings(view, 'omnisharp_response_timeout'))
+
+    host = 'localhost'
+    port = server_ports[solution_path]
+
+    httpurl = "http://%s:%s/" % (host, port)
+
+    target = urllib.parse.urljoin(httpurl, endpoint)
+    data = urllib.parse.urlencode(parameters).encode('utf-8')
+    print('request: %s' % target)
+    print('======== no request params ======== \n')
+
+    def urlopen_callback(data):
+        print('======== response ========')
+        if data is None:
+            print(None)
+            # traceback.print_stack(file=sys.stdout)
+            print('callback none')
+            callback(None)
+        else:
+            jsonStr = data.decode('utf-8')
+            print(jsonStr)
+            jsonObj = json.loads(jsonStr)
+            # traceback.print_stack(file=sys.stdout)
+            print('callback data')
             callback(jsonObj)
     urlopen_async(
         target,
@@ -97,11 +155,13 @@ def _available_prot():
 
 
 def create_omnisharp_server_subprocess(view):
-    solution_path = current_solution(view)
+    solution_path = current_solution_or_folder(view)
+
+    print(solution_path)
 
     # no solution file
-    if solution_path is None or not os.path.isfile(solution_path):
-        return
+    #if solution_path is None or not os.path.isfile(solution_path):
+        #return
 
     # server is running
     if solution_path in server_subprocesses:
@@ -112,11 +172,13 @@ def create_omnisharp_server_subprocess(view):
         '../server/server.py')
 
     port = _available_prot()
+
     args = [
         'python', omnisharp_server_path, str(os.getpid()), str(port), solution_path
     ]
 
     print('open_solution_server:%s' % (solution_path))
+    print(args)
     server_process = subprocess.Popen(args, stderr=subprocess.PIPE)
     server_thread = threading.Thread(target=communicate_server, args=(server_process, solution_path))
     server_thread.daemon = True

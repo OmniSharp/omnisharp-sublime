@@ -29,17 +29,25 @@ def project_file_name(view):
 def project_data(view):
     return view.window().project_data()
 
-
-def current_solution(view):
+def current_project_folder(view):
     project_file = project_file_name(view)
+    print('project file is : ' + project_file)
     if project_file is None:
         return None
+    project_dir = os.path.dirname(project_file)
+    return project_dir
+
+def current_solution_or_folder(view):
+    project_file = project_file_name(view)
+    print('project file is : ' + project_file)
+    if project_file is None:
+        return current_project_folder(view)
 
     project_dir = os.path.dirname(project_file)
 
     data = project_data(view)
     if 'solution_file' not in data:
-        return None
+        return current_project_folder(view)
 
     solution_file_name = data['solution_file']
     solution_file_path = os.path.join(project_dir, solution_file_name)

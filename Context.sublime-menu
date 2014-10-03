@@ -15,6 +15,26 @@
             {
                 "command": "omni_sharp_find_usage",
                 "caption": "Find Usage"
+            },
+            {
+                "command": "omni_sharp_go_to_implementation",
+                "caption": "Go to implementation"
+            },
+            {
+                "command": "omni_sharp_go_to_file",
+                "caption": "Go to file"
+            },
+            {
+                "command": "omni_sharp_format_document",
+                "caption": "Format Document"
+            },
+            {
+                "command": "omni_sharp_override_targets",
+                "caption": "Override"
+            },
+            {
+                "command": "omni_sharp_add_reference",
+                "caption": "Add Reference"
             }
         ]
     }

@@ -6,5 +6,26 @@
     {
         "command": "omni_sharp_rename",
         "caption": "OmniSharpSublime: Rename"
+    },
+    {
+        "command": "omni_sharp__find_usages",
+        "caption": "OmniSharpSublime: Find Usages"
+    },
+    {
+        "command": "omni_sharp_go_to_implementation",
+        "caption": "OmniSharpSublime: Go to implementation"
+    },
+    {
+        "command": "omni_sharp_go_to_file",
+        "caption": "OmniSharpSublime: Go to file"
+    },
+    {
+        "command": "omni_sharp_override_targets",
+        "caption": "OmniSharpSublime: Override Targets"
+    },
+    ,
+    {
+        "command": "omni_sharp_add_reference",
+        "caption": "OmniSharpSublime: Add Reference"
     }
 ]

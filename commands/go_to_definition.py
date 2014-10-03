@@ -11,7 +11,7 @@ class OmniSharpGoToDefinition(sublime_plugin.TextCommand):
             self.view, '/gotodefinition', self._handle_gotodefinition)
 
     def _handle_gotodefinition(self, data):
-        if data is None:
+        if data is None or data['FileName'] is None:
             return
 
         filename = data['FileName']

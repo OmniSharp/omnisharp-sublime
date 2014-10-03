@@ -9,6 +9,7 @@
  3. Auto Completion
  4. Goto definition
  5. Rename
+ 6. Add Reference
 
 # Requirements
  * Mono Development Kit(for [OmniSharpServer](https://github.com/nosami/OmniSharpServer))
@@ -18,18 +19,18 @@
 
         cd {path to ST3 plugin directory}/Packages
 
-2. Clone repository and update submodule.
+2. Clone repository.
 
         git clone https://github.com/moonrabbit/OmniSharpSublime.git
-        git submodule update --init
 
-3. Move to plugin directory and run build.sh
+3. Move to plugin directory, update submodule and build.
 
         cd OmniSharpSublime
+        git submodule update --init --recursive
         ./build.sh
 
 # Project Setting
-To run server automatically, you have to specify solution file on sublime-project file.
+To run server automatically, you have to specify a solution file in a sublime-project. For ASP.Net vNext applications you do not need to specify the solution file but you need the sublime-project file.
 
 ## Example of sublime-project
 
@@ -61,11 +62,18 @@ To run server automatically, you have to specify solution file on sublime-projec
         }
 
 
+## C# language-specific settings
+ This will launch completion on . and < symbols
+ Edit C#-sublime-settings
+ {
+    "auto_complete": true,
+    "auto_complete_selector": "source - comment",
+    "auto_complete_triggers": [ {"selector": "source.cs", "characters": ".<"} ],
+ }
+
 # TODO
-* find usage
 * class rename bug fix
 * field rename bug fix
-* syntax error notification
 
 # Sometime
 * Show Documentations
