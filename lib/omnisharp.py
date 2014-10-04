@@ -10,13 +10,17 @@ import subprocess
 import queue
 import traceback
 import sys
+import signal
+import tempfile
 
 from .helpers import get_settings
 from .helpers import current_solution_or_folder
 from .helpers import current_project_folder
 
+from multiprocessing.pool import ThreadPool
 
-server_subprocesses = {
+
+server_procs = {
 }
 server_ports = {
 }
@@ -145,7 +149,7 @@ def get_response_from_empty_httppost(view, endpoint, callback, timeout=None):
         timeout)
 
 
-def _available_prot():
+def _available_port():
     s = socket.socket()
     s.bind(('', 0))
     port = s.getsockname()[1]
@@ -196,18 +200,75 @@ def _find_omni_sharp_server_exe_path():
         plugin_dir_path,
         'OmniSharpServer/OmniSharp/bin/Debug/OmniSharp.exe') 
 
+def _open_pid_file(solution_path, mode):
+    solution_name = os.path.basename(solution_path)
+    solution_dir_path = os.path.dirname(solution_path)
+    pid_path = os.path.join(solution_dir_path, "_" + solution_name + ".pid")
+    print("!!", tempfile.tempdir, pid_path, mode)
+    return open(pid_path, mode)
+
+def _start_omni_sharp_server(mono_exe_path, omni_exe_path, solution_path, port):
+    try:
+        old_pid = int(_open_pid_file(solution_path, "r").read())
+        print('kill_old_omni_proc:', old_pid)
+        os.kill(old_pid, signal.SIGTERM)
+    except IOError:
+        pass
+
+    args = [
+        mono_exe_path, 
+        omni_exe_path, 
+        '-s', solution_path,
+        '-p', str(port),
+    ]
+
+    if os.name == 'nt':
+        startupinfo = subprocess.STARTUPINFO()
+        startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+        startupinfo.wShowWindow = subprocess.SW_HIDE
+    else:
+        startupinfo = None
+    
+    new_proc = subprocess.Popen(args, startupinfo=startupinfo)
+
+    try:
+        server_thread = threading.Thread(
+            target=_communicate_omni_sharp_server, 
+            args=(new_proc, solution_path))
+
+        #server_thread.daemon = True
+        server_thread.start()
+   
+        _open_pid_file(solution_path, "w").write(str(new_proc.pid))
+
+    except Exception as e:
+        new_proc.terminate()
+        raise e
+
+def _communicate_omni_sharp_server(server_proc, solution_path):
+    print('start_omni_sharp_communication:%s' % solution_path)
+    stdin_data, stderr_data = server_proc.communicate()
+    if not stderr_data:
+        print('exit_omni_sharp_communication:%s' % solution_path)
+        return
+
+    for stderr_line in stderr_data.splitlines():
+        print('stop_omni_sharp_communication:%s error:%s' % (target_name, stderr_line))
+
+
 def create_omnisharp_server_subprocess(view):
     solution_path = current_solution_or_folder(view)
-
-    print("current_solution:%s" % solution_path)
 
     # no solution file
     #if solution_path is None or not os.path.isfile(solution_path):
         #return
 
     # server is running
-    if solution_path in server_subprocesses:
+    if solution_path in server_procs:
+        print("already_bound_solution:%s" % solution_path)
         return
+
+    print("solution:%s" % solution_path)
 
     mono_exe_paths = _find_mono_exe_paths()
     if len(mono_exe_paths) == 0:
@@ -226,44 +287,22 @@ def create_omnisharp_server_subprocess(view):
 
     print('omni:%s' % omni_exe_path)
 
-    return
+    omni_port = _available_port()
+    print('port:%s' % omni_port)
 
-    omnisharp_server_path = os.path.join(
-        os.path.dirname(__file__),
-        '../server/server.py')
+    try:
+        omni_proc = _start_omni_sharp_server(
+            mono_exe_path,
+                omni_exe_path,
+            solution_path,
+            omni_port)
+    except Exception as e:
+        print('RAISE_OMNISHARP_SERVER_EXCEPTION:%s' % repr(e))
+        return
 
-    print("omnisharp_server:%s" % omnisharp_server_path)
+    server_procs[solution_path] = omni_proc
+    server_ports[solution_path] = omni_port
 
-    port = _available_prot()
-
-    # for windows
-    if os.name == 'nt':
-        solution_path = solution_path.replace('\\', '/')
-        omnisharp_server_path = os.path.normpath(omnisharp_server_path).replace('\\', '/')        
-        python_path = 'pythonw'
-    else:
-        python_path = 'python'
-
-
-    args = [
-        python_path, omnisharp_server_path, str(os.getpid()), str(port), solution_path
-    ]
-
-    print('open_solution_server:%s' % repr(args))
-    server_process = subprocess.Popen(args, stderr=subprocess.PIPE)
-    server_thread = threading.Thread(target=communicate_server, args=(server_process, solution_path))
-    server_thread.daemon = True
-    server_thread.start()
-
-    server_subprocesses[solution_path] = server_process
-    server_ports[solution_path] = port
-
-def communicate_server(target_process, target_name):
-    print('start_solution_server:%s' % (target_name))
-    stdin_data, stderr_data = target_process.communicate()
-    if stderr_data:
-        for stderr_line in stderr_data.splitlines():
-            print('exit_solution_server:%s error:%s' % (target_name, stderr_line))
-    else:
-        print('exit_solution_server:%s' % (target_name))
-
+def kill_all_servers():
+    for proc in server_procs.values():
+        proc.terminate()
