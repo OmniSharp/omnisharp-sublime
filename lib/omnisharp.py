@@ -17,47 +17,52 @@ from .helpers import get_settings
 from .helpers import current_solution_or_folder
 from .helpers import current_project_folder
 
-from multiprocessing.pool import ThreadPool
-
+from queue import Queue
 
 server_procs = {
 }
+
 server_ports = {
 }
 
-
-class ThreadUrl(threading.Thread):
-
-    def __init__(self, url, callback, data, timeout):
-        threading.Thread.__init__(self)
-        self.url = url
-        self.data = data
-        self.timeout = timeout
-        self.callback = callback
+class WorkerThread(threading.Thread):
+    _worker_threads = []
+    _worker_queue = Queue()
 
     def run(self):
-        try:
-            response = urllib.request.urlopen(
-                self.url, self.data, self.timeout)
-            self.callback(response.read())
-        except:
-            traceback.print_exc(file=sys.stdout)
-            self.callback(None)
+        while True:
+            url, data, timeout, callback = self._worker_queue.get()
+            try:
+                response = urllib.request.urlopen(url, data, timeout)
+                callback(response.read())
+            except:
+                traceback.print_exc(file=sys.stdout)
+                callback(None)
 
+    @classmethod
+    def make_worker_threads(cls, count):
+        while len(cls._worker_threads) < count:
+            new_worker_thread = cls()
+            new_worker_thread.start()
+            cls._worker_threads.append(new_worker_thread)
+
+    @classmethod
+    def add_work(cls, url, data, timeout, callback):
+        cls._worker_queue.put((url, data, timeout, callback))
+
+WorkerThread.make_worker_threads(1)
 
 def urlopen_async(url, callback, data, timeout):
-    thread = ThreadUrl(url, callback, data, timeout)
-    thread.start()
-
+    WorkerThread.add_work(url, data, timeout, callback)
 
 def get_response(view, endpoint, callback, params=None, timeout=None):
     solution_path =  current_solution_or_folder(view)
 
-    print(solution_path)
-    print(server_ports)
+    print('response:', solution_path)
     if solution_path is None or solution_path not in server_ports:
         callback(None)
         return
+        
     parameters = {}
     location = view.sel()[0]
     cursor = view.rowcol(location.begin())
@@ -204,7 +209,6 @@ def _open_pid_file(solution_path, mode):
     solution_name = os.path.basename(solution_path)
     solution_dir_path = os.path.dirname(solution_path)
     pid_path = os.path.join(solution_dir_path, "_" + solution_name + ".pid")
-    print("!!", tempfile.tempdir, pid_path, mode)
     return open(pid_path, mode)
 
 def _start_omni_sharp_server(mono_exe_path, omni_exe_path, solution_path, port):
