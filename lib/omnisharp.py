@@ -153,6 +153,49 @@ def _available_prot():
 
     return port
 
+def _find_mono_exe_paths():
+    if os.name == 'nt':
+        mono_dir_candidate_paths = os.environ['PATH'].split(';')
+        mono_dir_candidate_paths += [
+           'C:/Program Files (x86)/Mono-3.2.3/bin'
+        ]
+        mono_exe_name = "mono.exe"
+    else:
+        mono_dir_candidate_paths = os.environ['PATH'].split(':')
+        mono_dir_candidate_paths += [
+            '/usr/local/bin',
+            '/opt/usr/local/bin',
+            '/opt/usr/bin',
+        ]
+        mono_exe_name = "mono"
+
+    mono_exe_candidate_paths = [os.path.join(mono_dir_path, mono_exe_name)
+            for mono_dir_path in mono_dir_candidate_paths]
+
+    mono_exe_paths = [mono_exe_candidate_path 
+            for mono_exe_candidate_path in mono_exe_candidate_paths 
+            if os.access(mono_exe_candidate_path, os.R_OK)]
+
+    if os.name == 'nt':
+        return [mono_exe_path.replace('\\', '/')
+            for mono_exe_path in mono_exe_paths]
+    else:
+        return mono_exe_paths
+
+
+def _find_omni_sharp_server_exe_path():
+    if os.name == 'nt':
+        source_file_path = __file__.replace('\\', '/')
+    else:
+        source_file_path = __file__
+
+    source_dir_path = os.path.dirname(source_file_path)
+    plugin_dir_path = os.path.dirname(source_dir_path) 
+    
+    return os.path.join(
+        plugin_dir_path,
+        'OmniSharpServer/OmniSharp/bin/Debug/OmniSharp.exe') 
+
 def create_omnisharp_server_subprocess(view):
     solution_path = current_solution_or_folder(view)
 
@@ -165,6 +208,25 @@ def create_omnisharp_server_subprocess(view):
     # server is running
     if solution_path in server_subprocesses:
         return
+
+    mono_exe_paths = _find_mono_exe_paths()
+    if len(mono_exe_paths) == 0:
+        print('NOT_FOUND_MONO_EXE')
+        print('Install MRE(Mono Runtime Environment) from <http://www.mono-project.com/download/>')
+        return
+
+    mono_exe_path = mono_exe_paths[0]
+    print('mono:%s' % mono_exe_path)
+
+    omni_exe_path = _find_omni_sharp_server_exe_path()
+    if not os.access(omni_exe_path, os.R_OK):
+        print('NOT_FOUND_OMNI_SHARP_SERVER_EXE')
+        print('Browse Packages and run ./build.sh in OmniSharpSublime Directory')
+        return
+
+    print('omni:%s' % omni_exe_path)
+
+    return
 
     omnisharp_server_path = os.path.join(
         os.path.dirname(__file__),
