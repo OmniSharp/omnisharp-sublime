@@ -153,11 +153,10 @@ def _available_prot():
 
     return port
 
-
 def create_omnisharp_server_subprocess(view):
     solution_path = current_solution_or_folder(view)
 
-    print(solution_path)
+    print("current_solution:%s" % solution_path)
 
     # no solution file
     #if solution_path is None or not os.path.isfile(solution_path):
@@ -171,14 +170,24 @@ def create_omnisharp_server_subprocess(view):
         os.path.dirname(__file__),
         '../server/server.py')
 
+    print("omnisharp_server:%s" % omnisharp_server_path)
+
     port = _available_prot()
 
+    # for windows
+    if os.name == 'nt':
+        solution_path = solution_path.replace('\\', '/')
+        omnisharp_server_path = os.path.normpath(omnisharp_server_path).replace('\\', '/')        
+        python_path = 'pythonw'
+    else:
+        python_path = 'python'
+
+
     args = [
-        'python', omnisharp_server_path, str(os.getpid()), str(port), solution_path
+        python_path, omnisharp_server_path, str(os.getpid()), str(port), solution_path
     ]
 
-    print('open_solution_server:%s' % (solution_path))
-    print(args)
+    print('open_solution_server:%s' % repr(args))
     server_process = subprocess.Popen(args, stderr=subprocess.PIPE)
     server_thread = threading.Thread(target=communicate_server, args=(server_process, solution_path))
     server_thread.daemon = True
