@@ -311,14 +311,17 @@ def create_omnisharp_server_subprocess(view):
 
     print("solution:%s" % solution_path)
 
-    mono_exe_paths = _find_mono_exe_paths()
-    if not mono_exe_paths:
-        print('NOT_FOUND_MONO_EXE')
-        print('Install MRE(Mono Runtime Environment) from <http://www.mono-project.com/download/>')
-        return
+    if os.name == 'nt':
+        mono_exe_path = None
+    else:
+        mono_exe_paths = _find_mono_exe_paths()
+        if not mono_exe_paths:
+            print('NOT_FOUND_MONO_EXE')
+            print('Install MRE(Mono Runtime Environment) from <http://www.mono-project.com/download/>')
+            return
 
-    mono_exe_path = mono_exe_paths[0]
-    print('mono_exe:%s' % mono_exe_path)
+        mono_exe_path = mono_exe_paths[0]
+        print('mono_exe:%s' % mono_exe_path)
 
     omni_exe_paths = _find_omni_sharp_server_exe_paths()
     if not omni_exe_paths:
