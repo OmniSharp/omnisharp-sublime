@@ -94,8 +94,16 @@ def get_response(view, endpoint, callback, params=None, timeout=None):
         if data is None:
             print(None)
             # traceback.print_stack(file=sys.stdout)
-            print('callback none')
+            print('CALLBACK_ERROR')
             callback(None)
+
+            if solution_path in server_procs:
+                print('TERMINATE_OMNI_SHARP')
+                server_procs[solution_path].terminate();
+
+                del server_procs[solution_path]
+                del server_ports[solution_path]
+
         else:
             jsonStr = data.decode('utf-8')
             print(jsonStr)
@@ -103,6 +111,7 @@ def get_response(view, endpoint, callback, params=None, timeout=None):
             # traceback.print_stack(file=sys.stdout)
             print('callback data')
             callback(jsonObj)
+
     urlopen_async(
         target,
         urlopen_callback,
@@ -183,7 +192,7 @@ def _find_mono_exe_paths():
         ]
         mono_exe_name = "mono"
 
-    mono_exe_candidate_paths = [os.path.join(mono_dir_path, mono_exe_name)
+    mono_exe_candidate_paths = ['/'.join((mono_dir_path, mono_exe_name))
             for mono_dir_path in mono_dir_candidate_paths]
 
     mono_exe_paths = [mono_exe_candidate_path 
@@ -197,23 +206,35 @@ def _find_mono_exe_paths():
         return mono_exe_paths
 
 
-def _find_omni_sharp_server_exe_path():
+def _find_omni_sharp_server_exe_paths():
     if os.name == 'nt':
         source_file_path = __file__.replace('\\', '/')
     else:
         source_file_path = __file__
 
     source_dir_path = os.path.dirname(source_file_path)
-    plugin_dir_path = os.path.dirname(source_dir_path) 
-    
-    return os.path.join(
-        plugin_dir_path,
-        'OmniSharpServer/OmniSharp/bin/Debug/OmniSharp.exe') 
+    plugin_dir_path = os.path.dirname(source_dir_path)
+
+    omni_exe_candidate_rel_paths = [
+        'OmniSharpServer/OmniSharp/bin/Debug/OmniSharp.exe',
+        'OmniSharpServer/OmniSharp/bin/Release/OmniSharp.exe',
+        'server/OmniSharp.exe',
+    ]
+
+    omni_exe_candidate_abs_paths = [
+        '/'.join((plugin_dir_path, rel_path))
+        for rel_path in omni_exe_candidate_rel_paths
+    ]
+
+    return [omni_exe_path 
+        for omni_exe_path in omni_exe_candidate_abs_paths
+        if os.access(omni_exe_path, os.R_OK)]
+
 
 def _open_pid_file(solution_path, mode):
     solution_name = os.path.basename(solution_path)
     solution_dir_path = os.path.dirname(solution_path)
-    pid_path = os.path.join(solution_dir_path, "_" + solution_name + ".pid")
+    pid_path = '/'.join((solution_dir_path, solution_name + ".pid"))
     return open(pid_path, mode)
 
 def _start_omni_sharp_server(mono_exe_path, omni_exe_path, solution_path, port):
@@ -263,6 +284,8 @@ def _start_omni_sharp_server(mono_exe_path, omni_exe_path, solution_path, port):
         new_proc.terminate()
         raise e
 
+    return new_proc
+
 def _communicate_omni_sharp_server(server_proc, solution_path):
     print('start_omni_sharp_communication:%s' % solution_path)
     stdin_data, stderr_data = server_proc.communicate()
@@ -289,7 +312,7 @@ def create_omnisharp_server_subprocess(view):
     print("solution:%s" % solution_path)
 
     mono_exe_paths = _find_mono_exe_paths()
-    if len(mono_exe_paths) == 0:
+    if not mono_exe_paths:
         print('NOT_FOUND_MONO_EXE')
         print('Install MRE(Mono Runtime Environment) from <http://www.mono-project.com/download/>')
         return
@@ -297,12 +320,14 @@ def create_omnisharp_server_subprocess(view):
     mono_exe_path = mono_exe_paths[0]
     print('mono_exe:%s' % mono_exe_path)
 
-    omni_exe_path = _find_omni_sharp_server_exe_path()
-    if not os.access(omni_exe_path, os.R_OK):
-        print('NOT_FOUND_OMNI_SHARP_SERVER_EXE')
-        print('Browse Packages and run ./build.sh in OmniSharpSublime Directory')
+    omni_exe_paths = _find_omni_sharp_server_exe_paths()
+    if not omni_exe_paths:
+        print('NOT_FOUND_OMNI_EXE')
+        print('Browse Packages and run ./build.sh in OmniSharpSublime directory or')
+        print('Build the solution with xamarin(or visual studio)')
         return
 
+    omni_exe_path = omni_exe_paths[0]
     print('omni_exe:%s' % omni_exe_path)
 
     omni_port = _available_port()
