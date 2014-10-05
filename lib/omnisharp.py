@@ -11,13 +11,15 @@ import queue
 import traceback
 import sys
 import signal
-import tempfile
 
 from .helpers import get_settings
 from .helpers import current_solution_or_folder
 from .helpers import current_project_folder
 
 from queue import Queue
+
+IS_EXTERNAL_OMNI_SHARP_ENABLE = False
+IS_OMNI_SHARP_NT_CONSOLE_VISIBLE = False
 
 server_procs = {
 }
@@ -155,6 +157,9 @@ def get_response_from_empty_httppost(view, endpoint, callback, timeout=None):
 
 
 def _available_port():
+    if IS_EXTERNAL_OMNI_SHARP_ENABLE:
+        return 2000
+
     s = socket.socket()
     s.bind(('', 0))
     port = s.getsockname()[1]
@@ -219,18 +224,28 @@ def _start_omni_sharp_server(mono_exe_path, omni_exe_path, solution_path, port):
     except IOError:
         pass
 
-    args = [
-        mono_exe_path, 
-        omni_exe_path, 
-        '-s', solution_path,
-        '-p', str(port),
-    ]
-
     if os.name == 'nt':
-        startupinfo = subprocess.STARTUPINFO()
-        startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
-        startupinfo.wShowWindow = subprocess.SW_HIDE
+        args = [
+            omni_exe_path, 
+            '-s', solution_path,
+            '-p', str(port),
+        ]
+
+        if IS_OMNI_SHARP_NT_CONSOLE_VISIBLE:
+            startupinfo = None
+        else:
+            startupinfo = subprocess.STARTUPINFO()
+            startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+            startupinfo.wShowWindow = subprocess.SW_HIDE
+
     else:
+        args = [
+            mono_exe_path, 
+            omni_exe_path, 
+            '-s', solution_path,
+            '-p', str(port),
+        ]
+
         startupinfo = None
     
     new_proc = subprocess.Popen(args, startupinfo=startupinfo)
@@ -240,7 +255,6 @@ def _start_omni_sharp_server(mono_exe_path, omni_exe_path, solution_path, port):
             target=_communicate_omni_sharp_server, 
             args=(new_proc, solution_path))
 
-        #server_thread.daemon = True
         server_thread.start()
    
         _open_pid_file(solution_path, "w").write(str(new_proc.pid))
@@ -281,7 +295,7 @@ def create_omnisharp_server_subprocess(view):
         return
 
     mono_exe_path = mono_exe_paths[0]
-    print('mono:%s' % mono_exe_path)
+    print('mono_exe:%s' % mono_exe_path)
 
     omni_exe_path = _find_omni_sharp_server_exe_path()
     if not os.access(omni_exe_path, os.R_OK):
@@ -289,24 +303,25 @@ def create_omnisharp_server_subprocess(view):
         print('Browse Packages and run ./build.sh in OmniSharpSublime Directory')
         return
 
-    print('omni:%s' % omni_exe_path)
+    print('omni_exe:%s' % omni_exe_path)
 
     omni_port = _available_port()
-    print('port:%s' % omni_port)
+    print('omni_port:%s' % omni_port)
 
-    try:
-        omni_proc = _start_omni_sharp_server(
-            mono_exe_path,
+    if IS_EXTERNAL_OMNI_SHARP_ENABLE:
+        omni_proc = None
+        omni_port = 2000
+    else:
+        try:
+            omni_proc = _start_omni_sharp_server(
+                mono_exe_path,
                 omni_exe_path,
-            solution_path,
-            omni_port)
-    except Exception as e:
-        print('RAISE_OMNISHARP_SERVER_EXCEPTION:%s' % repr(e))
-        return
+                solution_path,
+                omni_port)
+        except Exception as e:
+            print('RAISE_OMNISHARP_SERVER_EXCEPTION:%s' % repr(e))
+            return
 
     server_procs[solution_path] = omni_proc
     server_ports[solution_path] = omni_port
 
-def kill_all_servers():
-    for proc in server_procs.values():
-        proc.terminate()
