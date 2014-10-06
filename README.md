@@ -10,6 +10,7 @@
  4. Goto definition
  5. Rename
  6. Add Reference
+ 7. Find Usage
 
 # Requirements
  * Mono Development Kit(for [OmniSharpServer](https://github.com/nosami/OmniSharpServer))
