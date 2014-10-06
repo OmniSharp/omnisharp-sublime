@@ -21,7 +21,7 @@ from queue import Queue
 IS_EXTERNAL_OMNI_SHARP_ENABLE = False
 IS_OMNI_SHARP_NT_CONSOLE_VISIBLE = False
 
-server_procs = {
+launcher_procs = {
 }
 
 server_ports = {
@@ -97,11 +97,11 @@ def get_response(view, endpoint, callback, params=None, timeout=None):
             print('CALLBACK_ERROR')
             callback(None)
 
-            if solution_path in server_procs:
+            if solution_path in launcher_procs:
                 print('TERMINATE_OMNI_SHARP')
-                server_procs[solution_path].terminate();
+                launcher_procs[solution_path].terminate();
 
-                del server_procs[solution_path]
+                del launcher_procs[solution_path]
                 del server_ports[solution_path]
 
         else:
@@ -158,6 +158,7 @@ def get_response_from_empty_httppost(view, endpoint, callback, timeout=None):
             # traceback.print_stack(file=sys.stdout)
             print('callback data')
             callback(jsonObj)
+
     urlopen_async(
         target,
         urlopen_callback,
@@ -176,80 +177,31 @@ def _available_port():
 
     return port
 
-def _find_mono_exe_paths():
-    if os.name == 'nt':
-        mono_dir_candidate_paths = os.environ['PATH'].split(';')
-        mono_dir_candidate_paths += [
-           'C:/Program Files (x86)/Mono-3.2.3/bin'
-        ]
-        mono_exe_name = "mono.exe"
-    else:
-        mono_dir_candidate_paths = os.environ['PATH'].split(':')
-        mono_dir_candidate_paths += [
-            '/usr/local/bin',
-            '/opt/usr/local/bin',
-            '/opt/usr/bin',
-        ]
-        mono_exe_name = "mono"
-
-    mono_exe_candidate_paths = ['/'.join((mono_dir_path, mono_exe_name))
-            for mono_dir_path in mono_dir_candidate_paths]
-
-    mono_exe_paths = [mono_exe_candidate_path 
-            for mono_exe_candidate_path in mono_exe_candidate_paths 
-            if os.access(mono_exe_candidate_path, os.R_OK)]
-
-    if os.name == 'nt':
-        return [mono_exe_path.replace('\\', '/')
-            for mono_exe_path in mono_exe_paths]
-    else:
-        return mono_exe_paths
-
-
-def _find_omni_sharp_server_exe_paths():
-    if os.name == 'nt':
-        source_file_path = __file__.replace('\\', '/')
-    else:
-        source_file_path = __file__
-
+def _run_omni_sharp_launcher(solution_path, port):
+    source_file_path = os.path.realpath(__file__)
     source_dir_path = os.path.dirname(source_file_path)
     plugin_dir_path = os.path.dirname(source_dir_path)
+    launcher_file_path = os.path.join(plugin_dir_path, 'launchers', 'omni_sharp_launcher.py')
+    print('LAUNCH!!!',launcher_file_path)
 
-    omni_exe_candidate_rel_paths = [
-        'OmniSharpServer/OmniSharp/bin/Debug/OmniSharp.exe',
-        'OmniSharpServer/OmniSharp/bin/Release/OmniSharp.exe',
-        'server/OmniSharp.exe',
-    ]
-
-    omni_exe_candidate_abs_paths = [
-        '/'.join((plugin_dir_path, rel_path))
-        for rel_path in omni_exe_candidate_rel_paths
-    ]
-
-    return [omni_exe_path 
-        for omni_exe_path in omni_exe_candidate_abs_paths
-        if os.access(omni_exe_path, os.R_OK)]
-
-
-def _open_pid_file(solution_path, mode):
-    solution_name = os.path.basename(solution_path)
-    solution_dir_path = os.path.dirname(solution_path)
-    pid_path = '/'.join((solution_dir_path, solution_name + ".pid"))
-    return open(pid_path, mode)
-
-def _start_omni_sharp_server(mono_exe_path, omni_exe_path, solution_path, port):
-    try:
-        old_pid = int(_open_pid_file(solution_path, "r").read())
-        print('kill_old_omni_proc:', old_pid)
-        os.kill(old_pid, signal.SIGTERM)
-    except IOError:
-        pass
-
-    if os.name == 'nt':
+    if os.name == 'posix':
         args = [
-            omni_exe_path, 
-            '-s', solution_path,
-            '-p', str(port),
+            'python',
+            launcher_file_path, 
+            '-S', solution_path,
+            '-P', str(port),
+            '-I', str(os.getpid()),
+        ]
+
+        startupinfo = None
+
+    else:
+        args = [
+            'pythonw',
+            launcher_file_path, 
+            '-S', solution_path,
+            '-P', str(port),
+            '-I', str(os.getpid()),
         ]
 
         if IS_OMNI_SHARP_NT_CONSOLE_VISIBLE:
@@ -259,26 +211,15 @@ def _start_omni_sharp_server(mono_exe_path, omni_exe_path, solution_path, port):
             startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
             startupinfo.wShowWindow = subprocess.SW_HIDE
 
-    else:
-        args = [
-            mono_exe_path, 
-            omni_exe_path, 
-            '-s', solution_path,
-            '-p', str(port),
-        ]
-
-        startupinfo = None
     
     new_proc = subprocess.Popen(args, startupinfo=startupinfo)
 
     try:
-        server_thread = threading.Thread(
-            target=_communicate_omni_sharp_server, 
+        launcher_communication_thread = threading.Thread(
+            target=_communicate_omni_sharp_launcher, 
             args=(new_proc, solution_path))
 
-        server_thread.start()
-   
-        _open_pid_file(solution_path, "w").write(str(new_proc.pid))
+        launcher_communication_thread.start()
 
     except Exception as e:
         new_proc.terminate()
@@ -286,70 +227,40 @@ def _start_omni_sharp_server(mono_exe_path, omni_exe_path, solution_path, port):
 
     return new_proc
 
-def _communicate_omni_sharp_server(server_proc, solution_path):
-    print('start_omni_sharp_communication:%s' % solution_path)
-    stdin_data, stderr_data = server_proc.communicate()
+def _communicate_omni_sharp_launcher(launcher_proc, solution_path):
+    print('start_omni_sharp_launcher:%s' % solution_path)
+    stdin_data, stderr_data = launcher_proc.communicate()
     if not stderr_data:
-        print('exit_omni_sharp_communication:%s' % solution_path)
+        print('exit_omni_sharp_launcher:%s' % solution_path)
         return
 
     for stderr_line in stderr_data.splitlines():
-        print('stop_omni_sharp_communication:%s error:%s' % (target_name, stderr_line))
+        print('stop_omni_sharp_launcher:%s error:%s' % (target_name, stderr_line))
 
 
 def create_omnisharp_server_subprocess(view):
     solution_path = current_solution_or_folder(view)
-
-    # no solution file
-    #if solution_path is None or not os.path.isfile(solution_path):
-        #return
-
-    # server is running
-    if solution_path in server_procs:
+    if solution_path in launcher_procs:
         print("already_bound_solution:%s" % solution_path)
         return
 
-    print("solution:%s" % solution_path)
-
-    if os.name == 'nt':
-        mono_exe_path = None
-    else:
-        mono_exe_paths = _find_mono_exe_paths()
-        if not mono_exe_paths:
-            print('NOT_FOUND_MONO_EXE')
-            print('Install MRE(Mono Runtime Environment) from <http://www.mono-project.com/download/>')
-            return
-
-        mono_exe_path = mono_exe_paths[0]
-        print('mono_exe:%s' % mono_exe_path)
-
-    omni_exe_paths = _find_omni_sharp_server_exe_paths()
-    if not omni_exe_paths:
-        print('NOT_FOUND_OMNI_EXE')
-        print('Browse Packages and run ./build.sh in OmniSharpSublime directory or')
-        print('Build the solution with xamarin(or visual studio)')
-        return
-
-    omni_exe_path = omni_exe_paths[0]
-    print('omni_exe:%s' % omni_exe_path)
+    print("solution_path:%s" % solution_path)
 
     omni_port = _available_port()
     print('omni_port:%s' % omni_port)
 
     if IS_EXTERNAL_OMNI_SHARP_ENABLE:
-        omni_proc = None
+        launcher_proc = None
         omni_port = 2000
     else:
         try:
-            omni_proc = _start_omni_sharp_server(
-                mono_exe_path,
-                omni_exe_path,
+            launcher_proc = _run_omni_sharp_launcher(
                 solution_path,
                 omni_port)
         except Exception as e:
-            print('RAISE_OMNISHARP_SERVER_EXCEPTION:%s' % repr(e))
+            print('RAISE_OMNI_SHARP_LAUNCHER_EXCEPTION:%s' % repr(e))
             return
 
-    server_procs[solution_path] = omni_proc
+    launcher_procs[solution_path] = launcher_proc
     server_ports[solution_path] = omni_port
 
