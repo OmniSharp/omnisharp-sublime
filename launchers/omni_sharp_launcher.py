@@ -7,6 +7,8 @@ import threading
 
 from argparse import ArgumentParser
 
+IS_NT_CONSOLE_VISIBLE = False
+
 # http://stackoverflow.com/questions/568271/how-to-check-if-there-exists-a-process-with-a-given-pid
 def is_pid_alive(pid):
     if os.name == 'posix':
@@ -88,7 +90,7 @@ def start_omni_sharp_server(mono_exe_path, omni_exe_path, solution_path, port):
             '-p', str(port),
         ]
 
-        if IS_OMNI_SHARP_NT_CONSOLE_VISIBLE:
+        if IS_NT_CONSOLE_VISIBLE:
             startupinfo = None
         else:
             startupinfo = subprocess.STARTUPINFO()
@@ -142,9 +144,9 @@ def main():
 
     while omni_proc.poll() is None:
         if not is_pid_alive(args.sublime_pid):
+            omni_proc.terminate()
             return 0
         
-        print 'running', args.sublime_check_cycle
         time.sleep(args.sublime_check_cycle)
     
     omni_proc.terminate()

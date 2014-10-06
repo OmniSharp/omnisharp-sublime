@@ -18,8 +18,8 @@ from .helpers import current_project_folder
 
 from queue import Queue
 
-IS_EXTERNAL_OMNI_SHARP_ENABLE = False
-IS_OMNI_SHARP_NT_CONSOLE_VISIBLE = False
+IS_EXTERNAL_SERVER_ENABLE = False
+IS_NT_CONSOLE_VISIBLE = False
 
 launcher_procs = {
 }
@@ -167,7 +167,7 @@ def get_response_from_empty_httppost(view, endpoint, callback, timeout=None):
 
 
 def _available_port():
-    if IS_EXTERNAL_OMNI_SHARP_ENABLE:
+    if IS_EXTERNAL_SERVER_ENABLE:
         return 2000
 
     s = socket.socket()
@@ -197,14 +197,14 @@ def _run_omni_sharp_launcher(solution_path, port):
 
     else:
         args = [
-            'pythonw',
+            'python',
             launcher_file_path, 
             '-S', solution_path,
             '-P', str(port),
             '-I', str(os.getpid()),
         ]
 
-        if IS_OMNI_SHARP_NT_CONSOLE_VISIBLE:
+        if IS_NT_CONSOLE_VISIBLE:
             startupinfo = None
         else:
             startupinfo = subprocess.STARTUPINFO()
@@ -249,7 +249,7 @@ def create_omnisharp_server_subprocess(view):
     omni_port = _available_port()
     print('omni_port:%s' % omni_port)
 
-    if IS_EXTERNAL_OMNI_SHARP_ENABLE:
+    if IS_EXTERNAL_SERVER_ENABLE:
         launcher_proc = None
         omni_port = 2000
     else:
