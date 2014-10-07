@@ -11,34 +11,25 @@ class OmniSharpFindUsage(sublime_plugin.TextCommand):
 
     def run(self, edit):
         if self.data is None:
-            print("getting usages")
             omnisharp.get_response(
                self.view, '/findusages', self._handle_findusage)
         else:
             self._show_usage_view(edit)
 
     def _handle_findusage(self, data):
-        print('findusages response is:')
-        print(data)
         if data is None:
             return
         self.data = data
         self.view.run_command('omni_sharp_find_usage')
 
     def _show_usage_view(self, edit):
-        view = self.view.window().new_file()
-        view.set_name('Find Usage Results')
-        view.set_scratch(True)
-        view.set_syntax_file('Packages/Default/Find Results.hidden-tmLanguage')        
-        text=''
-        print('findusage is :')
-        print(self.data)
-        if "QuickFixes" in self.data and self.data["QuickFixes"] != None:
-            for i in self.data["QuickFixes"]:
-                print(i)
-                text = text + i["FileName"].strip() + " - (" + str(i["Line"]) + ", " + str(i["Column"]) + ") : " + i["Text"].strip() + os.linesep
-        region = sublime.Region(0, view.size())
-        view.replace(edit, region, text)
+        if "QuickFixes" in self.data and self.data["QuickFixes"] is not None:
+            usages = self.data["QuickFixes"]
+            items = [[u["Text"].strip(), u["FileName"]] for u in usages]
+            window = self.view.window()
+            window.show_quick_panel(items,
+                lambda i: window.open_file('{}:{}:{}'.format(usages[i]["FileName"], usages[i]["Line"] or 0, usages[i]["Column"] or 0), sublime.ENCODED_POSITION))
+
         self.data = None
 
     def is_enabled(self):
