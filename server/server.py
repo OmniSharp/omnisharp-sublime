@@ -31,6 +31,12 @@ class Checker(threading.Thread):
             self.die = True
 
 if __name__ == '__main__':
+
+    windows = False
+
+    if os.name == 'nt':
+        windows = True
+
     opt_parser = OptionParser(usage=(
         'usage: %prog <sublime_pid> <port> <solution_file> '
     ))
@@ -43,35 +49,44 @@ if __name__ == '__main__':
     port = args[1]
     solution_file = args[2]
 
-    mono_dir_candidate_paths = os.environ['PATH'].split(':')
-    mono_dir_candidate_paths += [
-        '/usr/local/bin',
-        '/opt/usr/local/bin',
-        '/opt/usr/bin',
-    ]
-    mono_exe_candidate_paths = [os.path.join(mono_dir_path, 'mono') 
-            for mono_dir_path in mono_dir_candidate_paths]
-    mono_exe_paths = [mono_exe_candidate_path 
-            for mono_exe_candidate_path in mono_exe_candidate_paths 
-            if os.access(mono_exe_candidate_path, os.R_OK)]
+    if not windows:
+        mono_dir_candidate_paths = os.environ['PATH'].split(':')
+        mono_dir_candidate_paths += [
+            '/usr/local/bin',
+            '/opt/usr/local/bin',
+            '/opt/usr/bin',
+        ]
+        mono_exe_candidate_paths = [os.path.join(mono_dir_path, 'mono') 
+                for mono_dir_path in mono_dir_candidate_paths]
+        mono_exe_paths = [mono_exe_candidate_path 
+                for mono_exe_candidate_path in mono_exe_candidate_paths 
+                if os.access(mono_exe_candidate_path, os.R_OK)]
 
-    if not mono_exe_paths:
-        sys.stderr.write('Check your mono executable path.\n')
-        sys.stderr.write(repr(e) + '\n')
-        sys.stderr.write(repr(os.environ))
-        sys.exit(-1)
+        if not mono_exe_paths:
+            sys.stderr.write('Check your mono executable path.\n')
+            sys.stderr.write(repr(e) + '\n')
+            sys.stderr.write(repr(os.environ))
+            sys.exit(-1)
 
-    mono_exe_path = mono_exe_paths[0]
+        mono_exe_path = mono_exe_paths[0]
 
     omnisharp_server_path = os.path.join(
         os.path.dirname(__file__),
         '../OmniSharpServer/OmniSharp/bin/Debug/OmniSharp.exe')
-    args = [
-        mono_exe_path, 
-        omnisharp_server_path, 
-        '-p', port,
-        '-s', solution_file
-    ]
+
+    if not windows:
+        args = [
+            mono_exe_path, 
+            omnisharp_server_path, 
+            '-p', port,
+            '-s', solution_file
+        ]
+    else:
+        args = [
+            omnisharp_server_path, 
+            '-p', port,
+            '-s', solution_file
+        ]
 
     try:
         server_process = subprocess.Popen(args)
