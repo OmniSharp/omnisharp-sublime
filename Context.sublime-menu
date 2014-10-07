@@ -14,7 +14,7 @@
             },
             {
                 "command": "omni_sharp_find_usages",
-                "caption": "Find Usage"
+                "caption": "Find Usages"
             },
             {
                 "command": "omni_sharp_go_to_implementation",

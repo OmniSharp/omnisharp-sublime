@@ -1,4 +1,3 @@
-import os
 import sublime
 import sublime_plugin
 
@@ -7,30 +6,20 @@ from ..lib import helpers
 
 
 class OmniSharpFindUsages(sublime_plugin.TextCommand):
-    data = None
-
     def run(self, edit):
-        if self.data is None:
-            omnisharp.get_response(
-               self.view, '/findusages', self._handle_find_usages)
-        else:
-            self._show_usage_view(edit)
+        omnisharp.get_response(self.view, '/findusages', lambda data: self._show_usages(data))
 
-    def _handle_find_usages(self, data):
-        if data is None:
-            return
-        self.data = data
-        self.view.run_command('omni_sharp_find_usages')
-
-    def _show_usage_view(self, edit):
-        if "QuickFixes" in self.data and self.data["QuickFixes"] is not None:
-            usages = self.data["QuickFixes"]
+    def _show_usages(self, data):
+        if "QuickFixes" in data and data["QuickFixes"] is not None:
+            usages = data["QuickFixes"]
             items = [[u["Text"].strip(), u["FileName"]] for u in usages]
             window = self.view.window()
-            window.show_quick_panel(items,
-                lambda i: window.open_file('{}:{}:{}'.format(usages[i]["FileName"], usages[i]["Line"] or 0, usages[i]["Column"] or 0), sublime.ENCODED_POSITION))
 
-        self.data = None
+            def on_done(i):
+                if i is not -1:
+                    window.open_file('{}:{}:{}'.format(usages[i]["FileName"], usages[i]["Line"] or 0, usages[i]["Column"] or 0), sublime.ENCODED_POSITION)
+
+            window.show_quick_panel(items, on_done)
 
     def is_enabled(self):
         return helpers.is_csharp(self.view)
