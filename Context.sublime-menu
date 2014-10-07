@@ -13,7 +13,7 @@
                 "caption": "Rename"
             },
             {
-                "command": "omni_sharp_find_usage",
+                "command": "omni_sharp_find_usages",
                 "caption": "Find Usage"
             },
             {

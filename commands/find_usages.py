@@ -6,21 +6,21 @@ from ..lib import omnisharp
 from ..lib import helpers
 
 
-class OmniSharpFindUsage(sublime_plugin.TextCommand):
+class OmniSharpFindUsages(sublime_plugin.TextCommand):
     data = None
 
     def run(self, edit):
         if self.data is None:
             omnisharp.get_response(
-               self.view, '/findusages', self._handle_findusage)
+               self.view, '/findusages', self._handle_find_usages)
         else:
             self._show_usage_view(edit)
 
-    def _handle_findusage(self, data):
+    def _handle_find_usages(self, data):
         if data is None:
             return
         self.data = data
-        self.view.run_command('omni_sharp_find_usage')
+        self.view.run_command('omni_sharp_find_usages')
 
     def _show_usage_view(self, edit):
         if "QuickFixes" in self.data and self.data["QuickFixes"] is not None:
