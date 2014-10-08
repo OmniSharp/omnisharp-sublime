@@ -77,6 +77,9 @@ To run server automatically, you have to specify a solution file in a sublime-pr
     "auto_complete_triggers": [ {"selector": "source.cs", "characters": ".<"} ],
  }
  ```
+#Format Document Settings
+
+When you press `Ctrl + K + D` to format the document you may see `CR` markers.  
 
 ![CR Markers](http://i.imgur.com/SBgyjtk.png)
 
@@ -101,6 +104,5 @@ This is to do with the settings for `OmniSharpServer`.  Simply go to the OmniSha
 * Show Documentations
 * Find type / symbols
 * code action
-* code format
 * type lookup
 * advanced syntax highlight
