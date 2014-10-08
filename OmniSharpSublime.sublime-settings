@@ -1,4 +1,4 @@
 {
-    "omnisharp_response_timeout": 1,
+    "omnisharp_response_timeout": 100,
     "omnisharp_auto_start": true,
 }
