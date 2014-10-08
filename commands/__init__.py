@@ -6,6 +6,7 @@ from .go_to_file import OmniSharpGoToFile
 from .format_document import OmniSharpFormatDocument
 from .override import OmniSharpOverrideTargets
 from .override import OmniSharpRunTarget
+from .add_reference import OmniSharpAddReference
 
 __all__ = [
     'OmniSharpGoToDefinition',
@@ -15,5 +16,6 @@ __all__ = [
     'OmniSharpGoToFile',
     'OmniSharpFormatDocument',
     'OmniSharpOverrideTargets',
-    'OmniSharpRunTarget'
+    'OmniSharpRunTarget',
+    'OmniSharpAddReference'
 ]

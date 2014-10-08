@@ -9,6 +9,8 @@
  3. Auto Completion
  4. Goto definition
  5. Rename
+ 6. Add Reference
+ 7. Find Usage
 
 # Requirements
  * Mono Development Kit(for [OmniSharpServer](https://github.com/nosami/OmniSharpServer))
@@ -60,6 +62,17 @@ To run server automatically, you have to specify a solution file in a sublime-pr
             "solution_file": "./csharp-project.sln"
         }
 
+
+## C# language-specific settings
+ This will launch completion on . and < symbols
+ Edit C#-sublime-settings
+ ```
+ {
+    "auto_complete": true,
+    "auto_complete_selector": "source - comment",
+    "auto_complete_triggers": [ {"selector": "source.cs", "characters": ".<"} ],
+ }
+ ```
 
 # TODO
 * class rename bug fix
