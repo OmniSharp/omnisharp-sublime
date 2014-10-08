@@ -16,7 +16,7 @@
  10. Format Document
  11. Displays code issues such as `assigment is redundant`
  12. Fix code issues - put cursor on highlighted issue and select `Fix Code Issue`
- 13. Remove and Sort `Using` Statements
+ 13. Remove Unused, Add Missing and Sort `Using` Statements
 
 # Requirements
  * Mono Development Kit(for [OmniSharpServer](https://github.com/nosami/OmniSharpServer))
