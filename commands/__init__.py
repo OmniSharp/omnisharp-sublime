@@ -7,6 +7,7 @@ from .override import OmniSharpOverrideTargets
 from .override import OmniSharpRunTarget
 from .add_reference import OmniSharpAddReference
 from .fix_code_issue import OmniSharpFixCodeIssue
+from .fix_usings import OmniSharpFixUsings
 
 __all__ = [
     'OmniSharpGoToDefinition',
@@ -17,5 +18,6 @@ __all__ = [
     'OmniSharpOverrideTargets',
     'OmniSharpRunTarget',
     'OmniSharpAddReference',
-    'OmniSharpFixCodeIssue'
+    'OmniSharpFixCodeIssue',
+    'OmniSharpFixUsings'
 ]
