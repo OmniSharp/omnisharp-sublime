@@ -68,12 +68,12 @@ To run server automatically, you have to specify a solution file in a sublime-pr
 
 
 ## C# language-specific settings
- Create C# settings as shown in this picture
+ Create C# settings file as shown in this picture
  
  ![Imgur](http://i.imgur.com/KjcPSFq.png)
  
- This will launch completion on . and < symbols
- Edit C#-sublime-settings
+ 
+ Paste the below in. This will launch intellisense on . and < symbols
  ```
  {
     "auto_complete": true,
