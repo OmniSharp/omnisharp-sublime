@@ -22,5 +22,9 @@
     {
         "command": "omni_sharp_add_reference",
         "caption": "OmniSharpSublime: Add Reference"
+    },
+    {
+        "command": "omni_sharp_fix_code_issue",
+        "caption": "OmniSharpSublime: Fix Code Issue"
     }
 ]
