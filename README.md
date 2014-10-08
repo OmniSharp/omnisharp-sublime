@@ -14,6 +14,7 @@
  8. Displays possible override methods
  9. Find Usages
  10. Format Document
+ 11. Displays code issues such as `assigment is redundant`
 
 # Requirements
  * Mono Development Kit(for [OmniSharpServer](https://github.com/nosami/OmniSharpServer))
