@@ -5,12 +5,12 @@
 
 # Features
  1. Auto OmniSharpServer running
- 2. Asynchronous communication with OmniSharpServer (Never freeze!)
+ 2. Asynchronous communication with OmniSharpServer
  3. Auto Completion
  4. Goto definition
  5. Rename
  6. Add Reference
- 7. Find Usage
+ 7. Find Usages
 
 # Requirements
  * Mono Development Kit(for [OmniSharpServer](https://github.com/nosami/OmniSharpServer))
