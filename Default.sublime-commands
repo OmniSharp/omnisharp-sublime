@@ -14,5 +14,13 @@
     {
         "command": "omni_sharp_go_to_implementation",
         "caption": "OmniSharpSublime: Go to implementation"
+    },
+    {
+        "command": "omni_sharp_go_to_file",
+        "caption": "OmniSharpSublime: Go to file"
+    },
+    {
+        "command": "omni_sharp_override_targets",
+        "caption": "OmniSharpSublime: Override Targets"
     }
 ]

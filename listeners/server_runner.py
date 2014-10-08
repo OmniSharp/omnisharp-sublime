@@ -10,4 +10,4 @@ class OmniSharpServerRunnerEventListener(sublime_plugin.EventListener):
             return
             
         omnisharp.create_omnisharp_server_subprocess(view)
-        print('created server')
+
