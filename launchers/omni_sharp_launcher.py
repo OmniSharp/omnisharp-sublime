@@ -60,7 +60,6 @@ def find_omni_exe_paths():
     omni_exe_candidate_rel_paths = [
         'OmniSharpServer/OmniSharp/bin/Debug/OmniSharp.exe',
         'OmniSharpServer/OmniSharp/bin/Release/OmniSharp.exe',
-        'PrebuiltOmniSharpServer/OmniSharp.exe',
     ]
 
     omni_exe_candidate_abs_paths = [
