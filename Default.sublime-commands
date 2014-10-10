@@ -31,5 +31,9 @@
     {
         "command": "omni_sharp_fix_usings",
         "caption": "OmniSharpSublime: Fix Usings"
+    },
+    {
+        "command": "omni_sharp_code_actions",
+        "caption": "OmniSharpSublime: Code Actions"
     }
 ]
