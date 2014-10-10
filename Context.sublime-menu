@@ -39,6 +39,10 @@
             {
                 "command": "omni_sharp_fix_usings",
                 "caption": "Fix Usings"
+            },
+            {
+                "command": "omni_sharp_code_actions",
+                "caption": "Code Actions"
             }
         ]
     }
