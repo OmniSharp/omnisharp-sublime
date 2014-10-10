@@ -17,6 +17,7 @@
  11. Displays code issues such as `assigment is redundant`
  12. Fix code issues - put cursor on highlighted issue and select `Fix Code Issue`
  13. Remove Unused, Add Missing and Sort `Using` Statements
+ 14. Code Actions eg. `Convert LINQ query to Fluent Syntax`
 
 # Requirements
  * Mono Development Kit(for [OmniSharpServer](https://github.com/nosami/OmniSharpServer))
@@ -109,6 +110,5 @@ This is to do with the settings for `OmniSharpServer`.  Simply go to the OmniSha
 # Sometime
 * Show Documentations
 * Find type / symbols
-* code action
 * type lookup
 * advanced syntax highlight
