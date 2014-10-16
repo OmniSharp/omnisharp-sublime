@@ -1,49 +1,42 @@
 [
     {
-        "caption": "OmniSharpSublime",
-        "id": "omnisharp_context",
-        "children":
-        [
-            {
-                "command": "omni_sharp_go_to_definition",
-                "caption": "Goto Definition"
-            },
-            {
-                "command": "omni_sharp_rename",
-                "caption": "Rename"
-            },
-            {
-                "command": "omni_sharp_find_usages",
-                "caption": "Find Usages"
-            },
-            {
-                "command": "omni_sharp_go_to_implementation",
-                "caption": "Go to implementation"
-            },
-            {
-                "command": "omni_sharp_format_document",
-                "caption": "Format Document"
-            },
-            {
-                "command": "omni_sharp_override_targets",
-                "caption": "Override"
-            },
-            {
-                "command": "omni_sharp_add_reference",
-                "caption": "Add Reference"
-            },
-            {
-                "command": "omni_sharp_fix_code_issue",
-                "caption": "Fix Code Issue"
-            },
-            {
-                "command": "omni_sharp_fix_usings",
-                "caption": "Fix Usings"
-            },
-            {
-                "command": "omni_sharp_code_actions",
-                "caption": "Code Actions"
-            }
-        ]
+        "command": "omni_sharp_go_to_definition",
+        "caption": "Goto Definition"
+    }
+    , {
+        "command": "omni_sharp_go_to_implementation",
+        "caption": "Go to implementation"
+    }
+    , {
+        "command": "omni_sharp_find_usages",
+        "caption": "Find Usages"
+    }
+    , {
+        "command": "omni_sharp_fix_usings",
+        "caption": "Fix Usings"
+    }
+    , {
+        "command": "omni_sharp_format_document",
+        "caption": "Format Document"
+    }
+    , {
+        "command": "omni_sharp_rename",
+        "caption": "Rename"
+    }
+    , {
+        "command": "omni_sharp_fix_code_issue",
+        "caption": "Fix Code Issue"
+    }
+    , {
+        "command": "omni_sharp_code_actions",
+        "caption": "Code Actions"
+    }
+    , {
+        "command": "omni_sharp_override_targets",
+        "caption": "Override Targets"
+    }
+    , {
+        "command": "omni_sharp_add_reference",
+        "caption": "Add Reference"
     }
 ]
