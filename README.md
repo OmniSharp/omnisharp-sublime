@@ -18,6 +18,7 @@
  12. Fix code issues - put cursor on highlighted issue and select `Fix Code Issue`
  13. Remove Unused, Add Missing and Sort `Using` Statements
  14. Code Actions eg. `Convert LINQ query to Fluent Syntax`
+ 15. Add File To Project
 
 # Requirements
  * Mono Development Kit(for [OmniSharpServer](https://github.com/nosami/OmniSharpServer))
