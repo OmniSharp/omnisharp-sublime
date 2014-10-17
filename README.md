@@ -104,6 +104,27 @@ This is to do with the settings for `OmniSharpServer`.  Simply go to the OmniSha
     "wrapLineLength": 80
   },
 ```
+
+#Build Solution
+
+Create a new Build System
+
+`Tools -> Build System -> New Build System`
+
+Paste in the below and save the file as `xbuild.sublime-build`
+
+```
+{
+"cmd": ["xbuild"],
+"path": "/usr/bin/",
+"working_dir": "${project_path:${folder}}",
+"file_regex": "^ (.*)\\(([0-9]*),([0-9]*)"
+}
+```
+
+Press CMD+B to build the solution and see the output in the console.
+
+
 # TODO
 * class rename bug fix
 * field rename bug fix
