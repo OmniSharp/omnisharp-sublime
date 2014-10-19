@@ -1,18 +1,15 @@
 [
     {
         "caption": "-",
-        "id": "side-bar-start-separator"
+        "id": "omnisharp-side-bar-start-separator"
     },
     {
         "caption": "Remove from Project",
-        "id": "side-bar-new-file",
-        "command": "omni_sharp_remove_from_project",
-        "args": {
-            "paths": []
-        }
+        "id": "omnisharp-remove-from-project",
+        "command": "omni_sharp_remove_from_project"
     },
     {
         "caption": "-",
-        "id": "side-bar-end-separator"
+        "id": "omnisharp-side-bar-end-separator"
     }
 ]

@@ -6,7 +6,7 @@ from ..lib import helpers
 from ..lib import omnisharp
 
 class OmniSharpRemoveFromProject(sublime_plugin.WindowCommand):
-    def run(self, paths = [], name = ""):
+    def run(self):
         omnisharp.get_response(sublime.active_window().active_view(), '/removefromproject', self._handle_removetoproject)
 
     def is_enabled(self):
