@@ -116,14 +116,14 @@ Paste in the below and save the file as `xbuild.sublime-build`
 
 ```
 {
-"cmd": ["xbuild"],
+"cmd": ["xbuild","/property:GenerateFullPaths=true", "/nologo", "/v:q"],
 "path": "/usr/bin/",
 "working_dir": "${project_path:${folder}}",
-"file_regex": "^ (.*)\\(([0-9]*),([0-9]*)"
+"file_regex": "^([\\d\\w:/\\.-]*)\\((\\d+),(\\d+)\\)\\s*(.*)$"
 }
 ```
 
-Press CMD+B to build the solution and see the output in the console.
+Press `CMD+B` to build the solution and see the output in the console. Press `F4` to open the file where there is an error. `Shift+F4` to go backwards through the error list.
 
 
 # TODO
