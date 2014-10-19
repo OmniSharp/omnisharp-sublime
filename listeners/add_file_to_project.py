@@ -14,7 +14,9 @@ class OmniSharpAddFileToProjectEventListener(sublime_plugin.EventListener):
 
         omnisharp.get_response(view, '/addtoproject', self._handle_addtoproject)
 
+
     def _handle_addtoproject(self, data):
         print('file added to project')
+        print(data)
 
 

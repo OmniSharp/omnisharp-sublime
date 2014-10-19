@@ -10,6 +10,7 @@ from .fix_code_issue import OmniSharpFixCodeIssue
 from .fix_usings import OmniSharpFixUsings
 from .code_actions import OmniSharpCodeActions
 from .code_actions import OmniSharpRunCodeAction
+from .remove_from_project import OmniSharpRemoveFromProject
 
 __all__ = [
     'OmniSharpGoToDefinition',
@@ -23,5 +24,6 @@ __all__ = [
     'OmniSharpFixCodeIssue',
     'OmniSharpFixUsings',
     'OmniSharpCodeActions',
-    'OmniSharpRunCodeAction'
+    'OmniSharpRunCodeAction',
+    'OmniSharpRemoveFromProject'
 ]
