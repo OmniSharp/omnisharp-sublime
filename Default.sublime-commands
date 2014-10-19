@@ -34,5 +34,9 @@
     {
         "command": "omni_sharp_code_actions",
         "caption": "OmniSharpSublime: Code Actions"
+    },
+    {
+        "command": "omni_sharp_remove_from_project",
+        "caption": "OmniSharpSublime: Remove From Project"
     }
 ]

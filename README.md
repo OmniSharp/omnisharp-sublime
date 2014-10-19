@@ -19,6 +19,7 @@
  13. Remove Unused, Add Missing and Sort `Using` Statements
  14. Code Actions eg. `Convert LINQ query to Fluent Syntax`
  15. Add File To Project
+ 16. Remove File from Project (via sidebar and context menu)
 
 # Requirements
  * Mono Development Kit(for [OmniSharpServer](https://github.com/nosami/OmniSharpServer))

@@ -43,6 +43,10 @@
             {
                 "command": "omni_sharp_code_actions",
                 "caption": "Code Actions"
+            },
+            {
+                "command": "omni_sharp_remove_from_project",
+                "caption": "Remove From Project"
             }
         ]
     }
