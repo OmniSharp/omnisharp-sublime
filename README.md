@@ -42,34 +42,34 @@
 # Project Setting
 To run server automatically, you have to specify a solution file in a sublime-project. For ASP.Net vNext applications you do not need to specify the solution file but you need the sublime-project file.
 
+Let's assume you already have a solution.
+
+    Go to `File -> Open` and select the folder with your solution in it.
+    
+    Go to `Project -> Save Project As` and save your .sublime-project in the same location as your *.sln
+    
+    Open your .sublime-project file that should now appear in the sidebar on the left
+    
+    Enter the location to the *.sln file like below
+
 ## Example of sublime-project
 
         {
-            "folders":
-            [
-                {
-                    "name": "csharp_project",
-                    "follow_symlinks": true,
-                    "path": ".",
-                    "file_exclude_patterns":
-                    [
-                        "*.meta",
-                        "*.png",
-                        "*.dll",
-                        "*.mdb"
-                    ],
-                    "folder_exclude_patterns":
-                    [
-                        "Library"
-                    ]
-                }
-            ],
-            "settings":
+        "folders":
+        [
             {
-                "tab_size": 4
-            },
-            "solution_file": "./csharp-project.sln"
-        }
+                "follow_symlinks": true,
+                "path": "."
+            }
+        ],
+        "solution_file": "./testconsoleprj.sln"
+    }
+    
+    Close Sublime (YMMV but this seems to be the best way to open the .sublime-project)
+    
+    Open Sublime
+    
+    Click `Project -> Open Project`, and select your .sublime-project file
 
 
 ## C# language-specific settings
