@@ -54,7 +54,7 @@ Let's assume you already have a solution.
 
 ## Example of sublime-project
 
-        {
+    {
         "folders":
         [
             {
@@ -64,6 +64,8 @@ Let's assume you already have a solution.
         ],
         "solution_file": "./testconsoleprj.sln"
     }
+    
+ Once the `sublime-project` is set up and saved follow the below:
     
     Close Sublime (YMMV but this seems to be the best way to open the .sublime-project)
     
