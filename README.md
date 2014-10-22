@@ -99,10 +99,12 @@ When you press `Ctrl + K + D` to format the document you may see `CR` markers.
 ![CR Markers](http://i.imgur.com/SBgyjtk.png)
 
 This is to do with the settings for `OmniSharpServer`.  
-   
-   Preferences - Browse Packages
+   ```
+   Click Preferences - Browse Packages
    Go to `OmniSharp/PrebuiltOmniSharpServer/` sub directory 
    Open config.json and modify the `eolMarker` setting to `\n` like below
+   ```
+   
 ```
   "TextEditorOptions": {
     "tabsToSpaces": true,
