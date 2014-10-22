@@ -172,6 +172,8 @@ Press `CMD+B` to build the solution and see the output in the console. Press `F4
 
 Using the Command Pallete, type Build and you will see the options to build, clean and rebuild also!!
 
+**NOTE:** If you used Homebrew to install Mono the path in the build system needs to be `/usr/local/bin/`
+
 ![Build](http://i.imgur.com/j4y5qCv.png)
 
 
