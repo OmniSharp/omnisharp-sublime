@@ -24,7 +24,11 @@
 # Requirements
  * Mono Development Kit(for [OmniSharpServer](https://github.com/nosami/OmniSharpServer))
 
-# Installation
+#Installation
+
+ * Using the Sublime Package Manager install the package called `OmniSharp`
+
+# Building From Source
 1. Move to ST3 plugin directory in console.
 
         cd {path to ST3 plugin directory}/Packages
