@@ -9,6 +9,17 @@
         "command": "omni_sharp_remove_from_project"
     },
     {
+        "caption": "New C# Class",
+        "id": "omnisharp-new_class",
+        "command": "omni_sharp_new_class"
+    },
+    {
+        "caption": "New C# Interface",
+        "id": "omnisharp-new_class",
+        "command": "omni_sharp_new_class",
+        "args":{"type":"interface"}
+    },
+    {
         "caption": "-",
         "id": "omnisharp-side-bar-end-separator"
     }
