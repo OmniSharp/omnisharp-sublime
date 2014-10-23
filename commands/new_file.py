@@ -8,7 +8,7 @@ from ..lib import omnisharp
 
 class OmniSharpNewFile(sublime_plugin.TextCommand):
     
-    PACKAGE_NAME = 'omnisharp'
+    PACKAGE_NAME = 'omnisharpsublime'
     TMLP_DIR = 'templates'
 
     def run(self, edit, tmpltype='class', paths=[]):
@@ -24,7 +24,7 @@ class OmniSharpNewFile(sublime_plugin.TextCommand):
 
         self.incomingpath = incomingpath
         self.tmpltype = tmpltype
-        self.view.window().show_input_panel("New File:", incomingpath + "/new" + tmpltype + ".cs", self._on_done, None, None)
+        self.view.window().show_input_panel("New File:", incomingpath + os.path.sep + "new" + tmpltype + ".cs", self._on_done, None, None)
 
     def _on_done(self,filename):
         originalfilename = filename
@@ -40,11 +40,24 @@ class OmniSharpNewFile(sublime_plugin.TextCommand):
         filename = os.path.splitext(filename)[0]
 
         tmpl = self.get_code(self.tmpltype, namespace, filename)
-        
-        with open(originalfilename, 'w') as f:
-            f.write(tmpl)
 
-        sublime.active_window().open_file(originalfilename)
+        if len(tmpl) > 0:
+            with open(originalfilename, 'w') as f:
+                f.write(tmpl)
+
+            #set params for filename
+            params = {}
+            params['filename'] = originalfilename
+            omnisharp.get_response(self.view, '/addtoproject', self._handle_addtoproject, params)
+                
+            sublime.active_window().open_file(originalfilename)
+
+
+
+
+    def _handle_addtoproject(self, data):
+        print('file added to project')
+        print(data)
 
     def solution_folder(self, start_path):
         last_root    = start_path
