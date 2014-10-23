@@ -42,7 +42,7 @@
     {
         "command": "omni_sharp_new_file",
         "caption": "OmniSharpSublime: Add New Class",
-        "args": {"paths": [""]}
+        "args": {"paths": []}
     },
     {
         "command": "omni_sharp_new_file",

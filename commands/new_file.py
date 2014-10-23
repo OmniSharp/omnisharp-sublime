@@ -8,14 +8,13 @@ from ..lib import omnisharp
 
 class OmniSharpNewFile(sublime_plugin.TextCommand):
     
-    PACKAGE_NAME = 'omnisharpsublime'
+    PACKAGE_NAME = 'omnisharp'
     TMLP_DIR = 'templates'
 
     def run(self, edit, tmpltype='class', paths=[]):
         print(paths)
         if (len(paths) == 0):
             if sublime.active_window().active_view().file_name() is not None:
-                print(sublime.active_window().active_view().file_name())
                 paths = [sublime.active_window().active_view().file_name()]
             else:
                 paths = [sublime.active_window().folders()[0]]
@@ -23,34 +22,25 @@ class OmniSharpNewFile(sublime_plugin.TextCommand):
         incomingpath = paths[0]
         if not os.path.isdir(incomingpath):
             incomingpath = os.path.dirname(incomingpath)
-        print(incomingpath)
 
         self.incomingpath = incomingpath
         self.tmpltype = tmpltype
         self.view.window().show_input_panel("New File:", incomingpath + "/new" + tmpltype + ".cs", self._on_done, None, None)
 
-      
-
     def _on_done(self,filename):
-        well = self.solution_folder(self.incomingpath)
         originalfilename = filename
-        print(well)
 
-        indexpos = self.incomingpath.index(well)
+        root = self.solution_folder(self.incomingpath)
+
+        indexpos = self.incomingpath.index(root)
 
         namespace = self.incomingpath[indexpos:]
         namespace = namespace.replace("/",".")
-        print(namespace)
 
         filename =  os.path.basename(filename)
         filename = os.path.splitext(filename)[0]
-        print('noext')
-        print(filename)
-        tmpl = self.get_code(self.tmpltype, namespace, filename)
-        # self.tab = self.creat_tab(self.view)
 
-        # self.set_syntax()
-        # self.set_code(tmpl)
+        tmpl = self.get_code(self.tmpltype, namespace, filename)
         
         with open(originalfilename, 'w') as f:
             f.write(tmpl)
@@ -112,17 +102,3 @@ class OmniSharpNewFile(sublime_plugin.TextCommand):
         code = code.replace('${classname}', filename)
 
         return code
-
-    def creat_tab(self, view):
-        win = view.window()
-        tab = win.new_file()
-        return tab
-
-    def set_code(self, code):
-        tab = self.tab
-        tab.run_command('insert_snippet', {'contents': code})
-
-    def set_syntax(self):
-        v = self.tab
-
-        v.set_syntax_file('Packages/C#/C#.tmLanguage')
