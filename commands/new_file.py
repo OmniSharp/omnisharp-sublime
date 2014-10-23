@@ -12,7 +12,6 @@ class OmniSharpNewFile(sublime_plugin.TextCommand):
     TMLP_DIR = 'templates'
 
     def run(self, edit, tmpltype='class', paths=[]):
-        print(paths)
         if (len(paths) == 0):
             if sublime.active_window().active_view().file_name() is not None:
                 paths = [sublime.active_window().active_view().file_name()]
