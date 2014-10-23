@@ -47,7 +47,19 @@
             {
                 "command": "omni_sharp_remove_from_project",
                 "caption": "Remove From Project"
-            }
+            },
+            {
+                "caption": "New C# Class",
+                "id": "omnisharp-new-class",
+                "command": "omni_sharp_new_file",
+                "args": {"paths": []}
+            },
+            {
+                "caption": "New C# Interface",
+                "id": "omnisharp-new-interface",
+                "command": "omni_sharp_new_file",
+                "args":{"tmpltype":"interface","paths": []}
+            },
         ]
     }
 ]

@@ -11,7 +11,7 @@ from .fix_usings import OmniSharpFixUsings
 from .code_actions import OmniSharpCodeActions
 from .code_actions import OmniSharpRunCodeAction
 from .remove_from_project import OmniSharpRemoveFromProject
-from .new_class import OmniSharpNewClass
+from .new_file import OmniSharpNewFile
 
 __all__ = [
     'OmniSharpGoToDefinition',
@@ -27,5 +27,5 @@ __all__ = [
     'OmniSharpCodeActions',
     'OmniSharpRunCodeAction',
     'OmniSharpRemoveFromProject',
-    'OmniSharpNewClass'
+    'OmniSharpNewFile'
 ]

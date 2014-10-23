@@ -4,4 +4,6 @@
     {"command": "omni_sharp_find_usages", "keys": ["shift+f12"]},
     { "keys": ["ctrl+k", "ctrl+d"], "command": "omni_sharp_format_document" },
     {"command": "omni_sharp_code_actions", "keys": ["alt+enter"]},
+    {"command": "omni_sharp_new_file", "keys": ["super+alt+ctrl+c"], "args": {"paths": []}},
+    {"command": "omni_sharp_new_file", "keys": ["super+alt+ctrl+i"], "args":{"tmpltype":"interface","paths": []}},
 ]

@@ -38,5 +38,15 @@
     {
         "command": "omni_sharp_remove_from_project",
         "caption": "OmniSharpSublime: Remove From Project"
+    },
+    {
+        "command": "omni_sharp_new_file",
+        "caption": "OmniSharpSublime: Add New Class",
+        "args": {"paths": [""]}
+    },
+    {
+        "command": "omni_sharp_new_file",
+        "caption": "OmniSharpSublime: Add New Interface",
+        "args":{"tmpltype":"interface","paths": []}
     }
 ]
