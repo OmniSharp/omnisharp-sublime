@@ -9,7 +9,7 @@
   ],
 
   "TestCommands": {
-    "All": "nunit-console.exe -nologo {{AssemblyPath}}",
+    "All": "/Users/jonathan/Projects/Nancy/tools/xunit/xunit.console.clr4.x86.exe {{AssemblyPath}}",
     "Fixture": "nunit-console.exe -nologo {{AssemblyPath}} -run={{TypeName}}",
     "Single": "nunit-console.exe -nologo {{AssemblyPath}} -run={{TypeName}}.{{MethodName}}"
   },

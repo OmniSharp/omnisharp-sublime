@@ -15,6 +15,7 @@ from .new_file import OmniSharpNewFile
 from .type_lookup import OmniSharpTypeLookup
 from .hide_panel import OmniSharpHidePanel
 from .show_panel import OmniSharpShowPanel
+from .run_unit_tests import OmniSharpRunUnitTests
 
 __all__ = [
     'OmniSharpGoToDefinition',
@@ -33,5 +34,6 @@ __all__ = [
     'OmniSharpNewFile',
     'OmniSharpTypeLookup',
     'OmniSharpHidePanel',
-    'OmniSharpShowPanel'
+    'OmniSharpShowPanel',
+     'OmniSharpRunUnitTests'
 ]

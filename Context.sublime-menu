@@ -71,6 +71,11 @@
             {
                 "caption": "Hide Info Panel",
                 "command": "omni_sharp_hide_panel",
+            },
+            {
+                "caption": "Run Tests",
+                "id": "omnisharp-run-tests",
+                "command": "omni_sharp_run_unit_tests",
             }
         ]
     }
