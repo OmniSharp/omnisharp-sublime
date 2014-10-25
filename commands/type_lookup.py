@@ -22,6 +22,7 @@ class OmniSharpTypeLookup(sublime_plugin.TextCommand):
         return helpers.is_csharp(sublime.active_window().active_view())
 
     def _handle_typelookup(self, data):
-        print(data)
-        self.outputpanel.run_command('append', {'characters': "Type : " + '' if data["Type"] is None else data["Type"] + "\n" + "Documentation : " + '' if data["Documentation"] is None else data["Documentation"]})
-        self.view.window().run_command("show_panel", {"panel": "output.variable_get"})
+        sublime.status_message('' if data["Type"] is None else data["Type"])
+        if data["Documentation"] is not None:
+            self.outputpanel.run_command('append', {'characters': "Type : " + '' if data["Type"] is None else data["Type"] + "\n" + "Documentation : " + '' if data["Documentation"] is None else data["Documentation"]})
+            self.view.window().run_command("show_panel", {"panel": "output.variable_get"})
