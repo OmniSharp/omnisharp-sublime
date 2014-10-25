@@ -22,6 +22,7 @@
  16. Remove File from Project (via sidebar and context menu)
  17. Add New C# Class & Interface (via sidebar and context menu) via File Templates which also adds to `csproj`
  18. Type Lookup with Documentation 
+ 19. Hide/Show Info Panel
 
 #Requirements
  * Mono Development Kit(for [OmniSharpServer](https://github.com/nosami/OmniSharpServer))
