@@ -7,4 +7,6 @@
     {"command": "omni_sharp_new_file", "keys": ["super+alt+ctrl+c"], "args": {"paths": []}},
     {"command": "omni_sharp_new_file", "keys": ["super+alt+ctrl+i"], "args":{"tmpltype":"interface","paths": []}},
     {"command": "omni_sharp_hide_panel", "keys": ["alt+x"]},
+    {"command": "omni_sharp_show_panel", "keys": ["alt+z"]},
+    {"command": "omni_sharp_type_lookup", "keys": ["alt+`"]},
 ]

@@ -63,6 +63,14 @@
             {
                 "caption": "Type Lookup",
                 "command": "omni_sharp_type_lookup",
+            },
+            {
+                "caption": "Show Info Panel",
+                "command": "omni_sharp_show_panel",
+            },
+            {
+                "caption": "Hide Info Panel",
+                "command": "omni_sharp_hide_panel",
             }
         ]
     }
