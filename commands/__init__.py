@@ -13,6 +13,7 @@ from .code_actions import OmniSharpRunCodeAction
 from .remove_from_project import OmniSharpRemoveFromProject
 from .new_file import OmniSharpNewFile
 from .type_lookup import OmniSharpTypeLookup
+from .hide_panel import OmniSharpHidePanel
 
 __all__ = [
     'OmniSharpGoToDefinition',
@@ -29,5 +30,6 @@ __all__ = [
     'OmniSharpRunCodeAction',
     'OmniSharpRemoveFromProject',
     'OmniSharpNewFile',
-    'OmniSharpTypeLookup'
+    'OmniSharpTypeLookup',
+    'OmniSharpHidePanel'
 ]

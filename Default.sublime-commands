@@ -52,5 +52,9 @@
     {
         "caption": "OmniSharpSublime: Type Lookup",
         "command": "omni_sharp_type_lookup",
+    },
+    {
+        "caption": "OmniSharpSublime: Hide Info Panel",
+        "command": "omni_sharp_hide_panel",
     }
 ]
