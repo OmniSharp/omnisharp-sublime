@@ -60,6 +60,10 @@
                 "command": "omni_sharp_new_file",
                 "args":{"tmpltype":"interface","paths": []}
             },
+            {
+                "caption": "Type Lookup",
+                "command": "omni_sharp_type_lookup",
+            }
         ]
     }
 ]

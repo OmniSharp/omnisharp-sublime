@@ -48,5 +48,9 @@
         "command": "omni_sharp_new_file",
         "caption": "OmniSharpSublime: Add New Interface",
         "args":{"tmpltype":"interface","paths": []}
+    },
+    {
+        "caption": "OmniSharpSublime: Type Lookup",
+        "command": "omni_sharp_type_lookup",
     }
 ]
