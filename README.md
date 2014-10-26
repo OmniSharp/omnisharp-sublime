@@ -182,7 +182,7 @@ Using the Command Pallete, type Build and you will see the options to build, cle
 
 #Unit Tests
 
-For the plugin you need to configure the test runner. This is done in the server config file.
+For the plugin to be able to run unit tests you need to configure the test runner. This is done in the server config file.
 
    ```
    Click Preferences - Browse Packages
