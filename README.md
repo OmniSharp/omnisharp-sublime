@@ -187,5 +187,4 @@ Using the Command Pallete, type Build and you will see the options to build, cle
 # Sometime
 * Show Documentations
 * Find type / symbols
-* type lookup
 * advanced syntax highlight
