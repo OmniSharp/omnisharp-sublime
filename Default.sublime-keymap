@@ -9,4 +9,5 @@
     {"command": "omni_sharp_hide_panel", "keys": ["alt+x"]},
     {"command": "omni_sharp_show_panel", "keys": ["alt+z"]},
     {"command": "omni_sharp_type_lookup", "keys": ["alt+`"]},
+    {"command": "omni_sharp_run_unit_tests", "keys":["ctrl+shift+r"]}
 ]

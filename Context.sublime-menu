@@ -71,6 +71,23 @@
             {
                 "caption": "Hide Info Panel",
                 "command": "omni_sharp_hide_panel",
+            },
+            {
+                "caption": "Run All Tests",
+                "id": "omnisharp-run-tests",
+                "command": "omni_sharp_run_unit_tests",
+            },
+            {
+                "caption": "Run Fixture Tests",
+                "id": "omnisharp-run-fixture-tests",
+                "command": "omni_sharp_run_unit_tests",
+                "args":{"testtype":"fixture"}
+            },
+            {
+                "caption": "Run Single Test",
+                "id": "omnisharp-run-single-tests",
+                "command": "omni_sharp_run_unit_tests",
+                "args":{"testtype":"single"}
             }
         ]
     }
