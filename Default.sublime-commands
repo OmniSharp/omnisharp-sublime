@@ -60,5 +60,19 @@
     {
         "caption": "OmniSharpSublime: Show Info Panel",
         "command": "omni_sharp_show_panel",
+    },
+    {
+        "caption": "Run All Tests",
+        "command": "omni_sharp_run_unit_tests",
+    },
+    {
+        "caption": "Run Fixture Tests",
+        "command": "omni_sharp_run_unit_tests",
+        "args":{"testtype":"fixture"}
+    },
+    {
+        "caption": "Run Single Test",
+        "command": "omni_sharp_run_unit_tests",
+        "args":{"testtype":"single"}
     }
 ]
