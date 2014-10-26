@@ -23,6 +23,7 @@
  17. Add New C# Class & Interface (via sidebar and context menu) via File Templates which also adds to `csproj`
  18. Type Lookup with Documentation 
  19. Hide/Show Info Panel
+ 20. Run Unit Tests
 
 #Requirements
  * Mono Development Kit(for [OmniSharpServer](https://github.com/nosami/OmniSharpServer))
@@ -179,6 +180,21 @@ Using the Command Pallete, type Build and you will see the options to build, cle
 
 ![Build](http://i.imgur.com/j4y5qCv.png)
 
+#Unit Tests
+
+For the plugin you need to configure the test runner. This is done in the server config file.
+
+   ```
+   Click Preferences - Browse Packages
+   Go to `OmniSharp/PrebuiltOmniSharpServer/` sub directory 
+   Open config.json and modify the `TestCommands` like below
+   
+   "TestCommands": {
+    "All": "nunit-console.exe -nologo {{AssemblyPath}}",
+    "Fixture": "nunit-console.exe -nologo {{AssemblyPath}} -run={{TypeName}}",
+    "Single": "nunit-console.exe -nologo {{AssemblyPath}} -run={{TypeName}}.{{MethodName}}"
+   },
+   ```
 
 # TODO
 * class rename bug fix
