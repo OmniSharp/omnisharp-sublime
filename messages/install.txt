@@ -1,0 +1,5 @@
+Welcome to OmniSharpSublime!
+
+You can now edit C#, build your projects, run your tests, get intellisense, refactor like a pro, be shown syntax errors and lots more!
+
+For more information see the README and Wiki here https://github.com/moonrabbit/OmniSharpSublime
