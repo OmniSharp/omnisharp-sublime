@@ -131,8 +131,6 @@ def main():
         return -1002
 
     omni_exe_path = omni_exe_paths[0]
-
-    print("Using : " + omni_exe_path)
             
     try: 
         omni_proc = start_omni_sharp_server(
