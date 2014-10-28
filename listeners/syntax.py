@@ -38,7 +38,6 @@ class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
 
         if "QuickFixes" in self.data and self.data["QuickFixes"] != None and len(self.data["QuickFixes"]) > 0:
             for i in self.data["QuickFixes"]:
-                print('loop')
                 point = self.view.text_point(i["Line"]-1, i["Column"])
                 reg = self.view.word(point)
                 self.underlines.append(reg)
