@@ -1,0 +1,3 @@
+Fixes:
+
+os.path.sep fix for users on Windows when New C# Class/Interface is chosen
