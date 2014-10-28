@@ -74,5 +74,19 @@
         "caption": "OmniSharpSublime: Run Single Test",
         "command": "omni_sharp_run_unit_tests",
         "args":{"testtype":"single"}
-    }
+    },
+    {
+        "caption": "OmniSharpSublime: Build",
+        "command": "omni_sharp_build_project",
+    },
+    {
+        "caption": "OmniSharpSublime: ReBuild",
+        "command": "omni_sharp_build_project",
+        "args":{"buildtype":"rebuild"}
+    },
+    {
+        "caption": "OmniSharpSublime: Clean",
+        "command": "omni_sharp_build_project",
+        "args":{"buildtype":"clean"}
+    },
 ]

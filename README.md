@@ -122,64 +122,6 @@ This is to do with the settings for `OmniSharpServer`.
   },
 ```
 
-#Build Solution
-
-Create a new Build System
-
-`Tools -> Build System -> New Build System`
-
-Paste in the below and save the file as `xbuild.sublime-build`
-
-```
-{
-    "cmd": [
-        "xbuild",
-        "/property:GenerateFullPaths=true",
-        "/nologo",
-        "/v:q"
-    ],
-    "path": "/usr/bin/",
-    "working_dir": "${project_path:${folder}}",
-    "file_regex": "^([\\d\\w:/\\.-]*)\\((\\d+),(\\d+)\\)\\s*(.*)$",
-    "variants": [
-        {
-            "name": "Clean",
-            "cmd": [
-                "xbuild",
-                "/property:GenerateFullPaths=true",
-                "/nologo",
-                "/v:q",
-                "/target:Clean"
-            ],
-            "path": "/usr/bin/",
-            "working_dir": "${project_path:${folder}}",
-            "file_regex": "^([\\d\\w:/\\.-]*)\\((\\d+),(\\d+)\\)\\s*(.*)$"
-        },
-        {
-            "name": "ReBuild",
-            "cmd": [
-                "xbuild",
-                "/property:GenerateFullPaths=true",
-                "/nologo",
-                "/v:q",
-                "/target:rebuild"
-            ],
-            "path": "/usr/bin/",
-            "working_dir": "${project_path:${folder}}",
-            "file_regex": "^([\\d\\w:/\\.-]*)\\((\\d+),(\\d+)\\)\\s*(.*)$"
-        }
-    ]
-}
-```
-
-Press `CMD+B` to build the solution and see the output in the console. Press `F4` to open the file where there is an error. `Shift+F4` to go backwards through the error list.
-
-Using the Command Pallete, type Build and you will see the options to build, clean and rebuild also!!
-
-**NOTE:** If you used Homebrew to install Mono the path in the build system needs to be `/usr/local/bin/`
-
-![Build](http://i.imgur.com/j4y5qCv.png)
-
 #Unit Tests
 
 For the plugin to be able to run unit tests you need to configure the test runner. This is done in the server config file.

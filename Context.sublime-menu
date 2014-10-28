@@ -73,21 +73,46 @@
                 "command": "omni_sharp_hide_panel",
             },
             {
-                "caption": "Run All Tests",
-                "id": "omnisharp-run-tests",
-                "command": "omni_sharp_run_unit_tests",
+                "caption": "Build",
+                "children":[
+                    {
+                        "caption": "Build",
+                        "command": "omni_sharp_build_project",
+                    },
+                    {
+                        "caption": "ReBuild",
+                        "command": "omni_sharp_build_project",
+                        "args":{"buildtype":"rebuild"}
+                    },
+                    {
+                        "caption": "Clean",
+                        "command": "omni_sharp_build_project",
+                        "args":{"buildtype":"clean"}
+                    },
+                ]
             },
             {
-                "caption": "Run Fixture Tests",
-                "id": "omnisharp-run-fixture-tests",
-                "command": "omni_sharp_run_unit_tests",
-                "args":{"testtype":"fixture"}
-            },
-            {
-                "caption": "Run Single Test",
-                "id": "omnisharp-run-single-tests",
-                "command": "omni_sharp_run_unit_tests",
-                "args":{"testtype":"single"}
+                "caption": "Unit Tests",
+                "children":[
+                    {
+                        "caption": "Run All Tests",
+                        "id": "omnisharp-run-tests",
+                        "command": "omni_sharp_run_unit_tests",
+                    },
+                    {
+                        "caption": "Run Fixture Tests",
+                        "id": "omnisharp-run-fixture-tests",
+                        "command": "omni_sharp_run_unit_tests",
+                        "args":{"testtype":"fixture"}
+                    },
+                    {
+                        "caption": "Run Single Test",
+                        "id": "omnisharp-run-single-tests",
+                        "command": "omni_sharp_run_unit_tests",
+                        "args":{"testtype":"single"}
+                    },
+
+                ]
             }
         ]
     }
