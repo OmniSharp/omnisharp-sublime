@@ -24,6 +24,7 @@
  18. Type Lookup with Documentation 
  19. Hide/Show Info Panel
  20. Run Unit Tests
+ 21. Build/ReBuild/Clean Solution
 
 #Requirements
  * Mono Development Kit(for [OmniSharpServer](https://github.com/nosami/OmniSharpServer))
