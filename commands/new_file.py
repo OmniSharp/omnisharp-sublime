@@ -34,7 +34,7 @@ class OmniSharpNewFile(sublime_plugin.TextCommand):
         indexpos = self.incomingpath.index(root)
 
         namespace = self.incomingpath[indexpos:]
-        namespace = namespace.replace("/",".")
+        namespace = namespace.replace(os.path.sep,".")
 
         filename =  os.path.basename(filename)
         filename = os.path.splitext(filename)[0]
