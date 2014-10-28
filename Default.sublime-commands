@@ -74,5 +74,9 @@
         "caption": "OmniSharpSublime: Run Single Test",
         "command": "omni_sharp_run_unit_tests",
         "args":{"testtype":"single"}
-    }
+    },
+    {
+        "caption": "OmniSharpSublime: Build",
+        "command": "omni_sharp_build_project",
+    },
 ]

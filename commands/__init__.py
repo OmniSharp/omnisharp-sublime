@@ -16,7 +16,7 @@ from .type_lookup import OmniSharpTypeLookup
 from .hide_panel import OmniSharpHidePanel
 from .show_panel import OmniSharpShowPanel
 from .run_unit_tests import OmniSharpRunUnitTests
-
+from .build_project import OmniSharpBuildProject
 __all__ = [
     'OmniSharpGoToDefinition',
     'OmniSharpRename',
@@ -35,5 +35,6 @@ __all__ = [
     'OmniSharpTypeLookup',
     'OmniSharpHidePanel',
     'OmniSharpShowPanel',
-     'OmniSharpRunUnitTests'
+    'OmniSharpRunUnitTests',
+    'OmniSharpBuildProject'
 ]

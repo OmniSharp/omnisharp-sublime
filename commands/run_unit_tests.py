@@ -8,7 +8,7 @@ from ..lib import omnisharp
 class OmniSharpRunUnitTests(sublime_plugin.TextCommand):
     
     def run(self, edit, testtype='all'):
-        print(testtype)
+        sublime.active_window().run_command("save_all")
         params = {}
         params["type"] = testtype
         omnisharp.get_response(self.view, '/gettestcontext', self._handle_rununittests, params)
@@ -17,5 +17,14 @@ class OmniSharpRunUnitTests(sublime_plugin.TextCommand):
         return helpers.is_csharp(sublime.active_window().active_view())
 
     def _handle_rununittests(self, data):
-        testcommand = data["TestCommand"]
-        sublime.active_window().run_command('exec',{"cmd":[testcommand], "shell":"true"})
+        self.testcommand = data["TestCommand"]
+
+        params = {}
+        params["type"] = "build"
+        omnisharp.get_response(self.view, '/buildtarget', self._handle_build, params)    
+    
+    def _handle_build(self, data):
+        self.buildcommand = data["Command"]
+        build = {"cmd":self.buildcommand + " && " + self.testcommand,"shell":"true"}
+        sublime.active_window().run_command('exec',build)
+
