@@ -1,0 +1,5 @@
+Features Added:
+
+1. You can build your project by right clicking in a csharp file and selecting Build, Rebuild or Clean.  If you previously had a custom C# build system setup you can continue to use this but no longer need it.
+2. All documents are saved when you run unit tests and/or build your solution
+3. A build is kicked off when you run unit tests.
