@@ -1,5 +1,6 @@
 from .go_to_definition import OmniSharpGoToDefinition
 from .rename import OmniSharpRename
+from .rename import OmniSharpReplaceFile
 from .find_usages import OmniSharpFindUsages
 from .go_to_implementation import OmniSharpGoToImplementation
 from .format_document import OmniSharpFormatDocument
@@ -20,6 +21,7 @@ from .build_project import OmniSharpBuildProject
 __all__ = [
     'OmniSharpGoToDefinition',
     'OmniSharpRename',
+    'OmniSharpReplaceFile',
     'OmniSharpFindUsages',
     'OmniSharpGoToImplementation',
     'OmniSharpFormatDocument',

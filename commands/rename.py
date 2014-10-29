@@ -38,12 +38,23 @@ class OmniSharpRename(sublime_plugin.TextCommand):
                 '{}:0:0'.format(filename),
                 sublime.ENCODED_POSITION
             )
-            while view.is_loading():
-                time.sleep(0.01)
-
-            region = sublime.Region(0, view.size())
-            view.replace(edit, region, text)
+            sublime.active_window().run_command("omni_sharp_replace_file",{"args":{'text':item['Buffer'],'filename':filename}})
+            
         self.data = None
 
     def is_enabled(self):
         return helpers.is_csharp(self.view)
+
+class OmniSharpReplaceFile(sublime_plugin.TextCommand):
+
+    def run(self,edit,args):
+        foundview = sublime.active_window().find_open_file(args['filename'])
+        if not foundview.is_loading():
+            region = sublime.Region(0, foundview.size())
+            foundview.replace(edit,region,args['text'])
+        else:
+            sublime.set_timeout(lambda: self._try_again(args['text'],args['filename']), 10)
+
+    def _try_again(self, text, filename):
+        sublime.active_window().run_command("omni_sharp_replace_file",{"args":{'text':text,'filename':filename}})
+ 
