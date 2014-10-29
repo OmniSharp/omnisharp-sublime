@@ -55,7 +55,7 @@ def find_omni_exe_paths():
 
     source_dir_path = os.path.dirname(source_file_path)
     plugin_dir_path = os.path.dirname(source_dir_path)
-    print plugin_dir_path
+    print(plugin_dir_path)
 
     omni_exe_candidate_rel_paths = [
         'OmniSharpServer/OmniSharp/bin/Debug/OmniSharp.exe',
