@@ -139,10 +139,6 @@ For the plugin to be able to run unit tests you need to configure the test runne
    },
    ```
 
-# TODO
-* class rename bug fix
-* field rename bug fix
-
 # Sometime
 * Show Documentations
 * Find type / symbols
