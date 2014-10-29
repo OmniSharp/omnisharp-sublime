@@ -32,5 +32,5 @@ class OmniSharpBuildProject(sublime_plugin.TextCommand):
     
     def _handle_build(self, data):
         self.buildcommand = data["Command"]
-        build = {"cmd":self.buildcommand,"shell":"true","file_regex": "^([\\d\\w:/\\.-]*)\\((\\d+),(\\d+)\\)\\s*(.*)$"}
+        build = {"cmd":self.buildcommand,"shell":"true","file_regex": "^(.*)\((\d+)\,(\d+)\):"}
         sublime.active_window().run_command('exec',build)
