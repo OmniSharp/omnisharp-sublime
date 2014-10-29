@@ -1,5 +1,5 @@
 [
-    {"command": "omni_sharp_go_to_definition", "keys": ["ctrl+alt+g"]},
+    {"command": "omni_sharp_go_to_definition", "keys": ["f12"]},
     {"command": "omni_sharp_rename", "keys": ["ctrl+alt+r"]},
     {"command": "omni_sharp_find_usages", "keys": ["shift+f12"]},
     { "keys": ["ctrl+k", "ctrl+d"], "command": "omni_sharp_format_document" },
