@@ -1,0 +1,6 @@
+Fixes:
+
+Removed CR markers in info panel when syntax checking
+Added cross platform regex so pressing F4 & Shift+F4 on build output will take user to file with error in it. Thanks to @nosami
+Made F12 shortcut key for Go to Definition
+Fixed issue with renaming classes
