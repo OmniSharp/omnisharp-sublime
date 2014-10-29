@@ -1,7 +1,11 @@
 # OmniSharpSublime for ST3
  OmnisharpSublime is a plugin for ST3 to provide a C# development environment. It communicates with OmniSharpServer by nosami for IDE functions.
 
- It works on Mac OSX, Linux & Windows.
+ It works on: 
+   1. Mac OSX
+   2. Linux
+   3. Windows (needs Python installed)
+ 
 
 # Features
  1. Auto OmniSharpServer running
