@@ -48,17 +48,11 @@ class OmniSharpRename(sublime_plugin.TextCommand):
 class OmniSharpReplaceFile(sublime_plugin.TextCommand):
 
     def run(self,edit,args):
-        # print(args['text'])
-        print(args['filename'])
         foundview = sublime.active_window().find_open_file(args['filename'])
-        print(foundview.substr(sublime.Region(0, foundview.size())))
-        # sublime.active_window().focus_view(foundview)
         if not foundview.is_loading():
-            print('loaded')
             region = sublime.Region(0, foundview.size())
             foundview.replace(edit,region,args['text'])
         else:
-            print('not loaded')
             sublime.set_timeout(lambda: self._try_again(args['text'],args['filename']), 10)
 
     def _try_again(self, text, filename):
