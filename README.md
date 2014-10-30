@@ -59,13 +59,13 @@ Let's assume you already have a solution.
 
     Go to `File -> Open` and select the folder with your solution in it.
     
-    Go to `Project -> Save Project As` and save your .sublime-project in the same location as your *.sln
+    Go to `Project -> Save Project As` and save a YOURPROJECTNAME.sublime-project in the same location as your *.sln
     
-    Open your .sublime-project file that should now appear in the sidebar on the left
+    Open your YOURPROJECTNAME.sublime-project file that should now appear in the sidebar on the left
     
     Enter the location to the *.sln file like below
 
-## Example of sublime-project
+## Example of a sublime-project
 
     {
         "folders":
@@ -78,13 +78,13 @@ Let's assume you already have a solution.
         "solution_file": "./testconsoleprj.sln"
     }
     
- Once the `sublime-project` is set up and saved follow the below:
+ Once the `YOURPROJECT.sublime-project` is set up and saved follow the below:
     
     Close Sublime (YMMV but this seems to be the best way to open the .sublime-project)
     
     Open Sublime
     
-    Click `Project -> Open Project`, and select your .sublime-project file
+    Click `Project -> Open Project`, and select your YOURPROJECT.sublime-project file
 
 
 ## C# language-specific settings
