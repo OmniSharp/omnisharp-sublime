@@ -44,11 +44,11 @@
 
 2. Clone repository.
 
-        git clone https://github.com/moonrabbit/OmniSharpSublime.git
+        git clone https://github.com/OmniSharp/omnisharp-sublime.git OmniSharp
 
 3. Move to plugin directory, update submodule and build.
 
-        cd OmniSharpSublime
+        cd OmniSharp
         git submodule update --init --recursive
         ./build.sh
 
