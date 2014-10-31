@@ -177,7 +177,7 @@ def _available_port():
 
     return port
 
-def _run_omni_sharp_launcher(solution_path, port):
+def _run_omni_sharp_launcher(solution_path, port, config_file):
     source_file_path = os.path.realpath(__file__)
     source_dir_path = os.path.dirname(source_file_path)
     plugin_dir_path = os.path.dirname(source_dir_path)
@@ -191,6 +191,7 @@ def _run_omni_sharp_launcher(solution_path, port):
             '-S', solution_path,
             '-P', str(port),
             '-I', str(os.getpid()),
+            '-config', config_file
         ]
 
         startupinfo = None
@@ -202,6 +203,7 @@ def _run_omni_sharp_launcher(solution_path, port):
             '-S', solution_path,
             '-P', str(port),
             '-I', str(os.getpid()),
+            '-config', config_file
         ]
 
         if IS_NT_CONSOLE_VISIBLE:
@@ -248,6 +250,9 @@ def create_omnisharp_server_subprocess(view):
 
     omni_port = _available_port()
     print('omni_port:%s' % omni_port)
+    
+    
+    config_file = get_settings(view, "omnisharp_server_config_location")
 
     if IS_EXTERNAL_SERVER_ENABLE:
         launcher_proc = None
@@ -256,7 +261,8 @@ def create_omnisharp_server_subprocess(view):
         try:
             launcher_proc = _run_omni_sharp_launcher(
                 solution_path,
-                omni_port)
+                omni_port,
+                config_file)
         except Exception as e:
             print('RAISE_OMNI_SHARP_LAUNCHER_EXCEPTION:%s' % repr(e))
             return
