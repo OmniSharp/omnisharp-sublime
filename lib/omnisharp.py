@@ -178,8 +178,6 @@ def _available_port():
     return port
 
 def _run_omni_sharp_launcher(solution_path, port, config_file):
-    print('config is:')
-    print(config_file)
     source_file_path = os.path.realpath(__file__)
     source_dir_path = os.path.dirname(source_file_path)
     plugin_dir_path = os.path.dirname(source_dir_path)
@@ -268,7 +266,7 @@ def create_omnisharp_server_subprocess(view):
         except Exception as e:
             print('RAISE_OMNI_SHARP_LAUNCHER_EXCEPTION:%s' % repr(e))
             return
-    print('ok')
+
     launcher_procs[solution_path] = launcher_proc
     server_ports[solution_path] = omni_port
 
