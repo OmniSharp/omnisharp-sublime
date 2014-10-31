@@ -117,10 +117,13 @@ This is to do with the settings for `OmniSharpServer`.
    Click Preferences - Browse Packages
    Go to `OmniSharp/PrebuiltOmniSharpServer/` sub directory 
    Open config.json and modify the `eolMarker` setting to `\n` like below
-   *OR*
+   ```
+**OR**
+```
    Open your safely tucked away config.json file and modify the `eolMarker` setting to `\n` like below
    ```
-   
+
+
 ```
   "TextEditorOptions": {
     "tabsToSpaces": true,
@@ -142,9 +145,13 @@ For the plugin to be able to run unit tests you need to configure the test runne
    Click Preferences - Browse Packages
    Go to `OmniSharp/PrebuiltOmniSharpServer/` sub directory 
    Open config.json and modify the `TestCommands` like below
-   *OR*
+   ```
+**OR**
+  ```
    Open your safely tucked away config.json file and modify the `TestCommands` like below
-   
+ ```
+ 
+ ```
    "TestCommands": {
     "All": "nunit-console.exe -nologo {{AssemblyPath}}",
     "Fixture": "nunit-console.exe -nologo {{AssemblyPath}} -run={{TypeName}}",
