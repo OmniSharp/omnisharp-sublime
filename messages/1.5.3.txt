@@ -1,0 +1,3 @@
+Enhancements:
+
+Added plugin setting for user to define where the location of config.json is for OmniSharpServer to prevent it being overwritten on Package Updates
