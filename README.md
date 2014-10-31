@@ -87,7 +87,7 @@ Let's assume you already have a solution.
     Click `Project -> Open Project`, and select your YOURPROJECT.sublime-project file
 
 
-## C# language-specific settings
+# C# language-specific settings
  Create C# settings file as shown in this picture
  
  ![Imgur](http://i.imgur.com/KjcPSFq.png)
@@ -101,6 +101,11 @@ Let's assume you already have a solution.
     "auto_complete_triggers": [ {"selector": "source.cs", "characters": ".<"} ],
  }
  ```
+
+#OmniSharpServer Settings
+The Sublime plugin communicates to OmniSharp Server which has various availiable settings stored in a `config.json` file. By default the location of this file is in a folder under the Sublime OmniSharp packages folder called `PrebuiltOmniSharpServer` and there is also a user specific plugin setting that specifies the location of this `config.json` file.  To prevent your settings being overridden on new releases of the Sublime package, we recommend you store your `config.json` file somewhere other than the default location.  Once you have taken a copy of `config.json` and put it somewhere safe you will need to update the Sublime plugin's user setting called `"omnisharp_server_config_location"`. 
+
+ 
 #Format Document Settings
 
 When you press `Ctrl + K + D` to format the document you may see `CR` markers.  
