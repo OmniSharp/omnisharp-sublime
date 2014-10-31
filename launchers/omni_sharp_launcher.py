@@ -73,13 +73,14 @@ def find_omni_exe_paths():
         if os.access(omni_exe_path, os.R_OK)]
 
 
-def start_omni_sharp_server(mono_exe_path, omni_exe_path, solution_path, port):
+def start_omni_sharp_server(mono_exe_path, omni_exe_path, solution_path, port, config_file):
     if os.name == 'posix':
         args = [
             mono_exe_path, 
             omni_exe_path, 
             '-s', solution_path,
             '-p', str(port),
+            '-config', config_file
         ]
 
         startupinfo = None
@@ -88,6 +89,7 @@ def start_omni_sharp_server(mono_exe_path, omni_exe_path, solution_path, port):
             omni_exe_path, 
             '-s', solution_path,
             '-p', str(port),
+            '-config', config_file
         ]
 
         if IS_NT_CONSOLE_VISIBLE:
@@ -105,6 +107,7 @@ def main():
     arg_parser.add_argument('-P', '--omni-port', type=int, default=2000, help='OmniSharpServer Port')
     arg_parser.add_argument('-I', '--sublime-pid', type=int, help='Sublime Text Process ID')
     arg_parser.add_argument('-S', '--solution-path', type=str, help='Solution File Path')
+    arg_parser.add_argument('-config', '--config-file', type=str, help='Config File Path')
 
     args = arg_parser.parse_args() 
     if not args.sublime_pid:
@@ -137,7 +140,8 @@ def main():
             mono_exe_path,
             omni_exe_path,
             args.solution_path,
-            args.omni_port)
+            args.omni_port,
+            args.config_file)
     except Exception as e:
         sys.stderr.write('NOT_STARTED_OMNI_SHARP_SERVER:%s\n' % repr(e)) 
         return -2001
