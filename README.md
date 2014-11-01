@@ -93,7 +93,8 @@ Let's assume you already have a solution.
  ![Imgur](http://i.imgur.com/KjcPSFq.png)
  
  
- Paste the below in. This will launch intellisense on . and < symbols
+ Paste the below in. This will launch intellisense on . and < symbols p
+
  ```
  {
     "auto_complete": true,
