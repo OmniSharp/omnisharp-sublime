@@ -161,6 +161,5 @@ For the plugin to be able to run unit tests you need to configure the test runne
    ```
 
 # Sometime
-* Show Documentations
 * Find type / symbols
 * advanced syntax highlight
