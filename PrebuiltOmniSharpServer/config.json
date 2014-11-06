@@ -3,6 +3,28 @@
 
   ],
 
+  /* Example cygwin path replacements
+
+  "PathReplacements":[
+    {
+      "From":"/cygdrive/c/",
+      "To":"c:\\"
+    },
+    {
+      "From":"/",
+      "To":"\\"
+    }
+  ],*/
+
+  /* Native Emacs on Windows path replacements
+     
+  "PathReplacements": [
+      {
+          "From":"/",
+          "To":"\\"
+      }
+  ],*/
+
   "IgnoredCodeIssues": [
     "^Keyword 'private' is redundant. This is the default modifier.$",
     ".* should not separate words with an underscore.*"
@@ -20,7 +42,7 @@
     "indentSize": 4,
     "continuationIndent": 4,
     "labelIndent": 0,
-    "eolMarker": "\r\n",
+    /* "eolMarker": "\r\n", */
     "indentBlankLines": false,
     "wrapLineLength": 80
   },
