@@ -69,8 +69,6 @@ class OmniSharpCompletionEventListener(sublime_plugin.EventListener):
         display += '\t'
         display += json['ReturnType'] if json['ReturnType'] is not None and len(json['ReturnType']) > 0 else json['DisplayText']
 
-
-        completionText = json['Snippet'] if json['Snippet'] is not None and len(json['Snippet']) > 0 else "${1:"+json['DisplayText']+"}$0"
-        print(completionText)
+        completionText = json['Snippet'] if json['Snippet'] is not None and len(json['Snippet']) > 0 else json['DisplayText']
 
         return (display, completionText)
