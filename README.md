@@ -80,7 +80,7 @@ Let's assume you already have a solution.
     
  Once the `YOURPROJECT.sublime-project` is set up and saved follow the below:
     
-    Close Sublime (YMMV but this seems to be the best way to open the .sublime-project)
+    Close Sublime (YMMV but this seems to be the best way to open the YOURPROJECTNAME.sublime-project)
     
     Open Sublime
     
