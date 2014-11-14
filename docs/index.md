@@ -36,7 +36,7 @@ It works on:
 
 #Installation
 
- * Using the Sublime Package Manager install the package called `OmniSharp`
+ * Using [Package Control](https://packagecontrol.io), install the package `OmniSharp`
 
 # Building From Source
 1. Move to ST3 plugin directory in console.
