@@ -30,6 +30,7 @@ It works on:
  19. Hide/Show Info Panel
  20. Run Unit Tests
  21. Build/ReBuild/Clean Solution
+ 22. Reload Solution
 
 #Requirements
  * Mono Development Kit(for [OmniSharpServer](https://github.com/nosami/OmniSharpServer))
