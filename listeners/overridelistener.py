@@ -21,6 +21,5 @@ class OmniSharpOverrideListener(sublime_plugin.EventListener):
             keyword = view.substr(reg).strip();
             if keyword == 'override':
                 view.run_command('omni_sharp_override_targets')
-        
-        print('override changed')
+
 
