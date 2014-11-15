@@ -65,6 +65,10 @@
                 "command": "omni_sharp_type_lookup",
             },
             {
+                "caption": "Reload Solution",
+                "command": "omni_sharp_reload_solution",
+            },
+            {
                 "caption": "Show Info Panel",
                 "command": "omni_sharp_show_panel",
             },

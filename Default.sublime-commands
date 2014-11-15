@@ -89,4 +89,8 @@
         "command": "omni_sharp_build_project",
         "args":{"buildtype":"clean"}
     },
+    {
+        "caption": "OmniSharpSublime: Reload Solution",
+        "command": "omni_sharp_reload_solution",
+    },
 ]

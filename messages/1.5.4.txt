@@ -1,0 +1,12 @@
+***NOTE*** : If you're on Windows, we are aware of an issue that when upgrading Omnisharp.exe the user is required to close Sublime. You need to ensure Omnisharp.exe is not running and then you can safely open Sublime again. This is because the program is in use and Windows cannot copy over a new version whilst in use.  If anyone would like to help us improve this experience please get in touch!
+
+
+Enhancements:
+
+* Ability to Reload Solution if external changes have been made such as adding new files
+* Snippet based Intellisense eg/ var myDictionary = new Dictionary<TKey, TValue>()
+* Improved README and added documentation via http://omnisharp-sublime.readthedocs.org/en/latest/
+
+Bug Fixes:
+
+* Removed unnecessary logging
