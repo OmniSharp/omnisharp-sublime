@@ -64,7 +64,6 @@ class OmniSharpCompletionEventListener(sublime_plugin.EventListener):
         })
 
     def to_completion(self, json):
-        print(json)
         display = json['MethodHeader'] if json['MethodHeader'] is not None and len(json['MethodHeader']) > 0 else json['CompletionText']
         display += '\t'
         display += json['ReturnType'] if json['ReturnType'] is not None and len(json['ReturnType']) > 0 else json['DisplayText']
