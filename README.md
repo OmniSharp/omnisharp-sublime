@@ -4,7 +4,7 @@
  It works on: 
    1. Mac OSX
    2. Linux
-   3. Windows (**NOTE :** needs Python installed)
+   3. Windows (**NOTE : needs Python installed AND in your PATH**)
  
 
 # Features
