@@ -8,7 +8,7 @@ from ..lib import omnisharp
 
 class OmniSharpNewFile(sublime_plugin.TextCommand):
     
-    PACKAGE_NAME = 'omnisharp'
+    PACKAGE_NAME = 'OmniSharp'
     TMLP_DIR = 'templates'
 
     def run(self, edit, tmpltype='class', paths=[]):
