@@ -2,4 +2,9 @@ Welcome to OmniSharpSublime!
 
 You can now edit C#, build your projects, run your tests, get intellisense, refactor like a pro, be shown syntax errors and lots more!
 
-For more information see the README and Wiki here https://github.com/OmniSharp/omnisharp-sublime
+For more information see the README and Wiki here: https://github.com/OmniSharp/omnisharp-sublime
+
+Important! 
+If you are running on Windows, make sure Python is installed and added to your PATH. 
+You can get it here: https://www.python.org/downloads/. After installing, execute the following command to add Python to the PATH:
+set PATH=%PATH%;c:\Python27 (or a different location, depending on where you installed Python)
