@@ -35,7 +35,9 @@ class WorkerThread(threading.Thread):
         while True:
             url, data, timeout, callback = self._worker_queue.get()
             try:
-                response = urllib.request.urlopen(url, data, timeout)
+                proxy = urllib.request.ProxyHandler({})
+                opener = urllib.request.build_opener(proxy)
+                response = opener.open(url, data, timeout)
                 callback(response.read())
             except:
                 traceback.print_exc(file=sys.stdout)
@@ -97,12 +99,12 @@ def get_response(view, endpoint, callback, params=None, timeout=None):
             print('CALLBACK_ERROR')
             callback(None)
 
-            if solution_path in launcher_procs:
-                print('TERMINATE_OMNI_SHARP')
-                launcher_procs[solution_path].terminate();
+            # if solution_path in launcher_procs:
+            #     print('TERMINATE_OMNI_SHARP')
+            #     launcher_procs[solution_path].terminate();
 
-                del launcher_procs[solution_path]
-                del server_ports[solution_path]
+            #     del launcher_procs[solution_path]
+            #     del server_ports[solution_path]
 
         else:
             jsonStr = data.decode('utf-8')
