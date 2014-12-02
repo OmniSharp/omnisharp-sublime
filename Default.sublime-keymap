@@ -11,4 +11,5 @@
     {"command": "omni_sharp_type_lookup", "keys": ["alt+`"]},
     {"command": "omni_sharp_run_unit_tests", "keys":["ctrl+shift+r"]},
     {"command": "omni_sharp_build_project", "keys":["super+alt+b"]},
+    {"command": "omni_sharp_navigate_to", "keys":["ctrl+,"]},
 ]

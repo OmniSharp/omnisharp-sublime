@@ -19,6 +19,8 @@ from .show_panel import OmniSharpShowPanel
 from .run_unit_tests import OmniSharpRunUnitTests
 from .build_project import OmniSharpBuildProject
 from .reload_solution import OmniSharpReloadSolution
+from .navigate_to import OmniSharpNavigateTo
+
 __all__ = [
     'OmniSharpGoToDefinition',
     'OmniSharpRename',
@@ -40,5 +42,6 @@ __all__ = [
     'OmniSharpShowPanel',
     'OmniSharpRunUnitTests',
     'OmniSharpBuildProject',
-    'OmniSharpReloadSolution'
+    'OmniSharpReloadSolution',
+    'OmniSharpNavigateTo'
 ]

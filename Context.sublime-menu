@@ -69,6 +69,10 @@
                 "command": "omni_sharp_reload_solution",
             },
             {
+                "caption": "Navigate To",
+                "command": "omni_sharp_navigate_to",
+            },
+            {
                 "caption": "Show Info Panel",
                 "command": "omni_sharp_show_panel",
             },
