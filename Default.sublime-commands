@@ -93,4 +93,8 @@
         "caption": "OmniSharpSublime: Reload Solution",
         "command": "omni_sharp_reload_solution",
     },
+    {
+        "caption": "OmniSharpSublime: Navigate To",
+        "command": "omni_sharp_navigate_to",
+    }
 ]
