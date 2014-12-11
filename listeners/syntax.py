@@ -22,8 +22,8 @@ class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
         self.outputpanel.run_command('erase_view')
 
         self.view.erase_regions("oops")
-
-        omnisharp.get_response(view, '/codecheck', self._handle_codeerrors)
+        if bool(helpers.get_settings(view, 'omnisharp_onsave_codecheck')):
+            omnisharp.get_response(view, '/codecheck', self._handle_codeerrors)
 
         print('file changed')
 

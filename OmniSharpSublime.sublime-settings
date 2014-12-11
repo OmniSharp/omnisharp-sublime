@@ -1,5 +1,6 @@
 {
     "omnisharp_response_timeout": 100,
     "omnisharp_auto_start": true,
-    "omnisharp_server_config_location":""
+    "omnisharp_server_config_location":"",
+    "omnisharp_onsave_codecheck": true
 }
