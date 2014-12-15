@@ -1,6 +1,6 @@
 import sublime
 import os
-
+import fnmatch
 
 def is_csharp(view):
     try:
@@ -54,3 +54,49 @@ def current_solution_or_folder(view):
     solution_file_path = os.path.abspath(solution_file_path)
 
     return solution_file_path
+
+def current_solution_or_project_json_folder(view):
+    project_file = project_file_name(view)
+    if project_file is not None:
+        print('project file found')
+        project_dir = os.path.dirname(project_file)
+
+        data = project_data(view)
+        if 'solution_file' not in data:
+            raise ValueError('Please specify a path to the solution file in your sublime-project file or delete it')
+        else:
+            solution_file_name = data['solution_file']
+            solution_file_path = os.path.join(project_dir, solution_file_name)
+            solution_file_path = os.path.abspath(solution_file_path)
+            return solution_file_path
+    else:
+        parentpath = sublime.active_window().folders()[0] #assume parent folder is opened that contains all project folders eg/Web,ClassLib,Tests
+
+        for root, dirnames, filenames in os.walk(parentpath):
+          if 'bin' not in root or 'obj' not in root:
+            for filename in filenames:
+                if filename.endswith(('.sln', 'project.json')):
+                    if filename.endswith('.sln'):
+                        print ("disocvery solution is : " + os.path.join(root, filename))
+                        return os.path.join(root, filename)
+                    else:
+                        print("vnext root is : " + root)
+                        return root
+
+def current_solution_or_vnext_folder(view):
+    project_file = project_file_name(view)
+    
+    if project_file is not None:
+        project_dir = os.path.dirname(project_file)
+        return project_dir
+    else:
+        parentpath = sublime.active_window().folders()[0] #assume parent folder is opened that contains all project folders eg/Web,ClassLib,Tests
+
+        for root, dirnames, filenames in os.walk(parentpath):
+          if 'bin' not in root or 'obj' not in root:
+            for filename in filenames:
+                if filename.endswith(('.sln', 'project.json')):
+                    if filename.endswith('.sln'):
+                        print("root is : " + root)
+                        return root
+
