@@ -15,6 +15,7 @@ import signal
 from .helpers import get_settings
 from .helpers import current_solution_or_folder
 from .helpers import current_project_folder
+from .helpers import current_solution_or_project_json_folder
 
 from queue import Queue
 
@@ -60,7 +61,7 @@ def urlopen_async(url, callback, data, timeout):
     WorkerThread.add_work(url, data, timeout, callback)
 
 def get_response(view, endpoint, callback, params=None, timeout=None):
-    solution_path =  current_solution_or_folder(view)
+    solution_path =  current_solution_or_project_json_folder(view)#current_solution_or_folder(view)
 
     print('response:', solution_path)
     if solution_path is None or solution_path not in server_ports:
@@ -122,7 +123,7 @@ def get_response(view, endpoint, callback, params=None, timeout=None):
 
 
 def get_response_from_empty_httppost(view, endpoint, callback, timeout=None):
-    solution_path =  current_solution_or_folder(view)
+    solution_path =  current_solution_or_project_json_folder(view)#current_solution_or_folder(view)
 
     print(solution_path)
     print(server_ports)
@@ -243,7 +244,7 @@ def _communicate_omni_sharp_launcher(launcher_proc, solution_path):
 
 
 def create_omnisharp_server_subprocess(view):
-    solution_path = current_solution_or_folder(view)
+    solution_path = current_solution_or_project_json_folder(view) #current_solution_or_folder(view)
     if solution_path in launcher_procs:
         print("already_bound_solution:%s" % solution_path)
         return

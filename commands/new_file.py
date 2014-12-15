@@ -12,6 +12,7 @@ class OmniSharpNewFile(sublime_plugin.TextCommand):
     TMLP_DIR = 'templates'
 
     def run(self, edit, tmpltype='class', paths=[]):
+        print(paths)
         if (len(paths) == 0):
             if sublime.active_window().active_view().file_name() is not None:
                 paths = [sublime.active_window().active_view().file_name()]
@@ -29,8 +30,9 @@ class OmniSharpNewFile(sublime_plugin.TextCommand):
     def _on_done(self,filename):
         originalfilename = filename
 
-        root = self.solution_folder(self.incomingpath)
-
+        root = helpers.current_solution_or_vnext_folder(self.view)#self.solution_folder(self.incomingpath)
+        root = os.path.basename(root)
+        
         indexpos = self.incomingpath.index(root)
 
         namespace = self.incomingpath[indexpos:]
