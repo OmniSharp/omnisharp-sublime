@@ -55,9 +55,7 @@ It works on:
         ./build.sh
 
 # Project Setting
-To run server automatically, you have to specify a solution file in a sublime-project. For ASP.Net vNext applications you do not need to specify the solution file but you need the sublime-project file.
-
-Let's assume you already have a solution.
+The server will automatically find the the solution file from the folder you have opened in Sublime.  For ASP.Net vNext applications it will find the project.json file.  If you have multiple solutions you have to specify the solution file you wish to use in a sublime-project. 
 
     Go to `File -> Open` and select the folder with your solution in it.
     
