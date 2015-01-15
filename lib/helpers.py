@@ -77,7 +77,7 @@ def current_solution_or_project_json_folder(view):
             for filename in filenames:
                 if filename.endswith(('.sln', 'project.json')):
                     if filename.endswith('.sln'):
-                        print ("disocvery solution is : " + os.path.join(root, filename))
+                        print ("discovery solution is : " + os.path.join(root, filename))
                         return os.path.join(root, filename)
                     else:
                         print("vnext root is : " + root)
