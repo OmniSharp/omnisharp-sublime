@@ -1,0 +1,183 @@
+{
+  "sources": [
+    "src"
+  ],
+  "sdk": {
+    "version": "1.0.0-beta2"
+  },
+  "dependencies": {
+    "Kestrel": {
+      "version": "1.0.0-beta2",
+      "sha": "0m5OzK6rrK/kgHS2teeykE9gsMMgSZeT6DLHm2DEfSA4uGJKQmKdXSBPQtY/tbvoXRYhGioEtGhihYyMc83OGg=="
+    },
+    "Microsoft.AspNet.Mvc": {
+      "version": "6.0.0-beta2",
+      "sha": "19wDxjGeJJ86mFYTa3JO9ATagImTyV9XuogwdQVxps19ojpbmjxoSkOyP6og6bTB9MRGNg5zTc53B+sv1ILgJw=="
+    },
+    "Microsoft.AspNet.Diagnostics": {
+      "version": "1.0.0-beta2",
+      "sha": "QSY7ZtwJVi7JTl6pdbiMMcnNmYs4+n9Fptuboc4liiy7lPectRjUWMpCRINd6pG7e9mesyUpGgQgfxVlUxcDfw=="
+    },
+    "Microsoft.CodeAnalysis.CSharp": {
+      "version": "1.0.0.0-beta2",
+      "sha": "h6ZAonCRYCeqh9fZzwN9MdZ9Pi2bQESoJQuuWhe6kUkf2rESh/dSrX++dqa6nl1IouHzSgX8s+VMniM6jS5Rcg=="
+    },
+    "Microsoft.CodeAnalysis.CSharp.Workspaces": {
+      "version": "1.0.0.0-beta2",
+      "sha": "zUlOyjwWmmKV42THq5b/zT3azOZLYm7HS+h5u0/bYTWWsY/BtAYR9pewMlwPJTj7joG226i+HKXCYHtK6R/fCg=="
+    },
+    "Microsoft.CodeAnalysis.VisualBasic.Workspaces": {
+      "version": "1.0.0.0-beta2",
+      "sha": "Z3CUVubd/M5/HzoVXTK/QwkPED+4rtnsRTotCYERqLU1zFpG0tEsf6qpJwJHwn5mL5VwwrULginvMH1obsX2EA=="
+    },
+    "Microsoft.Framework.Logging.Console": {
+      "version": "1.0.0-beta2",
+      "sha": "+CxzBTABnzck3qL+blJSMoDtrwKRNBCp3IAkp1ZkD9oR36sKqw6knVAZS7fr/5LpWeYu0YxsNr3BpuFMA4iaXg=="
+    },
+    "Microsoft.Framework.ConfigurationModel.Json": {
+      "version": "1.0.0-beta2",
+      "sha": "vk9no0UoHk9Cv+IwJt4Q99YVh+wAqrBU/dYHV5eWVKi/qhXjF24b0t0RPJVk8va3ELcsjFnmGArMyZpFTbNDMw=="
+    },
+    "Microsoft.Framework.Cache.Memory": {
+      "version": "1.0.0-beta1",
+      "sha": "k56hDpfQ2TXtQ1EAY2nLcmcDSN1bUpFdUJ7ahVuHRW5v35fipvjKeFonaehY4rCUcw/7MWMbEbZojEceFNThOQ=="
+    },
+    "Microsoft.Composition": {
+      "version": "1.0.27",
+      "sha": "pwu80Ohe7SBzZ6i69LVdzowp6V+LaVRzd5F7A6QlD42vQkX0oT7KXKWWPlM/S00w1gnMQMRnEdbtOV12z6rXdQ=="
+    },
+    "Microsoft.AspNet.Hosting": {
+      "version": "1.0.0-beta2",
+      "sha": "ysGjfqKy0L2wrwUqEDDVsrzzQTjp9t03QgVUQE2PqPoeSfJpC+2Ycb6L/LpaDapxI8771iiDqIWZCQSC7Kd+sw=="
+    },
+    "Microsoft.AspNet.Server.Kestrel": {
+      "version": "1.0.0-beta2",
+      "sha": "E7b04TpZ5pRUqkocWwLFMh4N1VlVltD1m2vPFSG0DiMREde1wwma6OGoHHIk+jkDvtyWs1zGX0597cpgYeGhNQ=="
+    },
+    "Microsoft.AspNet.Mvc.Razor": {
+      "version": "6.0.0-beta2",
+      "sha": "rS43vUNAlmnNcG+rBud1vR2xN3b/IrWxObw8X7aRSdHgbxansJNzypjrUk/bDUvfzrZBXJbh8YkdIk8Fawjm+Q=="
+    },
+    "Microsoft.AspNet.PipelineCore": {
+      "version": "1.0.0-beta2",
+      "sha": "3FnM+NY3x1dzuWx8p0hSK1qDYaP3wLBCDFhblTkOwx+v8IGpHJtqksGXivgxIsmWaHOf0joWT2A0F+E6mgr8rg=="
+    },
+    "Microsoft.AspNet.RequestContainer": {
+      "version": "1.0.0-beta2",
+      "sha": "4UfstaI92YOBTQAOT09QKutOhmeoy5bAy5B3yIN3OCQiBSzaUMr0j6f5mon36+Nul3/lGljGoAJ693GEX2o1Ew=="
+    },
+    "Microsoft.CodeAnalysis.Common": {
+      "version": "1.0.0.0-beta2",
+      "sha": "JGx2+iwrOLZsWseUSbGuEMF9TVhuiiW/L541J+CeWZywLqhwy/mfuR96v0AsbPGEpzZjyegK52/OA4ob2fTwDg=="
+    },
+    "Microsoft.CodeAnalysis.Workspaces.Common": {
+      "version": "1.0.0.0-beta2",
+      "sha": "eUtO/cX2SHffwdozF/3cw3VcDCYP9lXFnkleO2oYOi8X1pz8qK2V/GVFu1P+IzkG5+0ZG5ZlJsoosMJPoTikhg=="
+    },
+    "Microsoft.CodeAnalysis.VisualBasic": {
+      "version": "1.0.0.0-beta2",
+      "sha": "W5fNJxUejSSQzjHYXhcwR4Jd9a2cvkbebr+AyPsKaUSRb2pM7k6TvsxRX1aY7Xrsprk1xu+YX15176grBoVmRg=="
+    },
+    "Microsoft.Framework.Logging": {
+      "version": "1.0.0-beta2",
+      "sha": "AaPGtRUhURYBXjiyKi+ScOPOa5P5txanjZmu0Yd0qTw1D4pyO/FsOt3BmMncIlZK5NsH04Ccdd+JWtudJ8JG3Q=="
+    },
+    "Microsoft.Framework.Logging.Interfaces": {
+      "version": "1.0.0-beta2",
+      "sha": "h02jwXqKLZjpH4C+dYpiOQcXO+cR9P15yOFiIhraKyy9L9ArGQpEGvUE4WalNvsr2z8Jv8GpMP6LgMYeKrE31A=="
+    },
+    "Newtonsoft.Json": {
+      "version": "6.0.6",
+      "sha": "w26uZNyCG5VeoKiEOJ4+9/o8koSofLKwHl7WLreIcp0U6r57L7WiRXmjp8MTKFw6dYNZ9AE0lw69WYbIhUsU9Q=="
+    },
+    "Microsoft.Framework.ConfigurationModel": {
+      "version": "1.0.0-beta2",
+      "sha": "L14wb0KS26DaRGPFb93l0Ju0vTOaUZKYX9Oz1h0BaB76ob3765qPWG2RqU6WM6QbC6PFQaP2DDBq+ZFkYD5cIg=="
+    },
+    "Microsoft.AspNet.FileSystems": {
+      "version": "1.0.0-beta2",
+      "sha": "snAbn38rys6Krd37EHnWRndEM0HuKP/3SCJNylgIjjS7BzzWGkCr9cFqL/1XKyS0A7wXgkZZn8TDYrzvfV8xDg=="
+    },
+    "Microsoft.Framework.OptionsModel": {
+      "version": "1.0.0-beta2",
+      "sha": "as+exnC0Ac/YONL4qRtJzSszEATbM1QBTT1qlG4up9xu1J52T4uSs9OHi5LliV51OwWQTrcPHZN32fYOw8b30g=="
+    },
+    "Microsoft.AspNet.Mvc.Core": {
+      "version": "6.0.0-beta2",
+      "sha": "X6w8dXR3yd0VW3cOz8JOA7Z3TYjkAXzjIGb3CdFoM8sx1OdrsadFwGpwtSQUHKeC+j5UNxkefxvI4/LDZIXxPQ=="
+    },
+    "Microsoft.AspNet.Mvc.Razor.Host": {
+      "version": "6.0.0-beta2",
+      "sha": "MwUXVH66DOKGG4cGXr3ai+4QrirDlI1nR2vaYzKXcvmTokm/ga9/HPsXQQLegU/sK+L6AVgvkdoeMDNapPbRzQ=="
+    },
+    "Microsoft.AspNet.FeatureModel": {
+      "version": "1.0.0-beta2",
+      "sha": "RlRD8/V2eZ5PgrXNddY8WzljIiOuUGKro+la+g2R5jAVcwYKQoSzebK0zvn+T++xoXkY3s+3vu9+5t0nojSz8g=="
+    },
+    "Microsoft.AspNet.Http": {
+      "version": "1.0.0-beta2",
+      "sha": "91Q6ZvHOZWP30Pia7EqaY86S5hOjux6fnUX+htghmcIOxvm2RHwyv7VCz7WiLXqAlcVGdw3T12d+r/y1GDN3jw=="
+    },
+    "Microsoft.AspNet.HttpFeature": {
+      "version": "1.0.0-beta2",
+      "sha": "H9yrnNu4tTAZRXr2SrEmpZPp2HbpxmLV5kdthbrF/vTxWlTTG5/P0jnO2UZm5wsfnYs96aywZ1/eVXVjzNUxtQ=="
+    },
+    "Microsoft.AspNet.WebUtilities": {
+      "version": "1.0.0-beta2",
+      "sha": "pqXqSYmflciz/zPTh2mdE3f011gY1OBHgO3GuekFsgg6eJ0g+EGv3FgUsIjwfq6a9VXu1vjiML/Vp26gUXCJdA=="
+    },
+    "Microsoft.AspNet.Http.Extensions": {
+      "version": "1.0.0-beta2",
+      "sha": "PDCM1Iyx0Fn7vbmdFZzra9PX406rOOazxUhd4seysWT0Ok1sID/ckekkiQIBz33pmdKY9F8IsSE0x0yoSrJPNA=="
+    },
+    "System.Collections.Immutable": {
+      "version": "1.1.32-beta",
+      "sha": "ckfFUM6keywtdZ+DT7/KWSmQ0YRLHu4OCnKKWbumvO8uDcKtCoxjLKcaWNzguGCSTy2r2Ap9gojazgCwMYw0bQ=="
+    },
+    "System.Reflection.Metadata": {
+      "version": "1.0.17-beta",
+      "sha": "PyXG0gfs9gDDj4Km2PKadmPOMsH7IL+S4zckKMESdgv34f0I063VKi+RgmZ8f4wtgBVQTw8UrYE911lpePFAgA=="
+    },
+    "Microsoft.AspNet.FileSystems.Interfaces": {
+      "version": "1.0.0-beta2",
+      "sha": "+YLIzbVvQ9JVyDybUBapSXvR5rJlo4/MZS0ZK7mC0FjBRroPNqln7XgOUwMw+nPsEMP9bgpaKmkAdS6C9EYJ0A=="
+    },
+    "Microsoft.Framework.DependencyInjection": {
+      "version": "1.0.0-beta2",
+      "sha": "1h7325dki5zEUCuDzTlbCcR62f9FYJbhHQEDtelx/a2i9Nhx171cAMxSxc3eNSes0INNLU2xQTGYJmhu4GoORw=="
+    },
+    "Microsoft.AspNet.Mvc.HeaderValueAbstractions": {
+      "version": "1.0.0-beta2",
+      "sha": "ALyQ0NsRhHYJYhPuYf6Jf1QUCF73+ta6+Wi+VSnt7ESacoaMWlv14AkRq3dY9FQpxl4Xhwcnqc3N4u9SGa/HyQ=="
+    },
+    "Microsoft.AspNet.Mvc.ModelBinding": {
+      "version": "6.0.0-beta2",
+      "sha": "kLjoJjXtpEtcLArSbDw0OrCGPlPyOnXUj06PqAuMVPGW2rn54Wqz+woWf+P5bb3sdhOMiGJ5C+j+6XkJjRHgbg=="
+    },
+    "Microsoft.AspNet.Routing": {
+      "version": "1.0.0-beta2",
+      "sha": "BMpGGO7AqKBPcxxIac4pXNSt+Lh+qf4lableBmdbdNj8ZaE9mTHsbzzSfq6qlmiW1Hwv/cYNFUJnI7jkHDmUrA=="
+    },
+    "Microsoft.AspNet.Security": {
+      "version": "1.0.0-beta2",
+      "sha": "4ewKZIZHeTLj5Yk35oGn28vYu5vf4EBdqk4BlHIJR0do170QSGS0mIQL72QxrA2nMK/+ZEdFFCC3p/cdBvH3ZA=="
+    },
+    "Microsoft.AspNet.Security.DataProtection": {
+      "version": "1.0.0-beta2",
+      "sha": "OZQq6qUr6Q99uhYjmAaD6uo9IIin8dHtvRXuQIyOp8ucyip3z7qdn/LbBgqu3pk1zqjuf5cWrYSzVxDpM0AIOQ=="
+    },
+    "Microsoft.AspNet.Razor.Runtime": {
+      "version": "4.0.0-beta2",
+      "sha": "kWz7YstnK2UCYEs+is2ozRDIy2xRC6lRDVO1DzBXWptYKdEM20AEjHvggw0MJolfuaQ3ZLmc3vVUDKEw8HbDCw=="
+    },
+    "Microsoft.Framework.Runtime.Interfaces": {
+      "version": "1.0.0-beta2",
+      "sha": "BgxwcDCczSX7D1V3cczjKLAnekgIlVcZMG73KPCKrRzGxmoMd1v1t5DI9STNmMk1DqnYgYJHBrG9FQsQ2nB3Og=="
+    },
+    "Microsoft.AspNet.Razor": {
+      "version": "4.0.0-beta2",
+      "sha": "6Zl5+WQ751s8suSOiCIRCb3WRHIndzLxtmw5FwZUxQEHj0taJPOvQdxhdjTnJKbRoK+Zhrcn1+aZhp6Dy3RAbA=="
+    }
+  },
+  "packages": "packages"
+}
