@@ -10,5 +10,5 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 export SET KRE_APPBASE="$DIR/approot/packages/OmniSharp/1.0.0/root"
 
-"$DIR/approot/packages/KRE-Mono.1.0.0-beta2/bin/klr" Microsoft.Framework.ApplicationHost omnisharp "$@"
+/bin/bash "$DIR/approot/packages/KRE-Mono.1.0.0-beta2/bin/klr" Microsoft.Framework.ApplicationHost omnisharp "$@"
 
