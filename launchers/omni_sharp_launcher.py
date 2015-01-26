@@ -31,36 +31,21 @@ def is_pid_alive(pid):
         else:
             return False
 
-def find_mono_exe_paths():
-    mono_dir_candidate_paths = os.environ['PATH'].split(':')
-    mono_dir_candidate_paths += [
-        '/usr/local/bin',
-        '/opt/usr/local/bin',
-        '/opt/usr/bin',
-    ]
-    mono_exe_name = "mono"
-
-    mono_exe_candidate_paths = ['/'.join((mono_dir_path, mono_exe_name))
-            for mono_dir_path in mono_dir_candidate_paths]
-
-    return [mono_exe_candidate_path 
-            for mono_exe_candidate_path in mono_exe_candidate_paths 
-            if os.access(mono_exe_candidate_path, os.R_OK)]
-
 def find_omni_exe_paths():
     if os.name == 'posix':
         source_file_path = os.path.realpath(__file__)
+        script_name = 'omnisharp'
     else:
         source_file_path = os.path.realpath(__file__).replace('\\', '/')
+        script_name = 'omnisharp.cmd'
 
     source_dir_path = os.path.dirname(source_file_path)
     plugin_dir_path = os.path.dirname(source_dir_path)
     print(plugin_dir_path)
 
     omni_exe_candidate_rel_paths = [
-        'OmniSharpServer/OmniSharp/bin/Debug/OmniSharp.exe',
-        'OmniSharpServer/OmniSharp/bin/Release/OmniSharp.exe',
-        'PrebuiltOmniSharpServer/OmniSharp.exe',
+        'omnisharp-roslyn/artifacts/build/omnisharp/' + script_name,
+        'PrebuiltOmniSharpServer/' + script_name,
     ]
 
     omni_exe_candidate_abs_paths = [
@@ -73,10 +58,9 @@ def find_omni_exe_paths():
         if os.access(omni_exe_path, os.R_OK)]
 
 
-def start_omni_sharp_server(mono_exe_path, omni_exe_path, solution_path, port, config_file):
+def start_omni_sharp_server(omni_exe_path, solution_path, port, config_file):
     if os.name == 'posix':
         args = [
-            mono_exe_path, 
             omni_exe_path, 
             '-s', solution_path,
             '-p', str(port),
@@ -118,16 +102,6 @@ def main():
         arg_parser.print_help()
         return -2
 
-    if os.name == 'posix':
-        mono_exe_paths = find_mono_exe_paths()
-        if not mono_exe_paths:
-            sys.stderr.write('NOT_FOUND_MONO_EXE\n')
-            return -1001
-
-        mono_exe_path = mono_exe_paths[0]
-    else:
-        mono_exe_path = None
-        
     omni_exe_paths = find_omni_exe_paths()
     if not omni_exe_paths:
         sys.stderr.write('NOT_FOUND_OMNI_EXE\n')
@@ -137,7 +111,6 @@ def main():
             
     try: 
         omni_proc = start_omni_sharp_server(
-            mono_exe_path,
             omni_exe_path,
             args.solution_path,
             args.omni_port,

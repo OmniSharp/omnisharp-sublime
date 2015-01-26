@@ -38,7 +38,8 @@ class WorkerThread(threading.Thread):
             try:
                 proxy = urllib.request.ProxyHandler({})
                 opener = urllib.request.build_opener(proxy)
-                response = opener.open(url, data, timeout)
+                request = urllib.request.Request(url, data, {'Content-Type': 'application/json'})
+                response = opener.open(request)
                 callback(response.read())
             except:
                 traceback.print_exc(file=sys.stdout)
@@ -88,9 +89,9 @@ def get_response(view, endpoint, callback, params=None, timeout=None):
     httpurl = "http://%s:%s/" % (host, port)
 
     target = urllib.parse.urljoin(httpurl, endpoint)
-    data = urllib.parse.urlencode(parameters).encode('utf-8')
+    data = json.dumps(parameters).encode('utf-8')
     print('request: %s' % target)
-    print('======== request params ======== \n %s' % json.dumps(parameters))
+    print('======== request params ======== \n %s' % data)
 
     def urlopen_callback(data):
         print('======== response ========')
