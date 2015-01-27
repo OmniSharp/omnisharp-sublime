@@ -4,7 +4,6 @@ import threading
 import json
 import urllib
 import urllib.parse
-import urllib.request
 import socket
 import subprocess
 import queue
@@ -16,6 +15,7 @@ from .helpers import get_settings
 from .helpers import current_solution_or_folder
 from .helpers import current_project_folder
 from .helpers import current_solution_or_project_json_folder
+from .urllib3 import PoolManager
 
 from queue import Queue
 
@@ -33,14 +33,12 @@ class WorkerThread(threading.Thread):
     _worker_queue = Queue()
 
     def run(self):
+        http = PoolManager(headers={'Content-Type': 'application/json'})
         while True:
             url, data, timeout, callback = self._worker_queue.get()
             try:
-                proxy = urllib.request.ProxyHandler({})
-                opener = urllib.request.build_opener(proxy)
-                request = urllib.request.Request(url, data, {'Content-Type': 'application/json'})
-                response = opener.open(request)
-                callback(response.read())
+                response = http.urlopen('POST', url, body=data)
+                callback(response.data)
             except:
                 traceback.print_exc(file=sys.stdout)
                 callback(None)
