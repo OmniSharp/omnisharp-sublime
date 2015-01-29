@@ -60,6 +60,8 @@ def find_omni_exe_paths():
 
 def start_omni_sharp_server(omni_exe_path, solution_path, port, config_file):
     if os.name == 'posix':
+        # On *nix systems use a shell-script to kill the server
+        # when Sublime exits
         source_file_path = os.path.realpath(__file__)
         source_dir_path = os.path.dirname(source_file_path)
         launch_sh = '/'.join((source_dir_path, 'launch.sh'))
@@ -73,11 +75,13 @@ def start_omni_sharp_server(omni_exe_path, solution_path, port, config_file):
 
         startupinfo = None
     else:
+        # On Windows systems the server self-terminates when hostPID exits
         args = [
             omni_exe_path, 
             '-s', solution_path,
             '-p', str(port),
-            '-config', config_file
+            '-config', config_file,
+            '--hostPID', str(os.getpid())
         ]
 
         if IS_NT_CONSOLE_VISIBLE:
