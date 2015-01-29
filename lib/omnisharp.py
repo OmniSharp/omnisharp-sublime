@@ -11,6 +11,8 @@ import traceback
 import sys
 import signal
 
+from ..launchers import launcher
+
 from .helpers import get_settings
 from .helpers import current_solution_or_folder
 from .helpers import current_project_folder
@@ -180,56 +182,7 @@ def _available_port():
     return port
 
 def _run_omni_sharp_launcher(solution_path, port, config_file):
-    source_file_path = os.path.realpath(__file__)
-    source_dir_path = os.path.dirname(source_file_path)
-    plugin_dir_path = os.path.dirname(source_dir_path)
-    launcher_file_path = os.path.join(plugin_dir_path, 'launchers', 'omni_sharp_launcher.py')
-    print('LAUNCH!!!',launcher_file_path)
-
-    if os.name == 'posix':
-        args = [
-            'python',
-            launcher_file_path, 
-            '-S', solution_path,
-            '-P', str(port),
-            '-I', str(os.getpid()),
-            '-config', config_file
-        ]
-
-        startupinfo = None
-
-    else:
-        args = [
-            'python',
-            launcher_file_path, 
-            '-S', solution_path,
-            '-P', str(port),
-            '-I', str(os.getpid()),
-            '-config', config_file
-        ]
-
-        if IS_NT_CONSOLE_VISIBLE:
-            startupinfo = None
-        else:
-            startupinfo = subprocess.STARTUPINFO()
-            startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
-            startupinfo.wShowWindow = subprocess.SW_HIDE
-
-    
-    new_proc = subprocess.Popen(args, startupinfo=startupinfo)
-
-    try:
-        launcher_communication_thread = threading.Thread(
-            target=_communicate_omni_sharp_launcher, 
-            args=(new_proc, solution_path))
-
-        launcher_communication_thread.start()
-
-    except Exception as e:
-        new_proc.terminate()
-        raise e
-
-    return new_proc
+    return launcher.run(port, solution_path, config_file)
 
 def _communicate_omni_sharp_launcher(launcher_proc, solution_path):
     print('start_omni_sharp_launcher:%s' % solution_path)

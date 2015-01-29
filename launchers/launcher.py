@@ -60,7 +60,11 @@ def find_omni_exe_paths():
 
 def start_omni_sharp_server(omni_exe_path, solution_path, port, config_file):
     if os.name == 'posix':
+        source_file_path = os.path.realpath(__file__)
+        source_dir_path = os.path.dirname(source_file_path)
+        launch_sh = '/'.join((source_dir_path, 'launch.sh'))
         args = [
+            launch_sh,
             omni_exe_path, 
             '-s', solution_path,
             '-p', str(port),
@@ -82,26 +86,11 @@ def start_omni_sharp_server(omni_exe_path, solution_path, port, config_file):
             startupinfo = subprocess.STARTUPINFO()
             startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
             startupinfo.wShowWindow = subprocess.SW_HIDE
-    
+
+    print(' '.join(args))
     return subprocess.Popen(args, startupinfo=startupinfo)
 
-def main():
-    arg_parser = ArgumentParser(description='Launch OmniSharpServer')
-    arg_parser.add_argument('-C', '--sublime-check-cycle', type=float, default=5, help='Sublime Text Process Check Cycle')
-    arg_parser.add_argument('-P', '--omni-port', type=int, default=2000, help='OmniSharpServer Port')
-    arg_parser.add_argument('-I', '--sublime-pid', type=int, help='Sublime Text Process ID')
-    arg_parser.add_argument('-S', '--solution-path', type=str, help='Solution File Path')
-    arg_parser.add_argument('-config', '--config-file', type=str, help='Config File Path')
-
-    args = arg_parser.parse_args() 
-    if not args.sublime_pid:
-        arg_parser.print_help()
-        return -1
-
-    if not args.solution_path:
-        arg_parser.print_help()
-        return -2
-
+def run(omni_port, solution_path, config_file=None):
     omni_exe_paths = find_omni_exe_paths()
     if not omni_exe_paths:
         sys.stderr.write('NOT_FOUND_OMNI_EXE\n')
@@ -112,24 +101,11 @@ def main():
     try: 
         omni_proc = start_omni_sharp_server(
             omni_exe_path,
-            args.solution_path,
-            args.omni_port,
-            args.config_file)
+            solution_path,
+            omni_port,
+            config_file)
     except Exception as e:
-        sys.stderr.write('NOT_STARTED_OMNI_SHARP_SERVER:%s\n' % repr(e)) 
+        print('NOT_STARTED_OMNI_SHARP_SERVER:%s' % repr(e)) 
         return -2001
 
-    while omni_proc.poll() is None:
-        if not is_pid_alive(args.sublime_pid):
-            omni_proc.terminate()
-            return 0
-        
-        time.sleep(args.sublime_check_cycle)
-    
-    omni_proc.terminate()
-    sys.stderr.write('TERMINATED_OMNI_SHARP_SERVER\n')
-    return -2002
-
-if __name__ == '__main__':
-    import sys
-    sys.exit(main())
+    return omni_proc
