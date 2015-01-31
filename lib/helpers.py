@@ -91,6 +91,7 @@ def current_solution_or_vnext_folder(view):
         return project_dir
     else:
         parentpath = sublime.active_window().folders()[0] #assume parent folder is opened that contains all project folders eg/Web,ClassLib,Tests
+<<<<<<< HEAD
 
         for root, dirnames, filenames in os.walk(parentpath):
           if 'bin' not in root or 'obj' not in root:
@@ -98,4 +99,16 @@ def current_solution_or_vnext_folder(view):
                 if filename.endswith(('.sln', 'project.json')):
                     print("root is : " + root)
                     return root
+=======
+        print(parentpath)
+        return parentpath
+        # for root, dirnames, filenames in os.walk(parentpath):
+        #   if 'bin' not in root or 'obj' not in root:
+        #     for filename in filenames:
+        #         if filename.endswith(('.sln', 'project.json')):
+        #             #if filename.endswith('.sln'):
+        #             #print("dir is : " + dirnames)
+        #             print("root is : " + root)
+        #             return root
+>>>>>>> b11115d... latest server and minor fix to retrieve root folder in helpers.py
 
