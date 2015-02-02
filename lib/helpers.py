@@ -96,7 +96,6 @@ def current_solution_or_vnext_folder(view):
           if 'bin' not in root or 'obj' not in root:
             for filename in filenames:
                 if filename.endswith(('.sln', 'project.json')):
-                    if filename.endswith('.sln'):
-                        print("root is : " + root)
-                        return root
+                    print("root is : " + root)
+                    return root
 
