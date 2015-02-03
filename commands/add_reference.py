@@ -10,7 +10,7 @@ from ..lib import helpers
 class OmniSharpAddReference(sublime_plugin.TextCommand):
     
     def run(self, edit):
-        parentpath =  helpers.current_solution_or_vnext_folder(self.view)#current_project_folder(self.view)
+        parentpath =  sublime.active_window().folders()[0]
         matches = []
         for root, dirnames, filenames in os.walk(parentpath):
           if 'bin' not in root or 'obj' not in root:

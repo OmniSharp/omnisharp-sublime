@@ -30,7 +30,7 @@ class OmniSharpNewFile(sublime_plugin.TextCommand):
     def _on_done(self,filename):
         originalfilename = filename
 
-        root = helpers.current_solution_or_vnext_folder(self.view)#self.solution_folder(self.incomingpath)
+        root = sublime.active_window().folders()[0]
         root = os.path.basename(root)
         
         indexpos = self.incomingpath.index(root)
