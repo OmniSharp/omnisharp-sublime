@@ -71,17 +71,18 @@ def current_solution_or_project_json_folder(view):
             return solution_file_path
     else:
         parentpath = sublime.active_window().folders()[0] #assume parent folder is opened that contains all project folders eg/Web,ClassLib,Tests
-
-        for root, dirnames, filenames in os.walk(parentpath):
-          if 'bin' not in root or 'obj' not in root:
-            for filename in filenames:
-                if filename.endswith(('.sln', 'project.json')):
-                    if filename.endswith('.sln'):
-                        print ("discovery solution is : " + os.path.join(root, filename))
-                        return os.path.join(root, filename)
-                    else:
-                        print("vnext root is : " + root)
-                        return root
+        return "\"" + parentpath + "\""
+        
+        # for root, dirnames, filenames in os.walk(parentpath):
+        #   if 'bin' not in root or 'obj' not in root:
+        #     for filename in filenames:
+        #         if filename.endswith(('.sln', 'project.json')):
+        #             if filename.endswith('.sln'):
+        #                 print ("discovery solution is : " + os.path.join(root, filename))
+        #                 return os.path.join(root, filename)
+        #             else:
+        #                 print("vnext root is : " + root)
+        #                 return root
 
 def current_solution_or_vnext_folder(view):
     project_file = project_file_name(view)

@@ -22,7 +22,7 @@ from .urllib3 import PoolManager
 from queue import Queue
 
 IS_EXTERNAL_SERVER_ENABLE = False
-IS_NT_CONSOLE_VISIBLE = False
+IS_NT_CONSOLE_VISIBLE = False 
 
 launcher_procs = {
 }
@@ -214,14 +214,56 @@ def create_omnisharp_server_subprocess(view):
         omni_port = 2000
     else:
         try:
-            launcher_proc = _run_omni_sharp_launcher(
-                solution_path,
-                omni_port,
-                config_file)
+            omni_exe_paths = find_omni_exe_paths()
+            omni_exe_path = "\"" + omni_exe_paths[0] + "\""
+
+            args = [
+                omni_exe_path, 
+                '-s', solution_path,
+                '-p', str(omni_port),
+                '-config', config_file,
+                '--hostPID', str(os.getpid())
+            ]
+
+            cmd = ' '.join(args)
+            print(cmd)
+            
+            view.window().run_command("exec",{"cmd":cmd,"shell":"true","quiet":"true"})
+            view.window().run_command("hide_panel", {"panel": "output.exec"})
+            # launcher_proc = _run_omni_sharp_launcher(
+            #     solution_path,
+            #     omni_port,
+            #     config_file)
         except Exception as e:
             print('RAISE_OMNI_SHARP_LAUNCHER_EXCEPTION:%s' % repr(e))
             return
 
-    launcher_procs[solution_path] = launcher_proc
+    launcher_procs[solution_path] = True#launcher_proc
     server_ports[solution_path] = omni_port
+
+def find_omni_exe_paths():
+    if os.name == 'posix':
+        source_file_path = os.path.realpath(__file__)
+        script_name = 'omnisharp'
+    else:
+        source_file_path = os.path.realpath(__file__).replace('\\', '/')
+        script_name = 'omnisharp.cmd'
+
+    source_dir_path = os.path.dirname(source_file_path)
+    plugin_dir_path = os.path.dirname(source_dir_path)
+    print(plugin_dir_path)
+
+    omni_exe_candidate_rel_paths = [
+        'omnisharp-roslyn/artifacts/build/omnisharp/' + script_name,
+        'PrebuiltOmniSharpServer/' + script_name,
+    ]
+
+    omni_exe_candidate_abs_paths = [
+        '/'.join((plugin_dir_path, rel_path))
+        for rel_path in omni_exe_candidate_rel_paths
+    ]
+
+    return [omni_exe_path 
+        for omni_exe_path in omni_exe_candidate_abs_paths
+        if os.access(omni_exe_path, os.R_OK)]
 
