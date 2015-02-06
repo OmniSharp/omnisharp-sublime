@@ -81,6 +81,10 @@
                 "command": "omni_sharp_hide_panel",
             },
             {
+                "caption": "Show Server Output",
+                "command": "omni_sharp_show_server_output",
+            },
+            {
                 "caption": "Build",
                 "children":[
                     {

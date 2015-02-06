@@ -91,6 +91,7 @@ def get_response(view, endpoint, callback, params=None, timeout=None):
 
     def urlopen_callback(data):
         print('======== response ========')
+        print(data)
         if data is None:
             print(None)
             # traceback.print_stack(file=sys.stdout)

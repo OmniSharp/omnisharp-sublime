@@ -96,5 +96,9 @@
     {
         "caption": "OmniSharpSublime: Navigate To",
         "command": "omni_sharp_navigate_to",
+    },
+    {
+        "caption": "OmniSharpSublime: Show Server Output",
+        "command": "omni_sharp_show_server_output",
     }
 ]
