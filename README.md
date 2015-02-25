@@ -56,34 +56,34 @@
 # Project Setting
 The server will automatically find the the solution file from the folder you have opened in Sublime.  For ASP.Net vNext applications it will find the project.json file.  If you have multiple solutions you have to specify the solution file you wish to use in a sublime-project. 
 
-    Go to `File -> Open` and select the folder with your solution in it.
-    
-    Go to `Project -> Save Project As` and save a YOURPROJECTNAME.sublime-project in the same location as your *.sln
-    
-    Open your YOURPROJECTNAME.sublime-project file that should now appear in the sidebar on the left
-    
-    Enter the location to the *.sln file like below
+1. Go to `File -> Open` and select the folder with your solution in it.
+
+2. Go to `Project -> Save Project As` and save a `YOURPROJECTNAME.sublime-project` in the same location as your `*.sln`
+
+3. Open your `YOURPROJECTNAME.sublime-project` file that should now appear in the sidebar on the left
+
+4. Enter the location to the `*.sln` file like below
 
 ## Example of a sublime-project
 
-    {
-        "folders":
-        [
-            {
-                "follow_symlinks": true,
-                "path": "."
-            }
-        ],
-        "solution_file": "./testconsoleprj.sln"
-    }
-    
- Once the `YOURPROJECT.sublime-project` is set up and saved follow the below:
-    
-    Close Sublime (YMMV but this seems to be the best way to open the YOURPROJECTNAME.sublime-project)
-    
-    Open Sublime
-    
-    Click `Project -> Open Project`, and select your YOURPROJECT.sublime-project file
+```json
+{
+    "folders":
+    [
+        {
+            "follow_symlinks": true,
+            "path": "."
+        }
+    ],
+    "solution_file": "./testconsoleprj.sln"
+}
+```
+
+Once the `YOURPROJECT.sublime-project` is set up and saved, follow the below:
+
+1. Close Sublime (YMMV but this seems to be the best way to open the `YOURPROJECTNAME.sublime-project`)
+2. Open Sublime
+3. Click `Project -> Open Project`, and select your `YOURPROJECT.sublime-project` file
 
 
 # C# language-specific settings
@@ -92,9 +92,9 @@ The server will automatically find the the solution file from the folder you hav
  ![Imgur](http://i.imgur.com/KjcPSFq.png)
  
  
- Paste the below in. This will launch intellisense on . and < symbols p
+ Paste the below in. This will launch intellisense on . and < symbols
 
- ```
+ ```json
  {
     "auto_complete": true,
     "auto_complete_selector": "source - comment",
@@ -113,18 +113,16 @@ When you press `Ctrl + K + D` to format the document you may see `CR` markers.
 ![CR Markers](http://i.imgur.com/SBgyjtk.png)
 
 This is to do with the settings for `OmniSharpServer`.  
-   ```
-   Click Preferences - Browse Packages
-   Go to `OmniSharp/PrebuiltOmniSharpServer/` sub directory 
-   Open config.json and modify the `eolMarker` setting to `\n` like below
-   ```
+
+1. Click Preferences - Browse Packages
+2. Go to `OmniSharp/PrebuiltOmniSharpServer/` sub directory 
+3. Open config.json and modify the `eolMarker` setting to `\n` like below
+
 **OR**
-```
-   Open your safely tucked away config.json file and modify the `eolMarker` setting to `\n` like below
-   ```
 
+Open your safely tucked away config.json file and modify the `eolMarker` setting to `\n` like below
 
-```
+```json
   "TextEditorOptions": {
     "tabsToSpaces": true,
     "tabSize": 4,
@@ -141,23 +139,21 @@ This is to do with the settings for `OmniSharpServer`.
 
 For the plugin to be able to run unit tests you need to configure the test runner. This is done in the server config file.
 
-   ```
-   Click Preferences - Browse Packages
-   Go to `OmniSharp/PrebuiltOmniSharpServer/` sub directory 
-   Open config.json and modify the `TestCommands` like below
-   ```
+1. Click Preferences - Browse Packages
+2. Go to `OmniSharp/PrebuiltOmniSharpServer/` sub directory 
+3. Open config.json and modify the `TestCommands` like below
+
 **OR**
-  ```
-   Open your safely tucked away config.json file and modify the `TestCommands` like below
- ```
- 
- ```
-   "TestCommands": {
+
+Open your safely tucked away config.json file and modify the `TestCommands` like below
+
+ ```json
+ "TestCommands": {
     "All": "nunit-console.exe -nologo {{AssemblyPath}}",
     "Fixture": "nunit-console.exe -nologo {{AssemblyPath}} -run={{TypeName}}",
     "Single": "nunit-console.exe -nologo {{AssemblyPath}} -run={{TypeName}}.{{MethodName}}"
    },
-   ```
+```
 
 # Sometime
 * Find type / symbols
