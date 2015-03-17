@@ -17,7 +17,7 @@
   ],*/
 
   /* Native Emacs on Windows path replacements
-     
+
   "PathReplacements": [
       {
           "From":"/",
@@ -47,6 +47,17 @@
     "wrapLineLength": 80
   },
 
+  /*
+    Available names:
+    * Custom
+    * KRStyle
+    * Allman
+    * Empty
+    * GNU
+    * Mono
+    * SharpDevelop
+    * Whitesmiths
+   */
   "CSharpFormattingOptionsName" : "Custom",
 
   "CSharpFormattingOptions": {
