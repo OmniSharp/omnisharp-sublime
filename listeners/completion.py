@@ -6,6 +6,7 @@ from ..lib import helpers
 from ..lib import omnisharp
 from ..lib.helpers import active_view
 
+AC_OPTS = sublime.INHIBIT_WORD_COMPLETIONS | sublime.INHIBIT_EXPLICIT_COMPLETIONS
 
 class OmniSharpCompletionEventListener(sublime_plugin.EventListener):
 
@@ -21,7 +22,6 @@ class OmniSharpCompletionEventListener(sublime_plugin.EventListener):
             cpl = self.completions
             self.completions = []
             self.ready_form_defer = False
-
             return cpl
 
         if re.match("^\W*$", prefix):
@@ -35,6 +35,7 @@ class OmniSharpCompletionEventListener(sublime_plugin.EventListener):
         params['WantMethodHeader'] = True
         params['WantReturnType'] = True 
         omnisharp.get_response(view, '/autocomplete', self._complete, params)
+        return ([], AC_OPTS)
 
     def _complete(self, response):
         if response is not None and len(response) > 0:
@@ -58,7 +59,7 @@ class OmniSharpCompletionEventListener(sublime_plugin.EventListener):
     def _run_auto_complete(self):
         active_view().run_command("auto_complete", {
             'disable_auto_insert': True,
-            'api_completions_only': False,
+            'api_completions_only': True,
             'next_completion_if_showing': False,
             'auto_complete_commit_on_tab': True,
         })
