@@ -43,16 +43,8 @@ class OmniSharpCompletionEventListener(sublime_plugin.EventListener):
             for item in response:
                 completions.append(self.to_completion(item))
 
-            active_view().run_command('hide_auto_complete')
             self.completions = completions 
             self.ready_form_defer = True
-
-            # is the tab key is used to complete just undo the last insertion
-            if active_view().command_history(0)[0] == 'insert_best_completion':
-                if active_view().substr(sublime.Region(
-                        active_view().sel()[0].begin() - 5,
-                        active_view().sel()[0].end())) == 'self.':
-                    active_view().run_command('undo')
 
             self._run_auto_complete()
 
