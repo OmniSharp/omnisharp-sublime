@@ -31,9 +31,9 @@
   ],
 
   "TestCommands": {
-    "All": "nunit-console.exe -nologo {{AssemblyPath}}",
-    "Fixture": "nunit-console.exe -nologo {{AssemblyPath}} -run={{TypeName}}",
-    "Single": "nunit-console.exe -nologo {{AssemblyPath}} -run={{TypeName}}.{{MethodName}}"
+    "All": "xunit.console.exe {{AssemblyPath}}",
+    "Fixture": "xunit.console.exe {{AssemblyPath}} -class {{TypeName}}",
+    "Single": "xunit.console.exe {{AssemblyPath}} -method {{TypeName}}.{{MethodName}}"
   },
 
   "TextEditorOptions": {
