@@ -232,7 +232,7 @@ def find_omni_exe_paths():
 
     omni_exe_candidate_rel_paths = [
         'omnisharp-roslyn/artifacts/build/omnisharp/' + script_name,
-        'PrebuiltOmniSharpServer/original/' + script_name,
+        'PrebuiltOmniSharpServer/' + script_name,
     ]
 
     omni_exe_candidate_abs_paths = [
