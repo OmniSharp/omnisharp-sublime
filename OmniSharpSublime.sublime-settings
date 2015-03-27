@@ -3,6 +3,4 @@
     "omnisharp_auto_start": true,
     "omnisharp_server_config_location":"",
     "omnisharp_onsave_codecheck": true,
-    "omnisharp_color_scheme" : "Packages/Theme - itg.flat/itg.Monokai.tmTheme",
-    "omnisharp_syntax" : "Packages/TestConsole.tmLanguage"
 }
