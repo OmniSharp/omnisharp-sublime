@@ -200,9 +200,9 @@ def create_omnisharp_server_subprocess(view):
 
             args = [
                 omni_exe_path, 
-                '-s', solution_path,
+                '-s', '"' + solution_path + '"',
                 '-p', str(omni_port),
-                '-config', config_file,
+                '-config', '"' + config_file + '"',
                 '--hostPID', str(os.getpid())
             ]
 
