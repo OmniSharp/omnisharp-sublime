@@ -1,0 +1,9 @@
+***NOTE*** : If you're on Windows, we are aware of an issue that when upgrading Omnisharp.exe the user is required to close Sublime. You need to ensure Omnisharp.exe is not running and then you can safely open Sublime again. This is because the program is in use and Windows cannot copy over a new version whilst in use.  If anyone would like to help us improve this experience please get in touch!
+
+Enhancements:
+
+* External Python is no longer needed on Windows.
+* Ability to show the server output via a right click option
+* Default test runner in config.json is xUnit
+* Intellisense improvements
+* Use urllib3 for json messages to/from server
