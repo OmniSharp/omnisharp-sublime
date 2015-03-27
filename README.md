@@ -54,7 +54,7 @@
         ./build.sh
 
 # Project Setting
-The server will automatically find the the solution file from the folder you have opened in Sublime.  For ASP.Net vNext applications it will find the project.json file.  If you have multiple solutions you have to specify the solution file you wish to use in a sublime-project. 
+The server will automatically find the the solution file from the folder you have opened in Sublime.  If you have multiple solutions you have to specify the solution file you wish to use in a `sublime-project`. 
 
 1. Go to `File -> Open` and select the folder with your solution in it.
 
@@ -85,6 +85,7 @@ Once the `YOURPROJECT.sublime-project` is set up and saved, follow the below:
 2. Open Sublime
 3. Click `Project -> Open Project`, and select your `YOURPROJECT.sublime-project` file
 
+**NOTE** : For ASP.Net vNext applications please use the Roslyn branch of this repository.  
 
 # C# language-specific settings
  Create C# settings file as shown in this picture
@@ -155,6 +156,4 @@ Open your safely tucked away config.json file and modify the `TestCommands` like
    },
 ```
 
-# Sometime
-* Find type / symbols
-* advanced syntax highlight
+
