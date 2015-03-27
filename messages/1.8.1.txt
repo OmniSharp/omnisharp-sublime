@@ -3,3 +3,5 @@
 Bug Fixes:
 
 * Allow for spaces in solution and config paths
+* OSX/Linux users may need to execute chmod +x /Users/***ENTER YOUR USERNAME***/Library/Application\ Support/Sublime\ Text\ 3/Packages/OmniSharp/PrebuiltOmniSharpServer/omnisharp
+
