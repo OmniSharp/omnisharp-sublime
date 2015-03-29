@@ -1,0 +1,5 @@
+***NOTE*** : If you're on Windows, we are aware of an issue that when upgrading Omnisharp.exe the user is required to close Sublime. You need to ensure Omnisharp.exe is not running and then you can safely open Sublime again. This is because the program is in use and Windows cannot copy over a new version whilst in use.  If anyone would like to help us improve this experience please get in touch!
+
+Bug Fixes:
+
+* OSX/Linux : omnisharp launcher has been given executable permissions inside the git repo so no user intervention should be needed to chmod -x that file
