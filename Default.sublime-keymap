@@ -12,4 +12,5 @@
     {"command": "omni_sharp_run_unit_tests", "keys":["ctrl+shift+r"]},
     {"command": "omni_sharp_build_project", "keys":["super+alt+b"]},
     {"command": "omni_sharp_navigate_to", "keys":["ctrl+,"]},
+    {"command": "omni_sharp_go_to_implementation", "keys":["super+i"]},
 ]
