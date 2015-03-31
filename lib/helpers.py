@@ -41,9 +41,9 @@ def current_solution_filepath_or_project_rootpath(view):
             solution_file_name = data['solution_file']
             solution_file_path = os.path.join(project_dir, solution_file_name)
             solution_file_path = os.path.abspath(solution_file_path)
-            return "\"" + solution_file_path + "\""
+            return solution_file_path
     else:
         parentpath = sublime.active_window().folders()[0] #assume parent folder is opened that contains all project folders eg/Web,ClassLib,Tests
-        return "\"" + parentpath + "\""
+        return parentpath
 
 
