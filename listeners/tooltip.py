@@ -1,15 +1,8 @@
 import sublime_plugin, sublime, json, webbrowser
-import re, os
+import re
 from time import time
 
-settings = {}
-
 class OmniSharpTooltipListener(sublime_plugin.EventListener):
-
-    cache = {}
-    region_row = []
-    lang = None
-
 
     def on_activated_async(self, view):
         self._check_tooltip(view)
@@ -21,7 +14,6 @@ class OmniSharpTooltipListener(sublime_plugin.EventListener):
         self._check_tooltip(view)
 
     def _check_tooltip(self, view):
-        global region_row, lang
 
         view_settings = view.settings()
         if view_settings.get('is_widget'):
@@ -53,5 +45,5 @@ class OmniSharpTooltipListener(sublime_plugin.EventListener):
         view.hide_popup()
 
     def on_navigate(self, link):
-        global lang
+        return
 
