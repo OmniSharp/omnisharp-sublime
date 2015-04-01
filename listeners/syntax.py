@@ -1,6 +1,7 @@
 import os
 import sublime
 import sublime_plugin
+from time import time
 
 from ..lib import helpers
 from ..lib import omnisharp
@@ -10,8 +11,27 @@ class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
     data = None
     view = None
     outputpanel = None
+    next_run_time = 0
+
+    def on_activated(self, view):
+        self._run_codecheck(view)
+
+    def on_load(self, view):
+        self._run_codecheck(view)
 
     def on_post_save(self, view):
+        self._run_codecheck(view)
+
+    def on_modified(self, view):
+        timeout_ms = 500
+        self.next_run_time = time() + 0.0009 * timeout_ms
+        sublime.set_timeout(lambda:self._run_codecheck_after_delay(view), timeout_ms)
+
+    def _run_codecheck_after_delay(self, view):
+        if self.next_run_time <= time():
+            self._run_codecheck(view)
+
+    def _run_codecheck(self, view):
         if not helpers.is_csharp(view):
             return
         
@@ -42,9 +62,9 @@ class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
                 point = self.view.text_point(i["Line"]-1, i["Column"])
                 reg = self.view.word(point)
                 self.underlines.append(reg)
-                logline = i["LogLevel"] + " : " + i["Text"].strip() + " - (" + str(i["Line"]) + ", " + str(i["Column"]) + ")\n"
-                oops_map[str(i["Line"]-1) + "@" + self.view.substr(reg)] = i["Text"].strip()
-                self.outputpanel.run_command('append', {'characters': logline})
+                key = "%s,%s" % (reg.a, reg.b)
+                oops_map[key] = i["Text"].strip()
+                self.outputpanel.run_command('append', {'characters': i["LogLevel"] + " : " + i["Text"].strip() + " - (" + str(i["Line"]) + ", " + str(i["Column"]) + ")\n"})
             if len(self.underlines) > 0:
                 print('underlines')
                 self.view.settings().set("oops", oops_map)
