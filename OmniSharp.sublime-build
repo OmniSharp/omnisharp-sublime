@@ -1,0 +1,39 @@
+{
+    "cmd": [
+        "xbuild",
+        "/property:GenerateFullPaths=true",
+        "/nologo",
+        "/v:q"
+    ],
+    "path": "/usr/bin/",
+    "working_dir": "${project_path:${folder}}",
+    "file_regex": "(?:^| |\"|'|\\(|\\[)((?:[A-Za-z]:)?[\\/][^\n \"':\\(\\)\\[\\]]+\\.\\w{0,4})(?=[\n \"':\\(\\)\\[\\]])\\((\\d+),\\d+\\)",
+    "syntax": "Packages/OmniSharp/TestConsole.hidden-tmLanguage",
+
+    "variants": [
+        {
+            "name": "Clean",
+            "cmd": [
+                "xbuild",
+                "/property:GenerateFullPaths=true",
+                "/nologo",
+                "/v:q",
+                "/target:Clean"
+            ],
+            "path": "/usr/bin/",
+            "working_dir": "${project_path:${folder}}"
+        },
+        {
+            "name": "ReBuild",
+            "cmd": [
+                "xbuild",
+                "/property:GenerateFullPaths=true",
+                "/nologo",
+                "/v:q",
+                "/target:rebuild"
+            ],
+            "path": "/usr/bin/",
+            "working_dir": "${project_path:${folder}}"
+        }
+    ]
+}
