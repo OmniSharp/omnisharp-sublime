@@ -13,12 +13,6 @@ class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
     outputpanel = None
     next_run_time = 0
 
-    def on_activated(self, view):
-        self._run_codecheck(view)
-
-    def on_load(self, view):
-        self._run_codecheck(view)
-
     def on_post_save(self, view):
         self._run_codecheck(view)
 
@@ -69,6 +63,8 @@ class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
                 print('underlines')
                 self.view.settings().set("oops", oops_map)
                 self.view.add_regions("oops", self.underlines, "illegal", "", sublime.DRAW_NO_FILL + sublime.DRAW_NO_OUTLINE + sublime.DRAW_SQUIGGLY_UNDERLINE)
+                if bool(helpers.get_settings(self.view,'omnisharp_onsave_showerrorwindows')):
+                    self.view.window().run_command("show_panel", {"panel": "output.variable_get"})
 
         self.data = None
 
