@@ -22,19 +22,20 @@ launcher_procs = {
 server_ports = {
 }
 
-pool = PoolManager(timeout=1.0,headers={'Content-Type': 'application/json; charset=UTF-8'})
+pool = PoolManager(headers={'Content-Type': 'application/json; charset=UTF-8'})
 
 class WorkerThread(threading.Thread):
-    def __init__(self, url, data, callback):
+    def __init__(self, url, data, callback, timeout):
         threading.Thread.__init__(self)
         self.url = url
         self.data = data
         self.callback = callback
+        self.timeout = timeout
 
     def run(self):
-        self.callback(pool.urlopen('POST', self.url, body=self.data).data)
+        self.callback(pool.urlopen('POST', self.url, body=self.data, timeout=self.timeout).data)
 
-def get_response(view, endpoint, callback, params=None, timeout=None):
+def get_response(view, endpoint, callback, params=None, timeout=1.0):
     solution_path =  current_solution_filepath_or_project_rootpath(view)
 
     print('solution path: %s' % solution_path)
@@ -74,7 +75,7 @@ def get_response(view, endpoint, callback, params=None, timeout=None):
             
         print('======== end ========')
 
-    thread = WorkerThread(url, data, urlopen_callback)
+    thread = WorkerThread(url, data, urlopen_callback, timeout)
     
     print('======== request ======== \n Url: %s \n Data: %s' % (url, data))    
     thread.start()
