@@ -45,10 +45,10 @@ class OmniSharpCompletionEventListener(sublime_plugin.EventListener):
         for item in data:
             completions.append(self.to_completion(item))
 
-            self.completions = completions 
-            self.ready_form_defer = True
+        self.completions = completions 
+        self.ready_form_defer = True
 
-            self._run_auto_complete()
+        self._run_auto_complete()
 
     def _run_auto_complete(self):
         active_view().run_command("auto_complete", {
