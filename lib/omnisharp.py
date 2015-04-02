@@ -6,7 +6,6 @@ import urllib
 import urllib.parse
 import socket
 import subprocess
-import queue
 import traceback
 import sys
 import signal
@@ -15,10 +14,7 @@ from .helpers import get_settings
 from .helpers import current_solution_filepath_or_project_rootpath
 from .urllib3 import PoolManager
 
-from queue import Queue
-
 IS_EXTERNAL_SERVER_ENABLE = False
-IS_NT_CONSOLE_VISIBLE = False 
 
 launcher_procs = {
 }
@@ -26,49 +22,30 @@ launcher_procs = {
 server_ports = {
 }
 
+pool = PoolManager(timeout=1.0,headers={'Content-Type': 'application/json; charset=UTF-8'})
+
 class WorkerThread(threading.Thread):
-    _worker_threads = []
-    _worker_queue = Queue()
+    def __init__(self, url, data, callback):
+        threading.Thread.__init__(self)
+        self.url = url
+        self.data = data
+        self.callback = callback
 
     def run(self):
-        http = PoolManager(headers={'Content-Type': 'application/json'})
-        while True:
-            url, data, timeout, callback = self._worker_queue.get()
-            try:
-                response = http.urlopen('POST', url, body=data)
-                callback(response.data)
-            except:
-                traceback.print_exc(file=sys.stdout)
-                callback(None)
-
-    @classmethod
-    def make_worker_threads(cls, count):
-        while len(cls._worker_threads) < count:
-            new_worker_thread = cls()
-            new_worker_thread.start()
-            cls._worker_threads.append(new_worker_thread)
-
-    @classmethod
-    def add_work(cls, url, data, timeout, callback):
-        cls._worker_queue.put((url, data, timeout, callback))
-
-WorkerThread.make_worker_threads(1)
-
-def urlopen_async(url, callback, data, timeout):
-    WorkerThread.add_work(url, data, timeout, callback)
+        self.callback(pool.urlopen('POST', self.url, body=self.data).data)
 
 def get_response(view, endpoint, callback, params=None, timeout=None):
     solution_path =  current_solution_filepath_or_project_rootpath(view)
 
-    print('response:', solution_path)
+    print('solution path: %s' % solution_path)
     if solution_path is None or solution_path not in server_ports:
         callback(None)
         return
         
-    parameters = {}
     location = view.sel()[0]
     cursor = view.rowcol(location.begin())
 
+    parameters = {}
     parameters['line'] = str(cursor[0] + 1)
     parameters['column'] = str(cursor[1] + 1)
     parameters['buffer'] = view.substr(sublime.Region(0, view.size()))
@@ -82,88 +59,25 @@ def get_response(view, endpoint, callback, params=None, timeout=None):
     host = 'localhost'
     port = server_ports[solution_path]
 
-    httpurl = "http://%s:%s/" % (host, port)
-
-    target = urllib.parse.urljoin(httpurl, endpoint)
-    data = json.dumps(parameters).encode('utf-8')
-    print('request: %s' % target)
-    print('======== request params ======== \n %s' % data)
+    url = "http://%s:%s%s" % (host, port, endpoint)
+    data = json.dumps(parameters)
 
     def urlopen_callback(data):
-        print('======== response ========')
-        print(data)
-        if data is None:
-            print(None)
-            # traceback.print_stack(file=sys.stdout)
-            print('CALLBACK_ERROR')
-            callback(None)
-
-            # if solution_path in launcher_procs:
-            #     print('TERMINATE_OMNI_SHARP')
-            #     launcher_procs[solution_path].terminate();
-
-            #     del launcher_procs[solution_path]
-            #     del server_ports[solution_path]
-
-        else:
-            jsonStr = data.decode('utf-8')
-            print(jsonStr)
-            jsonObj = json.loads(jsonStr)
-            # traceback.print_stack(file=sys.stdout)
-            print('callback data')
-            callback(jsonObj)
-
-    urlopen_async(
-        target,
-        urlopen_callback,
-        data,
-        timeout)
-
-def get_response_from_empty_httppost(view, endpoint, callback, timeout=None):
-    solution_path =  current_solution_filepath_or_project_rootpath(view)
-
-    print(solution_path)
-    print(server_ports)
-    if solution_path is None or solution_path not in server_ports:
-        callback(None)
-        return
-    parameters = {}
-    location = view.sel()[0]
-    cursor = view.rowcol(location.begin())
-
-    if timeout is None:
-        timeout = int(get_settings(view, 'omnisharp_response_timeout'))
-
-    host = 'localhost'
-    port = server_ports[solution_path]
-
-    httpurl = "http://%s:%s/" % (host, port)
-
-    target = urllib.parse.urljoin(httpurl, endpoint)
-    data = urllib.parse.urlencode(parameters).encode('utf-8')
-    print('request: %s' % target)
-    print('======== no request params ======== \n')
-
-    def urlopen_callback(data):
-        print('======== response ========')
-        if data is None:
-            print(None)
-            # traceback.print_stack(file=sys.stdout)
-            print('callback none')
+        if not data:
+            print('======== response ======== \n response is empty')
             callback(None)
         else:
-            jsonStr = data.decode('utf-8')
-            print(jsonStr)
-            jsonObj = json.loads(jsonStr)
-            # traceback.print_stack(file=sys.stdout)
-            print('callback data')
+            print('======== response ======== \n %s' % data)
+            jsonObj = json.loads(data.decode('utf-8'))
+            print(jsonObj)
             callback(jsonObj)
+            
+        print('======== end ========')
 
-    urlopen_async(
-        target,
-        urlopen_callback,
-        data,
-        timeout)
+    thread = WorkerThread(url, data, urlopen_callback)
+    
+    print('======== request ======== \n Url: %s \n Data: %s' % (url, data))    
+    thread.start()
 
 def _available_port():
     if IS_EXTERNAL_SERVER_ENABLE:
