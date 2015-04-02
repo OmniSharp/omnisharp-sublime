@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>name</key>
+    <string>Test Console</string>
+
+    <key>scopeName</key>
+    <string>text.test</string>
+
+    <key>patterns</key>
+    <array>
+        <!-- Low importance meta stuff -->
+        <dict>
+            <key>match</key>
+            <string>^\[Finished .*\]$</string>
+            <key>name</key>
+            <string>meta.comment.test</string>
+        </dict>
+        <dict>
+            <key>match</key>
+            <string>^xUnit\.net console test runner.*</string>
+            <key>name</key>
+            <string>meta.comment.test</string>
+        </dict>
+        <dict>
+            <key>match</key>
+            <string>^Copyright \(C\).*</string>
+            <key>name</key>
+            <string>meta.comment.test</string>
+        </dict>
+
+        <dict>
+            <key>match</key>
+            <string>^(Discovering|Discovered|Starting|Started|Finished):\s*([\w.]+)</string>
+            <key>name</key>
+            <string>string.package-line.test</string>
+            <key>captures</key>
+            <dict>
+                <key>2</key>
+                <dict>
+                    <key>name</key>
+                    <string>support.package.test</string>
+                </dict>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>match</key>
+            <string>^=== TEST EXECUTION SUMMARY ===$</string>
+            <key>name</key>
+            <string>meta.header.test</string>
+        </dict>
+
+        <dict>
+            <key>match</key>
+            <string>(?xi)
+                ^\s*([\w.]+)
+                    \s+(Total:\s*(\d+)),
+                    \s+(Errors:\s*(\d+)),
+                    \s+(Failed:\s*(\d+)),
+                    \s+(Skipped:\s*(\d+)),
+                    \s+(Time:\s*([\w.]+))</string>
+            <key>name</key>
+            <string>string.package-line.test</string>
+            <key>captures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>support.package.test</string>
+                </dict>
+                <key>2</key>
+                <dict>
+                    <key>name</key>
+                    <string>meta.result.total.test</string>
+                </dict>
+                <key>3</key>
+                <dict>
+                    <key>name</key>
+                    <string>meta.result.number.total.test</string>
+                </dict>
+                <key>4</key>
+                <dict>
+                    <key>name</key>
+                    <string>meta.result.error.test</string>
+                </dict>
+                <key>5</key>
+                <dict>
+                    <key>name</key>
+                    <string>meta.result.number.error.test</string>
+                </dict>
+                <key>6</key>
+                <dict>
+                    <key>name</key>
+                    <string>meta.result.failed.test</string>
+                </dict>
+                <key>7</key>
+                <dict>
+                    <key>name</key>
+                    <string>meta.result.number.failed.test</string>
+                </dict>
+                <key>8</key>
+                <dict>
+                    <key>name</key>
+                    <string>meta.result.skipped.test</string>
+                </dict>
+                <key>9</key>
+                <dict>
+                    <key>name</key>
+                    <string>meta.result.number.skipped.test</string>
+                </dict>
+                <key>10</key>
+                <dict>
+                    <key>name</key>
+                    <string>meta.result.time.test</string>
+                </dict>
+                <key>11</key>
+                <dict>
+                    <key>name</key>
+                    <string>meta.result.number.time.test</string>
+                </dict>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>include</key>
+            <string>#file-path</string>
+        </dict>
+    </array>
+
+    <key>repository</key>
+    <dict>
+        <key>file-path</key>
+        <dict>
+            <key>match</key>
+            <string>(?:^| |"|'|\(|\[)((?:[A-Za-z]:)?[\\/][^\n "':\(\)\[\]]+\.\w{0,4})(?=[\n "':\(\)\[\]])</string>
+            <key>name</key>
+            <string>markup.path.test</string>
+        </dict>
+    </dict>
+</dict>
+</plist>
