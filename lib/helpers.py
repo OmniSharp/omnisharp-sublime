@@ -21,9 +21,7 @@ def active_view():
 
 
 def project_file_name(view):
-    filename = view.window().project_file_name()
-    return filename
-
+    return view.window().project_file_name()
 
 def project_data(view):
     return view.window().project_data()
