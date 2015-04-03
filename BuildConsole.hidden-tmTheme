@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>name</key>
-    <string>Test Console</string>
+    <string>Build Console</string>
     <key>settings</key>
     <array>
         <dict>
@@ -28,7 +28,7 @@
             <key>name</key>
             <string>Comment</string>
             <key>scope</key>
-            <string>meta.comment.test</string>
+            <string>meta.comment.build</string>
             <key>settings</key>
             <dict>
                 <key>foreground</key>
@@ -40,7 +40,7 @@
             <key>name</key>
             <string>Test Package Line</string>
             <key>scope</key>
-            <string>string.package-line.test</string>
+            <string>string.package-line.build</string>
             <key>settings</key>
             <dict>
                 <key>foreground</key>
@@ -51,7 +51,7 @@
             <key>name</key>
             <string>Test Package</string>
             <key>scope</key>
-            <string>support.package.test</string>
+            <string>support.package.build</string>
             <key>settings</key>
             <dict>
                 <key>foreground</key>
@@ -63,7 +63,7 @@
             <key>name</key>
             <string>Header</string>
             <key>scope</key>
-            <string>meta.header.test</string>
+            <string>meta.header.build</string>
             <key>settings</key>
             <dict>
                 <key>foreground</key>
@@ -75,7 +75,7 @@
             <key>name</key>
             <string>Result - Total</string>
             <key>scope</key>
-            <string>meta.result.total.test</string>
+            <string>meta.result.total.build</string>
             <key>settings</key>
             <dict>
                 <key>foreground</key>
@@ -86,7 +86,7 @@
             <key>name</key>
             <string>Result - Error</string>
             <key>scope</key>
-            <string>meta.result.error.test</string>
+            <string>meta.result.error.build</string>
             <key>settings</key>
             <dict>
                 <key>foreground</key>
@@ -97,7 +97,7 @@
             <key>name</key>
             <string>Result - Failed</string>
             <key>scope</key>
-            <string>meta.result.failed.test</string>
+            <string>meta.result.failed.build</string>
             <key>settings</key>
             <dict>
                 <key>foreground</key>
@@ -108,7 +108,7 @@
             <key>name</key>
             <string>Result - Skipped</string>
             <key>scope</key>
-            <string>meta.result.skipped.test</string>
+            <string>meta.result.skipped.build</string>
             <key>settings</key>
             <dict>
                 <key>foreground</key>
@@ -119,7 +119,7 @@
             <key>name</key>
             <string>Result - Time</string>
             <key>scope</key>
-            <string>meta.result.time.test</string>
+            <string>meta.result.time.build</string>
             <key>settings</key>
             <dict>
                 <key>foreground</key>
@@ -143,7 +143,7 @@
             <key>name</key>
             <string>Path</string>
             <key>scope</key>
-            <string>markup.path.test</string>
+            <string>markup.path.build</string>
             <key>settings</key>
             <dict>
                 <key>foreground</key>

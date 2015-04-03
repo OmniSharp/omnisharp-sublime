@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
     <key>name</key>
-    <string>Test Console</string>
+    <string>Build Console</string>
 
     <key>scopeName</key>
-    <string>text.test</string>
+    <string>text.build</string>
 
     <key>patterns</key>
     <array>
@@ -15,32 +15,32 @@
             <key>match</key>
             <string>^\[.*\]$</string>
             <key>name</key>
-            <string>meta.comment.test</string>
+            <string>meta.comment.build</string>
         </dict>
         <dict>
             <key>match</key>
             <string>^xUnit\.net console test runner.*</string>
             <key>name</key>
-            <string>meta.comment.test</string>
+            <string>meta.comment.build</string>
         </dict>
         <dict>
             <key>match</key>
             <string>^Copyright \(C\).*</string>
             <key>name</key>
-            <string>meta.comment.test</string>
+            <string>meta.comment.build</string>
         </dict>
 
         <dict>
             <key>match</key>
             <string>^(Discovering|Discovered|Starting|Started|Finished):\s*([\w.]+)</string>
             <key>name</key>
-            <string>string.package-line.test</string>
+            <string>string.package-line.build</string>
             <key>captures</key>
             <dict>
                 <key>2</key>
                 <dict>
                     <key>name</key>
-                    <string>support.package.test</string>
+                    <string>support.package.build</string>
                 </dict>
             </dict>
         </dict>
@@ -49,7 +49,7 @@
             <key>match</key>
             <string>^=== TEST EXECUTION SUMMARY ===$</string>
             <key>name</key>
-            <string>meta.header.test</string>
+            <string>meta.header.build</string>
         </dict>
 
         <dict>
@@ -62,63 +62,63 @@
                     \s+(Skipped:\s*(\d+)),
                     \s+(Time:\s*([\w.]+))</string>
             <key>name</key>
-            <string>string.package-line.test</string>
+            <string>string.package-line.build</string>
             <key>captures</key>
             <dict>
                 <key>1</key>
                 <dict>
                     <key>name</key>
-                    <string>support.package.test</string>
+                    <string>support.package.build</string>
                 </dict>
                 <key>2</key>
                 <dict>
                     <key>name</key>
-                    <string>meta.result.total.test</string>
+                    <string>meta.result.total.build</string>
                 </dict>
                 <key>3</key>
                 <dict>
                     <key>name</key>
-                    <string>meta.result.number.total.test</string>
+                    <string>meta.result.number.total.build</string>
                 </dict>
                 <key>4</key>
                 <dict>
                     <key>name</key>
-                    <string>meta.result.error.test</string>
+                    <string>meta.result.error.build</string>
                 </dict>
                 <key>5</key>
                 <dict>
                     <key>name</key>
-                    <string>meta.result.number.error.test</string>
+                    <string>meta.result.number.error.build</string>
                 </dict>
                 <key>6</key>
                 <dict>
                     <key>name</key>
-                    <string>meta.result.failed.test</string>
+                    <string>meta.result.failed.build</string>
                 </dict>
                 <key>7</key>
                 <dict>
                     <key>name</key>
-                    <string>meta.result.number.failed.test</string>
+                    <string>meta.result.number.failed.build</string>
                 </dict>
                 <key>8</key>
                 <dict>
                     <key>name</key>
-                    <string>meta.result.skipped.test</string>
+                    <string>meta.result.skipped.build</string>
                 </dict>
                 <key>9</key>
                 <dict>
                     <key>name</key>
-                    <string>meta.result.number.skipped.test</string>
+                    <string>meta.result.number.skipped.build</string>
                 </dict>
                 <key>10</key>
                 <dict>
                     <key>name</key>
-                    <string>meta.result.time.test</string>
+                    <string>meta.result.time.build</string>
                 </dict>
                 <key>11</key>
                 <dict>
                     <key>name</key>
-                    <string>meta.result.number.time.test</string>
+                    <string>meta.result.number.time.build</string>
                 </dict>
             </dict>
         </dict>
@@ -136,7 +136,7 @@
             <key>match</key>
             <string>(?:^| |"|'|\(|\[)((?:[A-Za-z]:)?[\\/][^\n "':\(\)\[\]]+\.\w{0,4})(?=[\n "':\(\)\[\]])</string>
             <key>name</key>
-            <string>markup.path.test</string>
+            <string>markup.path.build</string>
         </dict>
     </dict>
 </dict>
