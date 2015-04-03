@@ -27,7 +27,9 @@ class OmniSharpRunUnitTests(sublime_plugin.TextCommand):
         self.buildcommand = data["Command"]
         build = {
             "cmd": self.buildcommand + " && " + self.testcommand,
-            "shell": "true"
+            "shell": "true",
+            "syntax": "Packages/OmniSharp/BuildConsole.hidden-tmLanguage",
+            "file_regex": "(?:^| |\"|'|\\(|\\[)((?:[A-Za-z]:)?[\\/][^\n \"':\\(\\)\\[\\]]+\\.\\w{0,4})(?=[\n \"':\\(\\)\\[\\]])\\((\\d+),\\d+\\)"
         }
         sublime.active_window().run_command('exec',build)
 
