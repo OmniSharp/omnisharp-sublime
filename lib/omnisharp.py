@@ -33,7 +33,19 @@ class WorkerThread(threading.Thread):
         self.timeout = timeout
 
     def run(self):
-        self.callback(pool.urlopen('POST', self.url, body=self.data, timeout=self.timeout).data)
+        print('======== request ======== \n Url: %s \n Data: %s' % (self.url, self.data))
+        
+        response = pool.urlopen('POST', self.url, body=self.data, timeout=self.timeout).data
+        
+        if not response:
+            print('======== response ======== \n response is empty')
+            self.callback(None)
+        else:
+            decodeddata = response.decode('utf-8')
+            print('======== response ======== \n %s' % decodeddata)
+            self.callback(json.loads(decodeddata))
+            
+        print('======== end ========')
 
 def get_response(view, endpoint, callback, params=None, timeout=None):
     solution_path =  current_solution_filepath_or_project_rootpath(view)
@@ -64,20 +76,7 @@ def get_response(view, endpoint, callback, params=None, timeout=None):
     url = "http://%s:%s%s" % (host, port, endpoint)
     data = json.dumps(parameters)
 
-    def urlopen_callback(data):
-        if not data:
-            print('======== response ======== \n response is empty')
-            callback(None)
-        else:
-            decodeddata = data.decode('utf-8')
-            print('======== response ======== \n %s' % decodeddata)
-            callback(json.loads(decodeddata))
-            
-        print('======== end ========')
-
-    thread = WorkerThread(url, data, urlopen_callback, timeout)
-    
-    print('======== request ======== \n Url: %s \n Data: %s' % (url, data))    
+    thread = WorkerThread(url, data, callback, timeout)  
     thread.start()
 
 def _available_port():
