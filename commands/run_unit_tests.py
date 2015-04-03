@@ -25,6 +25,9 @@ class OmniSharpRunUnitTests(sublime_plugin.TextCommand):
     
     def _handle_build(self, data):
         self.buildcommand = data["Command"]
-        build = {"cmd":self.buildcommand + " && " + self.testcommand,"shell":"true"}
+        build = {
+            "cmd": self.buildcommand + " && " + self.testcommand,
+            "shell": "true"
+        }
         sublime.active_window().run_command('exec',build)
 
