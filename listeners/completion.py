@@ -45,6 +45,7 @@ class OmniSharpCompletionEventListener(sublime_plugin.EventListener):
         for item in data:
             completions.append(self.to_completion(item))
 
+        active_view().run_command('hide_auto_complete')
         self.completions = completions 
         self.ready_form_defer = True
 
