@@ -35,7 +35,7 @@ class WorkerThread(threading.Thread):
     def run(self):
         self.callback(pool.urlopen('POST', self.url, body=self.data, timeout=self.timeout).data)
 
-def get_response(view, endpoint, callback, params=None, timeout=1.0):
+def get_response(view, endpoint, callback, params=None, timeout=None):
     solution_path =  current_solution_filepath_or_project_rootpath(view)
 
     print('solution path: %s' % solution_path)
@@ -54,9 +54,10 @@ def get_response(view, endpoint, callback, params=None, timeout=1.0):
 
     if params is not None:
         parameters.update(params)
+
     if timeout is None:
         timeout = int(get_settings(view, 'omnisharp_response_timeout'))
-
+        
     host = 'localhost'
     port = server_ports[solution_path]
 
@@ -68,10 +69,9 @@ def get_response(view, endpoint, callback, params=None, timeout=1.0):
             print('======== response ======== \n response is empty')
             callback(None)
         else:
-            print('======== response ======== \n %s' % data)
-            jsonObj = json.loads(data.decode('utf-8'))
-            print(jsonObj)
-            callback(jsonObj)
+            decodeddata = data.decode('utf-8')
+            print('======== response ======== \n %s' % decodeddata)
+            callback(json.loads(decodeddata))
             
         print('======== end ========')
 
