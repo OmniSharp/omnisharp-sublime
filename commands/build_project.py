@@ -13,7 +13,7 @@ class OmniSharpBuildProject(sublime_plugin.TextCommand):
         options['build'] = self.build
         options['rebuild'] = self.rebuild
         options['clean'] = self.clean
-        sublime.active_window().run_command("save_all")
+        helpers.save_all_files(sublime.active_window())
         options[buildtype]()
 
     def build(self):

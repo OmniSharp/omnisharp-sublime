@@ -46,4 +46,7 @@ def current_solution_filepath_or_project_rootpath(view):
         parentpath = sublime.active_window().folders()[0] #assume parent folder is opened that contains all project folders eg/Web,ClassLib,Tests
         return parentpath
 
-
+def save_all_files(window):
+    for view in window.views():
+        if view.file_name() and view.is_dirty():
+            view.run_command("save")

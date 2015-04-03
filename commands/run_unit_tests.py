@@ -8,7 +8,7 @@ from ..lib import omnisharp
 class OmniSharpRunUnitTests(sublime_plugin.TextCommand):
     
     def run(self, edit, testtype='all'):
-        sublime.active_window().run_command("save_all")
+        helpers.save_all_files(sublime.active_window())
         params = {}
         params["type"] = testtype
         omnisharp.get_response(self.view, '/gettestcontext', self._handle_rununittests, params)
