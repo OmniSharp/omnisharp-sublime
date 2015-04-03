@@ -13,7 +13,7 @@
         <!-- Low importance meta stuff -->
         <dict>
             <key>match</key>
-            <string>^\[Finished .*\]$</string>
+            <string>^\[.*\]$</string>
             <key>name</key>
             <string>meta.comment.test</string>
         </dict>
