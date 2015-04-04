@@ -37,13 +37,13 @@ def current_solution_filepath_or_project_rootpath(view):
         solution_file_path = os.path.join(project_dir, solution_file_name)
         return os.path.abspath(solution_file_path)
     else:
-        if len(sublime.active_window().folders()) > 0:
-            parentpath = sublime.active_window().folders()[0] #assume parent folder is opened that contains all project folders eg/Web,ClassLib,Tests
-            return parentpath
+        active_window = sublime.active_window()
+        
+        if len(active_window.folders()) > 0:
+            return active_window.folders()[0] #assume parent folder is opened that contains all project folders eg/Web,ClassLib,Tests
 
         try:
-            parentpath = os.path.dirname(sublime.active_window().active_view().file_name())
-            return parentpath
+            return os.path.dirname(active_window.active_view().file_name())
         except Exception:
             print("New file not saved. Can't find path.")
             return None
