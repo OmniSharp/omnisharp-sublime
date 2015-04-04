@@ -3,13 +3,11 @@ import os
 import fnmatch
 
 def is_csharp(view):
-    try:
-        location = view.sel()[0].begin()
-    except:
+    if len(view.sel()) == 0:
         return False
-
+    
+    location = view.sel()[0].begin()   
     return view.match_selector(location, 'source.cs')
-
 
 def get_settings(view, name, default=None):
     settings = sublime.load_settings('OmniSharpSublime.sublime-settings')
@@ -18,7 +16,6 @@ def get_settings(view, name, default=None):
 
 def active_view():
     return sublime.active_window().active_view()
-
 
 def project_file_name(view):
     return view.window().project_file_name()
@@ -29,27 +26,24 @@ def project_data(view):
 def current_solution_filepath_or_project_rootpath(view):
     project_file = project_file_name(view)
     if project_file is not None:
-        print('project file found')
-        project_dir = os.path.dirname(project_file)
+        print('project file %s found', project_file)
 
         data = project_data(view)
         if 'solution_file' not in data:
             raise ValueError('Please specify a path to the solution file in your sublime-project file or delete it')
-        else:
-            solution_file_name = data['solution_file']
-            solution_file_path = os.path.join(project_dir, solution_file_name)
-            solution_file_path = os.path.abspath(solution_file_path)
-            return solution_file_path
+      
+        project_dir = os.path.dirname(project_file)
+        solution_file_name = data['solution_file']
+        solution_file_path = os.path.join(project_dir, solution_file_name)
+        return os.path.abspath(solution_file_path)
     else:
-        if len(sublime.active_window().folders()) > 0:
-            parentpath = sublime.active_window().folders()[0] #assume parent folder is opened that contains all project folders eg/Web,ClassLib,Tests
-            return parentpath
-        else:
-            try:
-                parentpath = os.path.dirname(sublime.active_window().active_view().file_name())
-                return parentpath
-            except Exception:
-                print("New file not saved. Can't find path.")
-                return None
+        active_window = sublime.active_window()
+        
+        if len(active_window.folders()) > 0:
+            return active_window.folders()[0] #assume parent folder is opened that contains all project folders eg/Web,ClassLib,Tests
 
-
+        try:
+            return os.path.dirname(active_window.active_view().file_name())
+        except Exception:
+            print("New file not saved. Can't find path.")
+            return None
