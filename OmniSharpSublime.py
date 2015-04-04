@@ -1,4 +1,3 @@
-# TODO: Omnisharp server가 sublime이 꺼지면 같이 꺼져야함.
 import sys
 import sublime
 import os
@@ -18,4 +17,13 @@ def plugin_loaded():
         sublime.save_settings('OmniSharpSublime.sublime-settings')
 
 def plugin_unloaded():
+    from package_control import events
+
+    if events.pre_upgrade('OmniSharp'):
+        print('Upgrading OmniSharp')
+        if os.name == 'posix':
+            os.chmod('PrebuiltOmniSharpServer/omnisharp', st.st_mode | 0o111)
+        else:
+            os.system('taskkill /f /im PrebuiltOmniSharpServer/OmniSharp.exe')
+
     print('omnisharp plugin_unloaded')
