@@ -1,0 +1,3 @@
+Bug Fixes
+
+* Package Control JSON improvements 
