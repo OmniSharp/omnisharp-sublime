@@ -1,0 +1,7 @@
+Bug Fixes
+
+* chmond launch script on plugin install for *nix
+
+Enhancements
+
+* coloured output for builds and unit tests
