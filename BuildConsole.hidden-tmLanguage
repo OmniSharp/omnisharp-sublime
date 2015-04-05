@@ -10,7 +10,8 @@
 
     <key>patterns</key>
     <array>
-        <!-- Low importance meta stuff -->
+        <!-- Unit Test -->
+
         <dict>
             <key>match</key>
             <string>^\[.*\]$</string>
@@ -174,6 +175,49 @@
                 </dict>
             </dict>
         </dict>
+
+        <!-- Build -->
+
+        <dict>
+            <key>match</key>
+            <string>^(?:CSC|([^(]+)\((\d+),(\d+)\)):\s+(?:(error\s+\w+:)|(warning\s+\w+:))(.*)</string>
+            <key>name</key>
+            <string>message.file-error.build</string>
+            <key>captures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>markup.path.build</string>
+                </dict>
+                <key>2</key>
+                <dict>
+                    <key>name</key>
+                    <string>meta.line-number.build</string>
+                </dict>
+                <key>3</key>
+                <dict>
+                    <key>name</key>
+                    <string>meta.column-number.build</string>
+                </dict>
+                <key>4</key>
+                <dict>
+                    <key>name</key>
+                    <string>message.error.build</string>
+                </dict>
+                <key>5</key>
+                <dict>
+                    <key>name</key>
+                    <string>message.warning.build</string>
+                </dict>
+                <key>6</key>
+                <dict>
+                    <key>name</key>
+                    <string>message.build</string>
+                </dict>
+            </dict>
+        </dict>
+
 
         <dict>
             <key>include</key>

@@ -24,6 +24,8 @@
             </dict>
         </dict>
 
+        <!-- Unit Test -->
+
         <dict>
             <key>name</key>
             <string>Comment</string>
@@ -197,6 +199,43 @@
                 <string>#FFFFFF</string>
                 <key>background</key>
                 <string>#8D1414</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Warning</string>
+            <key>scope</key>
+            <string>message.warning.build</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#FD971F</string>
+            </dict>
+        </dict>
+
+
+        <!-- Build -->
+
+        <dict>
+            <key>name</key>
+            <string>Line Number</string>
+            <key>scope</key>
+            <string>meta.line-number.build</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#66D9EF</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Error message</string>
+            <key>scope</key>
+            <string>message.file-error.build message</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#718EC4</string>
             </dict>
         </dict>
     </array>
