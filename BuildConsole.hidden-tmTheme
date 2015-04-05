@@ -141,6 +141,30 @@
 
         <dict>
             <key>name</key>
+            <string>Test Fail</string>
+            <key>scope</key>
+            <string>message.test-method.build</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#F83333</string>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>name</key>
+            <string>Trace Methods</string>
+            <key>scope</key>
+            <string>message.trace.build support.package.build</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#FD971F</string>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>name</key>
             <string>Path</string>
             <key>scope</key>
             <string>markup.path.build</string>
@@ -148,6 +172,31 @@
             <dict>
                 <key>foreground</key>
                 <string>#E6DB74</string>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>name</key>
+            <string>Error</string>
+            <key>scope</key>
+            <string>message.error.build</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#F83333</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Flash Error</string>
+            <key>scope</key>
+            <string>message.error.flash.build</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#FFFFFF</string>
+                <key>background</key>
+                <string>#8D1414</string>
             </dict>
         </dict>
     </array>

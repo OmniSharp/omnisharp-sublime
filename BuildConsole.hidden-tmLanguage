@@ -124,6 +124,58 @@
         </dict>
 
         <dict>
+            <key>match</key>
+            <string>^\s*([\w.]+\.(\w+))\s+(\[FAIL\])\s*$</string>
+            <key>name</key>
+            <string>message.test-fail.build</string>
+            <key>captures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>support.package.build</string>
+                </dict>
+                <key>2</key>
+                <dict>
+                    <key>name</key>
+                    <string>message.test-method.build</string>
+                </dict>
+                <key>3</key>
+                <dict>
+                    <key>name</key>
+                    <string>message.error.flash.build</string>
+                </dict>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>match</key>
+            <string>(\s+Failure$)</string>
+            <key>name</key>
+            <string>message.error.build</string>
+        </dict>
+
+        <dict>
+            <key>match</key>
+            <string>\s*at\s+(\([^\)]+\)\s+)?([\w.:]+)</string>
+            <key>name</key>
+            <string>message.trace.build</string>
+            <key>captures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>meta.comment.build</string>
+                </dict>
+                <key>2</key>
+                <dict>
+                    <key>name</key>
+                    <string>support.package.build</string>
+                </dict>
+            </dict>
+        </dict>
+
+        <dict>
             <key>include</key>
             <string>#file-path</string>
         </dict>
