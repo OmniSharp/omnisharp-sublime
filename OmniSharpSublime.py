@@ -23,7 +23,7 @@ def plugin_loaded():
             # give the launch script executable permissions
             os.chmod('PrebuiltOmniSharpServer/omnisharp', st.st_mode | 0o111)
     elif events.post_upgrade('OmniSharp'):
-        print('Upgrading OmniSharp)
+        print('Upgrading OmniSharp')
         if os.name == 'posix':
             # give the launch script executable permissions
             os.chmod('PrebuiltOmniSharpServer/omnisharp', st.st_mode | 0o111)
