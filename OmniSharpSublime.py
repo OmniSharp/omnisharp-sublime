@@ -22,16 +22,19 @@ def plugin_loaded():
         if os.name == 'posix':
             # give the launch script executable permissions
             os.chmod('PrebuiltOmniSharpServer/omnisharp', st.st_mode | 0o111)
+    elif events.post_upgrade('OmniSharp'):
+        print('Upgrading OmniSharp)
+        if os.name == 'posix':
+            # give the launch script executable permissions
+            os.chmod('PrebuiltOmniSharpServer/omnisharp', st.st_mode | 0o111)
+
 
 def plugin_unloaded():
     from package_control import events
 
     if events.pre_upgrade('OmniSharp'):
-        print('Upgrading OmniSharp')
-        if os.name == 'posix':
-            # give the launch script executable permissions
-            os.chmod('PrebuiltOmniSharpServer/omnisharp', st.st_mode | 0o111)
-        else:
+        print('About to upgrade OmniSharp')
+        if os.name != 'posix':
             # kill the exe before the update complains about exe in use
             os.system('taskkill /f /im PrebuiltOmniSharpServer/OmniSharp.exe')
 
