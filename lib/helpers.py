@@ -47,3 +47,8 @@ def current_solution_filepath_or_project_rootpath(view):
         except Exception:
             print("New file not saved. Can't find path.")
             return None
+
+def save_all_files(window):
+    for view in window.views():
+        if view.file_name() and view.is_dirty():
+            view.run_command("save")

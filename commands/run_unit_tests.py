@@ -8,7 +8,7 @@ from ..lib import omnisharp
 class OmniSharpRunUnitTests(sublime_plugin.TextCommand):
     
     def run(self, edit, testtype='all'):
-        sublime.active_window().run_command("save_all")
+        helpers.save_all_files(sublime.active_window())
         params = {}
         params["type"] = testtype
         omnisharp.get_response(self.view, '/gettestcontext', self._handle_rununittests, params)
@@ -25,6 +25,11 @@ class OmniSharpRunUnitTests(sublime_plugin.TextCommand):
     
     def _handle_build(self, data):
         self.buildcommand = data["Command"]
-        build = {"cmd":self.buildcommand + " && " + self.testcommand,"shell":"true"}
+        build = {
+            "cmd": self.buildcommand + " && " + self.testcommand,
+            "shell": "true",
+            "syntax": "Packages/OmniSharp/BuildConsole.hidden-tmLanguage",
+            "file_regex": "(?:^| |\"|'|\\(|\\[)((?:[A-Za-z]:)?[\\/][^\n \"':\\(\\)\\[\\]]+\\.\\w{0,4})(?=[\n \"':\\(\\)\\[\\]])\\((\\d+),\\d+\\)"
+        }
         sublime.active_window().run_command('exec',build)
 

@@ -15,7 +15,8 @@ Below is a similar build system to what comes out of the box with OmniSharpSubli
     ],
     "path": "/usr/bin/",
     "working_dir": "${project_path:${folder}}",
-    "file_regex": "^([\\d\\w:/\\.-]*)\\((\\d+),(\\d+)\\)\\s*(.*)$",
+    "file_regex": "(?:^| |\"|'|\\(|\\[)((?:[A-Za-z]:)?[\\/][^\n \"':\\(\\)\\[\\]]+\\.\\w{0,4})(?=[\n \"':\\(\\)\\[\\]])\\((\\d+),\\d+\\)",
+    "syntax": "Packages/OmniSharp/BuildConsole.hidden-tmLanguage",
     "variants": [
         {
             "name": "Clean",
@@ -27,8 +28,7 @@ Below is a similar build system to what comes out of the box with OmniSharpSubli
                 "/target:Clean"
             ],
             "path": "/usr/bin/",
-            "working_dir": "${project_path:${folder}}",
-            "file_regex": "^([\\d\\w:/\\.-]*)\\((\\d+),(\\d+)\\)\\s*(.*)$"
+            "working_dir": "${project_path:${folder}}"
         },
         {
             "name": "ReBuild",
@@ -40,8 +40,7 @@ Below is a similar build system to what comes out of the box with OmniSharpSubli
                 "/target:rebuild"
             ],
             "path": "/usr/bin/",
-            "working_dir": "${project_path:${folder}}",
-            "file_regex": "^([\\d\\w:/\\.-]*)\\((\\d+),(\\d+)\\)\\s*(.*)$"
+            "working_dir": "${project_path:${folder}}"
         }
     ]
 }

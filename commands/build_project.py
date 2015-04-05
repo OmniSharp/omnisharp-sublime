@@ -13,7 +13,7 @@ class OmniSharpBuildProject(sublime_plugin.TextCommand):
         options['build'] = self.build
         options['rebuild'] = self.rebuild
         options['clean'] = self.clean
-        sublime.active_window().run_command("save_all")
+        helpers.save_all_files(sublime.active_window())
         options[buildtype]()
 
     def build(self):
@@ -31,14 +31,11 @@ class OmniSharpBuildProject(sublime_plugin.TextCommand):
         omnisharp.get_response(self.view, '/buildtarget', self._handle_build, params)    
     
     def _handle_build(self, data):
-        # settings = sublime.load_settings('OmniSharpSublime.sublime-settings')
-        # SYNTAX = settings.get('omnisharp_syntax')
-        # THEME = settings.get('omnisharp_color_scheme')
-        # self.panel = sublime.active_window().get_output_panel("exec")
-        # self.panel.settings().set("color_scheme", THEME)
-        # self.panel.set_syntax_file(SYNTAX)
-
-
         self.buildcommand = data["Command"]
-        build = {"cmd":self.buildcommand,"shell":"true","file_regex": "^(.*)\((\d+)\,(\d+)\):"}
+        build = {
+            "cmd": self.buildcommand,
+            "shell": "true",
+            "syntax": "Packages/OmniSharp/BuildConsole.hidden-tmLanguage",
+            "file_regex": "(?:^| |\"|'|\\(|\\[)((?:[A-Za-z]:)?[\\/][^\n \"':\\(\\)\\[\\]]+\\.\\w{0,4})(?=[\n \"':\\(\\)\\[\\]])\\((\\d+),\\d+\\)"
+        }
         sublime.active_window().run_command('exec',build)

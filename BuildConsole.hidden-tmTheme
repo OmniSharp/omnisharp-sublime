@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>name</key>
+    <string>Build Console</string>
+    <key>settings</key>
+    <array>
+        <dict>
+            <key>settings</key>
+            <dict>
+                <key>background</key>
+                <string>#000000</string>
+                <key>caret</key>
+                <string>#A7A7A7</string>
+                <key>foreground</key>
+                <string>#F8F8F8</string>
+                <key>invisibles</key>
+                <string>#CAE2FB3D</string>
+                <key>lineHighlight</key>
+                <string>#FFFFFF0D</string>
+                <key>selection</key>
+                <string>#DDF0FF33</string>
+            </dict>
+        </dict>
+
+        <!-- Unit Test -->
+
+        <dict>
+            <key>name</key>
+            <string>Comment</string>
+            <key>scope</key>
+            <string>meta.comment.build</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#75715E</string>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>name</key>
+            <string>Test Package Line</string>
+            <key>scope</key>
+            <string>string.package-line.build</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#E6DB74</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Test Package</string>
+            <key>scope</key>
+            <string>support.package.build</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#66D9EF</string>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>name</key>
+            <string>Header</string>
+            <key>scope</key>
+            <string>meta.header.build</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#A6E22E</string>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>name</key>
+            <string>Result - Total</string>
+            <key>scope</key>
+            <string>meta.result.total.build</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#BBBBBB</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Result - Error</string>
+            <key>scope</key>
+            <string>meta.result.error.build</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#F83333</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Result - Failed</string>
+            <key>scope</key>
+            <string>meta.result.failed.build</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#FD971F</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Result - Skipped</string>
+            <key>scope</key>
+            <string>meta.result.skipped.build</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#E6DB74</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Result - Time</string>
+            <key>scope</key>
+            <string>meta.result.time.build</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#A6E22E</string>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>name</key>
+            <string>Result - Numbers</string>
+            <key>scope</key>
+            <string>meta.result.number</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string>bold</string>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>name</key>
+            <string>Test Fail</string>
+            <key>scope</key>
+            <string>message.test-method.build</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#F83333</string>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>name</key>
+            <string>Trace Methods</string>
+            <key>scope</key>
+            <string>message.trace.build support.package.build</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#FD971F</string>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>name</key>
+            <string>Path</string>
+            <key>scope</key>
+            <string>markup.path.build</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#E6DB74</string>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>name</key>
+            <string>Error</string>
+            <key>scope</key>
+            <string>message.error.build</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#F83333</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Flash Error</string>
+            <key>scope</key>
+            <string>message.error.flash.build</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#FFFFFF</string>
+                <key>background</key>
+                <string>#8D1414</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Warning</string>
+            <key>scope</key>
+            <string>message.warning.build</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#FD971F</string>
+            </dict>
+        </dict>
+
+
+        <!-- Build -->
+
+        <dict>
+            <key>name</key>
+            <string>Line Number</string>
+            <key>scope</key>
+            <string>meta.line-number.build</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#66D9EF</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Error message</string>
+            <key>scope</key>
+            <string>message.file-error.build message</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#718EC4</string>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>
