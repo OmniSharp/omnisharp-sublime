@@ -52,3 +52,6 @@ def save_all_files(window):
     for view in window.views():
         if view.file_name() and view.is_dirty():
             view.run_command("save")
+
+def quote_path(path):
+    return '"' + path.strip('"') + '"'
