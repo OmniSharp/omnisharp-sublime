@@ -16,7 +16,8 @@ def plugin_loaded():
         settings.set("omnisharp_server_config_location", sublime.packages_path() + os.path.sep + "OmniSharp" + os.path.sep + "PrebuiltOmniSharpServer" + os.path.sep + "config.json")
         sublime.save_settings('OmniSharpSublime.sublime-settings')
     from package_control import events
-
+    print('got events')
+    print(events)
     if events.install('OmniSharp.OmniSharpSublime'):
         print('Installing OmniSharp')
         if os.name == 'posix':
