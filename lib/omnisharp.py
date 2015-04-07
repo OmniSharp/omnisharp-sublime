@@ -10,6 +10,7 @@ import traceback
 import sys
 import signal
 
+from .helpers import quote_path
 from .helpers import get_settings
 from .helpers import current_solution_filepath_or_project_rootpath
 from .urllib3 import PoolManager
