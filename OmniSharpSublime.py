@@ -19,8 +19,9 @@ def plugin_loaded():
 
     if os.name == 'posix':
         # give the launch script executable permissions
-        st = os.stat('PrebuiltOmniSharpServer/omnisharp')
-        os.chmod('PrebuiltOmniSharpServer/omnisharp', st.st_mode | 0o111)
+        script_path = os.path.dirname(__file__) + '/PrebuiltOmniSharpServer/omnisharp'
+        st = os.stat(script_path)
+        os.chmod(script_path, st.st_mode | 0o111)
 
     from package_control import events
     print('got events')
