@@ -1,6 +1,7 @@
 import sys
 import sublime
 import os
+import stat
 
 from .listeners import *
 from .commands import *
@@ -18,6 +19,7 @@ def plugin_loaded():
 
     if os.name == 'posix':
         # give the launch script executable permissions
+        st = os.stat('PrebuiltOmniSharpServer/omnisharp')
         os.chmod('PrebuiltOmniSharpServer/omnisharp', st.st_mode | 0o111)
 
     from package_control import events
@@ -27,11 +29,13 @@ def plugin_loaded():
         print('Installing OmniSharp')
         if os.name == 'posix':
             # give the launch script executable permissions
+            st = os.stat('PrebuiltOmniSharpServer/omnisharp')
             os.chmod('PrebuiltOmniSharpServer/omnisharp', st.st_mode | 0o111)
     elif events.post_upgrade('OmniSharp'):
         print('Upgrading OmniSharp')
         if os.name == 'posix':
             # give the launch script executable permissions
+            st = os.stat('PrebuiltOmniSharpServer/omnisharp')
             os.chmod('PrebuiltOmniSharpServer/omnisharp', st.st_mode | 0o111)
 
 
