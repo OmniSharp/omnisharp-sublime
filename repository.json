@@ -1,14 +1,5 @@
 {
 	"schema_version": "3.0.0",
-	"package_name_map":
-	{
-		"omnisharp-sublime": "OmniSharp"
-	},
-	"repositories":
-	[
-		"https://github.com/OmniSharp/omnisharp-sublime",
-		"http://sublime.wbond.net/packages.json"
-	],
 	"packages": [
 		{
 			"name": "OmniSharp",
