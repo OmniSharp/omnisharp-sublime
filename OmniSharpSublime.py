@@ -16,13 +16,14 @@ def plugin_loaded():
         settings.set("omnisharp_server_config_location", sublime.packages_path() + os.path.sep + "OmniSharp" + os.path.sep + "PrebuiltOmniSharpServer" + os.path.sep + "config.json")
         sublime.save_settings('OmniSharpSublime.sublime-settings')
     from package_control import events
-
-    if events.install('OmniSharp.OmniSharpSublime'):
+    print('got events')
+    print(events)
+    if events.install('OmniSharp'):
         print('Installing OmniSharp')
         if os.name == 'posix':
             # give the launch script executable permissions
             os.chmod('PrebuiltOmniSharpServer/omnisharp', st.st_mode | 0o111)
-    elif events.post_upgrade('OmniSharp.OmniSharpSublime'):
+    elif events.post_upgrade('OmniSharp'):
         print('Upgrading OmniSharp')
         if os.name == 'posix':
             # give the launch script executable permissions
@@ -32,7 +33,7 @@ def plugin_loaded():
 def plugin_unloaded():
     from package_control import events
 
-    if events.pre_upgrade('OmniSharp.OmniSharpSublime'):
+    if events.pre_upgrade('OmniSharp'):
         print('About to upgrade OmniSharp')
         if os.name != 'posix':
             # kill the exe before the update complains about exe in use

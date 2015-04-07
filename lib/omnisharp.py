@@ -10,6 +10,7 @@ import traceback
 import sys
 import signal
 
+from .helpers import quote_path
 from .helpers import get_settings
 from .helpers import current_solution_filepath_or_project_rootpath
 from .urllib3 import PoolManager
@@ -110,13 +111,13 @@ def create_omnisharp_server_subprocess(view):
     else:
         try:
             omni_exe_paths = find_omni_exe_paths()
-            omni_exe_path = "\"" + omni_exe_paths[0] + "\""
+            omni_exe_path = quote_path(omni_exe_paths[0])
 
             args = [
                 omni_exe_path, 
-                '-s', '"' + solution_path + '"',
+                '-s', quote_path(solution_path),
                 '-p', str(omni_port),
-                '-config', '"' + config_file + '"',
+                '-config', quote_path(config_file),
                 '--hostPID', str(os.getpid())
             ]
 
