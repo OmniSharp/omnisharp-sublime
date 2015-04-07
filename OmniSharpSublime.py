@@ -19,8 +19,8 @@ def plugin_loaded():
 
     if os.name == 'posix':
         # give the launch script executable permissions
-        st = os.stat('PrebuiltOmniSharpServer/omnisharp')
-        os.chmod('PrebuiltOmniSharpServer/omnisharp', st.st_mode | 0o111)
+        st = os.stat('Packages/OmniSharp/PrebuiltOmniSharpServer/omnisharp')
+        os.chmod('Packages/OmniSharp/PrebuiltOmniSharpServer/omnisharp', st.st_mode | 0o111)
 
     from package_control import events
     print('got events')
@@ -29,14 +29,14 @@ def plugin_loaded():
         print('Installing OmniSharp')
         if os.name == 'posix':
             # give the launch script executable permissions
-            st = os.stat('PrebuiltOmniSharpServer/omnisharp')
-            os.chmod('PrebuiltOmniSharpServer/omnisharp', st.st_mode | 0o111)
+            st = os.stat('Packages/OmniSharp/PrebuiltOmniSharpServer/omnisharp')
+            os.chmod('Packages/OmniSharp/PrebuiltOmniSharpServer/omnisharp', st.st_mode | 0o111)
     elif events.post_upgrade('OmniSharp'):
         print('Upgrading OmniSharp')
         if os.name == 'posix':
             # give the launch script executable permissions
-            st = os.stat('PrebuiltOmniSharpServer/omnisharp')
-            os.chmod('PrebuiltOmniSharpServer/omnisharp', st.st_mode | 0o111)
+            st = os.stat('Packages/OmniSharp/PrebuiltOmniSharpServer/omnisharp')
+            os.chmod('Packages/OmniSharp/PrebuiltOmniSharpServer/omnisharp', st.st_mode | 0o111)
 
 
 def plugin_unloaded():
