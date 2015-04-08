@@ -1,0 +1,16 @@
+Bug Fixes:
+
+* Refactoring of core plugin code that communicates with OmniSharp server
+* Correct case for OmniSharpServer.exe launching on Linux
+* Correct quotes around launch paths
+* Include homebrew path of Mono when launching omnisharp server
+* Updated UrlLib version
+* chmond launch script on plugin load for *nix
+
+Enhancements:
+
+* Single CS file usage, no folder needed
+* Tooltips on errors, when a document is saved the syntax error check will be executed after 500ms and the user can click on the squiggly warning lines and a tooltip will show the error. 
+  There is a new plugin setting that allows you turn on/off error window when syntax issues are found allowing the user to have tooltips and a window.
+* Super + I key binding for Go to Implementation feature
+* coloured output for builds and unit tests
