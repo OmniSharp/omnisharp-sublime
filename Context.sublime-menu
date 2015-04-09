@@ -85,6 +85,14 @@
                 "command": "omni_sharp_show_server_output",
             },
             {
+                "caption": "Next Syntax Error",
+                "command": "omni_sharp_next_syntax_error"
+            },
+            {
+                "caption": "Last Syntax Error",
+                "command": "omni_sharp_last_syntax_error"
+            },
+            {
                 "caption": "Build",
                 "children":[
                     {
