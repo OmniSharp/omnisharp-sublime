@@ -5,7 +5,7 @@ from ..lib import omnisharp
 from ..lib import helpers
 
 
-class OmniSharpNextSyntaxError(sublime_plugin.TextCommand):
+class OmniSharpNextCodeIssue(sublime_plugin.TextCommand):
     def run(self, text):
         oops_map = self.get_oops_map()
         if None == oops_map:
@@ -36,7 +36,7 @@ class OmniSharpNextSyntaxError(sublime_plugin.TextCommand):
         return self.view.settings().get("oops")
 
 
-class OmniSharpLastSyntaxError(sublime_plugin.TextCommand):
+class OmniSharpLastCodeIssue(sublime_plugin.TextCommand):
     def run(self, text):
         oops_map = self.get_oops_map()
         if None == oops_map:

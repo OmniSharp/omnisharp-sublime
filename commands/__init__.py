@@ -21,8 +21,8 @@ from .build_project import OmniSharpBuildProject
 from .reload_solution import OmniSharpReloadSolution
 from .navigate_to import OmniSharpNavigateTo
 from .show_server_output import OmniSharpShowServerOutput
-from .navigate_syntax_errors import OmniSharpNextSyntaxError
-from .navigate_syntax_errors import OmniSharpLastSyntaxError
+from .navigate_code_issues import OmniSharpNextCodeIssue
+from .navigate_code_issues import OmniSharpLastCodeIssue
 
 __all__ = [
     'OmniSharpGoToDefinition',
@@ -48,6 +48,6 @@ __all__ = [
     'OmniSharpReloadSolution',
     'OmniSharpNavigateTo',
     'OmniSharpShowServerOutput',
-    'OmniSharpNextSyntaxError',
-    'OmniSharpLastSyntaxError'
+    'OmniSharpNextCodeIssue',
+    'OmniSharpLastCodeIssue'
 ]

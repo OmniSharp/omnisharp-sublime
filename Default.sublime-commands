@@ -102,12 +102,12 @@
         "command": "omni_sharp_show_server_output",
     },
     {
-        "caption": "OmniSharpSublime: Next Syntax Error",
-        "command": "omni_sharp_next_syntax_error"
+        "caption": "OmniSharpSublime: Next Code Issue",
+        "command": "omni_sharp_next_code_issue"
     },
     {
-        "caption": "OmniSharpSublime: Last Syntax Error",
-        "command": "omni_sharp_last_syntax_error"
+        "caption": "OmniSharpSublime: Last Code Issue",
+        "command": "omni_sharp_last_code_issue"
     }
     }
 ]
