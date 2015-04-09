@@ -100,5 +100,14 @@
     {
         "caption": "OmniSharpSublime: Show Server Output",
         "command": "omni_sharp_show_server_output",
+    },
+    {
+        "caption": "OmniSharpSublime: Next Syntax Error",
+        "command": "omni_sharp_next_syntax_error"
+    },
+    {
+        "caption": "OmniSharpSublime: Last Syntax Error",
+        "command": "omni_sharp_last_syntax_error"
+    }
     }
 ]
