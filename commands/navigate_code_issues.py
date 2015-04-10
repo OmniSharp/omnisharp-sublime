@@ -24,9 +24,9 @@ class OmniSharpNextCodeIssue(sublime_plugin.TextCommand):
             next_region = all_regions[0]
 
         if next_region != None:
-            sel.clear()
             self.view.show_at_center(next_region)
-            sel.add(next_region)
+            sel.clear()
+            sel.add(sublime.Region(next_region.begin(), next_region.begin()))
 
     def is_enabled(self):
         oops_map = self.get_oops_map()
@@ -55,9 +55,9 @@ class OmniSharpLastCodeIssue(sublime_plugin.TextCommand):
             next_region = all_regions[-1]
 
         if next_region != None:
-            sel.clear()
             self.view.show_at_center(next_region)
-            sel.add(next_region)
+            sel.clear()
+            sel.add(sublime.Region(next_region.begin(), next_region.begin()))
 
     def is_enabled(self):
         oops_map = self.get_oops_map()
