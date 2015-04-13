@@ -42,7 +42,9 @@ class OmniSharpTooltipListener(sublime_plugin.EventListener):
 
             key = "%s,%s" % (word_region.a, word_region.b)
             if key not in oops_map:
-                continue
+                key = "%s,%s" % (region.begin(), region.begin() + 1)
+                if key not in oops_map:
+                    continue
             issue = oops_map[key]
 
             css = "html {background-color: #232628; color: #CCCCCC; } body {font-size: 12px; } a {color: #6699cc; } b {color: #cc99cc; } h1 {color: #99cc99; font-size: 14px; }"

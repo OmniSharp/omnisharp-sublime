@@ -61,6 +61,9 @@ class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
             for i in self.data["QuickFixes"]:
                 point = self.view.text_point(i["Line"]-1, i["Column"]-1)
                 reg = self.view.word(point)
+                region_that_would_be_looked_up = self.view.word(reg.begin())
+                if region_that_would_be_looked_up.begin() != reg.begin() or region_that_would_be_looked_up.end() != reg.end():
+                    reg = sublime.Region(point, point+1)
                 self.underlines.append(reg)
                 key = "%s,%s" % (reg.a, reg.b)
                 oops_map[key] = i["Text"].strip()
