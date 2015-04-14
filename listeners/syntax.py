@@ -49,22 +49,32 @@ class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
         
         self.data = data
         self.underlines = []
+        self.warninglines = []
+        self.errlines = []
         oops_map = {}
 
         if "QuickFixes" in self.data and self.data["QuickFixes"] != None and len(self.data["QuickFixes"]) > 0:
             for i in self.data["QuickFixes"]:
                 point = self.view.text_point(i["Line"]-1, i["Column"])
                 reg = self.view.word(point)
-                self.underlines.append(reg)
+                # self.underlines.append(reg)
+                if i["LogLevel"] == "Warning" :
+                    self.warninglines.append(reg)
+                if i["LogLevel"] == "Error" :
+                    self.errlines.append(reg)
                 key = "%s,%s" % (reg.a, reg.b)
                 oops_map[key] = i["Text"].strip()
                 self.outputpanel.run_command('append', {'characters': i["LogLevel"] + " : " + i["Text"].strip() + " - (" + str(i["Line"]) + ", " + str(i["Column"]) + ")\n"})
-            if len(self.underlines) > 0:
-                print('underlines')
+            if len(self.errlines) > 0:
+                # print('underlines')
                 self.view.settings().set("oops", oops_map)
-                self.view.add_regions("oops", self.underlines, "illegal", "", sublime.DRAW_NO_FILL + sublime.DRAW_NO_OUTLINE + sublime.DRAW_SQUIGGLY_UNDERLINE)
+                self.view.add_regions("oops", self.errlines, "illegal", "",  sublime.DRAW_EMPTY )
                 if bool(helpers.get_settings(self.view,'omnisharp_onsave_showerrorwindows')):
                     self.view.window().run_command("show_panel", {"panel": "output.variable_get"})
+            if len(self.warninglines) > 0:
+                # print('underlines')
+                self.view.settings().set("oops", oops_map)
+                self.view.add_regions("oops", self.warninglines, "illegal", "", sublime.DRAW_NO_FILL + sublime.DRAW_NO_OUTLINE + sublime.DRAW_SQUIGGLY_UNDERLINE )
 
         self.data = None
 

@@ -12,7 +12,7 @@ class OmniSharpAddFileToProjectEventListener(sublime_plugin.EventListener):
         if not helpers.is_csharp(view):
             return
 
-        omnisharp.get_response(view, '/addtoproject', self._handle_addtoproject)
+        # omnisharp.get_response(view, '/addtoproject', self._handle_addtoproject)
 
 
     def _handle_addtoproject(self, data):
