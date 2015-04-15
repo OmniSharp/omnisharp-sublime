@@ -68,7 +68,7 @@ class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
             if len(self.errlines) > 0:
                 # print('underlines')
                 self.view.settings().set("oops", oops_map)
-                self.view.add_regions("oops", self.errlines, "illegal", "",  sublime.DRAW_EMPTY )
+                self.view.add_regions("oops", self.errlines, "illegal", "",  sublime.DRAW_EMPTY_AS_OVERWRITE+sublime.DRAW_OUTLINED )
                 if bool(helpers.get_settings(self.view,'omnisharp_onsave_showerrorwindows')):
                     self.view.window().run_command("show_panel", {"panel": "output.variable_get"})
             if len(self.warninglines) > 0:
