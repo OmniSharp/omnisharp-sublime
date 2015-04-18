@@ -34,19 +34,27 @@ class WorkerThread(threading.Thread):
         self.timeout = timeout
 
     def run(self):
-        print('======== request ======== \n Url: %s \n Data: %s' % (self.url, self.data))
-        
-        response = pool.urlopen('POST', self.url, body=self.data, timeout=self.timeout).data
-        
-        if not response:
-            print('======== response ======== \n response is empty')
-            self.callback(None)
-        else:
-            decodeddata = response.decode('utf-8')
-            print('======== response ======== \n %s' % decodeddata)
-            self.callback(json.loads(decodeddata))
+        try:
+            print('======== request ======== \n Url: %s \n Data: %s' % (self.url, self.data))
+
+            response = pool.urlopen('POST', self.url, body=self.data, timeout=self.timeout).data
             
-        print('======== end ========')
+            if not response:
+                print('======== response ======== \n response is empty')
+                self.callback(None)
+            else:
+                decodeddata = response.decode('utf-8')
+                print('======== response ======== \n %s' % decodeddata)
+                self.callback(json.loads(decodeddata))
+                
+            print('======== end ========')
+        except Exception as ex:
+            if "checkalivestatus" not in self.url:
+                print(str(ex))
+                set_omnisharp_status("Error talking to " + self.url)
+            else:
+                set_omnisharp_status("Server Not Running")
+
 
 def get_response(view, endpoint, callback, params=None, timeout=None):
     solution_path =  current_solution_filepath_or_project_rootpath(view)
@@ -127,8 +135,12 @@ def create_omnisharp_server_subprocess(view):
             view.window().run_command("exec",{"cmd":cmd,"shell":"true","quiet":"true"})
             view.window().run_command("hide_panel", {"panel": "output.exec"})
 
+            set_omnisharp_status("Loading Project")
+            sublime.set_timeout(lambda:check_solution_ready_status(view), 5000)
+
         except Exception as e:
             print('RAISE_OMNI_SHARP_LAUNCHER_EXCEPTION:%s' % repr(e))
+            set_omnisharp_status("Error Launching Server")
             return
 
     launcher_procs[solution_path] = True
@@ -160,3 +172,35 @@ def find_omni_exe_paths():
         for omni_exe_path in omni_exe_candidate_abs_paths
         if os.access(omni_exe_path, os.R_OK)]
 
+def set_omnisharp_status(statusmsg):
+    sublime.active_window().active_view().set_status("OmniSharp", "OmniSharp : " + statusmsg)
+
+def check_solution_ready_status(view):
+    get_response(view, "/checkreadystatus", ready_status_handler)
+
+readycount = 0
+
+def ready_status_handler(data):
+    print("ready is " + str(data))
+    if data == False:
+        readycount += 1
+        if readycount < 5:
+            sublime.set_timeout(lambda:check_solution_ready_status(sublime.active_window().active_view()), 5000)
+        else:
+            set_omnisharp_status("Error Loading Project")
+            readycount = 0
+    elif data == True:
+        readycount = 0
+        set_omnisharp_status("Project Loaded")
+        sublime.set_timeout(lambda:check_server_alive_status(sublime.active_window().active_view()), 5000)
+
+def check_server_alive_status(view):
+    get_response(view, "/checkalivestatus", alive_status_handler)    
+
+def alive_status_handler(data):
+    if data == False:
+        # I don't expect this to get hit because if its not running it wil throw exception
+        set_omnisharp_status("Server Not Running")
+    elif data == True:
+        set_omnisharp_status("Server Running")
+        sublime.set_timeout(lambda:check_server_alive_status(sublime.active_window().active_view()), 5000)
