@@ -181,10 +181,9 @@ def check_solution_ready_status(view):
 readycount = 0
 
 def ready_status_handler(data):
-    print("ready is " + str(data))
     if data == False:
         readycount += 1
-        if readycount < 5:
+        if readycount < 3:
             sublime.set_timeout(lambda:check_solution_ready_status(sublime.active_window().active_view()), 5000)
         else:
             set_omnisharp_status("Error Loading Project")
