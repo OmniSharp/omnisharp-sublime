@@ -100,5 +100,13 @@
     {
         "caption": "OmniSharpSublime: Show Server Output",
         "command": "omni_sharp_show_server_output",
+    },
+    {
+        "caption": "OmniSharpSublime: Next Code Issue",
+        "command": "omni_sharp_next_code_issue"
+    },
+    {
+        "caption": "OmniSharpSublime: Last Code Issue",
+        "command": "omni_sharp_last_code_issue"
     }
 ]

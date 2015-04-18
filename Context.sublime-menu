@@ -85,6 +85,14 @@
                 "command": "omni_sharp_show_server_output",
             },
             {
+                "caption": "Next Code Issue",
+                "command": "omni_sharp_next_code_issue"
+            },
+            {
+                "caption": "Last Code Issue",
+                "command": "omni_sharp_last_code_issue"
+            },
+            {
                 "caption": "Build",
                 "children":[
                     {

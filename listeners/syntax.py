@@ -13,15 +13,21 @@ class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
     outputpanel = None
     next_run_time = 0
 
-    def on_post_save(self, view):
-        self._run_codecheck(view)
+    def on_activated(self, view):
+        self._run_codecheck_after_delay(view)
 
     def on_modified(self, view):
-        timeout_ms = 500
-        self.next_run_time = time() + 0.0009 * timeout_ms
-        sublime.set_timeout(lambda:self._run_codecheck_after_delay(view), timeout_ms)
+        self._run_codecheck_after_delay(view)
+
+    def on_post_save(self, view):
+        self._run_codecheck_after_delay(view)
 
     def _run_codecheck_after_delay(self, view):
+        timeout_ms = 500
+        self.next_run_time = time() + 0.0009 * timeout_ms
+        sublime.set_timeout(lambda:self._run_codecheck_after_delay_callback(view), timeout_ms)
+
+    def _run_codecheck_after_delay_callback(self, view):
         if self.next_run_time <= time():
             self._run_codecheck(view)
 
@@ -53,8 +59,11 @@ class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
 
         if "QuickFixes" in self.data and self.data["QuickFixes"] != None and len(self.data["QuickFixes"]) > 0:
             for i in self.data["QuickFixes"]:
-                point = self.view.text_point(i["Line"]-1, i["Column"])
+                point = self.view.text_point(i["Line"]-1, i["Column"]-1)
                 reg = self.view.word(point)
+                region_that_would_be_looked_up = self.view.word(reg.begin())
+                if region_that_would_be_looked_up.begin() != reg.begin() or region_that_would_be_looked_up.end() != reg.end():
+                    reg = sublime.Region(point, point+1)
                 self.underlines.append(reg)
                 key = "%s,%s" % (reg.a, reg.b)
                 oops_map[key] = i["Text"].strip()
