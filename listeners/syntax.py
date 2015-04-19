@@ -8,18 +8,21 @@ from ..lib import omnisharp
 
 
 class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
-    data = None
     view = None
     outputpanel = None
     next_run_time = 0
+    is_save = False
+    is_modify = False
 
     def on_activated(self, view):
         self._run_codecheck_after_delay(view)
 
     def on_modified(self, view):
+        self.is_modify = True
         self._run_codecheck_after_delay(view)
 
     def on_post_save(self, view):
+        self.is_save = True
         self._run_codecheck_after_delay(view)
 
     def _run_codecheck_after_delay(self, view):
@@ -42,23 +45,22 @@ class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
         self.outputpanel.run_command('erase_view')
 
         self.view.erase_regions("oops")
-        if bool(helpers.get_settings(view, 'omnisharp_onsave_codecheck')):
+        if bool(helpers.get_settings(view, 'omnisharp_onsave_codecheck')) and self.is_save:
             omnisharp.get_response(view, '/codecheck', self._handle_codeerrors)
 
         print('file changed')
 
     def _handle_codeerrors(self, data):
-        print('handling Errors')
+        print('handling errors')
         if data is None:
             print('no data')
             return
         
-        self.data = data
         self.underlines = []
         oops_map = {}
 
-        if "QuickFixes" in self.data and self.data["QuickFixes"] != None and len(self.data["QuickFixes"]) > 0:
-            for i in self.data["QuickFixes"]:
+        if "QuickFixes" in data and data["QuickFixes"] != None and len(data["QuickFixes"]) > 0:
+            for i in data["QuickFixes"]:
                 point = self.view.text_point(i["Line"]-1, i["Column"]-1)
                 reg = self.view.word(point)
                 region_that_would_be_looked_up = self.view.word(reg.begin())
@@ -72,9 +74,5 @@ class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
                 print('underlines')
                 self.view.settings().set("oops", oops_map)
                 self.view.add_regions("oops", self.underlines, "illegal", "", sublime.DRAW_NO_FILL + sublime.DRAW_NO_OUTLINE + sublime.DRAW_SQUIGGLY_UNDERLINE)
-                if bool(helpers.get_settings(self.view,'omnisharp_onsave_showerrorwindows')):
+                if bool(helpers.get_settings(self.view,'omnisharp_onsave_showerrorwindows')) and self.is_save:
                     self.view.window().run_command("show_panel", {"panel": "output.variable_get"})
-
-        self.data = None
-
-
