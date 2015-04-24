@@ -14,7 +14,7 @@ class OmniSharpFindUsages(sublime_plugin.TextCommand):
             return
 
         usages = data["QuickFixes"]
-        items = [[u["Text"].strip(), u["FileName"]] for u in usages]
+        items = [[u["Text"].strip(), u["FileName"] + " Line : " + str(u["Line"])] for u in usages]
         window = sublime.active_window()
 
         def on_done(i):
