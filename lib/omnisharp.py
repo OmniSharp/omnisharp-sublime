@@ -56,6 +56,7 @@ class WorkerThread(threading.Thread):
                 set_omnisharp_status("Error talking to " + self.url)
             else:
                 set_omnisharp_status("Server Not Running")
+            self.callback(None)
 
 
 def get_response(view, endpoint, callback, params=None, timeout=None):
