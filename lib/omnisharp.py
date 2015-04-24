@@ -25,6 +25,8 @@ server_ports = {
 
 pool = PoolManager(headers={'Content-Type': 'application/json; charset=UTF-8'})
 
+readycount = 0
+
 class WorkerThread(threading.Thread):
     def __init__(self, url, data, callback, timeout):
         threading.Thread.__init__(self)
@@ -178,12 +180,11 @@ def set_omnisharp_status(statusmsg):
 def check_solution_ready_status(view):
     get_response(view, "/checkreadystatus", ready_status_handler)
 
-readycount = 0
-
 def ready_status_handler(data):
+    global readycount
     if data == False:
         readycount += 1
-        if readycount < 3:
+        if readycount < 5:
             sublime.set_timeout(lambda:check_solution_ready_status(sublime.active_window().active_view()), 5000)
         else:
             set_omnisharp_status("Error Loading Project")
