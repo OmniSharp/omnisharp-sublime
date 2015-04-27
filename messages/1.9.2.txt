@@ -1,0 +1,10 @@
+Bug Fixes:
+
+* Removed code check on file activated and modified
+* Removed omnisharp_onsave_showerrorwindows setting. Code warnings now on shown on Save if omnisharp_onsave_codecheck is true
+
+Enhancements:
+
+* Keyboard bindings for viewing code warnings, Super+M for next error, Super+N for last error
+* Added server status in status bar of Sublime window, once "Server Running" shown all features should be available. Server connection issues will appear in status bar too
+* Added line numbers in the Find Usages feature
