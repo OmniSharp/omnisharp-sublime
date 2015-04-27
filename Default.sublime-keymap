@@ -13,6 +13,6 @@
     {"command": "omni_sharp_build_project", "keys":["super+alt+b"]},
     {"command": "omni_sharp_navigate_to", "keys":["ctrl+,"]},
     {"command": "omni_sharp_go_to_implementation", "keys":["super+i"]},
-    {"command": "omni_sharp_next_code_issue", "keys": ["super+m"]},
-    {"command": "omni_sharp_last_code_issue", "keys": ["super+n"]}
+    {"command": "omni_sharp_next_code_issue", "keys": ["super+alt+m"]},
+    {"command": "omni_sharp_last_code_issue", "keys": ["super+alt+n"]}
 ]
