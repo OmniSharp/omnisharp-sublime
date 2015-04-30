@@ -15,8 +15,10 @@ class OmniSharpOverrideListener(sublime_plugin.EventListener):
     def on_modified(self, view):
         if not helpers.is_csharp(view):
             return
+        if bool(helpers.get_settings(view, 'omnisharp_show_override_completion')) == False:
+            return;
         pos = view.sel()[0].begin()
-        if pos > 9: #override 
+        if pos > 9: #override
             reg = sublime.Region(pos-9, pos)
             keyword = view.substr(reg).strip();
             if keyword == 'override':
