@@ -74,17 +74,21 @@ class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
                 key = "%s,%s" % (reg.a, reg.b)
                 oops_map[key] = i["Text"].strip()
                 self.outputpanel.run_command('append', {'characters': i["LogLevel"] + " : " + i["Text"].strip() + " - (" + str(i["Line"]) + ", " + str(i["Column"]) + ")\n"})
-            if len(self.errlines) > 0:
+            showErrorPanel = bool(helpers.get_settings(self.view,'omnisharp_onsave_showerrorwindows'))
+            showWarningPanel = bool(helpers.get_settings(self.view,'omnisharp_onsave_showwarningwindows'))
+            haveError = len(self.errlines) > 0
+            if haveError:
                 # print('underlines')
                 self.view.settings().set("oops", oops_map)
                 self.view.add_regions("oops", self.errlines, "sublimelinter.mark.error", "circle",  sublime.DRAW_NO_FILL|sublime.DRAW_NO_OUTLINE|sublime.DRAW_SOLID_UNDERLINE )
-                if bool(helpers.get_settings(self.view,'omnisharp_onsave_showerrorwindows')):
+                if showErrorPanel:
                     self.view.window().run_command("show_panel", {"panel": "output.variable_get"})
             if len(self.warninglines) > 0:
                 # print('underlines')
                 self.view.settings().set("oops", oops_map)
                 self.view.add_regions("oops", self.warninglines, "sublimelinter.mark.warning", "dot", sublime.DRAW_NO_FILL + sublime.DRAW_NO_OUTLINE + sublime.DRAW_SQUIGGLY_UNDERLINE )
-                #self.view.window().run_command("show_panel", {"panel": "output.variable_get"})
+                if (not haveError or not showErrorPanel) and showWarningPanel:
+                    self.view.window().run_command("show_panel", {"panel": "output.variable_get"})
 
         self.data = None
 
