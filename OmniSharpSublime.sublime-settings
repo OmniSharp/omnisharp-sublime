@@ -5,5 +5,5 @@
     "omnisharp_onsave_codecheck": true,
     "omnisharp_onsave_showwarningwindows":true,
     "omnisharp_onsave_showerrorwindows":true,
-    "omnisharp_debug_log":false
+    "omnisharp_debug_log":true
 }
