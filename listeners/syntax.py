@@ -5,6 +5,7 @@ from time import time
 
 from ..lib import helpers
 from ..lib import omnisharp
+from ..lib.view import OutputPanel
 
 
 class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
@@ -38,8 +39,8 @@ class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
         self.view = view
 
         sublime.active_window().run_command("hide_panel",{"panel": "output.variable_get"})
-        self.outputpanel = self.view.window().create_output_panel("variable_get")
-        self.outputpanel.run_command('erase_view')
+        self.outputpanel = OutputPanel(sublime.active_window(),"variable_get", r"File: (.+)$",r"\((\d+), (\d+)\)$")
+        self.outputpanel.clear()
 
         self.view.erase_regions("oops")
         if bool(helpers.get_settings(view, 'omnisharp_onsave_codecheck')):
@@ -61,6 +62,7 @@ class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
 
         if "QuickFixes" in self.data and self.data["QuickFixes"] != None and len(self.data["QuickFixes"]) > 0:
             self.data["QuickFixes"].sort(key = lambda a:(a['Line'],a['Column']))
+            self.outputpanel.write_line("File: "+self.data["QuickFixes"][0]["FileName"]+"\n")
             for i in self.data["QuickFixes"]:
                 point = self.view.text_point(i["Line"]-1, i["Column"]-1)
                 reg = self.view.word(point)
@@ -74,7 +76,7 @@ class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
                     self.errlines.append(reg)
                 key = "%s,%s" % (reg.a, reg.b)
                 oops_map[key] = i["Text"].strip()
-                self.outputpanel.run_command('append', {'characters': i["LogLevel"] + " : " + i["Text"].strip() + " - (" + str(i["Line"]) + ", " + str(i["Column"]) + ")\n"})
+                self.outputpanel.write_line(i["LogLevel"] + " : " + i["Text"].strip() + " - (" + str(i["Line"]) + ", " + str(i["Column"]) + ")")
             showErrorPanel = bool(helpers.get_settings(self.view,'omnisharp_onsave_showerrorwindows'))
             showWarningPanel = bool(helpers.get_settings(self.view,'omnisharp_onsave_showwarningwindows'))
             haveError = len(self.errlines) > 0
