@@ -4,6 +4,5 @@
     "omnisharp_server_config_location":"",
     "omnisharp_onsave_codecheck": true,
     "omnisharp_onsave_showwarningwindows":true,
-    "omnisharp_onsave_showerrorwindows":true,
-    "omnisharp_debug_log":true
+    "omnisharp_onsave_showerrorwindows":true
 }

@@ -35,12 +35,10 @@ class WorkerThread(threading.Thread):
         self.callback = callback
         self.timeout = timeout
         settings = sublime.load_settings('OmniSharpSublime.sublime-settings')
-        self.debug = bool(settings.get('omnisharp_debug_log', None))
 
     def run(self):
         try:
-            if self.debug:
-                print('======== request ======== \n Url: %s \n Data: %s' % (self.url, self.data))
+            print('======== request ======== \n Url: %s \n Data: %s' % (self.url, self.data))
 
             response = pool.urlopen('POST', self.url, body=self.data, timeout=self.timeout).data
             
@@ -49,8 +47,7 @@ class WorkerThread(threading.Thread):
                 self.callback(None)
             else:
                 decodeddata = response.decode('utf-8')
-                if self.debug:
-                    print('======== response ======== \n %s' % decodeddata)
+                print('======== response ======== \n %s' % decodeddata)
                 self.callback(json.loads(decodeddata))
                 
             print('======== end ========')
