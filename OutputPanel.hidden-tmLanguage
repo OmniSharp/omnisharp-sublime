@@ -6,34 +6,13 @@
     <string>Omnisharp Output</string>
 
     <key>scopeName</key>
-    <string>text.build</string>
+    <string>text.outputmessage</string>
 
     <key>patterns</key>
     <array>
-        <!-- Unit Test -->
-
         <dict>
             <key>match</key>
-            <string>^\[.*\]$</string>
-            <key>name</key>
-            <string>meta.comment.build</string>
-        </dict>
-        <dict>
-            <key>match</key>
-            <string>^xUnit\.net console test runner.*</string>
-            <key>name</key>
-            <string>meta.comment.build</string>
-        </dict>
-        <dict>
-            <key>match</key>
-            <string>^Copyright \(C\).*</string>
-            <key>name</key>
-            <string>meta.comment.build</string>
-        </dict>
-
-        <dict>
-            <key>match</key>
-            <string>^(Error) :\s*(.+)$</string>
+            <string>^(Error :)\s*(.+)$</string>
             <key>name</key>
             <string>string.package-line.build</string>
             <key>captures</key>
@@ -41,12 +20,12 @@
                 <key>1</key>
                 <dict>
                     <key>name</key>
-                    <string>message.error.build</string>
+                    <string>sublimelinter.mark.error.build</string>
                 </dict>
                 <key>2</key>
                 <dict>
                     <key>name</key>
-                    <string>message.error.build</string>
+                    <string>string.build</string>
                 </dict>
             </dict>
         </dict>
@@ -60,12 +39,12 @@
                 <key>1</key>
                 <dict>
                     <key>name</key>
-                    <string>string.build</string>
+                    <string>sublimelinter.mark.warning</string>
                 </dict>
                 <key>2</key>
                 <dict>
                     <key>name</key>
-                    <string>meta.comment.build</string>
+                    <string>string.build</string>
                 </dict>
             </dict>
         </dict>
