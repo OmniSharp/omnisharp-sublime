@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>name</key>
+    <string>Omnisharp Output</string>
+
+    <key>scopeName</key>
+    <string>text.outputmessage</string>
+
+    <key>patterns</key>
+    <array>
+        <dict>
+            <key>match</key>
+            <string>^(Error :)\s*(.+)$</string>
+            <key>name</key>
+            <string>string.package-line.build</string>
+            <key>captures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>message.error.build</string>
+                </dict>
+                <key>2</key>
+                <dict>
+                    <key>name</key>
+                    <string>string.package-line.build</string>
+                </dict>
+            </dict>
+        </dict>
+        <dict>
+            <key>match</key>
+            <string>^(Hidden :|Warning :)\s*(.+)$</string>
+            <key>name</key>
+            <string>comment.build</string>
+            <key>captures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>message.warning.build</string>
+                </dict>
+                <key>2</key>
+                <dict>
+                    <key>name</key>
+                    <string>string.package-line.build</string>
+                </dict>
+            </dict>
+        </dict>
+
+        <!-- Build -->
+
+        <dict>
+            <key>include</key>
+            <string>#file-path</string>
+        </dict>
+    </array>
+
+    <key>repository</key>
+    <dict>
+        <key>file-path</key>
+        <dict>
+            <key>match</key>
+            <string>^File: (.+)$</string>
+            <key>name</key>
+            <string>meta.header.build</string>
+            <key>captures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>markup.path.build</string>
+                </dict>
+            </dict>
+        </dict>
+    </dict>
+</dict>
+</plist>
