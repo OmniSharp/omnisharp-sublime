@@ -20,12 +20,12 @@
                 <key>1</key>
                 <dict>
                     <key>name</key>
-                    <string>sublimelinter.mark.error.build</string>
+                    <string>message.error.build</string>
                 </dict>
                 <key>2</key>
                 <dict>
                     <key>name</key>
-                    <string>string.build</string>
+                    <string>string.package-line.build</string>
                 </dict>
             </dict>
         </dict>
@@ -39,12 +39,12 @@
                 <key>1</key>
                 <dict>
                     <key>name</key>
-                    <string>sublimelinter.mark.warning</string>
+                    <string>message.warning.build</string>
                 </dict>
                 <key>2</key>
                 <dict>
                     <key>name</key>
-                    <string>string.build</string>
+                    <string>string.package-line.build</string>
                 </dict>
             </dict>
         </dict>
@@ -64,13 +64,13 @@
             <key>match</key>
             <string>^File: (.+)$</string>
             <key>name</key>
-            <string>markup.path.build</string>
+            <string>meta.header.build</string>
             <key>captures</key>
             <dict>
                 <key>1</key>
                 <dict>
                     <key>name</key>
-                    <string>comment.build</string>
+                    <string>markup.path.build</string>
                 </dict>
             </dict>
         </dict>

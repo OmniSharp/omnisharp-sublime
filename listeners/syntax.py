@@ -42,6 +42,8 @@ class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
         self.outputpanel = OutputPanel(sublime.active_window(),"variable_get", r"File: (.+)$",r"\((\d+), (\d+)\)$")
         self.outputpanel.clear()
         self.outputpanel.view.set_syntax_file("Packages/OmniSharp/OutputPanel.hidden-tmLanguage")
+        self.outputpanel.view.settings().set("color_scheme", 'Packages/OmniSharp/BuildConsole.hidden-tmTheme')
+        self.outputpanel.view.run_command('change_window_color_scheme')
 
         self.view.erase_regions("oops")
         if bool(helpers.get_settings(view, 'omnisharp_onsave_codecheck')):
