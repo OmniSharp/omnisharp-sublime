@@ -1,3 +1,6 @@
+# *****Looking for a maintainer. If you'd like to help manage this plugin please file and issue*****
+
+
 # OmniSharpSublime for ST3
  OmnisharpSublime is a plugin for ST3 to provide a C# development environment. It communicates with OmniSharpServer by nosami for IDE functions.
 
