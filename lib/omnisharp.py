@@ -2,6 +2,7 @@ import os
 import sublime
 import threading
 import json
+import codecs
 import urllib
 import urllib.parse
 import socket
@@ -18,7 +19,7 @@ from .urllib3 import PoolManager
 from queue import Queue
 
 IS_EXTERNAL_SERVER_ENABLE = False
-IS_NT_CONSOLE_VISIBLE = False 
+IS_NT_CONSOLE_VISIBLE = False
 
 launcher_procs = {
 }
@@ -64,7 +65,7 @@ def get_response(view, endpoint, callback, params=None, timeout=None):
     if solution_path is None or solution_path not in server_ports:
         callback(None)
         return
-        
+
     parameters = {}
     location = view.sel()[0]
     cursor = view.rowcol(location.begin())
@@ -106,7 +107,11 @@ def get_response(view, endpoint, callback, params=None, timeout=None):
             #     del server_ports[solution_path]
 
         else:
-            jsonStr = data.decode('utf-8')
+            if data.startswith(codecs.BOM_UTF8):
+                jsonStr = data.decode('utf-8-sig')
+            else:
+                jsonStr = data.decode('utf-8')
+
             print(jsonStr)
             jsonObj = json.loads(jsonStr)
             # traceback.print_stack(file=sys.stdout)
@@ -177,7 +182,7 @@ def _available_port():
     return port
 
 def create_omnisharp_server_subprocess(view):
-    solution_path = current_solution_filepath_or_project_rootpath(view) 
+    solution_path = current_solution_filepath_or_project_rootpath(view)
     if solution_path in launcher_procs:
         print("already_bound_solution:%s" % solution_path)
         return
@@ -186,8 +191,8 @@ def create_omnisharp_server_subprocess(view):
 
     omni_port = _available_port()
     print('omni_port:%s' % omni_port)
-    
-    
+
+
     config_file = get_settings(view, "omnisharp_server_config_location")
 
     if IS_EXTERNAL_SERVER_ENABLE:
@@ -199,16 +204,16 @@ def create_omnisharp_server_subprocess(view):
             omni_exe_path = "\"" + omni_exe_paths[0] + "\""
 
             args = [
-                omni_exe_path, 
+                omni_exe_path,
                 '-s', solution_path,
                 '-p', str(omni_port),
-                '-config', config_file,
+                # '-config', config_file,
                 '--hostPID', str(os.getpid())
             ]
 
             cmd = ' '.join(args)
             print(cmd)
-            
+
             view.window().run_command("exec",{"cmd":cmd,"shell":"true","quiet":"true"})
             view.window().run_command("hide_panel", {"panel": "output.exec"})
 
@@ -241,7 +246,7 @@ def find_omni_exe_paths():
         for rel_path in omni_exe_candidate_rel_paths
     ]
 
-    return [omni_exe_path 
+    return [omni_exe_path
         for omni_exe_path in omni_exe_candidate_abs_paths
         if os.access(omni_exe_path, os.R_OK)]
 
