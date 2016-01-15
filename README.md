@@ -9,7 +9,7 @@
    2. Linux
    3. Windows
  
-
+ 
 # Features
  1. Auto OmniSharpServer running
  2. Asynchronous communication with OmniSharpServer (Never freeze!)
@@ -52,6 +52,13 @@
 
 3. Move to plugin directory, update submodule and build.
 
+        #Windows
+        cd OmniSharp
+        git submodule update --init --recursive
+        build.cmd
+        
+        
+        #Linux
         cd OmniSharp
         git submodule update --init --recursive
         ./build.sh
@@ -69,7 +76,7 @@ The server will automatically find the the solution file from the folder you hav
 
 ## Example of a sublime-project
 
-```json
+```
 {
     "folders":
     [
@@ -98,7 +105,7 @@ Once the `YOURPROJECT.sublime-project` is set up and saved, follow the below:
  
  Paste the below in. This will launch intellisense on . and < symbols
 
- ```json
+ ```
  {
     "auto_complete": true,
     "auto_complete_selector": "source - comment",
@@ -108,7 +115,6 @@ Once the `YOURPROJECT.sublime-project` is set up and saved, follow the below:
 
 #OmniSharpServer Settings
 The Sublime plugin communicates to OmniSharp Server which has various available settings stored in a `config.json` file. By default the location of this file is in a folder under the Sublime OmniSharp packages folder called `PrebuiltOmniSharpServer` and there is also a user specific plugin setting that specifies the location of this `config.json` file.  To prevent your settings being overridden on new releases of the Sublime package, we recommend you store your `config.json` file somewhere other than the default location.  Once you have taken a copy of `config.json` and put it somewhere safe you will need to update the Sublime plugin's user setting called `"omnisharp_server_config_location"`. 
-
  
 #Format Document Settings
 
@@ -126,7 +132,7 @@ This is to do with the settings for `OmniSharpServer`.
 
 Open your safely tucked away config.json file and modify the `eolMarker` setting to `\n` like below
 
-```json
+```
   "TextEditorOptions": {
     "tabsToSpaces": true,
     "tabSize": 4,
@@ -151,7 +157,7 @@ For the plugin to be able to run unit tests you need to configure the test runne
 
 Open your safely tucked away config.json file and modify the `TestCommands` like below
 
- ```json
+ ```
  "TestCommands": {
     "All": "nunit-console.exe -nologo {{AssemblyPath}}",
     "Fixture": "nunit-console.exe -nologo {{AssemblyPath}} -run={{TypeName}}",
