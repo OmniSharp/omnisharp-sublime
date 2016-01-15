@@ -43,10 +43,10 @@
             <summary> Attribute is declaring namespace ("xmlns" or "xmlns:*") </summary>
         </member>
         <member name="M:ICSharpCode.NRefactory.Xml.AXmlAttribute.AcceptVisitor(ICSharpCode.NRefactory.Xml.AXmlVisitor)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:ICSharpCode.NRefactory.Xml.AXmlAttribute.ToString">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="T:ICSharpCode.NRefactory.Xml.AXmlDocument">
             <summary>
@@ -54,10 +54,10 @@
             </summary>
         </member>
         <member name="M:ICSharpCode.NRefactory.Xml.AXmlDocument.AcceptVisitor(ICSharpCode.NRefactory.Xml.AXmlVisitor)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:ICSharpCode.NRefactory.Xml.AXmlDocument.ToString">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="F:ICSharpCode.NRefactory.Xml.AXmlDocument.Empty">
             <summary>
@@ -82,7 +82,7 @@
             <summary>Gets whether an end tag exists for this node.</summary>
         </member>
         <member name="P:ICSharpCode.NRefactory.Xml.AXmlElement.EndTag">
-            <summary> The end tag, if there is any. Returns null for empty elements "&lt;Element/&gt;" and missing end tags in malformed XML.</summary>
+            <summary> The end tag, if there is any. Returns null for empty elements "&lt;Element/>" and missing end tags in malformed XML.</summary>
         </member>
         <member name="P:ICSharpCode.NRefactory.Xml.AXmlElement.Attributes">
             <summary>
@@ -119,8 +119,7 @@
             <summary>
             Recursively resolve given prefix in this context.
             </summary>
-            <returns>
-                <c>null</c> if prefix is not found</returns>
+            <returns><c>null</c> if prefix is not found</returns>
         </member>
         <member name="M:ICSharpCode.NRefactory.Xml.AXmlElement.LookupPrefix(System.String)">
             <summary>
@@ -149,10 +148,10 @@
             <returns>Null if not found</returns>
         </member>
         <member name="M:ICSharpCode.NRefactory.Xml.AXmlElement.AcceptVisitor(ICSharpCode.NRefactory.Xml.AXmlVisitor)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:ICSharpCode.NRefactory.Xml.AXmlElement.ToString">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="T:ICSharpCode.NRefactory.Xml.AXmlObject">
             <summary>
@@ -254,19 +253,19 @@
             </summary>
         </member>
         <member name="P:ICSharpCode.NRefactory.Xml.AXmlObject.Length">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="P:ICSharpCode.NRefactory.Xml.AXmlObject.EndOffset">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="T:ICSharpCode.NRefactory.Xml.AXmlReader">
             <summary>
-            XmlReader implementation that reads from an <see cref="T:ICSharpCode.NRefactory.Xml.AXmlDocument" />.
+            XmlReader implementation that reads from an <see cref="T:ICSharpCode.NRefactory.Xml.AXmlDocument"/>.
             </summary>
         </member>
         <member name="T:ICSharpCode.NRefactory.Xml.AXmlTag">
             <summary>
-            Represents any markup starting with "&lt;" and (hopefully) ending with "&gt;"
+            Represents any markup starting with "&lt;" and (hopefully) ending with ">"
             </summary>
         </member>
         <member name="F:ICSharpCode.NRefactory.Xml.AXmlTag.DtdNames">
@@ -312,10 +311,10 @@
             <summary> True if tag starts with "&lt;!" </summary>
         </member>
         <member name="M:ICSharpCode.NRefactory.Xml.AXmlTag.AcceptVisitor(ICSharpCode.NRefactory.Xml.AXmlVisitor)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:ICSharpCode.NRefactory.Xml.AXmlTag.ToString">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="T:ICSharpCode.NRefactory.Xml.AXmlText">
             <summary>
@@ -329,10 +328,10 @@
             <summary> True if the text contains only whitespace characters </summary>
         </member>
         <member name="M:ICSharpCode.NRefactory.Xml.AXmlText.AcceptVisitor(ICSharpCode.NRefactory.Xml.AXmlVisitor)">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="M:ICSharpCode.NRefactory.Xml.AXmlText.ToString">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="T:ICSharpCode.NRefactory.Xml.AXmlVisitor">
             <summary>
@@ -357,7 +356,7 @@
         <member name="T:ICSharpCode.NRefactory.Xml.XmlDocumentationElement">
             <summary>
             Represents an element in the XML documentation.
-            Any occurrences of "&lt;inheritdoc/&gt;" are replaced with the inherited documentation.
+            Any occurrences of "&lt;inheritdoc/>" are replaced with the inherited documentation.
             </summary>
         </member>
         <member name="M:ICSharpCode.NRefactory.Xml.XmlDocumentationElement.Get(ICSharpCode.NRefactory.TypeSystem.IEntity,System.Boolean)">
@@ -424,7 +423,7 @@
             </summary>
         </member>
         <member name="M:ICSharpCode.NRefactory.Xml.XmlDocumentationElement.ToString">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="T:ICSharpCode.NRefactory.Xml.IncrementalParserState">
             <summary>
@@ -507,10 +506,10 @@
             </summary>
         </member>
         <member name="P:ICSharpCode.NRefactory.Xml.SyntaxError.Length">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="P:ICSharpCode.NRefactory.Xml.SyntaxError.EndOffset">
-            <inheritdoc />
+            <inheritdoc/>
         </member>
         <member name="T:ICSharpCode.NRefactory.Xml.TextType">
             <summary> Identifies the context in which the text occured </summary>
@@ -522,16 +521,16 @@
             <summary> Ends with "&lt;";  "]]&gt;" is error </summary>
         </member>
         <member name="F:ICSharpCode.NRefactory.Xml.TextType.Comment">
-            <summary> Ends with "--&gt;";  "--" is error </summary>
+            <summary> Ends with "-->";  "--" is error </summary>
         </member>
         <member name="F:ICSharpCode.NRefactory.Xml.TextType.CData">
             <summary> Ends with "]]&gt;" </summary>
         </member>
         <member name="F:ICSharpCode.NRefactory.Xml.TextType.ProcessingInstruction">
-            <summary> Ends with "?&gt;" </summary>
+            <summary> Ends with "?>" </summary>
         </member>
         <member name="F:ICSharpCode.NRefactory.Xml.TextType.UnknownBang">
-            <summary> Ends with "&lt;" or "&gt;" </summary>
+            <summary> Ends with "&lt;" or ">" </summary>
         </member>
         <member name="F:ICSharpCode.NRefactory.Xml.TextType.Other">
             <summary> Unknown </summary>
@@ -658,10 +657,10 @@
             <summary>
             Read a name token.
             The following characters are not allowed:
-            ""         End of file
-            " \n\r\t"  Whitesapce
-            "=\'\""    Attribute value
-            "&lt;&gt;/?"  Tags
+              ""         End of file
+              " \n\r\t"  Whitesapce
+              "=\'\""    Attribute value
+              "&lt;>/?"  Tags
             </summary>
             <returns>Returns the length of the name</returns>
         </member>

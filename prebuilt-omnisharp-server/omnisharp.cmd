@@ -1,0 +1,2 @@
+
+@"%~dp0omnisharp.exe" %*

@@ -11,7 +11,7 @@
         </member>
         <member name="T:ICSharpCode.NRefactory.CSharp.Refactoring.AddArgumentNameAction">
             <summary>
-            Add name for argument
+             Add name for argument
             </summary>
         </member>
         <member name="T:ICSharpCode.NRefactory.CSharp.Refactoring.AddUsingAction">
@@ -50,7 +50,7 @@
         </member>
         <member name="T:ICSharpCode.NRefactory.CSharp.Refactoring.ConvertDecToHexAction">
             <summary>
-            Convert a dec numer to hex. For example: 16 -&gt; 0x10
+            Convert a dec numer to hex. For example: 16 -> 0x10
             </summary>
         </member>
         <member name="T:ICSharpCode.NRefactory.CSharp.Refactoring.ConvertDoWhileToWhileLoopAction">
@@ -78,7 +78,7 @@
         </member>
         <member name="T:ICSharpCode.NRefactory.CSharp.Refactoring.ConvertHexToDecAction">
             <summary>
-            Convert a hex numer to dec. For example: 0x10 -&gt; 16
+            Convert a hex numer to dec. For example: 0x10 -> 16
             </summary>
         </member>
         <member name="T:ICSharpCode.NRefactory.CSharp.Refactoring.ConvertWhileToDoWhileLoopAction">
@@ -90,9 +90,10 @@
         <member name="P:ICSharpCode.NRefactory.CSharp.Refactoring.CreateEventInvocatorAction.UseExplictType">
             <summary>
             If <c>true</c> an explicit type will be used for the handler variable; otherwise, 'var' will be used as type.
-            Default value is <c>false</c></summary>
+            Default value is <c>false</c>
+            </summary>
         </member>
-        <!--FIXME: Invalid documentation markup was found for member T:ICSharpCode.NRefactory.CSharp.Refactoring.IntroduceFormatItemAction-->
+        <!-- Badly formed XML comment ignored for member "T:ICSharpCode.NRefactory.CSharp.Refactoring.IntroduceFormatItemAction" -->
         <member name="T:ICSharpCode.NRefactory.CSharp.Refactoring.SpecializedCodeAction`1">
             <summary>
             A specialized code action creates a code action assoziated with one special type of ast nodes.
@@ -105,10 +106,10 @@
             <returns>
             The code action. May return <c>null</c>, if no action can be provided.
             </returns>
-            <param name="context">
+            <param name='context'>
             The refactoring conext.
             </param>
-            <param name="node">
+            <param name='node'>
             The AstNode it's ensured that the node is always != null, if called.
             </param>
         </member>
@@ -127,46 +128,6 @@
             <summary>
             Finds redundant internal modifiers.
             </summary>
-        </member>
-        <member name="T:ICSharpCode.NRefactory.CSharp.GatherVisitorCodeIssueProvider">
-            <summary>
-            The code issue provider gets a list of all code issues in a syntax tree.
-            </summary>
-        </member>
-        <member name="T:ICSharpCode.NRefactory.CSharp.GatherVisitorBase`1">
-            <summary>
-            A base class for writing issue provider visitor implementations.
-            </summary>
-        </member>
-        <member name="F:ICSharpCode.NRefactory.CSharp.GatherVisitorBase`1.issueProvider">
-            <summary>
-            The issue provider. May be <c>null</c> if none was specified.
-            </summary>
-        </member>
-        <member name="M:ICSharpCode.NRefactory.CSharp.GatherVisitorBase`1.#ctor(ICSharpCode.NRefactory.CSharp.Refactoring.BaseRefactoringContext,`0)">
-            <summary>
-            Initializes a new instance of the <see cref="T:ICSharpCode.NRefactory.CSharp.GatherVisitorBase`1" /> class.
-            </summary>
-            <param name="ctx">
-            The refactoring context.
-            </param>
-            <param name="qualifierDirectiveEvidentIssueProvider">
-            The issue provider.
-            </param>
-        </member>
-        <member name="M:ICSharpCode.NRefactory.CSharp.GatherVisitorBase`1.GetIssues">
-            <summary>
-            Gets all the issues using the context root node as base.
-            </summary>
-            <returns>
-            The issues.
-            </returns>
-        </member>
-        <member name="M:ICSharpCode.NRefactory.CSharp.RefactoringExtensions.GetLocalVariableDeclarationSpace(ICSharpCode.NRefactory.CSharp.AstNode)">
-            <summary>
-            Gets the local variable declaration space, as defined by §3.3 Declarations.
-            </summary>
-            <returns>The local variable declaration space.</returns>
         </member>
         <member name="T:ICSharpCode.NRefactory.CSharp.Refactoring.EmptyGeneralCatchClauseIssue">
             <summary>
@@ -193,7 +154,7 @@
             If set, identifiers cannot be prefixed by any of these values.
             </summary>
         </member>
-        <!--FIXME: Invalid documentation markup was found for member P:ICSharpCode.NRefactory.CSharp.Refactoring.NamingRule.ForbiddenSuffixes-->
+        <!-- Badly formed XML comment ignored for member "P:ICSharpCode.NRefactory.CSharp.Refactoring.NamingRule.ForbiddenSuffixes" -->
         <member name="P:ICSharpCode.NRefactory.CSharp.Refactoring.NamingRule.AffectedEntity">
             <summary>
             Gets or sets the affected entity.
@@ -212,7 +173,7 @@
         <member name="M:ICSharpCode.NRefactory.CSharp.Refactoring.NamingRule.ApplySuffix(System.String,System.String)">
             <summary>
             Applies a suffix to a name and tries to reuse the suffix of the suffix.
-            MyArgs + EventArgs -&gt; MyEventArgs instead of MyArgsEventArgs
+            MyArgs + EventArgs -> MyEventArgs instead of MyArgsEventArgs
             </summary>
         </member>
         <member name="M:ICSharpCode.NRefactory.CSharp.Refactoring.NamingRule.GetPreview">
@@ -265,7 +226,7 @@
             CamelCaseWithUpperLetterUnderscore
             </summary>
         </member>
-        <!--FIXME: Invalid documentation markup was found for member T:ICSharpCode.NRefactory.CSharp.Refactoring.ConvertConditionalTernaryToNullCoalescingIssue-->
+        <!-- Badly formed XML comment ignored for member "T:ICSharpCode.NRefactory.CSharp.Refactoring.ConvertConditionalTernaryToNullCoalescingIssue" -->
         <member name="T:ICSharpCode.NRefactory.CSharp.Refactoring.SuggestUseVarKeywordEvidentIssue">
             <summary>
             Checks for places where the 'var' keyword can be used. Note that the action is actually done with a context
@@ -280,7 +241,7 @@
         </member>
         <member name="T:ICSharpCode.NRefactory.CSharp.Refactoring.RedundantBaseQualifierIssue">
             <summary>
-            Finds redundant base qualifier
+            Finds redundant base qualifier 
             </summary>
         </member>
         <member name="T:ICSharpCode.NRefactory.CSharp.Refactoring.RedundantExtendsListEntryIssue">
@@ -347,11 +308,51 @@
             Checks if the given type satisfies the critrion.
             </summary>
             <returns>
-                <c>true</c>, if the type satisfies the criterion, <c>false</c> otherwise.
+            <c>true</c>, if the type satisfies the criterion, <c>false</c> otherwise.
             </returns>
-            <param name="type">
+            <param name='type'>
             The type to check.
             </param>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.CSharp.GatherVisitorCodeIssueProvider">
+            <summary>
+            The code issue provider gets a list of all code issues in a syntax tree.
+            </summary>
+        </member>
+        <member name="T:ICSharpCode.NRefactory.CSharp.GatherVisitorBase`1">
+            <summary>
+            A base class for writing issue provider visitor implementations.
+            </summary>
+        </member>
+        <member name="F:ICSharpCode.NRefactory.CSharp.GatherVisitorBase`1.issueProvider">
+            <summary>
+            The issue provider. May be <c>null</c> if none was specified.
+            </summary>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.CSharp.GatherVisitorBase`1.#ctor(ICSharpCode.NRefactory.CSharp.Refactoring.BaseRefactoringContext,`0)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ICSharpCode.NRefactory.CSharp.GatherVisitorBase`1"/> class.
+            </summary>
+            <param name='ctx'>
+            The refactoring context.
+            </param>
+            <param name='qualifierDirectiveEvidentIssueProvider'>
+            The issue provider.
+            </param>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.CSharp.GatherVisitorBase`1.GetIssues">
+            <summary>
+            Gets all the issues using the context root node as base.
+            </summary>
+            <returns>
+            The issues.
+            </returns>
+        </member>
+        <member name="M:ICSharpCode.NRefactory.CSharp.RefactoringExtensions.GetLocalVariableDeclarationSpace(ICSharpCode.NRefactory.CSharp.AstNode)">
+            <summary>
+            Gets the local variable declaration space, as defined by §3.3 Declarations.
+            </summary>
+            <returns>The local variable declaration space.</returns>
         </member>
     </members>
 </doc>
