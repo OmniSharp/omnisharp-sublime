@@ -54,7 +54,7 @@
 
         cd OmniSharp
         git submodule update --init --recursive
-        ./build.sh
+        ./build.sh or ./build.cmd
 
 # Project Setting
 The server will automatically find the the solution file from the folder you have opened in Sublime.  If you have multiple solutions you have to specify the solution file you wish to use in a `sublime-project`. 
