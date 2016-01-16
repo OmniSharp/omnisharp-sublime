@@ -77,7 +77,7 @@ def get_omni_path(view):
     """
         Returns the path to the active omnisharp server's executable.
         If the path in the config file contains a .* then it will
-        attempt to match it to .cmd on windows, or a .sh on a nix.
+        attempt to match it to .cmd on windows, or no extension on a nix.
     :param view:
     :return: string
     """
@@ -89,10 +89,7 @@ def get_omni_path(view):
     absolute_omni_path = os.path.abspath(get_plugin_path() + os.sep + relative_omni_path)
 
     if absolute_omni_path.endswith(".*"):
-        absolute_omni_path = absolute_omni_path[0:-2] + (".sh" if os.name == 'posix' else ".cmd")
-
-    print("PATH --> " + absolute_omni_path)
-
+        absolute_omni_path = absolute_omni_path[0:-2] + ("" if os.name == 'posix' else ".cmd")
     return absolute_omni_path
 
 
