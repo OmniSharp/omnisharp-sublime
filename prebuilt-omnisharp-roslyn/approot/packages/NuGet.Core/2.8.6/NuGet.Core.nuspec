@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>NuGet.Core</id>
+    <version>2.8.6</version>
+    <authors>.NET Foundation</authors>
+    <owners>Microsoft Corporation</owners>
+    <licenseUrl>http://www.microsoft.com/web/webpi/eula/nuget_release_eula.htm</licenseUrl>
+    <projectUrl>https://github.com/NuGet/NuGet2</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>NuGet.Core is the core framework assembly for NuGet that the rest of NuGet builds upon.</description>
+    <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+    <tags>nuget</tags>
+    <dependencies>
+      <dependency id="Microsoft.Web.Xdt" version="2.1.0" />
+    </dependencies>
+  </metadata>
+</package>

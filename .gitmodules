@@ -1,3 +1,8 @@
-[submodule "OmniSharpServer"]
-	path = OmniSharpServer
-	url = https://github.com/nosami/OmniSharpServer.git
+[submodule "omnisharp-roslyn"]
+	path = omnisharp-roslyn
+	url = https://github.com/OmniSharp/omnisharp-roslyn
+
+[submodule "omnisharp-server"]
+	path = omnisharp-server
+	url = https://github.com/OmniSharp/omnisharp-server.git
+

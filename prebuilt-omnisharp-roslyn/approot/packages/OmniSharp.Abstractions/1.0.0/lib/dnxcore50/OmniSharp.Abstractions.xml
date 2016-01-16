@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OmniSharp.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="P:OmniSharp.Models.AutoCompleteRequest.WantDocumentationForEveryCompletionResult">
+            <summary>
+              Specifies whether to return the code documentation for
+              each and every returned autocomplete result.
+            </summary>
+        </member>
+        <member name="P:OmniSharp.Models.AutoCompleteRequest.WantImportableTypes">
+            <summary>
+              Specifies whether to return importable types. Defaults to
+              false. Can be turned off to get a small speed boost.
+            </summary>
+        </member>
+        <member name="P:OmniSharp.Models.AutoCompleteRequest.WantMethodHeader">
+            <summary>
+            Returns a 'method header' for working with parameter templating.
+            </summary>
+        </member>
+        <member name="P:OmniSharp.Models.AutoCompleteRequest.WantSnippet">
+            <summary>
+            Returns a snippet that can be used by common snippet libraries
+            to provide parameter and type parameter placeholders
+            </summary>
+        </member>
+        <member name="P:OmniSharp.Models.AutoCompleteRequest.WantReturnType">
+            <summary>
+            Returns the return type
+            </summary>
+        </member>
+        <member name="P:OmniSharp.Models.AutoCompleteRequest.WantKind">
+            <summary>
+            Returns the kind (i.e Method, Property, Field)
+            </summary>
+        </member>
+        <member name="P:OmniSharp.Models.FindUsagesRequest.OnlyThisFile">
+            <summary>
+            Only search for references in the current file
+            </summary>
+        </member>
+        <member name="P:OmniSharp.Models.HighlightRequest.Lines">
+            <summary>
+              Specifies which lines to highlight.
+              If none are given, highlight the entire
+              file.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:OmniSharp.Models.HighlightRequest.ProjectNames" -->
+        <member name="P:OmniSharp.Models.HighlightRequest.Classifications">
+            <summary>
+              Request specific classifications, if none are requested you will get them all.
+            </summary>
+        </member>
+        <member name="P:OmniSharp.Models.HighlightRequest.ExcludeClassifications">
+            <summary>
+              Exclude specific classifications
+            </summary>
+        </member>
+        <member name="P:OmniSharp.Models.PackageSearchRequest.ProjectPath">
+            <summary>
+            The path to the project file
+            </summary>
+        </member>
+        <member name="P:OmniSharp.Models.PackageSearchRequest.Sources">
+            <summary>
+            The sources to search for the given package
+            </summary>
+        </member>
+        <member name="P:OmniSharp.Models.PackageSearchRequest.Search">
+            <summary>
+            The filter search critera
+            </summary>
+        </member>
+        <member name="P:OmniSharp.Models.PackageSearchRequest.SupportedFrameworks">
+            <summary>
+            Filter to only the list of packages compatible with these frameworks.
+            </summary>
+        </member>
+        <member name="P:OmniSharp.Models.PackageSearchRequest.IncludePrerelease">
+            <summary>
+            Include prerelease packages in search
+            </summary>
+        </member>
+        <member name="P:OmniSharp.Models.PackageSearchRequest.PackageTypes">
+            <summary>
+            Restrict the search to certain package types.
+            </summary>
+        </member>
+        <member name="P:OmniSharp.Models.PackageSourceRequest.ProjectPath">
+            <summary>
+            The path to the project file
+            </summary>
+        </member>
+        <member name="P:OmniSharp.Models.PackageVersionRequest.ProjectPath">
+            <summary>
+            The path to the project file
+            </summary>
+        </member>
+        <member name="P:OmniSharp.Models.PackageVersionRequest.Sources">
+            <summary>
+            The sources to search for the given package
+            </summary>
+        </member>
+        <member name="P:OmniSharp.Models.PackageVersionRequest.Id">
+            <summary>
+            The id of the package to look up the versions
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:OmniSharp.Models.PackageVersionRequest.IncludePrerelease" -->
+        <member name="P:OmniSharp.Models.RenameRequest.WantsTextChanges">
+            <summary>
+             When true, return just the text changes.
+            </summary>
+        </member>
+        <member name="P:OmniSharp.Models.RenameRequest.ApplyTextChanges">
+            <summary>
+             When true, apply changes immediately on the server.
+            </summary>
+        </member>
+    </members>
+</doc>

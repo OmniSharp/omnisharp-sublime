@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0-*",
+  "compilationOptions": {
+    "warningsAsErrors": true
+  },
+  "dependencies": {
+    "OmniSharp.ScriptCs": "1.0.0"
+  },
+  "frameworks": {
+    "dnx451": {
+      "frameworkAssemblies": {},
+      "dependencies": {
+        "ScriptCs.Hosting": "0.14.1"
+      }
+    }
+  },
+  "entryPoint": "OmniSharp.ScriptCs",
+  "loadable": false
+}
