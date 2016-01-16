@@ -52,6 +52,13 @@
 
 3. Move to plugin directory, update submodule and build.
 
+        #Windows
+        cd OmniSharp
+        git submodule update --init --recursive
+        build.cmd
+        
+        
+        #Linux
         cd OmniSharp
         git submodule update --init --recursive
         ./build.sh or ./build.cmd
