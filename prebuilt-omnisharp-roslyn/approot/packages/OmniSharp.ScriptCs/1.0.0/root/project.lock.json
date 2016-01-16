@@ -1,0 +1,1972 @@
+{
+  "locked": false,
+  "version": -9998,
+  "projectFileDependencyGroups": {
+    "": [
+      "OmniSharp.Abstractions >= 1.0.0-*",
+      "OmniSharp.Roslyn.CSharp >= 1.0.0-*"
+    ],
+    "DNX,Version=v4.5.1": [
+      "ScriptCs.Hosting >= 0.14.1"
+    ]
+  },
+  "libraries": {
+    "Autofac/3.3.1": {
+      "serviceable": false,
+      "sha": "dOowodF/tGrsEhiTnrBb+zcXcKxitHMqHw8J+F5ELBsdm2Cypu6ZaSZo4T2wljnMBVqZXLnQWVf2NNIk4IR+2w==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {},
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/net40/Autofac.dll"
+          ],
+          "compileAssemblies": [
+            "lib/net40/Autofac.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {},
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [],
+          "compileAssemblies": []
+        }
+      },
+      "files": [
+        "Autofac.3.3.1.nupkg",
+        "Autofac.3.3.1.nupkg.sha512",
+        "Autofac.nuspec",
+        "lib/net40/Autofac.dll",
+        "lib/net40/Autofac.xml",
+        "lib/portable-win+net40+sl50+wp8/Autofac.dll",
+        "lib/portable-win+net40+sl50+wp8/Autofac.xml"
+      ]
+    },
+    "Autofac.Mef/3.0.3": {
+      "serviceable": false,
+      "sha": "n27ambqDJCyzjHmkD7sHXMyAfmFlvzCghyQM5fE2A4RxQ9c/F2TvpUzlC27hbQOoz8+yK9iY35ccXW/Xzal16A==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "Autofac": "[3.3.1, 4.0.0)"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/net40/Autofac.Integration.Mef.dll"
+          ],
+          "compileAssemblies": [
+            "lib/net40/Autofac.Integration.Mef.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "Autofac": "[3.3.1, 4.0.0)"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [],
+          "compileAssemblies": []
+        }
+      },
+      "files": [
+        "Autofac.Mef.3.0.3.nupkg",
+        "Autofac.Mef.3.0.3.nupkg.sha512",
+        "Autofac.Mef.nuspec",
+        "lib/net40/Autofac.Integration.Mef.dll",
+        "lib/net40/Autofac.Integration.Mef.xml"
+      ]
+    },
+    "Common.Logging/2.1.2": {
+      "serviceable": false,
+      "sha": "aqqmzNbkqmGBkKL84h2gv5BKBW2tj8E11KXYlAUiiNxGXFWG4fxvS7ashi3knx3rsOph8x9HaRmVqLyjv1PWnQ==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {},
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/net40/Common.Logging.dll"
+          ],
+          "compileAssemblies": [
+            "lib/net40/Common.Logging.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {},
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [],
+          "compileAssemblies": []
+        }
+      },
+      "files": [
+        "Common.Logging.2.1.2.nupkg",
+        "Common.Logging.2.1.2.nupkg.sha512",
+        "Common.Logging.nuspec",
+        "lib/net35/Common.Logging.dll",
+        "lib/net35/Common.Logging.pdb",
+        "lib/net35/Common.Logging.xml",
+        "lib/net40/Common.Logging.dll",
+        "lib/net40/Common.Logging.pdb",
+        "lib/net40/Common.Logging.xml"
+      ]
+    },
+    "ICSharpCode.NRefactory/6.0.0-alpha3": {
+      "serviceable": false,
+      "sha": "3bJrdiL/R0QBkdwRQK9Dgj+jU84a9zW+xFTMlqT21FhYDG3dNBFPCepv0TlikHH8RGXeEHpzGJVNNgkdqtUjsw==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "Microsoft.CodeAnalysis.Common": "1.0.0-rc1",
+            "Microsoft.CodeAnalysis.CSharp": "1.0.0-rc1",
+            "Microsoft.CodeAnalysis.CSharp.Workspaces": "1.0.0-rc1",
+            "Microsoft.CodeAnalysis.Workspaces.Common": "1.0.0-rc1",
+            "Microsoft.Composition": "1.0.30",
+            "System.Collections.Immutable": "1.1.33-beta",
+            "System.Reflection.Metadata": "1.0.18-beta"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/Net45/ICSharpCode.NRefactory6.CSharp.Refactoring.dll",
+            "lib/Net45/ICSharpCode.NRefactory6.CSharp.dll"
+          ],
+          "compileAssemblies": [
+            "lib/Net45/ICSharpCode.NRefactory6.CSharp.Refactoring.dll",
+            "lib/Net45/ICSharpCode.NRefactory6.CSharp.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "Microsoft.CodeAnalysis.Common": "1.0.0-rc1",
+            "Microsoft.CodeAnalysis.CSharp": "1.0.0-rc1",
+            "Microsoft.CodeAnalysis.CSharp.Workspaces": "1.0.0-rc1",
+            "Microsoft.CodeAnalysis.Workspaces.Common": "1.0.0-rc1",
+            "Microsoft.Composition": "1.0.30",
+            "System.Collections.Immutable": "1.1.33-beta",
+            "System.Reflection.Metadata": "1.0.18-beta"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [],
+          "compileAssemblies": []
+        }
+      },
+      "files": [
+        "ICSharpCode.NRefactory.6.0.0-alpha3.nupkg",
+        "ICSharpCode.NRefactory.6.0.0-alpha3.nupkg.sha512",
+        "ICSharpCode.NRefactory.nuspec",
+        "lib/Net45/ICSharpCode.NRefactory6.CSharp.Refactoring.dll",
+        "lib/Net45/ICSharpCode.NRefactory6.CSharp.Refactoring.xml",
+        "lib/Net45/ICSharpCode.NRefactory6.CSharp.dll",
+        "lib/Net45/ICSharpCode.NRefactory6.CSharp.xml",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/CompletionContext.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/CompletionEngine.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/CompletionResult.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/CompletionTriggerInfo.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/CompletionTriggerReason.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/DisplayFlags.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/EditorBrowsableBehavior.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/ICompletionCategory.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/ICompletionData.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/ICompletionDataFactory.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/ICompletionKeyHandler.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/ISymbolCompletionData.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/SyntaxKindSet.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/ContextHandler/AttributeNamedParameterContextHandler.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/ContextHandler/CastCompletionContextHandler.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/ContextHandler/CompletionContextHandler.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/ContextHandler/DelegateCreationContextHandler.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/ContextHandler/EnumMemberContextHandler.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/ContextHandler/ExplicitInterfaceContextHandler.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/ContextHandler/ExternAliasContextHandler.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/ContextHandler/FormatItemContextHandler.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/ContextHandler/KeywordContextHandler.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/ContextHandler/NamedParameterContextHandler.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/ContextHandler/ObjectCreationContextHandler.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/ContextHandler/ObjectInitializerContextHandler.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/ContextHandler/OverrideContextHandler.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/ContextHandler/PartialOverrideContextHandler.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/ContextHandler/RoslynRecommendationsCompletionContextHandler.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/ContextHandler/SenderCompletionContextHandler.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/ContextHandler/SnippetContextHandler.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/ContextHandler/SpeculativeNameContextHandler.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/ContextHandler/SpeculativeTContextHandler.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/ContextHandler/XmlDocCommentContextHandler.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/AbstractKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/AbstractSyntacticSingleKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/AddKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/AliasKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/AsKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/AscendingKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/AssemblyKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/AsyncKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/AwaitKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/BaseKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/BoolKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/BreakKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/ByKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/ByteKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/CaseKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/CatchKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/CharKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/CheckedKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/ChecksumKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/ClassKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/ConstKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/ContinueKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/DecimalKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/DefaultKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/DefineKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/DelegateKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/DescendingKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/DisableKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/DoKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/DoubleKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/DynamicKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/ElifKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/ElseKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/EndIfKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/EndRegionKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/EnumKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/EqualsKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/ErrorKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/EventKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/ExplicitKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/ExternKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/FalseKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/FieldKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/FinallyKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/FixedKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/FloatKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/ForEachKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/ForKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/FromKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/GetKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/GlobalKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/GotoKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/GroupKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/HiddenKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/IfKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/ImplicitKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/InKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/IntKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/InterfaceKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/InternalKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/IntoKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/IsKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/JoinKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/LetKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/LineKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/LockKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/LongKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/MethodKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/ModuleKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/NameOfKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/NamespaceKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/NewKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/NullKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/ObjectKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/OnKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/OperatorKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/OrderByKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/OutKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/OverrideKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/ParamKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/ParamsKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/PartialKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/PragmaKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/PrivateKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/PropertyKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/ProtectedKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/PublicKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/ReadOnlyKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/RefKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/ReferenceKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/RegionKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/RemoveKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/RestoreKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/ReturnKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/SByteKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/SealedKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/SelectKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/SetKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/ShortKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/SizeOfKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/StackAllocKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/StaticKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/StringKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/StructKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/SwitchKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/ThisKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/ThrowKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/TrueKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/TryKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/TypeKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/TypeOfKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/TypeVarKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/UIntKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/ULongKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/UShortKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/UncheckedKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/UndefKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/UnsafeKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/UsingKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/VarKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/VirtualKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/VoidKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/VolatileKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/WarningKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/WhenKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/WhereKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/WhileKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Completion/KeywordRecommender/YieldKeywordRecommender.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Formatter/FormattingOptionsFactory.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/Formatter/Indent.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/FrameworkLookup/FrameworkLookup.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/IndentEngine/CSharpIndentEngine.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/IndentEngine/CacheIndentEngine.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/IndentEngine/IDocumentIndentEngine.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/IndentEngine/IStateMachineIndentEngine.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/IndentEngine/ITextPasteHandler.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/IndentEngine/IndentState.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/IndentEngine/NullIStateMachineIndentEngine.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/IndentEngine/TextPasteIndentEngine.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/ParameterHinting/IParameterHintingData.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/ParameterHinting/IParameterHintingDataFactory.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/ParameterHinting/ParameterHintingEngine.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/ParameterHinting/ParameterHintingResult.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/ParameterHinting/ParameterUtil.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Features/SemanticHighlighting/SemanticHighlightingVisitor.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Properties/AssemblyInfo.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Properties/GlobalAssemblyInfo.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Refactoring/DocumentChangeAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Refactoring/InsertionAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Refactoring/InsertionResult.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Refactoring/NRefactoryCodeAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Refactoring/TypeGuessing.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Reflection/CSharpSyntaxContext.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/7BitEncodedInts.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/CSharpCodeGenerationService.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/CSharpUtil.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/CloneableStack.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/CompilationExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/DocumentExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/EnumerableExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/ExpressionSyntaxExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/FastSerializer.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/FindTokenHelper.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/FormatStringHelper.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/IAssemblySymbolExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/ICompilationExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/IDocumentExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/INamedTypeSymbolExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/INamespaceOrTypeSymbolExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/ISymbolExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/ITypeSymbolExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/LinkedListExtension.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/Matcher.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/MemberDeclarationSyntaxExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/NameGenerator.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/NameSyntaxExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/NamespaceExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/ObjectExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/ReferenceComparer.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/SemanticModelExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/SignatureComparer.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/SourceTextExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/SpecializedCollections.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/StringExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/SymbolExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/SymbolInfoExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/SyntaxContext.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/SyntaxExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/SyntaxNodeExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/SyntaxTokenExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/SyntaxTreeExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/SyntaxTriviaExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/TextLineExtension.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/TypeExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/TypeSyntaxExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/UnicodeNewline.cs",
+        "src/ICSharpCode.NRefactory.CSharp/Util/WordParser.cs",
+        "src/ICSharpCode.NRefactory.CSharp/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs",
+        "src/ICSharpCode.NRefactory.CSharp/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs",
+        "src/ICSharpCode.NRefactory.CSharp/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs",
+        "src/ICSharpCode.NRefactory.CSharp/obj/Release/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs",
+        "src/ICSharpCode.NRefactory.CSharp/obj/Release/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs",
+        "src/ICSharpCode.NRefactory.CSharp/obj/Release/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/NRefactoryCodeDiagnosticAnalyzerAttribute.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/NRefactoryCodeRefactoringProviderAttribute.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/RefactoringHelpers.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/AbstractAndVirtualConversionAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/AddAnotherAccessorAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/AddArgumentNameAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/AddBracesAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/AddCatchTypeAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/AddExceptionDescriptionAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/AddOptionalParameterToInvocationAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/AddUsingAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/AutoLinqSumAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/CS1105ExtensionMethodMustBeDeclaredStaticAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/CS1520MethodMustHaveAReturnTypeAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ChangeAccessModifierAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/CheckIfParameterIsNullAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ComputeConstantValueAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertAnonymousDelegateToLambdaAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertAsToCastAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertAssignmentToIfAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertBitwiseFlagComparisonToHasFlagsAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertCastToAsAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertDecToHexAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertDoWhileToWhileLoopAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertEqualityOperatorToEqualsAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertEqualsToEqualityOperatorAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertExplicitToImplicitImplementationAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertForToWhileAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertForeachToForAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertHasFlagsToBitwiseFlagComparisonAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertHexToDecAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertIfStatementToConditionalTernaryExpressionAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertIfStatementToNullCoalescingExpressionAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertIfStatementToReturnStatementAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertIfStatementToSwitchStatementAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertImplicitToExplicitImplementationAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertLambdaBodyExpressionToStatementAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertLambdaBodyStatementToExpressionAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertLambdaToAnonymousDelegateAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertMethodGroupToAnonymousMethodAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertMethodGroupToLambdaAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertMultiplyToShiftAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertNullCoalescingToConditionalExpressionAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertReturnStatementToIfAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertShiftToMultiplyAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertSwitchToIfAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertWhileToDoWhileLoopAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/CopyCommentsFromBase.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/CopyCommentsFromInterface.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/CreateBackingStoreAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/CreateChangedEventAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/CreateClassDeclarationAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/CreateConstructorDeclarationAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/CreateCustomEventImplementationAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/CreateDelegateAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/CreateEnumValue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/CreateEventInvocatorAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/CreateFieldAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/CreateIndexerAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/CreateLocalVariableAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/CreateMethodDeclarationAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/CreateOverloadWithoutParameterAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/CreatePropertyAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/DeclareLocalVariableAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ExtensionMethodInvocationToStaticMethodInvocationAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ExtractAnonymousMethodAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ExtractFieldAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ExtractWhileConditionToInternalIfStatementAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/FlipEqualsTargetAndArgumentAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/FlipOperatorArgumentsAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/GenerateGetterAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/GeneratePropertyAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/GenerateSwitchLabelsAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ImplementAbstractMembersAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ImplementInterfaceAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ImplementInterfaceExplicitAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ImplementNotImplementedProperty.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/InlineLocalVariableAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/InsertAnonymousMethodSignatureAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/IntroduceConstantAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/IntroduceFormatItemAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/InvertConditionalOperatorAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/InvertIfAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/InvertIfAndSimplify.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/InvertLogicalExpressionAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/IterateViaForeachAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/JoinDeclarationAndAssignmentAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/JoinStringAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/LinqFluentToQueryAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/LinqQueryToFluentAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/MergeNestedIfAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/MoveToOuterScopeAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/NegateIsExpressionAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/NegateRelationalExpressionAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/PutInsideUsingAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/RemoveBackingStoreAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/RemoveBracesAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/RemoveRedundantCatchTypeAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/RemoveRegionAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ReplaceAssignmentWithPostfixExpressionAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ReplaceEmptyStringAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ReplaceOperatorAssignmentWithAssignmentAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ReplacePostfixExpressionWithAssignmentAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ReplaceWithOperatorAssignmentAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ReverseDirectionForForLoopAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/SimplifyIfFlowAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/SimplifyIfInLoopsFlowAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/SortUsingsAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/SpecializedCodeAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/SplitDeclarationAndAssignmentAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/SplitDeclarationListAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/SplitIfAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/SplitStringAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/UseAsAndNullCheckAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/UseExplicitTypeAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/UseStringFormatAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/UseVarKeywordAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertToInitializer/AccessPath.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertToInitializer/ConvertInitializerToExplicitInitializationsAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertToInitializer/ConvertToInitializerAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ConvertToInitializer/StatementsToInitializerConverter.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ExtractMethod/ExtractMethodAction.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ExtractMethod/StaticVisitor.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ExtractMethod/VariableLookupVisitor.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeActions/ExtractMethod/VariableUsageAnalyzation.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/CodeActionFactory.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/DiagnosticFactory.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/GatherVisitorBase.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/IssueCategories.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/IssueMarker.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/NRefactoryCodeFixProvider.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/RefactoringExtensions.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/AdditionalOfTypeIssues.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/BaseMethodParameterNameMismatchIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/CallToObjectEqualsViaBaseIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/CastExpressionOfIncompatibleTypeIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/CheckNamespaceIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/ConstantConditionIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/ConvertIfToAndExpressionIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/LockThisIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/MixedUseOfFieldsAndGettersIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/NegativeRelationalExpressionIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/NotImplementedExceptionIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/ParameterOnlyAssignedIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/RedundantAssignmentIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/RedundantInternalIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/RedundantPrivateIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/StaticEventSubscriptionIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/UnreachableCodeIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/VariableOnlyAssignedIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/XmlDocIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/CompilerErrors/CS0029InvalidConversionIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/CompilerErrors/CS0126ReturnMustBeFollowedByAnyExpression.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/CompilerErrors/CS0127ReturnMustNotBeFollowedByAnyExpression.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/CompilerErrors/CS0152DuplicateCaseLabelValueIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/CompilerErrors/CS0169FieldIsNeverUsedIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/CompilerErrors/CS0618UsageOfObsoleteMemberIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/CompilerErrors/CS0659OverrideEqualWithoutGetHashCode.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/CompilerErrors/CS0759RedundantPartialMethodIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/CompilerErrors/CS1729TypeHasNoConstructorWithNArgumentsIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/CompilerErrors/ExpressionIsNeverOfProvidedTypeIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/CompilerErrors/MissingInterfaceMemberImplementationIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Custom/CompilerErrors/StaticConstructorParameterIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/NotWorking/DuplicateBodyMethodIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/NotWorking/DuplicateExpressionsInConditionsIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/NotWorking/DuplicateIfInIfChainIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/NotWorking/ParameterCanBeIEnumerableIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/NotWorking/VariableDeclaredInWideScopeIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/NotWorking/AccessToClosureIssues/AccessToClosureIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/NotWorking/AccessToClosureIssues/AccessToDisposedClosureIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/NotWorking/AccessToClosureIssues/AccessToModifiedClosureIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/NotWorking/AccessToClosureIssues/LocalVariableNamePicker.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/BaseMethodCallWithDefaultParameterIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/BitwiseOperatorOnEnumWithoutFlagsIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/CanBeReplacedWithTryCastAndCheckForNullIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/CompareNonConstrainedGenericWithNullIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/CompareOfFloatsByEqualityOperatorIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/ConditionalTernaryEqualBranchIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/DelegateSubtractionIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/DoNotCallOverridableMethodsInConstructorIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/EmptyGeneralCatchClauseIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/EqualExpressionComparisonIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/EventUnsubscriptionViaAnonymousDelegateIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/ForControlVariableIsNeverModifiedIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/FormatStringProblemIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/FunctionNeverReturnsIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/LocalVariableHidesMemberIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/LongLiteralEndingLowerLIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/MemberHidesStaticFromOuterClassIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/MethodOverloadWithOptionalParameterIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/NonReadonlyReferencedInGetHashCodeIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/NotResolvedInTextIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/ObjectCreationAsStatementIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/OperatorIsCanBeUsedIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/OptionalParameterHierarchyMismatchIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/OptionalParameterRefOutIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/ParameterHidesMemberIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/PartialMethodParameterNameMismatchIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/PolymorphicFieldLikeEventInvocationIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/PossibleAssignmentToReadonlyFieldIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/PossibleMultipleEnumerationIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/StaticFieldInGenericTypeIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/ThreadStaticAtInstanceFieldIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CodeQuality/ValueParameterNotUsedIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CompilerErrors/ProhibitedModifiersIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CompilerWarnings/CS0183ExpressionIsAlwaysOfProvidedTypeIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CompilerWarnings/CS1573ParameterHasNoMatchingParamTagIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CompilerWarnings/CS1717AssignmentMadeToSameVariableIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/CompilerWarnings/UnassignedReadonlyFieldIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/ConstraintViolations/InconsistentNamingIssue/AffectedEntity.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/ConstraintViolations/InconsistentNamingIssue/DefaultRules.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/ConstraintViolations/InconsistentNamingIssue/InconsistentNamingIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/ConstraintViolations/InconsistentNamingIssue/Modifiers.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/ConstraintViolations/InconsistentNamingIssue/NamingConventionService.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/ConstraintViolations/InconsistentNamingIssue/NamingRule.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/ConstraintViolations/InconsistentNamingIssue/NamingStyle.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/NUnit/NonPublicMethodWithTestAttributeIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/Opportunities/ConvertClosureToMethodGroupIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/Opportunities/ConvertConditionalTernaryToNullCoalescingIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/Opportunities/ConvertIfStatementToConditionalTernaryExpressionIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/Opportunities/ConvertIfStatementToNullCoalescingExpressionIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/Opportunities/ConvertIfStatementToSwitchStatementIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/Opportunities/ConvertNullableToShortFormIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/Opportunities/ConvertToAutoPropertyIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/Opportunities/ConvertToLambdaExpressionIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/Opportunities/ConvertToStaticTypeIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/Opportunities/ForCanBeConvertedToForeachIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/Opportunities/InvokeAsExtensionMethodIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/Opportunities/RewriteIfReturnToReturnIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/Opportunities/SuggestUseVarKeywordEvidentIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/AccessToStaticMemberViaDerivedTypeIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/BaseMemberHasParamsIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ConvertIfDoToWhileIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ConvertIfToOrExpressionIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ConvertToConstantIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/EmptyEmbeddedStatementIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/FieldCanBeMadeReadOnlyIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/MemberCanBeMadeStaticIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ParameterCanBeDeclaredWithBaseTypeIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/PossibleMistakenCallToGetTypeIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/PublicConstructorInAbstractClass.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ReferenceEqualsWithValueTypeIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ReplaceWithFirstOrDefaultIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ReplaceWithLastOrDefaultIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ReplaceWithOfTypeAny.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ReplaceWithOfTypeCountIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ReplaceWithOfTypeFirstIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ReplaceWithOfTypeFirstOrDefaultIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ReplaceWithOfTypeIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ReplaceWithOfTypeLastIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ReplaceWithOfTypeLastOrDefaultIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ReplaceWithOfTypeLongCountIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ReplaceWithOfTypeSingleIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ReplaceWithOfTypeSingleOrDefaultIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ReplaceWithOfTypeWhereIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ReplaceWithSimpleAssignmentIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ReplaceWithSingleCallToAnyIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ReplaceWithSingleCallToCountIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ReplaceWithSingleCallToFirstIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ReplaceWithSingleCallToFirstOrDefaultIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ReplaceWithSingleCallToLastIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ReplaceWithSingleCallToLastOrDefaultIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ReplaceWithSingleCallToLongCountIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ReplaceWithSingleCallToSingleIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ReplaceWithSingleCallToSingleOrDefaultIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/ReplaceWithStringIsNullOrEmptyIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/SimplifyConditionalTernaryExpressionIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/SimplifyLinqExpressionIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/StringCompareIsCultureSpecificIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/StringCompareToIsCultureSpecificIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/StringEndsWithIsCultureSpecificIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/StringIndexOfIsCultureSpecificIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/StringLastIndexOfIsCultureSpecificIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/StringStartsWithIsCultureSpecificIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/UseArrayCreationExpressionIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/UseIsOperatorIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/UseMethodAnyIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/PracticesAndImprovements/UseMethodIsInstanceOfTypeIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/ArrayCreationCanBeReplacedWithArrayInitializerIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/ConditionIsAlwaysTrueOrFalseIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/ConstantNullCoalescingConditionIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/DoubleNegationOperatorIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/EmptyStatementIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/ForStatementConditionIsTrueIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantAnonymousTypePropertyNameIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantArgumentDefaultValueIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantArgumentNameIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantAttributeParenthesesIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantBaseQualifierIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantBoolCompareIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantCaseLabelIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantCastIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantCatchClauseIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantCheckBeforeAssignmentIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantCommaInArrayInitializerIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantComparisonWithNullIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantDelegateCreationIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantEmptyDefaultSwitchBranchIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantEmptyFinallyBlockIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantEnumerableCastCallIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantExplicitArrayCreationIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantExplicitArraySizeIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantExplicitNullableCreationIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantExtendsListEntryIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantIfElseBlockIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantLambdaParameterTypeIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantLambdaSignatureParenthesesIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantLogicalConditionalExpressionOperandIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantNameQualifierIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantObjectCreationArgumentListIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantObjectOrCollectionInitializerIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantStringToCharArrayCallIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantTernaryExpressionIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantThisQualifierIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantToStringCallForValueTypesIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantToStringCallIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantUnsafeContextIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RedundantUsingDirectiveIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/RemoveRedundantOrStatementIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInCode/UnusedAnonymousMethodSignatureIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInDeclaration/EmptyConstructorIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInDeclaration/EmptyDestructorIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInDeclaration/EmptyNamespaceIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInDeclaration/EnumUnderlyingTypeIsIntIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInDeclaration/LocalVariableNotUsedIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInDeclaration/PartialTypeWithSinglePartIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInDeclaration/RedundantBaseConstructorCallIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInDeclaration/RedundantDefaultFieldInitializerIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInDeclaration/RedundantOverridenMemberIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInDeclaration/RedundantParamsIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInDeclaration/SealedMemberInSealedClassIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInDeclaration/UnusedLabelIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInDeclaration/UnusedParameterIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Synced/RedundanciesInDeclaration/UnusedTypeParameterIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/TODO/ConvertTailRecursiveCallToLoopIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/TODO/LoopCanBeConvertedToQueryIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/TODO/PartOfBodyCanBeConvertedToQueryIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/TODO/RedundantTypeArgumentsOfMethodIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Uncategorized/AutoAsyncIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Uncategorized/CS0108UseNewKeywordIfHidingIntendedIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Uncategorized/DisposeMethodInNonIDisposableTypeIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Uncategorized/DontUseLinqWhenItsVerboseAndInefficientIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Uncategorized/DuplicatedLinqToListOrArrayIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Uncategorized/ExceptionRethrowIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Uncategorized/ExplicitConversionInForEachIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Uncategorized/IncorrectCallToObjectGetHashCodeIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Uncategorized/RedundantBlockInDifferentBranchesIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Uncategorized/RedundantNotNullAttributeInNonNullableTypeIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Uncategorized/ResultOfAsyncCallShouldNotBeIgnoredIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Uncategorized/SameGuardConditionExpressionInIfelseBranchesIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Uncategorized/UnmatchedSizeSpecificationInArrayCreationIssue.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/CodeIssues/Uncategorized/UseOfMemberOfNullReference.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/Properties/AssemblyInfo.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/obj/Release/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/obj/Release/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs",
+        "src/ICSharpCode.NRefactory.CSharp.Refactoring/obj/Release/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs"
+      ]
+    },
+    "Microsoft.CodeAnalysis/1.0.0-rc2": {
+      "serviceable": false,
+      "sha": "mnZx3W0C2+0Z9x3L2oSEfI6CCVK6jPDxdMcP6rKfAlSy1E1Lj1ocnJJKQ31lgne7A2kMKEdEIp1Zsm8Bc5HMYA==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "Microsoft.CodeAnalysis.CSharp.Workspaces": "[1.0.0-rc2]",
+            "Microsoft.CodeAnalysis.VisualBasic.Workspaces": "[1.0.0-rc2]"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [],
+          "compileAssemblies": []
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "Microsoft.CodeAnalysis.CSharp.Workspaces": "[1.0.0-rc2]",
+            "Microsoft.CodeAnalysis.VisualBasic.Workspaces": "[1.0.0-rc2]"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [],
+          "compileAssemblies": []
+        }
+      },
+      "files": [
+        "Microsoft.CodeAnalysis.1.0.0-rc2.nupkg",
+        "Microsoft.CodeAnalysis.1.0.0-rc2.nupkg.sha512",
+        "Microsoft.CodeAnalysis.nuspec",
+        "ThirdPartyNotices.rtf"
+      ]
+    },
+    "Microsoft.CodeAnalysis.Analyzers/1.0.0-rc2": {
+      "serviceable": false,
+      "sha": "S3P/WuSCgbhIxMVDFCJiJAh9g8ZVVIISsFn2lKqJYJdRGiFM2WJR0I46psNVXJt2uM13SBSGiAKAdqOeRvhl7w==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {},
+          "frameworkAssemblies": [
+            "System"
+          ],
+          "runtimeAssemblies": [],
+          "compileAssemblies": []
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {},
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [],
+          "compileAssemblies": []
+        }
+      },
+      "files": [
+        "Microsoft.CodeAnalysis.Analyzers.1.0.0-rc2.nupkg",
+        "Microsoft.CodeAnalysis.Analyzers.1.0.0-rc2.nupkg.sha512",
+        "Microsoft.CodeAnalysis.Analyzers.nuspec",
+        "ThirdPartyNotices.rtf",
+        "tools/install.ps1",
+        "tools/uninstall.ps1",
+        "tools/analyzers/C#/Microsoft.CodeAnalysis.Analyzers.dll",
+        "tools/analyzers/C#/Microsoft.CodeAnalysis.CSharp.Analyzers.dll",
+        "tools/analyzers/VB.NET/Microsoft.CodeAnalysis.Analyzers.dll",
+        "tools/analyzers/VB.NET/Microsoft.CodeAnalysis.VisualBasic.Analyzers.dll"
+      ]
+    },
+    "Microsoft.CodeAnalysis.Common/1.0.0-rc2": {
+      "serviceable": false,
+      "sha": "LIc/rzjORrM0jrQ9ZtoIwJWbYi4IM7RvcSFT9YLe2uH9aBPq2oQ7qimK3ZosZJE+5faoJ+DgfGOigWw6uQpmQw==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "System.Collections.Immutable": "[1.1.33-beta]",
+            "System.Reflection.Metadata": "[1.0.18-beta]",
+            "Microsoft.CodeAnalysis.Analyzers": "[1.0.0-rc2]"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/net45/Microsoft.CodeAnalysis.Desktop.dll",
+            "lib/net45/Microsoft.CodeAnalysis.dll"
+          ],
+          "compileAssemblies": [
+            "lib/net45/Microsoft.CodeAnalysis.Desktop.dll",
+            "lib/net45/Microsoft.CodeAnalysis.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "System.Collections.Immutable": "[1.1.33-beta]",
+            "System.Reflection.Metadata": "[1.0.18-beta]",
+            "Microsoft.CodeAnalysis.Analyzers": "[1.0.0-rc2]"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/portable-net45+win8/Microsoft.CodeAnalysis.dll"
+          ],
+          "compileAssemblies": [
+            "lib/portable-net45+win8/Microsoft.CodeAnalysis.dll"
+          ]
+        }
+      },
+      "files": [
+        "Microsoft.CodeAnalysis.Common.1.0.0-rc2.nupkg",
+        "Microsoft.CodeAnalysis.Common.1.0.0-rc2.nupkg.sha512",
+        "Microsoft.CodeAnalysis.Common.nuspec",
+        "ThirdPartyNotices.rtf",
+        "lib/net45/Microsoft.CodeAnalysis.Desktop.dll",
+        "lib/net45/Microsoft.CodeAnalysis.Desktop.xml",
+        "lib/net45/Microsoft.CodeAnalysis.dll",
+        "lib/net45/Microsoft.CodeAnalysis.xml",
+        "lib/portable-net45+win8/Microsoft.CodeAnalysis.dll",
+        "lib/portable-net45+win8/Microsoft.CodeAnalysis.xml"
+      ]
+    },
+    "Microsoft.CodeAnalysis.CSharp/1.0.0-rc2": {
+      "serviceable": false,
+      "sha": "RdXyaAZSRJH/oU6ccy3RNgGVMwFY1fY41I0Rtpbch9nq4mePYrkjTk3YObNHYa4lowAhktlaUoQOpprmOzc/kg==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "Microsoft.CodeAnalysis.Common": "[1.0.0-rc2]"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/net45/Microsoft.CodeAnalysis.CSharp.Desktop.dll",
+            "lib/net45/Microsoft.CodeAnalysis.CSharp.dll"
+          ],
+          "compileAssemblies": [
+            "lib/net45/Microsoft.CodeAnalysis.CSharp.Desktop.dll",
+            "lib/net45/Microsoft.CodeAnalysis.CSharp.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "Microsoft.CodeAnalysis.Common": "[1.0.0-rc2]"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/portable-net45+win8/Microsoft.CodeAnalysis.CSharp.dll"
+          ],
+          "compileAssemblies": [
+            "lib/portable-net45+win8/Microsoft.CodeAnalysis.CSharp.dll"
+          ]
+        }
+      },
+      "files": [
+        "Microsoft.CodeAnalysis.CSharp.1.0.0-rc2.nupkg",
+        "Microsoft.CodeAnalysis.CSharp.1.0.0-rc2.nupkg.sha512",
+        "Microsoft.CodeAnalysis.CSharp.nuspec",
+        "ThirdPartyNotices.rtf",
+        "lib/net45/Microsoft.CodeAnalysis.CSharp.Desktop.dll",
+        "lib/net45/Microsoft.CodeAnalysis.CSharp.Desktop.xml",
+        "lib/net45/Microsoft.CodeAnalysis.CSharp.dll",
+        "lib/net45/Microsoft.CodeAnalysis.CSharp.xml",
+        "lib/portable-net45+win8/Microsoft.CodeAnalysis.CSharp.dll",
+        "lib/portable-net45+win8/Microsoft.CodeAnalysis.CSharp.xml"
+      ]
+    },
+    "Microsoft.CodeAnalysis.CSharp.Features/1.0.0-rc2": {
+      "serviceable": false,
+      "sha": "wrO6J/8nz0xHpQ78toYmdk7WmhdZ+Un4SNipRUE7NHKuK1A2ZZnYV3jjSD8kdllRUVeH5yy/58aaY2i5GrHEPg==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {},
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/Net45/Microsoft.CodeAnalysis.CSharp.Features.dll",
+            "lib/Net45/Microsoft.CodeAnalysis.CSharp.dll",
+            "lib/Net45/Microsoft.CodeAnalysis.Features.dll"
+          ],
+          "compileAssemblies": [
+            "lib/Net45/Microsoft.CodeAnalysis.CSharp.Features.dll",
+            "lib/Net45/Microsoft.CodeAnalysis.CSharp.dll",
+            "lib/Net45/Microsoft.CodeAnalysis.Features.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {},
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [],
+          "compileAssemblies": []
+        }
+      },
+      "files": [
+        "Microsoft.CodeAnalysis.CSharp.Features.1.0.0-rc2.nupkg",
+        "Microsoft.CodeAnalysis.CSharp.Features.1.0.0-rc2.nupkg.sha512",
+        "Microsoft.CodeAnalysis.CSharp.Features.nuspec",
+        "lib/Net45/Microsoft.CodeAnalysis.CSharp.Features.dll",
+        "lib/Net45/Microsoft.CodeAnalysis.CSharp.dll",
+        "lib/Net45/Microsoft.CodeAnalysis.Features.dll"
+      ]
+    },
+    "Microsoft.CodeAnalysis.CSharp.Workspaces/1.0.0-rc2": {
+      "serviceable": false,
+      "sha": "9CgvV/jv7GNDJcMcVewUS8u5C0iNf6Vv0M9PTKbAzvy5LrjcvctENUZJTfUT1piGFPaVgASFwPb/YcWt/B6v5g==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "Microsoft.CodeAnalysis.CSharp": "[1.0.0-rc2]",
+            "Microsoft.CodeAnalysis.Workspaces.Common": "[1.0.0-rc2]"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/net45/Microsoft.CodeAnalysis.CSharp.Workspaces.Desktop.dll",
+            "lib/net45/Microsoft.CodeAnalysis.CSharp.Workspaces.dll"
+          ],
+          "compileAssemblies": [
+            "lib/net45/Microsoft.CodeAnalysis.CSharp.Workspaces.Desktop.dll",
+            "lib/net45/Microsoft.CodeAnalysis.CSharp.Workspaces.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "Microsoft.CodeAnalysis.CSharp": "[1.0.0-rc2]",
+            "Microsoft.CodeAnalysis.Workspaces.Common": "[1.0.0-rc2]"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/portable-net45+win8/Microsoft.CodeAnalysis.CSharp.Workspaces.dll"
+          ],
+          "compileAssemblies": [
+            "lib/portable-net45+win8/Microsoft.CodeAnalysis.CSharp.Workspaces.dll"
+          ]
+        }
+      },
+      "files": [
+        "Microsoft.CodeAnalysis.CSharp.Workspaces.1.0.0-rc2.nupkg",
+        "Microsoft.CodeAnalysis.CSharp.Workspaces.1.0.0-rc2.nupkg.sha512",
+        "Microsoft.CodeAnalysis.CSharp.Workspaces.nuspec",
+        "ThirdPartyNotices.rtf",
+        "lib/net45/Microsoft.CodeAnalysis.CSharp.Workspaces.Desktop.dll",
+        "lib/net45/Microsoft.CodeAnalysis.CSharp.Workspaces.Desktop.xml",
+        "lib/net45/Microsoft.CodeAnalysis.CSharp.Workspaces.dll",
+        "lib/net45/Microsoft.CodeAnalysis.CSharp.Workspaces.xml",
+        "lib/portable-net45+win8/Microsoft.CodeAnalysis.CSharp.Workspaces.dll",
+        "lib/portable-net45+win8/Microsoft.CodeAnalysis.CSharp.Workspaces.xml"
+      ]
+    },
+    "Microsoft.CodeAnalysis.VisualBasic/1.0.0-rc2": {
+      "serviceable": false,
+      "sha": "Tqy5VgGq6q0a3OE2+dIETG8xMeW7Dyt7aY+1SGjvLjTJmv1UWN/xR9iYnB3n4sV8zUkKxFRWeqtJxdB7GCBG0Q==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "Microsoft.CodeAnalysis.Common": "1.0.0-rc2"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/net45/Microsoft.CodeAnalysis.VisualBasic.Desktop.dll",
+            "lib/net45/Microsoft.CodeAnalysis.VisualBasic.dll"
+          ],
+          "compileAssemblies": [
+            "lib/net45/Microsoft.CodeAnalysis.VisualBasic.Desktop.dll",
+            "lib/net45/Microsoft.CodeAnalysis.VisualBasic.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "Microsoft.CodeAnalysis.Common": "1.0.0-rc2"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/portable-net45+win8/Microsoft.CodeAnalysis.VisualBasic.dll"
+          ],
+          "compileAssemblies": [
+            "lib/portable-net45+win8/Microsoft.CodeAnalysis.VisualBasic.dll"
+          ]
+        }
+      },
+      "files": [
+        "Microsoft.CodeAnalysis.VisualBasic.1.0.0-rc2.nupkg",
+        "Microsoft.CodeAnalysis.VisualBasic.1.0.0-rc2.nupkg.sha512",
+        "Microsoft.CodeAnalysis.VisualBasic.nuspec",
+        "ThirdPartyNotices.rtf",
+        "lib/net45/Microsoft.CodeAnalysis.VisualBasic.Desktop.dll",
+        "lib/net45/Microsoft.CodeAnalysis.VisualBasic.Desktop.xml",
+        "lib/net45/Microsoft.CodeAnalysis.VisualBasic.dll",
+        "lib/net45/Microsoft.CodeAnalysis.VisualBasic.xml",
+        "lib/portable-net45+win8/Microsoft.CodeAnalysis.VisualBasic.dll",
+        "lib/portable-net45+win8/Microsoft.CodeAnalysis.VisualBasic.xml"
+      ]
+    },
+    "Microsoft.CodeAnalysis.VisualBasic.Workspaces/1.0.0-rc2": {
+      "serviceable": false,
+      "sha": "2DR1Sa1yHaQI0YSCadoH0wKSkBZL+zd8J2h/YUCf7DjhtBXAbiNuPIiWBOv99gnD/cZewOWjYRKqtUcpEGetmQ==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "Microsoft.CodeAnalysis.VisualBasic": "[1.0.0-rc2]",
+            "Microsoft.CodeAnalysis.Workspaces.Common": "[1.0.0-rc2]"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/net45/Microsoft.CodeAnalysis.VisualBasic.Workspaces.Desktop.dll",
+            "lib/net45/Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll"
+          ],
+          "compileAssemblies": [
+            "lib/net45/Microsoft.CodeAnalysis.VisualBasic.Workspaces.Desktop.dll",
+            "lib/net45/Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "Microsoft.CodeAnalysis.VisualBasic": "[1.0.0-rc2]",
+            "Microsoft.CodeAnalysis.Workspaces.Common": "[1.0.0-rc2]"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/portable-net45+win8/Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll"
+          ],
+          "compileAssemblies": [
+            "lib/portable-net45+win8/Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll"
+          ]
+        }
+      },
+      "files": [
+        "Microsoft.CodeAnalysis.VisualBasic.Workspaces.1.0.0-rc2.nupkg",
+        "Microsoft.CodeAnalysis.VisualBasic.Workspaces.1.0.0-rc2.nupkg.sha512",
+        "Microsoft.CodeAnalysis.VisualBasic.Workspaces.nuspec",
+        "ThirdPartyNotices.rtf",
+        "lib/net45/Microsoft.CodeAnalysis.VisualBasic.Workspaces.Desktop.dll",
+        "lib/net45/Microsoft.CodeAnalysis.VisualBasic.Workspaces.Desktop.xml",
+        "lib/net45/Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll",
+        "lib/net45/Microsoft.CodeAnalysis.VisualBasic.Workspaces.xml",
+        "lib/portable-net45+win8/Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll",
+        "lib/portable-net45+win8/Microsoft.CodeAnalysis.VisualBasic.Workspaces.xml"
+      ]
+    },
+    "Microsoft.CodeAnalysis.Workspaces.Common/1.0.0-rc2": {
+      "serviceable": false,
+      "sha": "1KgosYakcYnT2nXERFTjHoL5uW/nYQQ1MLMg75rOuVH6uW+RVYAOcmYsi6EM3HjjyRZVP65hzY9xOeWrH4LkNA==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "Microsoft.CodeAnalysis.Common": "[1.0.0-rc2]",
+            "Microsoft.Composition": "1.0.27"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/net45/Microsoft.CodeAnalysis.Workspaces.Desktop.dll",
+            "lib/net45/Microsoft.CodeAnalysis.Workspaces.dll"
+          ],
+          "compileAssemblies": [
+            "lib/net45/Microsoft.CodeAnalysis.Workspaces.Desktop.dll",
+            "lib/net45/Microsoft.CodeAnalysis.Workspaces.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "Microsoft.CodeAnalysis.Common": "[1.0.0-rc2]",
+            "Microsoft.Composition": "1.0.27"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/portable-net45+win8/Microsoft.CodeAnalysis.Workspaces.dll"
+          ],
+          "compileAssemblies": [
+            "lib/portable-net45+win8/Microsoft.CodeAnalysis.Workspaces.dll"
+          ]
+        }
+      },
+      "files": [
+        "Microsoft.CodeAnalysis.Workspaces.Common.1.0.0-rc2.nupkg",
+        "Microsoft.CodeAnalysis.Workspaces.Common.1.0.0-rc2.nupkg.sha512",
+        "Microsoft.CodeAnalysis.Workspaces.Common.nuspec",
+        "ThirdPartyNotices.rtf",
+        "lib/net45/Microsoft.CodeAnalysis.Workspaces.Desktop.dll",
+        "lib/net45/Microsoft.CodeAnalysis.Workspaces.Desktop.xml",
+        "lib/net45/Microsoft.CodeAnalysis.Workspaces.dll",
+        "lib/net45/Microsoft.CodeAnalysis.Workspaces.xml",
+        "lib/portable-net45+win8/Microsoft.CodeAnalysis.Workspaces.dll",
+        "lib/portable-net45+win8/Microsoft.CodeAnalysis.Workspaces.xml"
+      ]
+    },
+    "Microsoft.Composition/1.0.30": {
+      "serviceable": true,
+      "sha": "IDOxST2DCUziePSD2vK3Z7LI6e1rejJCp21/rKZ8fdsyTcq9SfnAV8udi0GSIpjO9wwSLZx9Kfc7co3PTs7IlA==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {},
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/portable-net45+win8+wp8+wpa81/System.Composition.AttributedModel.dll",
+            "lib/portable-net45+win8+wp8+wpa81/System.Composition.Convention.dll",
+            "lib/portable-net45+win8+wp8+wpa81/System.Composition.Hosting.dll",
+            "lib/portable-net45+win8+wp8+wpa81/System.Composition.Runtime.dll",
+            "lib/portable-net45+win8+wp8+wpa81/System.Composition.TypedParts.dll"
+          ],
+          "compileAssemblies": [
+            "lib/portable-net45+win8+wp8+wpa81/System.Composition.AttributedModel.dll",
+            "lib/portable-net45+win8+wp8+wpa81/System.Composition.Convention.dll",
+            "lib/portable-net45+win8+wp8+wpa81/System.Composition.Hosting.dll",
+            "lib/portable-net45+win8+wp8+wpa81/System.Composition.Runtime.dll",
+            "lib/portable-net45+win8+wp8+wpa81/System.Composition.TypedParts.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {},
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/portable-net45+win8+wp8+wpa81/System.Composition.AttributedModel.dll",
+            "lib/portable-net45+win8+wp8+wpa81/System.Composition.Convention.dll",
+            "lib/portable-net45+win8+wp8+wpa81/System.Composition.Hosting.dll",
+            "lib/portable-net45+win8+wp8+wpa81/System.Composition.Runtime.dll",
+            "lib/portable-net45+win8+wp8+wpa81/System.Composition.TypedParts.dll"
+          ],
+          "compileAssemblies": [
+            "lib/portable-net45+win8+wp8+wpa81/System.Composition.AttributedModel.dll",
+            "lib/portable-net45+win8+wp8+wpa81/System.Composition.Convention.dll",
+            "lib/portable-net45+win8+wp8+wpa81/System.Composition.Hosting.dll",
+            "lib/portable-net45+win8+wp8+wpa81/System.Composition.Runtime.dll",
+            "lib/portable-net45+win8+wp8+wpa81/System.Composition.TypedParts.dll"
+          ]
+        }
+      },
+      "files": [
+        "License-Stable.rtf",
+        "Microsoft.Composition.1.0.30.nupkg",
+        "Microsoft.Composition.1.0.30.nupkg.sha512",
+        "Microsoft.Composition.nuspec",
+        "lib/portable-net45+win8+wp8+wpa81/System.Composition.AttributedModel.XML",
+        "lib/portable-net45+win8+wp8+wpa81/System.Composition.AttributedModel.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Composition.Convention.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Composition.Convention.xml",
+        "lib/portable-net45+win8+wp8+wpa81/System.Composition.Hosting.XML",
+        "lib/portable-net45+win8+wp8+wpa81/System.Composition.Hosting.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Composition.Runtime.XML",
+        "lib/portable-net45+win8+wp8+wpa81/System.Composition.Runtime.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Composition.TypedParts.XML",
+        "lib/portable-net45+win8+wp8+wpa81/System.Composition.TypedParts.dll"
+      ]
+    },
+    "Microsoft.Framework.Caching.Interfaces/1.0.0-beta4": {
+      "serviceable": true,
+      "sha": "46cDLfehLNidWL55zPvLOinR/G3Z/hPtr6memnVenrt2BNPWmqujeXQaMyfklsYblxzeMhoE1ZhYsNuQdvj8zg==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {},
+          "frameworkAssemblies": [
+            "mscorlib",
+            "System",
+            "System.Core",
+            "Microsoft.CSharp"
+          ],
+          "runtimeAssemblies": [
+            "lib/dnx451/Microsoft.Framework.Caching.Interfaces.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnx451/Microsoft.Framework.Caching.Interfaces.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "System.Runtime": "4.0.20-beta-22816"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/dnxcore50/Microsoft.Framework.Caching.Interfaces.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnxcore50/Microsoft.Framework.Caching.Interfaces.dll"
+          ]
+        }
+      },
+      "files": [
+        "Microsoft.Framework.Caching.Interfaces.1.0.0-beta4.nupkg",
+        "Microsoft.Framework.Caching.Interfaces.1.0.0-beta4.nupkg.sha512",
+        "Microsoft.Framework.Caching.Interfaces.nuspec",
+        "lib/dnx451/Microsoft.Framework.Caching.Interfaces.dll",
+        "lib/dnx451/Microsoft.Framework.Caching.Interfaces.xml",
+        "lib/dnxcore50/Microsoft.Framework.Caching.Interfaces.dll",
+        "lib/dnxcore50/Microsoft.Framework.Caching.Interfaces.xml",
+        "lib/net45/Microsoft.Framework.Caching.Interfaces.dll",
+        "lib/net45/Microsoft.Framework.Caching.Interfaces.xml"
+      ]
+    },
+    "Microsoft.Framework.Caching.Memory/1.0.0-beta4": {
+      "serviceable": true,
+      "sha": "fRruSHyvGTRaHNe6CmYRxIzcRdR/IEv3BkNpyk15IDxcJp3HrghwTa3hRjpOjd42oSOswaYzlrF/6XbARCH/6A==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "Microsoft.Framework.OptionsModel": "1.0.0-beta4",
+            "Microsoft.Framework.Caching.Interfaces": "1.0.0-beta4"
+          },
+          "frameworkAssemblies": [
+            "mscorlib",
+            "System",
+            "System.Core",
+            "Microsoft.CSharp"
+          ],
+          "runtimeAssemblies": [
+            "lib/dnx451/Microsoft.Framework.Caching.Memory.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnx451/Microsoft.Framework.Caching.Memory.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "Microsoft.Framework.OptionsModel": "1.0.0-beta4",
+            "Microsoft.Framework.Caching.Interfaces": "1.0.0-beta4",
+            "System.Threading": "4.0.10-beta-22816",
+            "System.Threading.ThreadPool": "4.0.10-beta-22816"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/dnxcore50/Microsoft.Framework.Caching.Memory.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnxcore50/Microsoft.Framework.Caching.Memory.dll"
+          ]
+        }
+      },
+      "files": [
+        "Microsoft.Framework.Caching.Memory.1.0.0-beta4.nupkg",
+        "Microsoft.Framework.Caching.Memory.1.0.0-beta4.nupkg.sha512",
+        "Microsoft.Framework.Caching.Memory.nuspec",
+        "lib/dnx451/Microsoft.Framework.Caching.Memory.dll",
+        "lib/dnx451/Microsoft.Framework.Caching.Memory.xml",
+        "lib/dnxcore50/Microsoft.Framework.Caching.Memory.dll",
+        "lib/dnxcore50/Microsoft.Framework.Caching.Memory.xml",
+        "lib/net45/Microsoft.Framework.Caching.Memory.dll",
+        "lib/net45/Microsoft.Framework.Caching.Memory.xml"
+      ]
+    },
+    "Microsoft.Framework.ConfigurationModel/1.0.0-beta4": {
+      "serviceable": true,
+      "sha": "VD5MhmQRhYVfxyDs1fyruPTj3pYwLMV5dXJkPUVg1KKbJ9qr/tEn3frJA1NN1jdeVBt1RrW5FXr+wWG9YoO9Yg==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "Microsoft.Framework.ConfigurationModel.Interfaces": "1.0.0-beta4",
+            "Microsoft.Framework.Runtime.Interfaces": "1.0.0-beta4"
+          },
+          "frameworkAssemblies": [
+            "mscorlib",
+            "System",
+            "System.Core",
+            "Microsoft.CSharp"
+          ],
+          "runtimeAssemblies": [
+            "lib/dnx451/Microsoft.Framework.ConfigurationModel.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnx451/Microsoft.Framework.ConfigurationModel.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "Microsoft.Framework.ConfigurationModel.Interfaces": "1.0.0-beta4",
+            "System.Collections": "4.0.10-beta-22816",
+            "System.Diagnostics.Debug": "4.0.10-beta-22816",
+            "System.IO.FileSystem": "4.0.0-beta-22816",
+            "System.Linq": "4.0.0-beta-22816",
+            "System.Resources.ResourceManager": "4.0.0-beta-22816",
+            "System.Runtime.Extensions": "4.0.10-beta-22816",
+            "System.Runtime.InteropServices": "4.0.20-beta-22816",
+            "Microsoft.Framework.Runtime.Interfaces": "1.0.0-beta4"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.dll"
+          ]
+        }
+      },
+      "files": [
+        "Microsoft.Framework.ConfigurationModel.1.0.0-beta4.nupkg",
+        "Microsoft.Framework.ConfigurationModel.1.0.0-beta4.nupkg.sha512",
+        "Microsoft.Framework.ConfigurationModel.nuspec",
+        "lib/dnx451/Microsoft.Framework.ConfigurationModel.dll",
+        "lib/dnx451/Microsoft.Framework.ConfigurationModel.xml",
+        "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.dll",
+        "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.xml",
+        "lib/net45/Microsoft.Framework.ConfigurationModel.dll",
+        "lib/net45/Microsoft.Framework.ConfigurationModel.xml",
+        "lib/portable-net451+win81+wpa81/Microsoft.Framework.ConfigurationModel.dll",
+        "lib/portable-net451+win81+wpa81/Microsoft.Framework.ConfigurationModel.xml"
+      ]
+    },
+    "Microsoft.Framework.ConfigurationModel.Interfaces/1.0.0-beta4": {
+      "serviceable": true,
+      "sha": "lU9+gyEz+jSeR+QsZxZtDf0U2DS/pl3I8/m7YeKjHMnjqoxUKFbSOpzegll7bhq0Alw7/8gF2Byrcy+PlzRc/g==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {},
+          "frameworkAssemblies": [
+            "mscorlib",
+            "System",
+            "System.Core",
+            "Microsoft.CSharp"
+          ],
+          "runtimeAssemblies": [
+            "lib/dnx451/Microsoft.Framework.ConfigurationModel.Interfaces.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnx451/Microsoft.Framework.ConfigurationModel.Interfaces.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "System.Collections": "4.0.10-beta-22816",
+            "System.Diagnostics.Debug": "4.0.10-beta-22816",
+            "System.IO.FileSystem": "4.0.0-beta-22816",
+            "System.Linq": "4.0.0-beta-22816",
+            "System.Resources.ResourceManager": "4.0.0-beta-22816",
+            "System.Runtime.Extensions": "4.0.10-beta-22816",
+            "System.Runtime.InteropServices": "4.0.20-beta-22816"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.Interfaces.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.Interfaces.dll"
+          ]
+        }
+      },
+      "files": [
+        "Microsoft.Framework.ConfigurationModel.Interfaces.1.0.0-beta4.nupkg",
+        "Microsoft.Framework.ConfigurationModel.Interfaces.1.0.0-beta4.nupkg.sha512",
+        "Microsoft.Framework.ConfigurationModel.Interfaces.nuspec",
+        "lib/dnx451/Microsoft.Framework.ConfigurationModel.Interfaces.dll",
+        "lib/dnx451/Microsoft.Framework.ConfigurationModel.Interfaces.xml",
+        "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.Interfaces.dll",
+        "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.Interfaces.xml",
+        "lib/net45/Microsoft.Framework.ConfigurationModel.Interfaces.dll",
+        "lib/net45/Microsoft.Framework.ConfigurationModel.Interfaces.xml",
+        "lib/portable-net451+win81+wpa81/Microsoft.Framework.ConfigurationModel.Interfaces.dll",
+        "lib/portable-net451+win81+wpa81/Microsoft.Framework.ConfigurationModel.Interfaces.xml"
+      ]
+    },
+    "Microsoft.Framework.DependencyInjection.Interfaces/1.0.0-beta4": {
+      "serviceable": true,
+      "sha": "qbBGymgVdlrJZhJFg+35JaA0Tp8DYeFrDwv1Q3Di9hRWLZ3rAE7bvsnP+fmuo0XGlZDVXfGjINvtryFPyoQ58g==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {},
+          "frameworkAssemblies": [
+            "mscorlib",
+            "System",
+            "System.Core",
+            "Microsoft.CSharp"
+          ],
+          "runtimeAssemblies": [
+            "lib/dnx451/Microsoft.Framework.DependencyInjection.Interfaces.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnx451/Microsoft.Framework.DependencyInjection.Interfaces.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "System.ComponentModel": "4.0.0-beta-22816",
+            "System.Diagnostics.Debug": "4.0.10-beta-22816",
+            "System.Globalization": "4.0.10-beta-22816",
+            "System.Linq": "4.0.0-beta-22816",
+            "System.Linq.Expressions": "4.0.10-beta-22816",
+            "System.Reflection": "4.0.10-beta-22816",
+            "System.Resources.ResourceManager": "4.0.0-beta-22816"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/dnxcore50/Microsoft.Framework.DependencyInjection.Interfaces.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnxcore50/Microsoft.Framework.DependencyInjection.Interfaces.dll"
+          ]
+        }
+      },
+      "files": [
+        "Microsoft.Framework.DependencyInjection.Interfaces.1.0.0-beta4.nupkg",
+        "Microsoft.Framework.DependencyInjection.Interfaces.1.0.0-beta4.nupkg.sha512",
+        "Microsoft.Framework.DependencyInjection.Interfaces.nuspec",
+        "lib/dnx451/Microsoft.Framework.DependencyInjection.Interfaces.dll",
+        "lib/dnx451/Microsoft.Framework.DependencyInjection.Interfaces.xml",
+        "lib/dnxcore50/Microsoft.Framework.DependencyInjection.Interfaces.dll",
+        "lib/dnxcore50/Microsoft.Framework.DependencyInjection.Interfaces.xml",
+        "lib/net45/Microsoft.Framework.DependencyInjection.Interfaces.dll",
+        "lib/net45/Microsoft.Framework.DependencyInjection.Interfaces.xml",
+        "lib/portable-net451+win81+wpa81/Microsoft.Framework.DependencyInjection.Interfaces.dll",
+        "lib/portable-net451+win81+wpa81/Microsoft.Framework.DependencyInjection.Interfaces.xml"
+      ]
+    },
+    "Microsoft.Framework.FileSystemGlobbing/1.0.0-beta4": {
+      "serviceable": false,
+      "sha": "H9MTpDPDRfs1BxlOfdjgsb8uwN3xY+zYeSiyStuXjWFyhA5oc/y13+/QhMj0ev/XSCy8apJsMO1AZfTU5yAH6Q==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {},
+          "frameworkAssemblies": [
+            "mscorlib",
+            "System",
+            "System.Core",
+            "Microsoft.CSharp"
+          ],
+          "runtimeAssemblies": [
+            "lib/dnx451/Microsoft.Framework.FileSystemGlobbing.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnx451/Microsoft.Framework.FileSystemGlobbing.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "System.Runtime": "4.0.20-beta-22816",
+            "System.Collections": "4.0.10-beta-22816",
+            "System.IO.FileSystem": "4.0.0-beta-22816",
+            "System.Linq": "4.0.0-beta-22816",
+            "System.Runtime.Extensions": "4.0.10-beta-22816"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/dnxcore50/Microsoft.Framework.FileSystemGlobbing.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnxcore50/Microsoft.Framework.FileSystemGlobbing.dll"
+          ]
+        }
+      },
+      "files": [
+        "Microsoft.Framework.FileSystemGlobbing.1.0.0-beta4.nupkg",
+        "Microsoft.Framework.FileSystemGlobbing.1.0.0-beta4.nupkg.sha512",
+        "Microsoft.Framework.FileSystemGlobbing.nuspec",
+        "lib/dnx451/Microsoft.Framework.FileSystemGlobbing.dll",
+        "lib/dnx451/Microsoft.Framework.FileSystemGlobbing.xml",
+        "lib/dnxcore50/Microsoft.Framework.FileSystemGlobbing.dll",
+        "lib/dnxcore50/Microsoft.Framework.FileSystemGlobbing.xml",
+        "lib/net45/Microsoft.Framework.FileSystemGlobbing.dll",
+        "lib/net45/Microsoft.Framework.FileSystemGlobbing.xml"
+      ]
+    },
+    "Microsoft.Framework.Logging.Console/1.0.0-beta4": {
+      "serviceable": true,
+      "sha": "8EC3z+rmENBeYWc4o57ZdmytUrzpT/6NvHIIM8sNpj3v/zMopqMs6Ie4LAKk/TxUjPPvxcR0vyajQB8z6TLCiA==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "Microsoft.Framework.Logging.Interfaces": "1.0.0-beta4"
+          },
+          "frameworkAssemblies": [
+            "mscorlib",
+            "System",
+            "System.Core",
+            "Microsoft.CSharp"
+          ],
+          "runtimeAssemblies": [
+            "lib/dnx451/Microsoft.Framework.Logging.Console.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnx451/Microsoft.Framework.Logging.Console.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "Microsoft.Framework.Logging.Interfaces": "1.0.0-beta4",
+            "System.Runtime": "4.0.20-beta-22816",
+            "System.Console": "4.0.0-beta-22816",
+            "System.IO": "4.0.10-beta-22816",
+            "System.Threading": "4.0.10-beta-22816"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/dnxcore50/Microsoft.Framework.Logging.Console.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnxcore50/Microsoft.Framework.Logging.Console.dll"
+          ]
+        }
+      },
+      "files": [
+        "Microsoft.Framework.Logging.Console.1.0.0-beta4.nupkg",
+        "Microsoft.Framework.Logging.Console.1.0.0-beta4.nupkg.sha512",
+        "Microsoft.Framework.Logging.Console.nuspec",
+        "lib/dnx451/Microsoft.Framework.Logging.Console.dll",
+        "lib/dnx451/Microsoft.Framework.Logging.Console.xml",
+        "lib/dnxcore50/Microsoft.Framework.Logging.Console.dll",
+        "lib/dnxcore50/Microsoft.Framework.Logging.Console.xml",
+        "lib/net45/Microsoft.Framework.Logging.Console.dll",
+        "lib/net45/Microsoft.Framework.Logging.Console.xml"
+      ]
+    },
+    "Microsoft.Framework.Logging.Interfaces/1.0.0-beta4": {
+      "serviceable": true,
+      "sha": "OK8v8gpDYfH01Gy1tvT4mS1r6ZWMAz1HXo872v7pswishE6oyTQwC44BpYM+Obq8GW7E6Ai/Vj3wE/CuLUDJGA==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {},
+          "frameworkAssemblies": [
+            "mscorlib",
+            "System",
+            "System.Core",
+            "Microsoft.CSharp"
+          ],
+          "runtimeAssemblies": [
+            "lib/dnx451/Microsoft.Framework.Logging.Interfaces.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnx451/Microsoft.Framework.Logging.Interfaces.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "System.Collections": "4.0.10-beta-22816",
+            "System.Collections.Concurrent": "4.0.10-beta-22816",
+            "System.Linq": "4.0.0-beta-22816",
+            "System.Globalization": "4.0.10-beta-22816",
+            "System.Reflection": "4.0.10-beta-22816",
+            "System.Runtime": "4.0.20-beta-22816",
+            "System.Runtime.Extensions": "4.0.10-beta-22816",
+            "System.Runtime.InteropServices": "4.0.20-beta-22816"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/dnxcore50/Microsoft.Framework.Logging.Interfaces.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnxcore50/Microsoft.Framework.Logging.Interfaces.dll"
+          ]
+        }
+      },
+      "files": [
+        "Microsoft.Framework.Logging.Interfaces.1.0.0-beta4.nupkg",
+        "Microsoft.Framework.Logging.Interfaces.1.0.0-beta4.nupkg.sha512",
+        "Microsoft.Framework.Logging.Interfaces.nuspec",
+        "lib/dnx451/Microsoft.Framework.Logging.Interfaces.dll",
+        "lib/dnx451/Microsoft.Framework.Logging.Interfaces.xml",
+        "lib/dnxcore50/Microsoft.Framework.Logging.Interfaces.dll",
+        "lib/dnxcore50/Microsoft.Framework.Logging.Interfaces.xml",
+        "lib/net45/Microsoft.Framework.Logging.Interfaces.dll",
+        "lib/net45/Microsoft.Framework.Logging.Interfaces.xml",
+        "lib/portable-net451+win81+wpa81/Microsoft.Framework.Logging.Interfaces.dll",
+        "lib/portable-net451+win81+wpa81/Microsoft.Framework.Logging.Interfaces.xml"
+      ]
+    },
+    "Microsoft.Framework.OptionsModel/1.0.0-beta4": {
+      "serviceable": true,
+      "sha": "xjr084yTcmBLI8F3gb+hIEhf+ttanmbCWl54GkMhSH/dU1bqbR2Ts6Ks51kwUaACfNEDNY9zRwblT4of51lA6w==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "Microsoft.Framework.ConfigurationModel": "1.0.0-beta4",
+            "Microsoft.Framework.DependencyInjection.Interfaces": "1.0.0-beta4"
+          },
+          "frameworkAssemblies": [
+            "mscorlib",
+            "System",
+            "System.Core",
+            "Microsoft.CSharp"
+          ],
+          "runtimeAssemblies": [
+            "lib/dnx451/Microsoft.Framework.OptionsModel.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnx451/Microsoft.Framework.OptionsModel.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "Microsoft.Framework.ConfigurationModel": "1.0.0-beta4",
+            "Microsoft.Framework.DependencyInjection.Interfaces": "1.0.0-beta4",
+            "System.ComponentModel": "4.0.0-beta-22816",
+            "System.Reflection.TypeExtensions": "4.0.0-beta-22816",
+            "System.Threading": "4.0.10-beta-22816"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/dnxcore50/Microsoft.Framework.OptionsModel.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnxcore50/Microsoft.Framework.OptionsModel.dll"
+          ]
+        }
+      },
+      "files": [
+        "Microsoft.Framework.OptionsModel.1.0.0-beta4.nupkg",
+        "Microsoft.Framework.OptionsModel.1.0.0-beta4.nupkg.sha512",
+        "Microsoft.Framework.OptionsModel.nuspec",
+        "lib/dnx451/Microsoft.Framework.OptionsModel.dll",
+        "lib/dnx451/Microsoft.Framework.OptionsModel.xml",
+        "lib/dnxcore50/Microsoft.Framework.OptionsModel.dll",
+        "lib/dnxcore50/Microsoft.Framework.OptionsModel.xml",
+        "lib/net45/Microsoft.Framework.OptionsModel.dll",
+        "lib/net45/Microsoft.Framework.OptionsModel.xml",
+        "lib/portable-net451+win81+wpa81/Microsoft.Framework.OptionsModel.dll",
+        "lib/portable-net451+win81+wpa81/Microsoft.Framework.OptionsModel.xml"
+      ]
+    },
+    "Microsoft.Framework.Runtime.Interfaces/1.0.0-beta4": {
+      "serviceable": true,
+      "sha": "RrZdqvUm8QbgxnZQuafYGo6NezoKx7VqAfAtHVzoKBm3GSV8xlPh90u1fsGhNCv37xJNk5PuRCa4Mq27ko7pLw==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {},
+          "frameworkAssemblies": [
+            "mscorlib",
+            "System",
+            "System.Core",
+            "Microsoft.CSharp"
+          ],
+          "runtimeAssemblies": [
+            "lib/dnx451/Microsoft.Framework.Runtime.Interfaces.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnx451/Microsoft.Framework.Runtime.Interfaces.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "System.IO": "4.0.10-beta-22816",
+            "System.Reflection": "4.0.10-beta-22816",
+            "System.Runtime": "4.0.20-beta-22816",
+            "System.Runtime.Extensions": "4.0.10-beta-22816",
+            "System.Threading.Tasks": "4.0.10-beta-22816",
+            "System.ComponentModel": "4.0.0-beta-22816"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/dnxcore50/Microsoft.Framework.Runtime.Interfaces.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnxcore50/Microsoft.Framework.Runtime.Interfaces.dll"
+          ]
+        }
+      },
+      "files": [
+        "Microsoft.Framework.Runtime.Interfaces.1.0.0-beta4.nupkg",
+        "Microsoft.Framework.Runtime.Interfaces.1.0.0-beta4.nupkg.sha512",
+        "Microsoft.Framework.Runtime.Interfaces.nuspec",
+        "lib/dnx451/Microsoft.Framework.Runtime.Interfaces.dll",
+        "lib/dnx451/Microsoft.Framework.Runtime.Interfaces.xml",
+        "lib/dnxcore50/Microsoft.Framework.Runtime.Interfaces.dll",
+        "lib/dnxcore50/Microsoft.Framework.Runtime.Interfaces.xml"
+      ]
+    },
+    "Microsoft.Web.Xdt/2.1.1": {
+      "serviceable": false,
+      "sha": "PHoqib4d+f2lmnluVwMFM8M4AF8Z7y2g18hUTi5UCKkjNQIzkNnB1uyqnS5od2sMsRcI/9mexQjDO6e5dL/MeA==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {},
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/net40/Microsoft.Web.XmlTransform.dll"
+          ],
+          "compileAssemblies": [
+            "lib/net40/Microsoft.Web.XmlTransform.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {},
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [],
+          "compileAssemblies": []
+        }
+      },
+      "files": [
+        "Microsoft.Web.Xdt.2.1.1.nupkg",
+        "Microsoft.Web.Xdt.2.1.1.nupkg.sha512",
+        "Microsoft.Web.Xdt.nuspec",
+        "lib/net40/Microsoft.Web.XmlTransform.dll"
+      ]
+    },
+    "Newtonsoft.Json/7.0.1": {
+      "serviceable": false,
+      "sha": "q3V4KLetMLnt1gpAVWgtXnHjKs0UG/RalBc29u2ZKxd5t5Ze4JBL5WiiYIklJyK/5CRiIiNwigVQUo0FgbsuWA==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {},
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/net45/Newtonsoft.Json.dll"
+          ],
+          "compileAssemblies": [
+            "lib/net45/Newtonsoft.Json.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {},
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll"
+          ],
+          "compileAssemblies": [
+            "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll"
+          ]
+        }
+      },
+      "files": [
+        "Newtonsoft.Json.7.0.1.nupkg",
+        "Newtonsoft.Json.7.0.1.nupkg.sha512",
+        "Newtonsoft.Json.nuspec",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.xml",
+        "tools/install.ps1"
+      ]
+    },
+    "NuGet.Core/2.8.5": {
+      "serviceable": false,
+      "sha": "7ZLQxwAVp55iEWzzu6DP7FNesg/c6NnLo2M/tCs+xA2pOXYEIW2H4XaDqLQEblXYXS01ZpRsiZOFnS6QVwN20w==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "Microsoft.Web.Xdt": "2.1.0"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/net40-Client/NuGet.Core.dll"
+          ],
+          "compileAssemblies": [
+            "lib/net40-Client/NuGet.Core.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "Microsoft.Web.Xdt": "2.1.0"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [],
+          "compileAssemblies": []
+        }
+      },
+      "files": [
+        "NuGet.Core.2.8.5.nupkg",
+        "NuGet.Core.2.8.5.nupkg.sha512",
+        "NuGet.Core.nuspec",
+        "lib/net40-Client/NuGet.Core.dll"
+      ]
+    },
+    "ScriptCs.Contracts/0.14.1": {
+      "serviceable": false,
+      "sha": "Oz6x2ErV6i1Kww195sMQUD3ROc2aoIHfKmqsxcDs/b23UcL+ibrfTODRO0k8AKhP3bpYmcVzkQmrXwWhwS5YXw==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {},
+          "frameworkAssemblies": [
+            "System.ComponentModel.Composition"
+          ],
+          "runtimeAssemblies": [
+            "lib/net45/ScriptCs.Contracts.dll"
+          ],
+          "compileAssemblies": [
+            "lib/net45/ScriptCs.Contracts.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {},
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [],
+          "compileAssemblies": []
+        }
+      },
+      "files": [
+        "ScriptCs.Contracts.0.14.1.nupkg",
+        "ScriptCs.Contracts.0.14.1.nupkg.sha512",
+        "ScriptCs.Contracts.nuspec",
+        "lib/net45/ScriptCs.Contracts.dll"
+      ]
+    },
+    "ScriptCs.Core/0.14.1": {
+      "serviceable": false,
+      "sha": "WaiFpj/OjgY1gMtm/2MQUghu65n4wwUHM+QPm0TBiBVyW6S6vMZNdx1yzLIY4rfcNSP3gBo/e7ZW0XOEHFMt8A==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "ScriptCs.Contracts": "0.14.1",
+            "Common.Logging": "2.1.2"
+          },
+          "frameworkAssemblies": [
+            "System.ComponentModel.Composition"
+          ],
+          "runtimeAssemblies": [
+            "lib/net45/ScriptCs.Core.dll"
+          ],
+          "compileAssemblies": [
+            "lib/net45/ScriptCs.Core.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "ScriptCs.Contracts": "0.14.1",
+            "Common.Logging": "2.1.2"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [],
+          "compileAssemblies": []
+        }
+      },
+      "files": [
+        "ScriptCs.Core.0.14.1.nupkg",
+        "ScriptCs.Core.0.14.1.nupkg.sha512",
+        "ScriptCs.Core.nuspec",
+        "lib/net45/ScriptCs.Core.dll"
+      ]
+    },
+    "ScriptCs.Hosting/0.14.1": {
+      "serviceable": false,
+      "sha": "augDOt5w8ZEml9Ef6+diY0Ork/IM6cZT1j6Wau6h1ygLBNE3LJtqeTuiDw7ZJO6vOb8Z1fzpuYASmQM9CsU/hw==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "ScriptCs.Core": "0.14.1",
+            "Autofac.Mef": "3.0.3",
+            "Common.Logging": "2.1.2",
+            "Newtonsoft.Json": "6.0.3",
+            "NuGet.Core": "2.8.5"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/net45/ScriptCs.Hosting.dll"
+          ],
+          "compileAssemblies": [
+            "lib/net45/ScriptCs.Hosting.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "ScriptCs.Core": "0.14.1",
+            "Autofac.Mef": "3.0.3",
+            "Common.Logging": "2.1.2",
+            "Newtonsoft.Json": "6.0.3",
+            "NuGet.Core": "2.8.5"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [],
+          "compileAssemblies": []
+        }
+      },
+      "files": [
+        "ScriptCs.Hosting.0.14.1.nupkg",
+        "ScriptCs.Hosting.0.14.1.nupkg.sha512",
+        "ScriptCs.Hosting.nuspec",
+        "lib/net45/ScriptCs.Hosting.dll"
+      ]
+    },
+    "System.Collections.Immutable/1.1.33-beta": {
+      "serviceable": true,
+      "sha": "Qnv6M/BRf0w1xNoD5tH7V+jK0kdO+OZymwQS5Lj6FALt3AZMGVeJs+lHXi1PsKFll67UtGY+I7r8WDhRzspXCA==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {},
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll"
+          ],
+          "compileAssemblies": [
+            "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {},
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll"
+          ],
+          "compileAssemblies": [
+            "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll"
+          ]
+        }
+      },
+      "files": [
+        "License-Stable.rtf",
+        "System.Collections.Immutable.1.1.33-beta.nupkg",
+        "System.Collections.Immutable.1.1.33-beta.nupkg.sha512",
+        "System.Collections.Immutable.nuspec",
+        "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.xml"
+      ]
+    },
+    "System.Reflection.Metadata/1.0.18-beta": {
+      "serviceable": true,
+      "sha": "4PtC2U6seQthZMvXvGTxXZUqlF0oV9jzYNTkG0Yo/D6cLO5AH3lrxh2djGyKsDYnAZjBCoyA/z3vHRCeaBEp4w==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "System.Collections.Immutable": "1.1.33-beta"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/portable-net45+win8/System.Reflection.Metadata.dll"
+          ],
+          "compileAssemblies": [
+            "lib/portable-net45+win8/System.Reflection.Metadata.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "System.Collections.Immutable": "1.1.33-beta"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/portable-net45+win8/System.Reflection.Metadata.dll"
+          ],
+          "compileAssemblies": [
+            "lib/portable-net45+win8/System.Reflection.Metadata.dll"
+          ]
+        }
+      },
+      "files": [
+        "License-Stable.rtf",
+        "System.Reflection.Metadata.1.0.18-beta.nupkg",
+        "System.Reflection.Metadata.1.0.18-beta.nupkg.sha512",
+        "System.Reflection.Metadata.nuspec",
+        "lib/portable-net45+win8/System.Reflection.Metadata.dll",
+        "lib/portable-net45+win8/System.Reflection.Metadata.xml"
+      ]
+    }
+  }
+}

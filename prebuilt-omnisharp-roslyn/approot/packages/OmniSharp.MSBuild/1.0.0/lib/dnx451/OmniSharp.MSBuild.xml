@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OmniSharp.MSBuild</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.CodeAnalysis.MSBuild.SectionBlock">
+            <summary>
+            Represents a SectionBlock in a .sln file. Section blocks are of the form:
+            
+            Type(ParenthesizedName) = Value
+                Key = Value
+                [more keys/values]
+            EndType
+            </summary>
+        </member>
+    </members>
+</doc>

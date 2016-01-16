@@ -1,0 +1,578 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OmniSharp.Roslyn.CSharp</name>
+    </assembly>
+    <members>
+        <member name="M:OmniSharp.Roslyn.CSharp.Services.Documentation.DocumentationConverter.ConvertDocumentation(System.String,System.String)">
+            <summary>
+            Converts the xml documentation string into a plain text string.
+            </summary>
+        </member>
+        <member name="T:OmniSharp.Intellisense.AnnotationTable`1">
+             <summary>
+             An AnnotationTable helps you attach your own annotation types/instances to syntax.
+            
+             It maintains a map between your instances and actual SyntaxAnnotation's used to annotate the nodes
+             and offers an API that matches the true annotation API on SyntaxNode.
+            
+             The table controls the lifetime of when you can find and retrieve your annotations. You won't be able to
+             find your annotations via HasAnnotations/GetAnnotations unless you use the same annotation table for these operations
+             that you used for the WithAdditionalAnnotations operation.
+            
+             Your custom annotations are not serialized with the syntax tree, so they won't move across boundaries unless the
+             same AnnotationTable is available on both ends.
+            
+             also, note that this table is not thread safe.
+             </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.EnumerableExtensions.IsEmpty``1(``0[])">
+            <remarks>
+            This method is necessary to avoid an ambiguity between <see cref="M:OmniSharp.Intellisense.EnumerableExtensions.IsEmpty``1(System.Collections.Generic.IReadOnlyCollection{``0})"/> and <see cref="M:OmniSharp.Intellisense.EnumerableExtensions.IsEmpty``1(System.Collections.Generic.ICollection{``0})"/>.
+            </remarks>
+        </member>
+        <member name="M:OmniSharp.Intellisense.EnumerableExtensions.IsEmpty``1(System.Collections.Generic.List{``0})">
+            <remarks>
+            This method is necessary to avoid an ambiguity between <see cref="M:OmniSharp.Intellisense.EnumerableExtensions.IsEmpty``1(System.Collections.Generic.IReadOnlyCollection{``0})"/> and <see cref="M:OmniSharp.Intellisense.EnumerableExtensions.IsEmpty``1(System.Collections.Generic.ICollection{``0})"/>.
+            </remarks>
+        </member>
+        <member name="M:OmniSharp.Intellisense.ExpressionSyntaxExtensions.CastIfPossible(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax,Microsoft.CodeAnalysis.ITypeSymbol,System.Int32,Microsoft.CodeAnalysis.SemanticModel,System.Boolean@)">
+            <summary>
+            Adds to <paramref name="targetType"/> if it does not contain an anonymous
+            type and binds to the same type at the given <paramref name="position"/>.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.ExpressionSyntaxExtensions.IsMemberAccessADynamicInvocation(Microsoft.CodeAnalysis.CSharp.Syntax.MemberAccessExpressionSyntax,Microsoft.CodeAnalysis.SemanticModel)">
+            <summary>
+            Tells if the Member access is the starting part of a Dynamic Invocation
+            </summary>
+            <param name="memberAccess"></param>
+            <param name="semanticModel"></param>
+            <returns>Return true, if the member access is the starting point of a Dynamic Invocation</returns>
+        </member>
+        <member name="M:OmniSharp.Intellisense.ExpressionSyntaxExtensions.GetPredefinedKeywordKind(Microsoft.CodeAnalysis.SpecialType)">
+            <summary>
+            Returns the predefined keyword kind for a given specialtype.
+            </summary>
+            <param name="specialType">The specialtype of this type.</param>
+            <returns>The keyword kind for a given special type, or SyntaxKind.None if the type name is not a predefined type.</returns>
+        </member>
+        <member name="T:OmniSharp.Intellisense.OperatorPrecedence">
+            <summary>
+            Operator precedence classes from section 7.3.1 of the C# language specification.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.FindTokenHelper.FindTokenOnRightOfPosition``1(Microsoft.CodeAnalysis.SyntaxNode,System.Int32,System.Func{Microsoft.CodeAnalysis.SyntaxTriviaList,System.Int32,Microsoft.CodeAnalysis.SyntaxToken},System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            If the position is inside of token, return that token; otherwise, return the token to the right.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.FindTokenHelper.FindTokenOnLeftOfPosition``1(Microsoft.CodeAnalysis.SyntaxNode,System.Int32,System.Func{Microsoft.CodeAnalysis.SyntaxTriviaList,System.Int32,Microsoft.CodeAnalysis.SyntaxToken},System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            If the position is inside of token, return that token; otherwise, return the token to the left.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.FindTokenHelper.FindSkippedTokenBackward(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxToken},System.Int32)">
+            <summary>
+            Look inside a trivia list for a skipped token that contains the given position.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.FindTokenHelper.FindSkippedTokenForward(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxToken},System.Int32)">
+            <summary>
+            Look inside a trivia list for a skipped token that contains the given position.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.ISymbolExtensions.IsAccessibleWithin(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.ITypeSymbol)">
+            <summary>
+            Checks if 'symbol' is accessible from within 'within'.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.ISymbolExtensions.IsAccessibleWithin(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.IAssemblySymbol,Microsoft.CodeAnalysis.ITypeSymbol)">
+            <summary>
+            Checks if 'symbol' is accessible from within assembly 'within'.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.ISymbolExtensions.IsAccessibleWithin(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.INamedTypeSymbol,Microsoft.CodeAnalysis.ITypeSymbol)">
+            <summary>
+            Checks if 'symbol' is accessible from within name type 'within', with an optional
+            qualifier of type "throughTypeOpt".
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.ISymbolExtensions.IsSymbolAccessible(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.INamedTypeSymbol,Microsoft.CodeAnalysis.ITypeSymbol,System.Boolean@)">
+            <summary>
+            Checks if 'symbol' is accessible from within assembly 'within', with an qualifier of
+            type "throughTypeOpt". Sets "failedThroughTypeCheck" to true if it failed the "through
+            type" check.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.ISymbolExtensions.IsSymbolAccessibleCore(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.ITypeSymbol,System.Boolean@)">
+            <summary>
+            Checks if 'symbol' is accessible from within 'within', which must be a INamedTypeSymbol
+            or an IAssemblySymbol.  If 'symbol' is accessed off of an expression then
+            'throughTypeOpt' is the type of that expression. This is needed to properly do protected
+            access checks. Sets "failedThroughTypeCheck" to true if this protected check failed.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.Matcher.Repeat``1(OmniSharp.Intellisense.Matcher{``0})">
+            <summary>
+            Matcher equivalent to (m*)
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.Matcher.OneOrMore``1(OmniSharp.Intellisense.Matcher{``0})">
+            <summary>
+            Matcher equivalent to (m+)
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.Matcher.Choice``1(OmniSharp.Intellisense.Matcher{``0},OmniSharp.Intellisense.Matcher{``0})">
+            <summary>
+            Matcher equivalent to (m_1|m_2)
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.Matcher.Sequence``1(OmniSharp.Intellisense.Matcher{``0}[])">
+            <summary>
+            Matcher equivalent to (m_1 ... m_n)
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.Matcher.Single``1(System.Func{``0,System.Boolean},System.String)">
+            <summary>
+            Matcher that matches an element if the provide predicate returns true.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.NameGenerator.EnsureUniqueness(System.Collections.Generic.IList{System.String},System.Collections.Generic.IList{System.Boolean},System.Func{System.String,System.Boolean},System.Boolean)">
+            <summary>
+            Ensures that any 'names' is unique and does not collide with any other name.  Names that
+            are marked as IsFixed can not be touched.  This does mean that if there are two names
+            that are the same, and both are fixed that you will end up with non-unique names at the
+            end.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.NameGenerator.EnsureUniqueness(System.String,System.Collections.Generic.IEnumerable{System.String},System.Boolean)">
+            <summary>
+            Transforms baseName into a name that does not conflict with any name in 'reservedNames'
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SemanticModelExtensions.DecomposeName(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax,Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax@,System.String@,System.Int32@)">
+            <summary>
+            Decomposes a name or member access expression into its component parts.
+            </summary>
+            <param name="expression">The name or member access expression.</param>
+            <param name="qualifier">The qualifier (or left-hand-side) of the name expression. This may be null if there is no qualifier.</param>
+            <param name="name">The name of the expression.</param>
+            <param name="arity">The number of generic type parameters.</param>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SemanticModelExtensions.GenerateNameForArgument(Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax)">
+            <summary>
+            Given an argument node, tries to generate an appropriate name that can be used for that
+            argument.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SemanticModelExtensions.GenerateNameForExpression(Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax,System.Boolean)">
+            <summary>
+            Given an expression node, tries to generate an appropriate name that can be used for
+            that expression.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SemanticModelExtensions.GetSymbolInfo(Microsoft.CodeAnalysis.SemanticModel,Microsoft.CodeAnalysis.SyntaxToken,System.Threading.CancellationToken)">
+            <summary>
+            Gets semantic information, such as type, symbols, and diagnostics, about the parent of a token.
+            </summary>
+            <param name="semanticModel">The SemanticModel object to get semantic information
+            from.</param>
+            <param name="token">The token to get semantic information from. This must be part of the
+            syntax tree associated with the binding.</param>
+            <param name="cancellationToken">A cancellation token.</param>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SourceTextExtensions.GetLeadingWhitespaceOfLineAtPosition(Microsoft.CodeAnalysis.Text.SourceText,System.Int32)">
+            <summary>
+            Returns the leading whitespace of the line located at the specified position in the given snapshot.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SourceTextExtensions.TryOverlapsHiddenPosition(Microsoft.CodeAnalysis.Text.SourceText,Microsoft.CodeAnalysis.Text.TextSpan,System.Func{System.Int32,System.Threading.CancellationToken,System.Boolean},System.Threading.CancellationToken)">
+            <summary>
+            Same as OverlapsHiddenPosition but doesn't throw on cancellation.  Instead, returns false
+            in that case.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.StringExtensions.IsValidClrNamespaceName(System.String)">
+            <summary>
+            Checks if the given name is a sequence of valid CLR names separated by a dot.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.StringExtensions.Unquote(System.String)">
+            <summary>
+            Remove one set of leading and trailing double quote characters, if both are present.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SymbolExtensions.GetEditorBrowsableState(Microsoft.CodeAnalysis.ISymbol)">
+            <summary>
+            Gets the EditorBrowsableState of an entity.
+            </summary>
+            <returns>
+            The editor browsable state.
+            </returns>
+            <param name='symbol'>
+            Entity.
+            </param>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SymbolExtensions.IsEditorBrowsable(Microsoft.CodeAnalysis.ISymbol)">
+            <summary>
+            Determines if an entity should be shown in the code completion window. This is the same as:
+            <c>GetEditorBrowsableState (entity) != System.ComponentModel.EditorBrowsableState.Never</c>
+            </summary>
+            <returns>
+            <c>true</c> if the entity should be shown; otherwise, <c>false</c>.
+            </returns>
+            <param name='symbol'>
+            The entity.
+            </param>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SymbolExtensions.IsDesignerBrowsable(Microsoft.CodeAnalysis.ISymbol)">
+            <summary>
+            Returns true if the symbol wasn't tagged with
+            [System.ComponentModel.BrowsableAttribute (false)]
+            </summary>
+            <returns><c>true</c> if is designer browsable the specified symbol; otherwise, <c>false</c>.</returns>
+            <param name="symbol">Symbol.</param>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SymbolExtensions.GetComponentCategory(Microsoft.CodeAnalysis.ISymbol)">
+            <summary>
+            Returns the component category.
+            [System.ComponentModel.CategoryAttribute (CATEGORY)]
+            </summary>
+            <param name="symbol">Symbol.</param>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SymbolExtensions.IsUnsafe(Microsoft.CodeAnalysis.ISymbol)">
+            <summary>
+            Returns true if this symbol contains anything unsafe within it.  for example
+            List&lt;int*[]&gt; is unsafe, as it "int* Foo { get; }"
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SymbolExtensions.IsInaccessibleLocal(Microsoft.CodeAnalysis.ISymbol,System.Int32)">
+            <returns>
+            Returns true if symbol is a local variable and its declaring syntax node is
+            after the current position, false otherwise (including for non-local symbols)
+            </returns>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SymbolExtensions.IsAwaitable(Microsoft.CodeAnalysis.ISymbol,Microsoft.CodeAnalysis.SemanticModel,System.Int32)">
+            <summary>
+            If the <paramref name="symbol"/> is a method symbol, returns True if the method's return type is "awaitable".
+            If the <paramref name="symbol"/> is a type symbol, returns True if that type is "awaitable".
+            An "awaitable" is any type that exposes a GetAwaiter method which returns a valid "awaiter". This GetAwaiter method may be an instance method or an extension method.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SymbolExtensions.RemoveOverriddenSymbolsWithinSet``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            First, remove symbols from the set if they are overridden by other symbols in the set.
+            If a symbol is overridden only by symbols outside of the set, then it is not removed.
+            This is useful for filtering out symbols that cannot be accessed in a given context due
+            to the existence of overriding members. Second, remove remaining symbols that are
+            unsupported (e.g. pointer types in VB) or not editor browsable based on the EditorBrowsable
+            attribute.
+            </summary>
+        </member>
+        <member name="F:OmniSharp.Intellisense.SyntaxExtensions.s_findSkippedTokenBackward">
+            <summary>
+            Look inside a trivia list for a skipped token that contains the given position.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SyntaxExtensions.GetSkippedTokens(Microsoft.CodeAnalysis.SyntaxTriviaList)">
+            <summary>
+            return only skipped tokens
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SyntaxExtensions.FindTokenOnLeftOfPosition(Microsoft.CodeAnalysis.SyntaxNode,System.Int32,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            If the position is inside of token, return that token; otherwise, return the token to the left.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SyntaxNodeExtensions.IsChildNode``1(Microsoft.CodeAnalysis.SyntaxNode,System.Func{``0,Microsoft.CodeAnalysis.SyntaxNode})">
+            <summary>
+            Returns true if is a given token is a child token of of a certain type of parent node.
+            </summary>
+            <typeparam name="TParent">The type of the parent node.</typeparam>
+            <param name="node">The node that we are testing.</param>
+            <param name="childGetter">A function that, when given the parent node, returns the child token we are interested in.</param>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SyntaxNodeExtensions.IsFoundUnder``1(Microsoft.CodeAnalysis.SyntaxNode,System.Func{``0,Microsoft.CodeAnalysis.SyntaxNode})">
+            <summary>
+            Returns true if this node is found underneath the specified child in the given parent.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SyntaxNodeExtensions.AddAnnotations(Microsoft.CodeAnalysis.SyntaxNode,System.Collections.Generic.IEnumerable{System.Tuple{Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.SyntaxAnnotation}})">
+             <summary>
+             create a new root node from the given root after adding annotations to the tokens
+            
+             tokens should belong to the given root
+             </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SyntaxNodeExtensions.AddAnnotations(Microsoft.CodeAnalysis.SyntaxNode,System.Collections.Generic.IEnumerable{System.Tuple{Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxAnnotation}})">
+             <summary>
+             create a new root node from the given root after adding annotations to the nodes
+            
+             nodes should belong to the given root
+             </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SyntaxNodeExtensions.ReplaceNodesAsync``1(``0,System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.SyntaxNode},System.Func{Microsoft.CodeAnalysis.SyntaxNode,Microsoft.CodeAnalysis.SyntaxNode,System.Threading.CancellationToken,System.Threading.Tasks.Task{Microsoft.CodeAnalysis.SyntaxNode}},System.Threading.CancellationToken)">
+            <summary>
+            Creates a new tree of nodes from the existing tree with the specified old nodes replaced with a newly computed nodes.
+            </summary>
+            <param name="root">The root of the tree that contains all the specified nodes.</param>
+            <param name="nodes">The nodes from the tree to be replaced.</param>
+            <param name="computeReplacementAsync">A function that computes a replacement node for
+            the argument nodes. The first argument is one of the original specified nodes. The second argument is
+            the same node possibly rewritten with replaced descendants.</param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SyntaxNodeExtensions.GetEnclosingUsingDirectives(Microsoft.CodeAnalysis.SyntaxNode)">
+            <summary>
+            Returns the list of using directives that affect <paramref name="node"/>. The list will be returned in
+            top down order.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SyntaxNodeExtensions.GetAllPrecedingTriviaToPreviousToken(Microsoft.CodeAnalysis.SyntaxToken)">
+            <summary>
+            Returns all of the trivia to the left of this token up to the previous token (concatenates
+            the previous token's trailing trivia and this token's leading trivia).
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SyntaxNodeExtensions.ContainsInterleavedDirective(Microsoft.CodeAnalysis.SyntaxNode,System.Threading.CancellationToken)">
+             <summary>
+             Returns true if the passed in node contains an interleaved pp directive.
+            
+             i.e. The following returns false:
+            
+               void Foo() {
+             #if true
+             #endif
+               }
+            
+             #if true
+               void Foo() {
+               }
+             #endif
+            
+             but these return true:
+            
+             #if true
+               void Foo() {
+             #endif
+               }
+            
+               void Foo() {
+             #if true
+               }
+             #endif
+            
+             #if true
+               void Foo() {
+             #else
+               }
+             #endif
+            
+             i.e. the method returns true if it contains a PP directive that belongs to a grouping
+             constructs (like #if/#endif or #region/#endregion), but the grouping construct isn't
+             entirely contained within the span of the node.
+             </summary>
+        </member>
+        <member name="F:OmniSharp.Intellisense.SyntaxNodeExtensions.s_findSkippedTokenForward">
+            <summary>
+            Look inside a trivia list for a skipped token that contains the given position.
+            </summary>
+        </member>
+        <member name="F:OmniSharp.Intellisense.SyntaxNodeExtensions.s_findSkippedTokenBackward">
+            <summary>
+            Look inside a trivia list for a skipped token that contains the given position.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SyntaxNodeExtensions.GetSkippedTokens(Microsoft.CodeAnalysis.SyntaxTriviaList)">
+            <summary>
+            return only skipped tokens
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SyntaxNodeExtensions.FindTokenOnRightOfPosition(Microsoft.CodeAnalysis.SyntaxNode,System.Int32,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            If the position is inside of token, return that token; otherwise, return the token to the right.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SyntaxNodeExtensions.ChildThatContainsPosition(Microsoft.CodeAnalysis.SyntaxNode,System.Int32,System.Int32@)">
+            <summary>
+            Returns child node or token that contains given position.
+            </summary>
+            <remarks>
+            This is a copy of <see cref="M:Microsoft.CodeAnalysis.SyntaxNode.ChildThatContainsPosition(System.Int32)"/> that also returns the index of the child node.
+            </remarks>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SyntaxTokenExtensions.IsFirstTokenOnLine(Microsoft.CodeAnalysis.SyntaxToken,Microsoft.CodeAnalysis.Text.SourceText)">
+            <summary>
+            Determines whether the given SyntaxToken is the first token on a line in the specified SourceText.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SyntaxTokenExtensions.GetAllTrailingTrivia(Microsoft.CodeAnalysis.SyntaxToken)">
+            <summary>
+            Retrieves all trivia after this token, including it's trailing trivia and
+            the leading trivia of the next token.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SyntaxTokenExtensions.FindLastTokenOfPartialGenericName(Microsoft.CodeAnalysis.SyntaxToken)">
+            <summary>
+            Lexically, find the last token that looks like it's part of this generic name.
+            </summary>
+            <param name="genericIdentifier">The "name" of the generic identifier, last token before
+            the "&amp;"</param>
+            <returns>The last token in the name</returns>
+            <remarks>This is related to the code in <see cref="M:OmniSharp.Intellisense.SyntaxTreeExtensions.IsInPartiallyWrittenGeneric(Microsoft.CodeAnalysis.SyntaxTree,System.Int32,System.Threading.CancellationToken)"/></remarks>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SyntaxTreeExtensions.IsHiddenPosition(Microsoft.CodeAnalysis.SyntaxTree,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Returns <c>true</c> if the provided position is in a hidden region inaccessible to the user.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.SyntaxTreeExtensions.FindTokenOnLeftOfPosition(Microsoft.CodeAnalysis.SyntaxTree,System.Int32,System.Threading.CancellationToken,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            If the position is inside of token, return that token; otherwise, return the token to the left.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.TextLineExtensions.GetFirstNonWhitespacePosition(Microsoft.CodeAnalysis.Text.TextLine)">
+            <summary>
+            Returns the first non-whitespace position on the given line, or null if
+            the line is empty or contains only whitespace.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.TextLineExtensions.GetFirstNonWhitespaceOffset(Microsoft.CodeAnalysis.Text.TextLine)">
+            <summary>
+            Returns the first non-whitespace position on the given line as an offset
+            from the start of the line, or null if the line is empty or contains only
+            whitespace.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.TextLineExtensions.IsEmptyOrWhitespace(Microsoft.CodeAnalysis.Text.TextLine)">
+            <summary>
+            Determines whether the specified line is empty or contains whitespace only.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.TypeSyntaxExtensions.IsTypeInferred(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax,Microsoft.CodeAnalysis.SemanticModel)">
+            <summary>
+            Determines whether the specified TypeSyntax is actually 'var'.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.Hash.Combine(System.Int32,System.Int32)">
+            <summary>
+            This is how VB Anonymous Types combine hash values for fields.
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.Hash.Combine``1(``0,System.Int32)">
+            <summary>
+            This is how VB Anonymous Types combine hash values for fields.
+            PERF: Do not use with enum types because that involves multiple
+            unnecessary boxing operations.  Unfortunately, we can't constrain
+            T to "non-enum", so we'll use a more restrictive constraint.
+            </summary>
+        </member>
+        <member name="F:OmniSharp.Intellisense.Hash.FnvOffsetBias">
+            <summary>
+            The offset bias value used in the FNV-1a algorithm
+            See http://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function
+            </summary>
+        </member>
+        <member name="F:OmniSharp.Intellisense.Hash.FnvPrime">
+            <summary>
+            The generative factor used in the FNV-1a algorithm
+            See http://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function
+            </summary>
+        </member>
+        <member name="M:OmniSharp.Intellisense.Hash.GetFNVHashCode(System.Byte[])">
+            <summary>
+            Compute the FNV-1a hash of a sequence of bytes
+            See http://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function
+            </summary>
+            <param name="data">The sequence of bytes</param>
+            <returns>The FNV-1a hash of <paramref name="data"/></returns>
+        </member>
+        <member name="M:OmniSharp.Intellisense.Hash.GetFNVHashCode(System.Collections.Immutable.ImmutableArray{System.Byte})">
+            <summary>
+            Compute the FNV-1a hash of a sequence of bytes
+            See http://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function
+            </summary>
+            <param name="data">The sequence of bytes</param>
+            <returns>The FNV-1a hash of <paramref name="data"/></returns>
+        </member>
+        <member name="M:OmniSharp.Intellisense.Hash.GetFNVHashCode(System.String,System.Int32,System.Int32)">
+            <summary>
+            Compute the hashcode of a sub-string using FNV-1a
+            See http://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function
+            Note: FNV-1a was developed and tuned for 8-bit sequences. We're using it here
+            for 16-bit Unicode chars on the understanding that the majority of chars will
+            fit into 8-bits and, therefore, the algorithm will retain its desirable traits
+            for generating hash codes.
+            </summary>
+            <param name="text">The input string</param>
+            <param name="start">The start index of the first character to hash</param>
+            <param name="length">The number of characters, beginning with <paramref name="start"/> to hash</param>
+            <returns>The FNV-1a hash code of the substring beginning at <paramref name="start"/> and ending after <paramref name="length"/> characters.</returns>
+        </member>
+        <member name="M:OmniSharp.Intellisense.Hash.GetFNVHashCode(System.String,System.Int32)">
+            <summary>
+            Compute the hashcode of a sub-string using FNV-1a
+            See http://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function
+            </summary>
+            <param name="text">The input string</param>
+            <param name="start">The start index of the first character to hash</param>
+            <returns>The FNV-1a hash code of the substring beginning at <paramref name="start"/> and ending at the end of the string.</returns>
+        </member>
+        <member name="M:OmniSharp.Intellisense.Hash.GetFNVHashCode(System.String)">
+            <summary>
+            Compute the hashcode of a string using FNV-1a
+            See http://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function
+            </summary>
+            <param name="text">The input string</param>
+            <returns>The FNV-1a hash code of <paramref name="text"/></returns>
+        </member>
+        <member name="M:OmniSharp.Intellisense.Hash.GetFNVHashCode(System.Text.StringBuilder)">
+            <summary>
+            Compute the hashcode of a string using FNV-1a
+            See http://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function
+            </summary>
+            <param name="text">The input string</param>
+            <returns>The FNV-1a hash code of <paramref name="text"/></returns>
+        </member>
+        <member name="M:OmniSharp.Intellisense.Hash.GetFNVHashCode(System.Char[],System.Int32,System.Int32)">
+            <summary>
+            Compute the hashcode of a sub string using FNV-1a
+            See http://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function
+            </summary>
+            <param name="text">The input string as a char array</param>
+            <param name="start">The start index of the first character to hash</param>
+            <param name="length">The number of characters, beginning with <paramref name="start"/> to hash</param>
+            <returns>The FNV-1a hash code of the substring beginning at <paramref name="start"/> and ending after <paramref name="length"/> characters.</returns>
+        </member>
+        <member name="M:OmniSharp.Intellisense.Hash.GetFNVHashCode(System.Char)">
+            <summary>
+            Compute the hashcode of a single character using the FNV-1a algorithm
+            See http://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function
+            Note: In general, this isn't any more useful than "char.GetHashCode". However,
+            it may be needed if you need to generate the same hash code as a string or
+            substring with just a single character.
+            </summary>
+            <param name="ch">The character to hash</param>
+            <returns>The FNV-1a hash code of the character.</returns>
+        </member>
+        <member name="M:OmniSharp.Intellisense.Hash.CombineFNVHash(System.Int32,System.String)">
+            <summary>
+            Combine a string with an existing FNV-1a hash code
+            See http://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function
+            </summary>
+            <param name="hashCode">The accumulated hash code</param>
+            <param name="text">The string to combine</param>
+            <returns>The result of combining <paramref name="hashCode"/> with <paramref name="text"/> using the FNV-1a algorithm</returns>
+        </member>
+        <member name="M:OmniSharp.Intellisense.Hash.CombineFNVHash(System.Int32,System.Char)">
+            <summary>
+            Combine a char with an existing FNV-1a hash code
+            See http://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function
+            </summary>
+            <param name="hashCode">The accumulated hash code</param>
+            <param name="ch">The new character to combine</param>
+            <returns>The result of combining <paramref name="hashCode"/> with <paramref name="ch"/> using the FNV-1a algorithm</returns>
+        </member>
+    </members>
+</doc>

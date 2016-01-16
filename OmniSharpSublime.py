@@ -32,6 +32,6 @@ def plugin_unloaded():
         print('About to upgrade OmniSharp')
         if os.name != 'posix':
             # kill the exe before the update complains about exe in use
-            os.system('taskkill /f /im PrebuiltOmniSharpServer/OmniSharp.exe')
+            os.system('taskkill /f /im ' + get_omni_path(active_view()))
 
     print('omnisharp plugin_unloaded')
