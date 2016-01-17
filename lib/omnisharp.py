@@ -9,6 +9,7 @@ import subprocess
 import traceback
 import sys
 import signal
+import codecs
 
 from .helpers import get_omni_path
 from .helpers import get_config_path
@@ -49,7 +50,11 @@ class WorkerThread(threading.Thread):
                 print('======== response ======== \n response is empty')
                 self.callback(None)
             else:
-                decodeddata = response.decode('utf-8')
+                if response.startswith(codecs.BOM_UTF8):
+                    decodeddata = response.decode('utf-8-sig')
+                else:
+                    decodeddata = response.decode('utf-8')
+
                 print('======== response ======== \n %s' % decodeddata)
                 self.callback(json.loads(decodeddata))
 
