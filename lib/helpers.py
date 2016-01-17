@@ -67,11 +67,7 @@ def get_omni_active(view):
     active_server = get_settings(view, "omnisharp_server_active")
 
     for server in servers:
-<<<<<<< HEAD
         if(server.get("name") == active_server):
-=======
-        if (server.get("name") == active_server):
->>>>>>> 4c3023feb3f1e9425820f8ba0f6080c275f39c76
             return server
 
     raise Exception("No OmniSharpSever selected")
@@ -90,7 +86,7 @@ def get_omni_path(view):
     if relative_omni_path is None:
         return None
 
-    absolute_omni_path = os.path.abspath(get_plugin_path() + os.sep + relative_omni_path)
+    absolute_omni_path = os.path.abspath(get_plugin_path() + os.sep + relative_omni_path).replace('\\', '/')
 
     if absolute_omni_path.endswith(".*"):
         absolute_omni_path = absolute_omni_path[0:-2] + ("" if os.name == 'posix' else ".cmd")
@@ -104,12 +100,10 @@ def get_config_path(view):
     :return: string
     """
     relative_config_path = get_omni_active(view).get("config")
-    return os.path.abspath(
-<<<<<<< HEAD
-        get_plugin_path() + os.sep + relative_config_path) if relative_config_path is not None else None
-=======
-            get_plugin_path() + os.sep + relative_config_path) if relative_config_path is not None else None
->>>>>>> 4c3023feb3f1e9425820f8ba0f6080c275f39c76
+
+    if relative_config_path is None:
+        return None
+    return os.path.abspath(get_plugin_path() + os.sep + relative_config_path).replace('\\', '/')
 
 
 def get_plugin_path():
@@ -138,12 +132,9 @@ def save_all_files(window):
 
 
 def quote_path(path):
-<<<<<<< HEAD
     """
         Surrounds the path in quotes.
     :param path:
     :return: string
     """
-=======
->>>>>>> 4c3023feb3f1e9425820f8ba0f6080c275f39c76
     return '"' + path.strip('"') + '"'

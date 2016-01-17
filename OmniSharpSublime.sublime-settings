@@ -1,7 +1,7 @@
 {
     "omnisharp_response_timeout": 100,
     "omnisharp_auto_start": true,
-    "omnisharp_server_active":"coreclr-roslyn",
+    "omnisharp_server_active":"roslyn",
     "omnisharp_servers": [
         {
             "name": "roslyn",
@@ -21,11 +21,6 @@
         {
             "name": "prebuilt-roslyn",
             "path": "prebuilt-omnisharp-roslyn/omnisharp.*",
-            "config": null,
-        },
-        {
-            "name": "coreclr-roslyn",
-            "path": "coreclr/run.*",
             "config": null,
         }
     ],
