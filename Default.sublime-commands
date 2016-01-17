@@ -1,6 +1,10 @@
 [
     {
-        "caption": "OmniSharpSublime: Select Version",
+        "caption": "OmniSharpSublime: Restart Server",
+        "command": "omni_sharp_restart_server"
+    },
+    {
+        "caption": "OmniSharpSublime: Select Server Version",
         "command": "omni_sharp_select_version"
     },
     {

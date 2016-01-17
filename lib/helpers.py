@@ -4,6 +4,7 @@ import fnmatch
 import json
 
 
+
 def is_csharp(view):
     if len(view.sel()) == 0:
         return False

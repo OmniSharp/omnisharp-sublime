@@ -15,6 +15,8 @@ class SwapServerClosure():
         print(settings)
         sublime.save_settings('OmniSharpSublime.sublime-settings')
 
+        sublime.run_command("omni_sharp_rester_server")
+
 
 class OmniSharpSelectVersion(sublime_plugin.TextCommand):
     def run(self, edit):

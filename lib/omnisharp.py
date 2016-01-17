@@ -11,12 +11,7 @@ import sys
 import signal
 import codecs
 
-from .helpers import get_omni_path
-from .helpers import get_config_path
-from .helpers import get_plugin_path
-from .helpers import quote_path
-from .helpers import get_settings
-from .helpers import current_solution_filepath_or_project_rootpath
+from .helpers import *
 from .urllib3 import PoolManager
 
 IS_EXTERNAL_SERVER_ENABLE = False
@@ -113,6 +108,11 @@ def _available_port():
     return port
 
 
+def restart_omnisharp_server_subprocess(view):
+    close_omnisharp_server_subprocess(view)
+    create_omnisharp_server_subprocess(view)
+
+
 def create_omnisharp_server_subprocess(view):
     solution_path = current_solution_filepath_or_project_rootpath(view)
     if solution_path in launcher_procs:
@@ -160,6 +160,19 @@ def create_omnisharp_server_subprocess(view):
     launcher_procs[solution_path] = True
     server_ports[solution_path] = omni_port
 
+
+def close_omnisharp_server_subprocess(view):
+    get_response(view, "/stopserver", close_omnishar_handler)
+
+
+def close_omnishar_handler(statusmsg):
+    print(statusmsg)
+    solution_path = current_solution_filepath_or_project_rootpath(active_view())
+    launcher_procs.pop(solution_path)
+    server_ports.pop(solution_path)
+    print("PORTS AND PROCS")
+    print(launcher_procs)
+    print(server_ports)
 
 def set_omnisharp_status(statusmsg):
     sublime.active_window().active_view().set_status("OmniSharp", "OmniSharp : " + statusmsg)
