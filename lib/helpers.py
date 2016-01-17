@@ -48,6 +48,69 @@ def current_solution_filepath_or_project_rootpath(view):
             print("New file not saved. Can't find path.")
             return None
 
+
+def get_omni_active(view):
+    """
+        Returns the active omnisharp server
+    :param view:
+    :return:
+    """
+    servers = get_settings(view, "omnisharp_servers")
+    active_server = get_settings(view, "omnisharp_server_active")
+
+    for server in servers:
+        if (server.get("name") == active_server):
+            return server
+
+    raise Exception("No OmniSharpSever selected")
+
+
+def get_omni_path(view):
+    """
+        Returns the path to the active omnisharp server's executable.
+        If the path in the config file contains a .* then it will
+        attempt to match it to .cmd on windows, or no extension on a nix.
+    :param view:
+    :return: string
+    """
+    relative_omni_path = get_omni_active(view).get("path")
+
+    if relative_omni_path is None:
+        return None
+
+    absolute_omni_path = os.path.abspath(get_plugin_path() + os.sep + relative_omni_path)
+
+    if absolute_omni_path.endswith(".*"):
+        absolute_omni_path = absolute_omni_path[0:-2] + ("" if os.name == 'posix' else ".cmd")
+    return absolute_omni_path
+
+
+def get_config_path(view):
+    """
+        Returns the path to the active omnisharp server's config file.
+    :param view:
+    :return: string
+    """
+    relative_config_path = get_omni_active(view).get("config")
+    return os.path.abspath(
+            get_plugin_path() + os.sep + relative_config_path) if relative_config_path is not None else None
+
+
+def get_plugin_path():
+    """
+        Returns the path to the plugin folder
+    :return: string
+    """
+    if os.name == 'posix':
+        source_file_path = os.path.realpath(__file__)
+    else:
+        source_file_path = os.path.realpath(__file__).replace('\\', '/')
+
+    source_dir_path = os.path.dirname(source_file_path)
+    plugin_dir_path = os.path.dirname(source_dir_path)
+    return plugin_dir_path
+
+
 def save_all_files(window):
     for view in window.views():
         if view.file_name() and view.is_dirty():

@@ -1,5 +1,9 @@
 [
     {
+        "caption": "OmniSharpSublime: Select Version",
+        "command": "omni_sharp_select_version"
+    },
+    {
         "caption": "OmniSharpSublime: Goto Definition",
         "command": "omni_sharp_go_to_definition"
     },
