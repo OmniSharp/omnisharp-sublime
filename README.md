@@ -1,6 +1,3 @@
-# *****Looking for a maintainer. If you'd like to help manage this plugin please file and issue*****
-
-
 # OmniSharpSublime for ST3
  OmnisharpSublime is a plugin for ST3 to provide a C# development environment. It communicates with OmniSharpServer by nosami for IDE functions.
 
@@ -62,6 +59,13 @@
         cd OmniSharp
         git submodule update --init --recursive
         ./build.sh or ./build.cmd
+
+# Selecting OmniSharp Version
+
+Currently both `omnisharp-server` and `omnisharp-roslyn` are both supported. To swap between the
+different version open up the sublime command window ctrl-shift-p, type Select Server Version 
+and press enter. Prebuilt-Roslyn and Prebuilt-Legacy are the only two working servers that work
+unless you have built the plugin from source.
 
 # Project Setting
 The server will automatically find the the solution file from the folder you have opened in Sublime.  If you have multiple solutions you have to specify the solution file you wish to use in a `sublime-project`. 
