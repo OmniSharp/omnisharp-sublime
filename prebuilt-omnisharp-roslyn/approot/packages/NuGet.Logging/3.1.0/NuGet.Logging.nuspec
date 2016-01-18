@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>NuGet.Logging</id>
+    <version>3.1.0</version>
+    <authors>NuGet</authors>
+    <owners>NuGet</owners>
+    <licenseUrl>https://raw.githubusercontent.com/NuGet/NuGet.Home/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/NuGet/NuGet.Home/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Logger abstractions for NuGet</description>
+    <copyright>Copyright Microsoft Corporation. All rights reserved.</copyright>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5" />
+      <group targetFramework="DNXCore5.0">
+        <dependency id="System.Runtime" version="4.0.20-beta-23019" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="mscorlib" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="Microsoft.CSharp" targetFramework=".NETFramework4.5" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

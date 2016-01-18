@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>NuGet.Versioning</id>
+    <version>3.1.0</version>
+    <authors>NuGet</authors>
+    <owners>NuGet</owners>
+    <licenseUrl>https://raw.githubusercontent.com/NuGet/NuGet.Versioning/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/NuGet/NuGet.Versioning/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>NuGet's implementation of Semantic Versioning.</description>
+    <copyright>Copyright Microsoft Corporation. All rights reserved.</copyright>
+    <tags>semver semantic versioning</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5" />
+      <group targetFramework="DNXCore5.0">
+        <dependency id="System.Diagnostics.Tools" version="4.0.0-beta-23019" />
+        <dependency id="System.Diagnostics.Debug" version="4.0.10-beta-23019" />
+        <dependency id="System.Linq" version="4.0.0-beta-23019" />
+        <dependency id="System.Resources.ResourceManager" version="4.0.0-beta-23019" />
+        <dependency id="System.Reflection" version="4.0.10-beta-23019" />
+        <dependency id="System.Runtime.Extensions" version="4.0.10-beta-23019" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="mscorlib" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="Microsoft.CSharp" targetFramework=".NETFramework4.5" />
+    </frameworkAssemblies>
+  </metadata>
+</package>
