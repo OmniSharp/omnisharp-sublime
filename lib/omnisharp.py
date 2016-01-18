@@ -109,11 +109,15 @@ def _available_port():
 
 
 def restart_omnisharp_server_subprocess(view):
-    close_omnisharp_server_subprocess(view)
-    create_omnisharp_server_subprocess(view)
+    def omnisharp_onclose_cb():
+        create_omnisharp_server_subprocess(view)
+
+    close_omnisharp_server_subprocess(view, omnisharp_onclose_cb)
 
 
 def create_omnisharp_server_subprocess(view):
+    set_omnisharp_status("Server Starting")
+
     solution_path = current_solution_filepath_or_project_rootpath(view)
     if solution_path in launcher_procs:
         print("already_bound_solution:%s" % solution_path)
@@ -161,18 +165,20 @@ def create_omnisharp_server_subprocess(view):
     server_ports[solution_path] = omni_port
 
 
-def close_omnisharp_server_subprocess(view):
+def close_omnisharp_server_subprocess(view, cb=None):
+    def close_omnishar_handler(statusmsg):
+        print(statusmsg)
+
+        solution_path = current_solution_filepath_or_project_rootpath(active_view())
+        server_ports.pop(solution_path)
+        launcher_procs.pop(solution_path)
+
+        if cb:
+            cb()
+
     get_response(view, "/stopserver", close_omnishar_handler)
+    set_omnisharp_status("Server Shutting Down")
 
-
-def close_omnishar_handler(statusmsg):
-    print(statusmsg)
-    solution_path = current_solution_filepath_or_project_rootpath(active_view())
-    launcher_procs.pop(solution_path)
-    server_ports.pop(solution_path)
-    print("PORTS AND PROCS")
-    print(launcher_procs)
-    print(server_ports)
 
 def set_omnisharp_status(statusmsg):
     sublime.active_window().active_view().set_status("OmniSharp", "OmniSharp : " + statusmsg)
