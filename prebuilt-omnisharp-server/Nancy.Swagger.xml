@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nancy.Swagger</name>
+    </assembly>
+    <members>
+        <member name="M:Nancy.Swagger.SwaggerModelDataBuilder`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nancy.Swagger.SwaggerModelDataBuilder`1"/> class.
+            </summary>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerModelDataBuilder`1.Description(System.String)">
+            <summary>
+            Specify the description for the model.
+            </summary>
+            <param name="description">The description.</param>
+            <returns>The <see cref="T:Nancy.Swagger.SwaggerModelDataBuilder`1"/> instance.</returns>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerModelDataBuilder`1.Property``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            Access a <see cref="T:Nancy.Swagger.SwaggerModelPropertyDataBuilder`1"/> for a given property of the model.
+            </summary>
+            <param name="expression">An <see cref="!:Expression&lt;Func&lt;T, TProperty&gt;&gt;"/> for accessing the property.</param>
+            <returns>The <see cref="T:Nancy.Swagger.SwaggerModelPropertyDataBuilder`1"/> instance.</returns>
+        </member>
+        <member name="P:Nancy.Swagger.SwaggerModelDataBuilder`1.Data">
+            <summary>
+            Gets the <see cref="T:Nancy.Swagger.SwaggerModelData"/> instance.
+            </summary>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerModelPropertyDataBuilder`1.#ctor(Nancy.Swagger.SwaggerModelPropertyData)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nancy.Swagger.SwaggerRouteDataBuilder"/> class.
+            </summary>
+            <param name="data">The <see cref="T:Nancy.Swagger.SwaggerModelPropertyData"/> to build.</param>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerModelPropertyDataBuilder`1.Default(`0)">
+            <summary>
+            Specify the default value for the property.
+            </summary>
+            <param name="value">The default value.</param>
+            <returns>The <see cref="T:Nancy.Swagger.SwaggerModelPropertyDataBuilder`1"/> instance.</returns>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerModelPropertyDataBuilder`1.Description(System.String)">
+            <summary>
+            Specify the description for the property.
+            </summary>
+            <param name="description">The description.</param>
+            <returns>The <see cref="T:Nancy.Swagger.SwaggerModelPropertyDataBuilder`1"/> instance.</returns>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerModelPropertyDataBuilder`1.Enum(System.String[])">
+            <summary>
+            Specify a fixed list of possible values for the property. 
+            </summary>
+            <param name="values">The values.</param>
+            <returns>The <see cref="T:Nancy.Swagger.SwaggerModelPropertyDataBuilder`1"/> instance.</returns>
+            <remarks>If this field is used in conjunction with a default value, then the default value MUST be one of the values defined in the enum.</remarks>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerModelPropertyDataBuilder`1.Maximum(System.Int64)">
+            <summary>
+            Specify the maximum valid value for the property, inclusive.
+            </summary>
+            <param name="maximum">The maximum value.</param>
+            <returns>The <see cref="T:Nancy.Swagger.SwaggerModelPropertyDataBuilder`1"/> instance.</returns>
+            <remarks>If this field is used in conjunction with a default value, then the default value MUST be lower than or equal to this value.</remarks>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerModelPropertyDataBuilder`1.Minimum(System.Int64)">
+            <summary>
+            Specify the minimum valid value for the property, inclusive.
+            </summary>
+            <param name="minimum">The minimum value.</param>
+            <returns>The <see cref="T:Nancy.Swagger.SwaggerModelPropertyDataBuilder`1"/> instance.</returns>
+            <remarks>If this field is used in conjunction with a default value, then the default value MUST be higher than or equal to this value.</remarks>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerModelPropertyDataBuilder`1.Required(System.Boolean)">
+            <summary>
+            Specify whether the property is required or not.
+            </summary>
+            <param name="required">A value indicating whether the property is required.</param>
+            <returns>The <see cref="T:Nancy.Swagger.SwaggerModelPropertyDataBuilder`1"/> instance.</returns>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerModelPropertyDataBuilder`1.UniqueItems(System.Boolean)">
+            <summary>
+            Specify whether the container allows duplicate values or not.
+            </summary>
+            <param name="uniqueItems">A value indicating whether the container allows duplicate values or not</param>
+            <returns></returns>
+        </member>
+        <member name="P:Nancy.Swagger.SwaggerModelPropertyDataBuilder`1.Data">
+            <summary>
+            Gets the <see cref="T:Nancy.Swagger.SwaggerModelPropertyData"/> instance.
+            </summary>
+        </member>
+        <member name="F:Nancy.Swagger.SwaggerConfig.DefaultResourceListingPath">
+            <summary>
+            The default resource listing path, <c>api-docs</c>.
+            </summary>
+        </member>
+        <member name="F:Nancy.Swagger.SwaggerConfig._resolvedModelIds">
+            <summary>
+            Contains all resolved ids by the <see cref="M:Nancy.Swagger.SwaggerConfig.DefaultModelIdConvention(System.Type)"/>.
+            </summary>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerConfig.DefaultModelIdConvention(System.Type)">
+            <summary>
+            Returns a unique model id for the given <paramref name="type"/>. 
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+            <remarks>Returns the type's name. If this id was resolved by a 
+            different type first, prepend the last part of the type's namespace and check again.
+            And so on.</remarks>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerConfig.DefaultNicknameConvention(Nancy.Swagger.SwaggerRouteData)">
+            <summary>
+            Returns a unique id for the given <paramref name="route"/>
+            that can be used by tools reading the output for further and easier
+            manipulation.
+            </summary>
+            <param name="route">The route for which a nickname is returned.</param>
+            <returns>a unique id for the given <paramref name="route"/> that can
+            be used by tools reading the output for further and easier 
+            manipulation.</returns>        
+        </member>
+        <member name="P:Nancy.Swagger.SwaggerConfig.ModelIdConvention">
+            <summary>
+            Gets or sets the function which returns a unique model id for a given <see cref="T:System.Type"/>.
+            </summary>
+        </member>
+        <member name="P:Nancy.Swagger.SwaggerConfig.NicknameConvention">
+            <summary>
+            Get or sets a function which returns a unique id for the given 
+            <see cref="T:Nancy.Swagger.SwaggerRouteData"/> that can be used by tools reading
+            the output for further and easier manipulation.
+            </summary>
+        </member>
+        <member name="P:Nancy.Swagger.SwaggerConfig.ResourceListingPath">
+            <summary>
+            Gets or sets the path at which the Swagger resource listing will be served. 
+            Default value is <see cref="F:Nancy.Swagger.SwaggerConfig.DefaultResourceListingPath"/>.
+            </summary>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerExtensions.AsSwagger(Nancy.Routing.RouteDescription,System.Action{Nancy.Swagger.SwaggerRouteDataBuilder})">
+            <summary>
+            Returns an instance of <see cref="T:Nancy.Swagger.SwaggerRouteData"/> representing this route.
+            </summary>
+            <param name="desc">The <see cref="T:Nancy.Routing.RouteDescription"/>.</param>
+            <param name="action">An <see cref="T:System.Action`1"/> for building the <see cref="T:Nancy.Swagger.SwaggerRouteData"/>.</param>
+            <returns>An instance of <see cref="T:Nancy.Swagger.SwaggerRouteData"/> constructed using <paramref name="desc"/> and by invoking <paramref name="action"/>.</returns>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerModelData.ForType``1(System.Action{Nancy.Swagger.SwaggerModelDataBuilder{``0}})">
+            <summary>
+            Returns an instance of <see cref="T:Nancy.Swagger.SwaggerModelData"/> representing this type.
+            </summary>
+            <param name="action">An <see cref="T:System.Action`1"/> for building the <see cref="T:Nancy.Swagger.SwaggerModelData"/>.</param>
+            <returns>An instance of <see cref="T:Nancy.Swagger.SwaggerModelData"/> constructed using the type and by invoking <paramref name="action"/>.</returns>
+        </member>
+        <member name="T:Nancy.Swagger.SwaggerRouteData">
+            <summary>
+            Holds all the Swagger metadata pertaining to a specific route.
+            </summary>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerRouteData.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nancy.Swagger.SwaggerRouteData"/> class.
+            </summary>
+        </member>
+        <member name="T:Nancy.Swagger.SwaggerRouteDataBuilder">
+            <summary>
+            Helper class for configuring an instance of <see cref="T:Nancy.Swagger.SwaggerRouteData"/>.
+            </summary>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerRouteDataBuilder.#ctor(System.String,Swagger.ObjectModel.ApiDeclaration.HttpMethod,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nancy.Swagger.SwaggerRouteDataBuilder"/> class.
+            </summary>
+            <param name="operationNickName">The nickname for the operation.</param>
+            <param name="method">The method for the route.</param>
+            <param name="apiPath">The path for the API.</param>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerRouteDataBuilder.ResourcePath(System.String)">
+            <summary>
+            Specify the path for the resource.
+            </summary>
+            <param name="resourcePath">The resource path.</param>
+            <returns>The <see cref="T:Nancy.Swagger.SwaggerRouteDataBuilder"/> instance.</returns>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerRouteDataBuilder.ApiPath(System.String)">
+            <summary>
+            Specify the path for the API.
+            </summary>
+            <param name="apiPath">The resource path.</param>
+            <returns>The <see cref="T:Nancy.Swagger.SwaggerRouteDataBuilder"/> instance.</returns>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerRouteDataBuilder.Summary(System.String)">
+            <summary>
+            Specify the summary for the operation.
+            </summary>
+            <param name="summary">The operation summary.</param>
+            <returns>The <see cref="T:Nancy.Swagger.SwaggerRouteDataBuilder"/> instance.</returns>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerRouteDataBuilder.Notes(System.String)">
+            <summary>
+            Specify the notes for the operation.
+            </summary>
+            <param name="notes">The operation notes.</param>
+            <returns>The <see cref="T:Nancy.Swagger.SwaggerRouteDataBuilder"/> instance.</returns>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerRouteDataBuilder.QueryParam``1(System.String,System.String,System.Boolean,``0)">
+            <summary>
+            Specify a query parameter for the operation.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="description">The description of the parameter.</param>
+            <param name="required">A <see cref="T:System.Boolean"/> value indicating whether the parameter is required. The default is <c>false</c>.</param>
+            <param name="defaultValue">The default value to be used for the field.</param>
+            <returns>The <see cref="T:Nancy.Swagger.SwaggerRouteDataBuilder"/> instance.</returns>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerRouteDataBuilder.BodyParam``1(System.String,System.Boolean,``0)">
+            <summary>
+            Specify a body parameter for the operation.
+            </summary>
+            <param name="description">The description of the parameter.</param>
+            <param name="required">A <see cref="T:System.Boolean"/> value indicating whether the parameter is required. The default is <c>false</c>.</param>
+            <param name="defaultValue">The default value to be used for the field.</param>
+            <returns>The <see cref="T:Nancy.Swagger.SwaggerRouteDataBuilder"/> instance.</returns>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerRouteDataBuilder.PathParam``1(System.String,System.String,System.Boolean,``0)">
+            <summary>
+            Specify a path parameter for the operation.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="description">The description of the parameter.</param>
+            <param name="required">A <see cref="T:System.Boolean"/> value indicating whether the parameter is required. The default is <c>false</c>.</param>
+            <param name="defaultValue">The default value to be used for the field.</param>
+            <returns>The <see cref="T:Nancy.Swagger.SwaggerRouteDataBuilder"/> instance.</returns>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerRouteDataBuilder.Param``1(Swagger.ObjectModel.ApiDeclaration.ParameterType,System.String,System.String,System.Boolean,``0)">
+            <summary>
+            Specify a parameter for the operation.
+            </summary>
+            <param name="paramType">The <see cref="T:Swagger.ObjectModel.ApiDeclaration.ParameterType"/> of the parameter.</param>
+            <param name="name">The name of the parameter.</param>
+            <param name="description">The description of the parameter.</param>
+            <param name="required">A <see cref="T:System.Boolean"/> value indicating whether the parameter is required. The default is <c>false</c>.</param>
+            <param name="defaultValue">The default value to be used for the field.</param>
+            <returns>The <see cref="T:Nancy.Swagger.SwaggerRouteDataBuilder"/> instance.</returns>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerRouteDataBuilder.Response(System.Int32,System.String)">
+            <summary>
+            Specify a response message for the operation.
+            </summary>
+            <param name="code">The HTTP code of the response.</param>
+            <param name="message">The message for the response.</param>
+            <returns>The <see cref="T:Nancy.Swagger.SwaggerRouteDataBuilder"/> instance.</returns>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerRouteDataBuilder.Produces(Nancy.Responses.Negotiation.MediaType[])">
+            <summary>
+            Specify what media type(s) the operation produces.
+            </summary>
+            <param name="mediaTypes">The media type(s).</param>
+            <returns>The <see cref="T:Nancy.Swagger.SwaggerRouteDataBuilder"/> instance.</returns>
+        </member>
+        <member name="M:Nancy.Swagger.SwaggerRouteDataBuilder.Consumes(Nancy.Responses.Negotiation.MediaType[])">
+            <summary>
+            Specify what media type(s) the operation consumes.
+            </summary>
+            <param name="mediaTypes">The media type(s).</param>
+            <returns>The <see cref="T:Nancy.Swagger.SwaggerRouteDataBuilder"/> instance.</returns>
+        </member>
+        <member name="P:Nancy.Swagger.SwaggerRouteDataBuilder.Data">
+            <summary>
+            Gets the <see cref="T:Nancy.Swagger.SwaggerRouteData"/> instance.
+            </summary>
+        </member>
+    </members>
+</doc>

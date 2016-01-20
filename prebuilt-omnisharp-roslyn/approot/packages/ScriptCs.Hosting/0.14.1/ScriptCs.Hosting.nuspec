@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>ScriptCs.Hosting</id>
+    <version>0.14.1</version>
+    <authors>Glenn Block, Filip Wojcieszyn, Justin Rusbatch, Kristian Hellang, Damian Schenkelman, Adam Ralph</authors>
+    <owners>Glenn Block, Justin Rusbatch, Filip Wojcieszyn</owners>
+    <licenseUrl>https://github.com/scriptcs/scriptcs/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>http://scriptcs.net</projectUrl>
+    <iconUrl>http://www.gravatar.com/avatar/5c754f646971d8bc800b9d4057931938.png?s=120</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>ScriptCs.Hosting provides common services necessary for hosting scriptcs in your application.</description>
+    <tags>roslyn csx script scriptcs</tags>
+    <dependencies>
+      <dependency id="ScriptCs.Core" version="0.14.1" />
+      <dependency id="Autofac.Mef" version="3.0.3" />
+      <dependency id="Common.Logging" version="2.1.2" />
+      <dependency id="Newtonsoft.Json" version="6.0.3" />
+      <dependency id="NuGet.Core" version="2.8.5" />
+    </dependencies>
+  </metadata>
+</package>
