@@ -28,4 +28,4 @@ class OmniSharpSelectVersion(sublime_plugin.TextCommand):
         for server in servers:
             popup_list.append(server.get("name"))
 
-        view.show_popup_menu(popup_list, SwapServerClosure(popup_list).cb)
+        view.window().show_quick_panel(popup_list, SwapServerClosure(popup_list).cb)
