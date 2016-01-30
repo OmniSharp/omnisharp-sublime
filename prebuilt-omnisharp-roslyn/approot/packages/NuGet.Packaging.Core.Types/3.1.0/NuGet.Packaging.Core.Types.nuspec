@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>NuGet.Packaging.Core.Types</id>
+    <version>3.1.0</version>
+    <authors>Microsoft Open Technologies, Inc.</authors>
+    <owners>Microsoft Open Technologies, Inc.</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>NuGet.Packaging.Core.Types</description>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5">
+        <dependency id="NuGet.Frameworks" version="3.1.0" />
+      </group>
+      <group targetFramework="DNXCore5.0">
+        <dependency id="NuGet.Frameworks" version="3.1.0" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="mscorlib" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="Microsoft.CSharp" targetFramework=".NETFramework4.5" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

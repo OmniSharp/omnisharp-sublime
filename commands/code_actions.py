@@ -104,4 +104,3 @@ class OmniSharpRunCodeAction(sublime_plugin.TextCommand):
   def run(self, edit, args):
     region = sublime.Region(0, self.view.size())
     self.view.replace(edit, region, args['text'])
-    self.view.sel().clear()

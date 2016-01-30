@@ -1,7 +1,31 @@
 {
     "omnisharp_response_timeout": 100,
     "omnisharp_auto_start": true,
-    "omnisharp_server_config_location":"",
+    "omnisharp_server_active":"roslyn",
+    "omnisharp_servers": [
+        {
+            "name": "roslyn",
+            "path": "omnisharp-roslyn/scripts/Omnisharp.*",
+            "config": null,
+        },
+        {
+            "name": "legacy",
+            "path":"omnisharp-server/OmniSharp/bin/Debug/OmniSharp.exe",
+            "config":"omnisharp-server/OmniSharp/bin/Debug/config.json",
+        },
+        {
+            "name": "prebuilt-legacy",
+            "path": "prebuilt-omnisharp-server/OmniSharp.exe",
+            "config": "prebuilt-omnisharp-server/config.json",
+        },
+        {
+            "name": "prebuilt-roslyn",
+            "path": "prebuilt-omnisharp-roslyn/omnisharp.*",
+            "config": null,
+        }
+    ],
     "omnisharp_onsave_codecheck": true,
     "omnisharp_show_override_completion": true,
+    "omnisharp_onsave_showwarningwindows":true,
+    "omnisharp_onsave_showerrorwindows":true
 }

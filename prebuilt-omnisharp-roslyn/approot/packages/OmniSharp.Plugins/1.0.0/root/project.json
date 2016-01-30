@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0-*",
+  "compilationOptions": {
+    "warningsAsErrors": true
+  },
+  "dependencies": {
+    "OmniSharp.Plugins": "1.0.0"
+  },
+  "frameworks": {
+    "dnx451": {
+      "frameworkAssemblies": {
+        "System.Collections.Concurrent": ""
+      }
+    },
+    "dnxcore50": {
+      "dependencies": {
+        "System.Diagnostics.Process": "4.0.0-beta-22816",
+        "System.Runtime": "4.0.20-beta-22816",
+        "System.Collections.Concurrent": "4.0.10-beta-22816"
+      }
+    }
+  },
+  "entryPoint": "OmniSharp.Plugins",
+  "loadable": false
+}
