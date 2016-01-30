@@ -25,6 +25,7 @@
         }
     ],
     "omnisharp_onsave_codecheck": true,
+    "omnisharp_show_override_completion": true,
     "omnisharp_onsave_showwarningwindows":true,
     "omnisharp_onsave_showerrorwindows":true
 }
