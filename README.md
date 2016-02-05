@@ -55,7 +55,7 @@
         build.cmd
         
         
-        #Linux
+        #Linux Or Mac OSX
         cd OmniSharp
         git submodule update --init --recursive
         ./build.sh or ./build.cmd
