@@ -1,3 +1,6 @@
+# Help Required
+*******Looking for a maintainer. If you'd like to help manage this plugin please file and issue*******
+
 Linux & OSX | Windows
 ------------|------------
 [![Build Status](https://travis-ci.org/OmniSharp/omnisharp-sublime.svg?branch=master)](https://travis-ci.org/OmniSharp/omnisharp-sublime) | [![Build status](https://ci.appveyor.com/api/projects/status/n70n3340jg2afgob?svg=true)](https://ci.appveyor.com/project/robbert229/omnisharp-sublime)
