@@ -190,7 +190,7 @@ def check_solution_ready_status(view):
 
 def ready_status_handler(data):
     global readycount
-    if data == False:
+    if data == False or data == None:
         readycount += 1
         if readycount < 5:
             sublime.set_timeout(lambda: check_solution_ready_status(sublime.active_window().active_view()), 5000)
@@ -208,7 +208,7 @@ def check_server_alive_status(view):
 
 
 def alive_status_handler(data):
-    if data == False:
+    if data == False or data == None:
         # I don't expect this to get hit because if its not running it wil throw exception
         set_omnisharp_status("Server Not Running")
     elif data == True:
