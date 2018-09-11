@@ -31,10 +31,10 @@
  21. Build/ReBuild/Clean Solution
  22. Reload Solution
 
-#Requirements
+# Requirements
  * Mono Development Kit(for [OmniSharpServer](https://github.com/nosami/OmniSharpServer))
 
-#Installation
+# Installation
 
  * Using [Package Control](https://packagecontrol.io), install the package called `OmniSharp`
 
@@ -117,10 +117,10 @@ Once the `YOURPROJECT.sublime-project` is set up and saved, follow the below:
  }
  ```
 
-#OmniSharpServer Settings
+# OmniSharpServer Settings
 The Sublime plugin communicates to OmniSharp Server which has various available settings stored in a `config.json` file. By default the location of this file is in a folder under the Sublime OmniSharp packages folder called `PrebuiltOmniSharpServer` and there is also a user specific plugin setting that specifies the location of this `config.json` file.  To prevent your settings being overridden on new releases of the Sublime package, we recommend you store your `config.json` file somewhere other than the default location.  Once you have taken a copy of `config.json` and put it somewhere safe you will need to update the Sublime plugin's user setting called `"omnisharp_server_config_location"`. 
  
-#Format Document Settings
+# Format Document Settings
 
 When you press `Ctrl + K + D` to format the document you may see `CR` markers.  
 
@@ -149,7 +149,7 @@ Open your safely tucked away config.json file and modify the `eolMarker` setting
   },
 ```
 
-#Unit Tests
+# Unit Tests
 
 For the plugin to be able to run unit tests you need to configure the test runner. This is done in the server config file.
 

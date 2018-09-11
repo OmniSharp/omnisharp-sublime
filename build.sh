@@ -1,9 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -e
+./scripts/prepare.sh
+./scripts/build.sh
 
-pushd omnisharp-server
-xbuild /p:Platform="Any CPU" /property:nowarn=1685
-popd
-
-pushd omnisharp-roslyn
-./build.sh
-popd

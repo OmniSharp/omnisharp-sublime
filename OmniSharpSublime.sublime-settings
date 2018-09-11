@@ -9,16 +9,6 @@
             "config": null,
         },
         {
-            "name": "legacy",
-            "path":"omnisharp-server/OmniSharp/bin/Debug/OmniSharp.exe",
-            "config":"omnisharp-server/OmniSharp/bin/Debug/config.json",
-        },
-        {
-            "name": "prebuilt-legacy",
-            "path": "prebuilt-omnisharp-server/OmniSharp.exe",
-            "config": "prebuilt-omnisharp-server/config.json",
-        },
-        {
             "name": "prebuilt-roslyn",
             "path": "prebuilt-omnisharp-roslyn/omnisharp.*",
             "config": null,
