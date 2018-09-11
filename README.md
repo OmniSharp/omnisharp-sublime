@@ -60,13 +60,6 @@
         git submodule update --init --recursive
         ./build.sh or ./build.cmd
 
-# Selecting OmniSharp Version
-
-Currently both `omnisharp-server` and `omnisharp-roslyn` are both supported. To swap between the
-different version open up the sublime command window ctrl-shift-p, type Select Server Version 
-and press enter. Prebuilt-Roslyn and Prebuilt-Legacy are the only two working servers that work
-unless you have built the plugin from source.
-
 # Project Setting
 The server will automatically find the the solution file from the folder you have opened in Sublime.  If you have multiple solutions you have to specify the solution file you wish to use in a `sublime-project`. 
 
@@ -99,7 +92,6 @@ Once the `YOURPROJECT.sublime-project` is set up and saved, follow the below:
 2. Open Sublime
 3. Click `Project -> Open Project`, and select your `YOURPROJECT.sublime-project` file
 
-**NOTE** : For ASP.Net vNext applications please use the Roslyn branch of this repository.  
 
 # C# language-specific settings
  Create C# settings file as shown in this picture
@@ -116,9 +108,6 @@ Once the `YOURPROJECT.sublime-project` is set up and saved, follow the below:
     "auto_complete_triggers": [ {"selector": "source.cs", "characters": ".<"} ],
  }
  ```
-
-# OmniSharpServer Settings
-The Sublime plugin communicates to OmniSharp Server which has various available settings stored in a `config.json` file. By default the location of this file is in a folder under the Sublime OmniSharp packages folder called `PrebuiltOmniSharpServer` and there is also a user specific plugin setting that specifies the location of this `config.json` file.  To prevent your settings being overridden on new releases of the Sublime package, we recommend you store your `config.json` file somewhere other than the default location.  Once you have taken a copy of `config.json` and put it somewhere safe you will need to update the Sublime plugin's user setting called `"omnisharp_server_config_location"`. 
  
 # Format Document Settings
 
@@ -147,26 +136,6 @@ Open your safely tucked away config.json file and modify the `eolMarker` setting
     "indentBlankLines": false,
     "wrapLineLength": 80
   },
-```
-
-# Unit Tests
-
-For the plugin to be able to run unit tests you need to configure the test runner. This is done in the server config file.
-
-1. Click Preferences - Browse Packages
-2. Go to `OmniSharp/PrebuiltOmniSharpServer/` sub directory 
-3. Open config.json and modify the `TestCommands` like below
-
-**OR**
-
-Open your safely tucked away config.json file and modify the `TestCommands` like below
-
- ```
- "TestCommands": {
-    "All": "nunit-console.exe -nologo {{AssemblyPath}}",
-    "Fixture": "nunit-console.exe -nologo {{AssemblyPath}} -run={{TypeName}}",
-    "Single": "nunit-console.exe -nologo {{AssemblyPath}} -run={{TypeName}}.{{MethodName}}"
-   },
 ```
 
 
