@@ -1,5 +1,5 @@
 # OmniSharpSublime for ST3
- OmnisharpSublime is a plugin for ST3 to provide a C# development environment. It communicates with OmniSharpServer by nosami for IDE functions.
+ OmnisharpSublime is a plugin for ST3 to provide a C# development environment. It communicates with omnisharp-roslyn by nosami for IDE functions.
 
  It works on: 
    1. Mac OSX
@@ -32,7 +32,11 @@
  22. Reload Solution
 
 # Requirements
- * Mono Development Kit(for [OmniSharpServer](https://github.com/nosami/OmniSharpServer))
+ * mono
+
+# Build Requirements
+ * msbuild
+ * dotnet core sdk
 
 # Installation
 
@@ -49,16 +53,18 @@
 
 3. Move to plugin directory, update submodule and build.
 
-        #Windows
-        cd OmniSharp
-        git submodule update --init --recursive
-        build.cmd
-        
-        
-        #Linux Or Mac OSX
-        cd OmniSharp
-        git submodule update --init --recursive
-        ./build.sh or ./build.cmd
+
+      * Windows
+      
+       cd OmniSharp
+       git submodule update --init --recursive
+       build.cmd
+ 
+      * Linux Or Mac OSX
+      
+       cd OmniSharp
+       git submodule update --init --recursive
+       ./build.sh
 
 # Project Setting
 The server will automatically find the the solution file from the folder you have opened in Sublime.  If you have multiple solutions you have to specify the solution file you wish to use in a `sublime-project`. 
@@ -108,34 +114,5 @@ Once the `YOURPROJECT.sublime-project` is set up and saved, follow the below:
     "auto_complete_triggers": [ {"selector": "source.cs", "characters": ".<"} ],
  }
  ```
- 
-# Format Document Settings
-
-When you press `Ctrl + K + D` to format the document you may see `CR` markers.  
-
-![CR Markers](http://i.imgur.com/SBgyjtk.png)
-
-This is to do with the settings for `OmniSharpServer`.  
-
-1. Click Preferences - Browse Packages
-2. Go to `OmniSharp/PrebuiltOmniSharpServer/` sub directory 
-3. Open config.json and modify the `eolMarker` setting to `\n` like below
-
-**OR**
-
-Open your safely tucked away config.json file and modify the `eolMarker` setting to `\n` like below
-
-```
-  "TextEditorOptions": {
-    "tabsToSpaces": true,
-    "tabSize": 4,
-    "indentSize": 4,
-    "continuationIndent": 4,
-    "labelIndent": 0,
-    "eolMarker": "\n",
-    "indentBlankLines": false,
-    "wrapLineLength": 80
-  },
-```
 
 
