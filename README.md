@@ -33,9 +33,9 @@
 
 # Requirements
  * mono
+ * msbuild-stable
 
 # Build Requirements
- * msbuild
  * dotnet core sdk
 
 # Installation
