@@ -31,9 +31,12 @@
  21. Build/ReBuild/Clean Solution
  22. Reload Solution
 
-# Requirements
+# Linux Requirements
  * mono
- * msbuild-stable
+ * msbuild-stable 
+ 
+# Windows Requirements
+ * Microsoft Build Tools 2015 (*must* be added to PATH)
 
 # Build Requirements
  * dotnet core sdk
