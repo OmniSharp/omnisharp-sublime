@@ -17,7 +17,6 @@ from .type_lookup import OmniSharpTypeLookup
 from .hide_panel import OmniSharpHidePanel
 from .show_panel import OmniSharpShowPanel
 from .run_unit_tests import OmniSharpRunUnitTests
-from .build_project import OmniSharpBuildProject
 from .reload_solution import OmniSharpReloadSolution
 from .navigate_to import OmniSharpNavigateTo
 from .show_server_output import OmniSharpShowServerOutput
@@ -45,7 +44,6 @@ __all__ = [
     'OmniSharpHidePanel',
     'OmniSharpShowPanel',
     'OmniSharpRunUnitTests',
-    'OmniSharpBuildProject',
     'OmniSharpReloadSolution',
     'OmniSharpNavigateTo',
     'OmniSharpShowServerOutput',
