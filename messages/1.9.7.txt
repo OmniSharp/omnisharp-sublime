@@ -1,0 +1,5 @@
+Enhancements:
+
+* Omnisharp-roslyn update
+* Removed deprecated build options
+* Added new requirements to README.md
