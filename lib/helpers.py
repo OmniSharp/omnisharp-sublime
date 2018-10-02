@@ -34,7 +34,7 @@ def project_data(view):
 def current_solution_filepath_or_project_rootpath(view):
     project_file = project_file_name(view)
     if project_file is not None:
-        print('project file %s found', project_file)
+        print('project file %s found' % project_file)
 
         data = project_data(view)
         if 'solution_file' not in data:
