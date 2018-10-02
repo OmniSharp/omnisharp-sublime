@@ -14,8 +14,10 @@
             "config": null,
         }
     ],
+    "omnisharp_onload_codecheck": false,
+    "omnisharp_onedit_codecheck": false,
     "omnisharp_onsave_codecheck": true,
     "omnisharp_show_override_completion": true,
-    "omnisharp_onsave_showwarningwindows":true,
-    "omnisharp_onsave_showerrorwindows":true
+    "omnisharp_showwarningwindows":true,
+    "omnisharp_showerrorwindows":true
 }

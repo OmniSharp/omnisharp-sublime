@@ -14,14 +14,17 @@ class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
     outputpanel = None
     next_run_time = 0
 
-    # def on_activated(self, view):
-    #     self._run_codecheck_after_delay(view)
+    def on_activated(self, view):
+        if bool(helpers.get_settings(view, 'omnisharp_onload_codecheck')):
+            self._run_codecheck_after_delay(view)
 
-    # def on_modified(self, view):
-    #     self._run_codecheck_after_delay(view)
+    def on_modified(self, view):
+        if bool(helpers.get_settings(view, 'omnisharp_onedit_codecheck')):
+            self._run_codecheck(view)
 
     def on_post_save(self, view):
-        self._run_codecheck_after_delay(view)
+        if bool(helpers.get_settings(view, 'omnisharp_onsave_codecheck')):
+            self._run_codecheck_after_delay(view)
 
     def _run_codecheck_after_delay(self, view):
         timeout_ms = 500
@@ -45,8 +48,7 @@ class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
         self.outputpanel.view.settings().set("color_scheme", 'Packages/OmniSharp/BuildConsole.hidden-tmTheme')
 
         self.view.erase_regions("oops")
-        if bool(helpers.get_settings(view, 'omnisharp_onsave_codecheck')):
-            omnisharp.get_response(view, '/codecheck', self._handle_codeerrors)
+        omnisharp.get_response(view, '/codecheck', self._handle_codeerrors)
 
         print('file changed')
 
@@ -79,8 +81,8 @@ class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
                 key = "%s,%s" % (reg.a, reg.b)
                 oops_map[key] = i["Text"].strip()
                 self.outputpanel.write_line(i["LogLevel"] + " : " + i["Text"].strip() + " - (" + str(i["Line"]) + ", " + str(i["Column"]) + ")")
-            showErrorPanel = bool(helpers.get_settings(self.view,'omnisharp_onsave_showerrorwindows'))
-            showWarningPanel = bool(helpers.get_settings(self.view,'omnisharp_onsave_showwarningwindows'))
+            showErrorPanel = bool(helpers.get_settings(self.view,'omnisharp_showerrorwindows'))
+            showWarningPanel = bool(helpers.get_settings(self.view,'omnisharp_showwarningwindows'))
             haveError = len(self.errlines) > 0
             if haveError:
                 # print('underlines')
