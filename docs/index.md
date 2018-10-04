@@ -1,12 +1,12 @@
 # OmniSharpSublime for ST3
- OmnisharpSublime is a plugin for ST3 to provide a C# development environment. It communicates with OmniSharpServer by nosami for IDE functions.
+ OmnisharpSublime is a plugin for ST3 to provide a C# development environment. It communicates with omnisharp-roslyn by nosami for IDE functions.
 
  It works on: 
    1. Mac OSX
    2. Linux
    3. Windows
  
-
+ 
 # Features
  1. Auto OmniSharpServer running
  2. Asynchronous communication with OmniSharpServer (Never freeze!)
@@ -27,14 +27,19 @@
  17. Add New C# Class & Interface (via sidebar and context menu) via File Templates which also adds to `csproj`
  18. Type Lookup with Documentation 
  19. Hide/Show Info Panel
- 20. Run Unit Tests
- 21. Build/ReBuild/Clean Solution
- 22. Reload Solution
+ 20. Reload Solution
 
-#Requirements
- * Mono Development Kit(for [OmniSharpServer](https://github.com/nosami/OmniSharpServer))
+# Linux Requirements
+ * mono
+ * msbuild-stable 
+ 
+# Windows Requirements
+ * Microsoft Build Tools 2015 (*must* be added to PATH)
 
-#Installation
+# Build Requirements
+ * dotnet core sdk
+
+# Installation
 
  * Using [Package Control](https://packagecontrol.io), install the package called `OmniSharp`
 
@@ -49,12 +54,21 @@
 
 3. Move to plugin directory, update submodule and build.
 
-        cd OmniSharp
-        git submodule update --init --recursive
-        ./build.sh
+
+      * Windows
+      
+       cd OmniSharp
+       git submodule update --init --recursive
+       build.cmd
+ 
+      * Linux Or Mac OSX
+      
+       cd OmniSharp
+       git submodule update --init --recursive
+       ./build.sh
 
 # Project Setting
-The server will automatically find the the solution file from the folder you have opened in Sublime.  For ASP.Net vNext applications it will find the project.json file.  If you have multiple solutions you have to specify the solution file you wish to use in a sublime-project. 
+The server will automatically find the the solution file from the folder you have opened in Sublime.  If you have multiple solutions you have to specify the solution file you wish to use in a `sublime-project`. 
 
 1. Go to `File -> Open` and select the folder with your solution in it.
 
@@ -66,7 +80,7 @@ The server will automatically find the the solution file from the folder you hav
 
 ## Example of a sublime-project
 
-```json
+```
 {
     "folders":
     [
@@ -94,7 +108,7 @@ Once the `YOURPROJECT.sublime-project` is set up and saved, follow the below:
  
  Paste the below in. This will launch intellisense on . and < symbols
 
- ```json
+ ```
  {
     "auto_complete": true,
     "auto_complete_selector": "source - comment",
@@ -102,59 +116,4 @@ Once the `YOURPROJECT.sublime-project` is set up and saved, follow the below:
  }
  ```
 
-#OmniSharpServer Settings
-The Sublime plugin communicates to OmniSharp Server which has various available settings stored in a `config.json` file. By default the location of this file is in a folder under the Sublime OmniSharp packages folder called `PrebuiltOmniSharpServer` and there is also a user specific plugin setting that specifies the location of this `config.json` file.  To prevent your settings being overridden on new releases of the Sublime package, we recommend you store your `config.json` file somewhere other than the default location.  Once you have taken a copy of `config.json` and put it somewhere safe you will need to update the Sublime plugin's user setting called `"omnisharp_server_config_location"`. 
 
- 
-#Format Document Settings
-
-When you press `Ctrl + K + D` to format the document you may see `CR` markers.  
-
-![CR Markers](http://i.imgur.com/SBgyjtk.png)
-
-This is to do with the settings for `OmniSharpServer`.  
-
-1. Click Preferences - Browse Packages
-2. Go to `OmniSharp/PrebuiltOmniSharpServer/` sub directory 
-3. Open config.json and modify the `eolMarker` setting to `\n` like below
-
-**OR**
-
-Open your safely tucked away config.json file and modify the `eolMarker` setting to `\n` like below
-
-```json
-  "TextEditorOptions": {
-    "tabsToSpaces": true,
-    "tabSize": 4,
-    "indentSize": 4,
-    "continuationIndent": 4,
-    "labelIndent": 0,
-    "eolMarker": "\n",
-    "indentBlankLines": false,
-    "wrapLineLength": 80
-  },
-```
-
-#Unit Tests
-
-For the plugin to be able to run unit tests you need to configure the test runner. This is done in the server config file.
-
-1. Click Preferences - Browse Packages
-2. Go to `OmniSharp/PrebuiltOmniSharpServer/` sub directory 
-3. Open config.json and modify the `TestCommands` like below
-
-**OR**
-
-Open your safely tucked away config.json file and modify the `TestCommands` like below
-
- ```json
- "TestCommands": {
-    "All": "nunit-console.exe -nologo {{AssemblyPath}}",
-    "Fixture": "nunit-console.exe -nologo {{AssemblyPath}} -run={{TypeName}}",
-    "Single": "nunit-console.exe -nologo {{AssemblyPath}} -run={{TypeName}}.{{MethodName}}"
-   },
-```
-
-# Sometime
-* Find type / symbols
-* advanced syntax highlight
