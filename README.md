@@ -27,9 +27,7 @@
  17. Add New C# Class & Interface (via sidebar and context menu) via File Templates which also adds to `csproj`
  18. Type Lookup with Documentation 
  19. Hide/Show Info Panel
- 20. Run Unit Tests
- 21. Build/ReBuild/Clean Solution
- 22. Reload Solution
+ 20. Reload Solution
 
 # Linux Requirements
  * mono
