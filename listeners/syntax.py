@@ -67,6 +67,7 @@ class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
         if "QuickFixes" in self.data and self.data["QuickFixes"] != None and len(self.data["QuickFixes"]) > 0:
             self.data["QuickFixes"].sort(key = lambda a:(a['Line'],a['Column']))
             self.outputpanel.write_line("File: "+self.data["QuickFixes"][0]["FileName"]+"\n")
+            suppressHidden = bool(helpers.get_settings(self.view,'omnisharp_suppresshidden'))
             for i in self.data["QuickFixes"]:
                 point = self.view.text_point(i["Line"]-1, i["Column"]-1)
                 reg = self.view.word(point)
@@ -74,6 +75,9 @@ class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
                 if region_that_would_be_looked_up.begin() != reg.begin() or region_that_would_be_looked_up.end() != reg.end():
                     reg = sublime.Region(point, point+1)
                 # self.underlines.append(reg)
+
+                if i["LogLevel"] == "Hidden" and suppressHidden:
+                    continue
                 if i["LogLevel"] == "Warning" :
                     self.warninglines.append(reg)
                 if i["LogLevel"] == "Error" :
