@@ -99,4 +99,6 @@ class OmniSharpSyntaxEventListener(sublime_plugin.EventListener):
 
         self.data = None
 
+        # Make error panel be scrolled to top so that we can see the first error:
+        self.outputpanel.view.set_viewport_position((0,0))
 
